@@ -1,6 +1,6 @@
 ### Hi there 👋
 # 05/09/2022 - Deixei em documentos os rascunhos de como imaginamos o site.
-# 05/09/2022 - Em Imagens, até o momento, só tem a paleta de cores que achamos ser boa para fazera implementação, mas ela só vai ser aplicada posteriormente
+# 05/09/2022 - Em Imagens, até o momento, só tem a paleta de cores que achamos ser boa para fazer a implementação, mas ela só vai ser aplicada posteriormente
 
 
 <!--
