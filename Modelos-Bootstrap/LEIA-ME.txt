@@ -1,4 +1,5 @@
-Vocês devem conferir os modelos que existem aqui, escolher, e implementar dentro do HTML da página que estão trabalhando, tudo bem arquitetato.
+Vocês devem conferir os modelos que existem aqui, escolher, e implementar dentro do HTML da página que estão trabalhando,
+tudo bem arquitetato.
 
 Prezem pela organização do código, para facilitar o debug e leitura por parte da equipe.
 
