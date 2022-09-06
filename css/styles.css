@@ -29,7 +29,8 @@ html, body {
     display: grid;
     height: 85%; 
     grid-template-rows: 10% 75% 15%;
-    margin: 0px;
+    width: 70%;
+    margin: 0px auto;
     padding: 0px;
   }
   

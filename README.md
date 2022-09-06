@@ -1,6 +1,9 @@
 ### Hi there 👋
-# 05/09/2022 - Deixei em documentos os rascunhos de como imaginamos o site.
-# 05/09/2022 - Em Imagens, até o momento, só tem a paleta de cores que achamos ser boa para fazer a implementação, mas ela só vai ser aplicada posteriormente
+# 06/09/2022 - na pasta documentos/burndown está a divisão das tarefas com uma breve explicação falando o que é para fazer!
+# 06/09/2022 - Deixei dentro da pasta documentos/layoutsite os rascunhos de como imaginamos o site.
+# 06/09/2022 - Em Imagens, até o momento, só tem a paleta de cores que achamos ser boa para fazer a implementação, mas ela só vai ser aplicada posteriormente
+# 06/09/2022 - Na pasta BOOTSTRAP tem alguns modelos que gostariamos que fossem utilizados (OBS: Grid tem algumas formações que podem facilitar para quem vai fazer as páginas com os computadores; Cheatssheet tem modelos de caixas de texto para inserir as informações.)
+
 
 
 <!--
