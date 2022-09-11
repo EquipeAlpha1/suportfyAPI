@@ -59,6 +59,7 @@ html, body {
     background: yellow;
     margin: 0px;
     padding: 0px 20px;
+    cursor: pointer;
   }
   
   footer {
