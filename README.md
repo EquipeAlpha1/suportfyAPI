@@ -1,5 +1,6 @@
 
-<img src="" width="900" height="500"/>
+![capa-1](https://user-images.githubusercontent.com/111616660/190826899-092229bb-1bb6-4ed4-b0c8-ef6e499a0fb2.png)
+
 
 
 ## Dev team
@@ -10,13 +11,13 @@
 
 
 * Rafael Silva de Oliveira (Scrum Master)
-#### [Github](https://github.com/rafaelsilvva)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+#### [Linked](https://www.linkedin.com/in/rafael-silva-519b07192/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/rafaelsilvva)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
 
 
 
 * Gustavo Comparotto Minamisako (Dev Team)
 
-#### [Github]()
+#### [Linked](https://www.linkedin.com/in/gustavo-comparotto-minamisako-73a98b250/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg)[Github](https://github.com/guscomparotto)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
 
 
 
@@ -26,7 +27,7 @@
 
 
 * Nilber Nick Barbosa de Siqueira (Dev Team)
-#### [Github](https://github.com/NilberSiqueira)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+#### [Linked](https://www.linkedin.com/mwlite/in/nilber-siqueira-b3404a176)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/NilberSiqueira)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
 
 
 
