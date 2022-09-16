@@ -26,7 +26,8 @@
 
 
 * Pedro Henrique Davi Gonçalves (Dev team)
-#### [Linked] (https://www.linkedin.com/in/pedro-davi-jobs/) <img src="![logo-linkedin](https://user-images.githubusercontent.com/111616660/190698763-cd03405b-aae0-45fd-b053-40be9208c21d.png)" width="15" height="15" /> [Github] width="20" height="20" />
+#### [Linked](https://www.linkedin.com/in/pedro-davi-jobs/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/PedrohDavi)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+
 
 
 * Murilo Mendonça Custódio da Silva (Dev team)
