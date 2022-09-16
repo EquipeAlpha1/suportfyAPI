@@ -1,0 +1,252 @@
+html, body {  
+  height: 100%;  
+}
+
+body { 
+  /* background: orange; */ 
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;      
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  max-width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+header {  
+  background: #97BEC2;  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15%;
+  margin: 0px;
+  padding: 0px 20px;
+}
+
+.logoHeader {
+  height: 50%;
+}
+
+section {  
+  background: #dbdbdb;
+  display: grid;
+  height: 85%; 
+  grid-template-rows: calc(85% / 10) 85%;
+  width: 70%;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+.etapas {
+  /* background: blue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px;
+  padding: 0px 20px;
+}
+
+.conteudo {
+  /* background: red; */
+  /* display: flex; */
+  /* justify-content: space-between; */
+  align-items: center;
+  margin: 0px;
+  padding: 0px 20px;
+}
+
+.botoes {
+  /* background: yellow; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px;
+  padding: 0px 20px;
+}
+
+footer {
+  background: #485a5c;  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30%;
+  margin: 0px;
+  padding: 0px 20px;
+}
+
+.logoFooter {
+  height: 50%;
+}
+
+.linksFooter a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.pag4 {
+  /* background: brown; */
+  text-align: center;
+  margin: 0;
+}
+
+.pag4 img {
+  width: 10%;
+  height: auto;
+}
+
+.container-fluid {
+  /* background: yellow; */
+  /* height: 70%; */
+}
+
+.col-6 {  
+  margin: 0 auto;
+}
+
+.col-6 h4 {
+  text-align: center;
+}
+
+/* ############################################################################################################ */
+
+/* Posicionamento etapas */
+.wrapper {
+  /* background: black; */
+  width: 100px;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0px auto;
+  /* padding: 0px 20px; */
+}
+
+.header {
+  /* background: springgreen; */
+  width: auto;
+  margin: auto 0;
+  height: 40px;
+}
+
+/* Quebra linha etapas */
+.header ul {
+  display: flex;
+  list-style: none;
+}
+
+/* Distanciamento etapas */
+.header ul li {
+  /* background: turquoise; */
+  margin-right: 50px;
+  position: relative;
+}
+
+/* Criação linhas das */
+.header ul li:before {
+  content: "";
+  position: absolute;
+  top: 35%;
+  left: 40px;
+  width: 70px;
+  height: 4px;
+  background: #bff0f5;
+}
+
+/* Limite etapas */
+.header ul li:last-child:before {
+  display: none;
+}
+
+/* Encaixe etapas */
+.header ul li div {
+  /* padding: 20%; */
+  border-radius: 50%;
+}
+
+/* Custumização etapas */
+.header ul li p {
+  width: 40px;
+  height: 40px;
+  background: #abd7db;
+  color: black;
+  text-align: center;
+  line-height: 250%; /* 40px; */
+  border-radius: 50%;
+}
+
+/* Cor etaps (linhas) */
+.header ul li.active:before {
+  background: #485a5c;
+}
+
+/* Cor etapas (bolas) */
+.header ul li.active p {
+  background: #485a5c;
+}
+
+/*conteudo */
+.form_wrap {
+  /* background: green; */
+  height: 100%;
+  width: 100%;
+  color: black;
+} */
+
+/* Pocisionamento botões */
+.form_wrap h2 {
+  color: #bff0f5;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Pocisionamento botões */
+.btns_wrap {
+  /* background: black; */
+  width: 50%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Posicionamento botões */
+.common_btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Posicionamento botão proximo */
+.common_btns.form_1_btns {
+  justify-content: flex-end;
+}
+
+/* Customização do botão */
+.common_btns button {
+  border: 0;
+  padding: 12px 15px;
+  background: #bff0f5;
+  color: black;
+  width: 150px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Cor ao selecionar botão */
+.common_btns button.btn_next:hover,
+.common_btns button.btn_done:hover {
+    background: #485a5c;
+  }
+  
+.common_btns button.btn_back:hover {
+    background: #485a5c;
+  }
+  
