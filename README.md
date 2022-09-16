@@ -1,22 +1,50 @@
-### Hi there 👋
-# 06/09/2022 - na pasta documentos/burndown está a divisão das tarefas com uma breve explicação falando o que é para fazer!
-# 06/09/2022 - Deixei dentro da pasta documentos/layoutsite os rascunhos de como imaginamos o site.
-# 06/09/2022 - Em Imagens, até o momento, só tem a paleta de cores que achamos ser boa para fazer a implementação, mas ela só vai ser aplicada posteriormente
-# 06/09/2022 - Na pasta BOOTSTRAP tem alguns modelos que gostariamos que fossem utilizados (OBS: Grid tem algumas formações que podem facilitar para quem vai fazer as páginas com os computadores; Cheatssheet tem modelos de caixas de texto para inserir as informações.)
+
+<img src="" width="900" height="500"/>
+
+
+## Dev team
+
+* Luís Eduardo Barros Fontes (Product Owner)
+#### [Linked] width="15" height="15" /> [Github]( width="20" height="20" />
+
+
+* Rafael Silva de Oliveira (Scrum Master)
+#### [Linked] width="15" height="15" /> [Github]( width="20" height="20" />
+
+
+* Gustavo Comparotto Minamisako (Dev Team)
+
+#### [Linked] width="15" height="15" /> [Github] width="20" height="20" />
+
+
+* Natanael Silva Machado (Dev Team)
+#### [Linked] width="15" height="15" /> [Github] width="20" height="20" />
+
+
+* Nilber Nick Barbosa de Siqueira (Dev Team)
+#### [Linked] width="15" height="15" /> [Github] width="20" height="20" />
+
+
+* Pedro Henrique Davi Gonçalves (Dev team)
+#### [Linked] width="15" height="15" /> [Github] width="20" height="20" />
+
+
+* Murilo Mendonça Custódio da Silva (Dev team)
+#### [Linked] width="15" height="15" /> [Github] width="20" height="20" />
 
 
 
-<!--
-**suportfy/suportfy** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### Disciplina Focal Point: Programação em Microinformática
+* M2 (Master dos Masters): Prof. Jean Carlos Costa
+* P2 (PO dos PO´s): Prof. Antônio Egydio
+## Índice
+* [Objetivo do Projeto](#Objetivo-do-Projeto)
+* [Backlog Total](#backlog-total)
+* [Backlog Sprint 1](#backlog-1)
+* [Burndown Sprint 1](#burndown)
+* [Tecnologias e ferramentas utilizadas](#ferramentas)
+* [Cronograma de Entregas](#cronograma-de-entregas)
+* [Agradecimentos] (#agradecimentos)
 
-Here are some ideas to get you started:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Objetivo do Projeto
