@@ -5,24 +5,29 @@
 ## Dev team
 
 * Luís Eduardo Barros Fontes (Product Owner)
-#### [Linked] width="15" height="15" /> [Github]( width="20" height="20" />
+#### [Linked](https://www.linkedin.com/in/luis-f-b74683190)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/luisebf01)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+
 
 
 * Rafael Silva de Oliveira (Scrum Master)
-#### [Linked] width="15" height="15" /> [Github]( width="20" height="20" />
+#### [Github](https://github.com/rafaelsilvva)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+
 
 
 * Gustavo Comparotto Minamisako (Dev Team)
 
-#### [Linked] width="15" height="15" /> [Github] width="20" height="20" />
+#### [Github]()
+
 
 
 * Natanael Silva Machado (Dev Team)
-#### [Linked] width="15" height="15" /> [Github] width="20" height="20" />
+#### [Github](https://github.com/NatanaelSM)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+
 
 
 * Nilber Nick Barbosa de Siqueira (Dev Team)
-#### [Linked] width="15" height="15" /> [Github] width="20" height="20" />
+#### [Github](https://github.com/NilberSiqueira)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+
 
 
 * Pedro Henrique Davi Gonçalves (Dev team)
@@ -31,7 +36,7 @@
 
 
 * Murilo Mendonça Custódio da Silva (Dev team)
-#### [Linked] width="15" height="15" /> [Github] width="20" height="20" />
+#### [Github](https://github.com/murillomendoncaa)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
 
 
 
