@@ -259,3 +259,8 @@ footer {
     background: #485a5c;
   }
   
+/* formatação computdores pc */
+.pc {
+  display: flex;
+  /* align-items: center; */
+}
