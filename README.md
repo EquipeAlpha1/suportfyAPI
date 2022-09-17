@@ -17,12 +17,12 @@
 
 * Gustavo Comparotto Minamisako (Dev Team)
 
-#### [Linked](https://www.linkedin.com/in/gustavo-comparotto-minamisako-73a98b250/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg)[Github](https://github.com/guscomparotto)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+#### [Linked](https://www.linkedin.com/in/gustavo-comparotto-minamisako-73a98b250/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/guscomparotto)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
 
 
 
 * Natanael Silva Machado (Dev Team)
-#### [Github](https://github.com/NatanaelSM)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+#### [Linked](https://www.linkedin.com/in/natanael-silva-machado-207508250/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/NatanaelSM)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
 
 
 
@@ -51,7 +51,8 @@
 * [Burndown Sprint 1](#burndown)
 * [Tecnologias e ferramentas utilizadas](#ferramentas)
 * [Cronograma de Entregas](#cronograma-de-entregas)
-* [Agradecimentos] (#agradecimentos)
+* [Agradecimentos](#agradecimentos)
 
 
 ## Objetivo do Projeto
+O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como principal objetivo facilitar a identificação de problemas de quaisquer origens nos computadores da faculdade, por meio de um software. A ideia é que a identificação do PC e do problema sejam simples para quem abrirá o chamado e também para quem fará a manutenção.
