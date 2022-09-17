@@ -263,3 +263,7 @@ footer {
     background: #485a5c;
   }
   
+ /* formatando os pcs em fileiras */ 
+.pc {
+  display: flex;
+}
