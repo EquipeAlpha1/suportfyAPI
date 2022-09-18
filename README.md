@@ -50,8 +50,8 @@
 * [Backlog Total](#backlog-total)
 * [Backlog Sprint 1](#backlog-sprint-1)
 * [Burndown Sprint 1](#burndown)
-* [Tecnologias e ferramentas utilizadas](#ferramentas)
-* [Software em funcionamentp](#software-em-funcionamento)
+* [Tecnologias e ferramentas utilizadas](#tecnologias-e-ferramentas)
+* [Software em funcionamento](#software-em-funcionamento)
 * [Agradecimentos](#agradecimentos)
 
 
@@ -104,3 +104,19 @@ O Burndown da equipe foi baseado nas horas disponíveis para estar trabalhando n
 | 21	| 18/09/2022	| 6,03961E-14	| 0	| 38 |
 
 
+![Burndown-grafico](https://user-images.githubusercontent.com/111616660/190922296-544ff341-6509-4875-8b96-fcf8f066d83e.png)
+
+
+## Tecnologias e ferramentas
+* HTML;
+* CSS Puro;
+* BootStrap CSS;
+* JavaScript;
+* JQuery;
+* Flask.
+
+## Software em funcionamento
+
+
+## Agradecimentos
+Agradecemos pelo corpo docente da Fatec-SJC, que nos auxiliou no trabalho com as tecnologias envolvidas no projeto e também com a disponibilidade dos laborátórios, para mapeamento e para utilização dos computadores.
