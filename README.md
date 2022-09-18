@@ -46,9 +46,9 @@
 * P2 (PO dos PO´s): Prof. Antônio Egydio
 
 ## Índice
-* [Objetivo do Projeto](#Objetivo-do-Projeto)
+* [Objetivo do Projeto](#objetivo-do-projeto)
 * [Backlog Total](#backlog-total)
-* [Backlog Sprint 1](#backlog-1)
+* [Backlog Sprint 1](#backlog-sprint-1)
 * [Burndown Sprint 1](#burndown)
 * [Tecnologias e ferramentas utilizadas](#ferramentas)
 * [Cronograma de Entregas](#cronograma-de-entregas)
@@ -63,3 +63,13 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 
 ![Backlog total](https://user-images.githubusercontent.com/111616660/190879818-7063c42b-8c20-4404-8b14-e524a64352ad.png)
 
+
+## Backlog Sprint 1
+
+| US | Estimativa de esforço | Critério de aceitação |
+|:--------------:  | :----------:|:---------------------------------:|
+|    Layout do site   | 3 | Documento com formatação das páginas |
+|    Montagem da página inserção de dados do usuário  | 10 | Página funcional com os dados do usuário |
+|    Montagem página formatação dos computadores em sala com botões seletivos   | 16 | Montagem da sala com botões seleção de computador |
+|    Montagem de campo para descrição do problema da máquina   | 10 | Página funcional para inserção do problema da máquina |
+|    Envio de e-mail com dados cadastrados para o usuário   | 12 | Remoção dos dados imputados e envio de e-mail para usuário | 
