@@ -47,6 +47,10 @@ section {
   margin: auto;
 }
 
+.botoes {
+  margin: auto 0;
+}
+
 footer {
   background: #485a5c;  
   display: flex;
@@ -106,7 +110,6 @@ footer {
 }
 
 .header {
-  width: auto;
   margin: auto 0;
   height: 40px;
 }
@@ -177,7 +180,6 @@ footer {
 }
 
 .gridPC {
-  height: auto;
   width: 80%;
   display: grid;
   grid-template-rows: 20% 20% 20% 20% 20%;
@@ -191,33 +193,32 @@ footer {
 .fileira5 {
   display: flex;
   justify-content: space-evenly;
-  padding: 0;
-  margin: 0;
+  padding: 2px 5px;
 }
 
 .esquerda,
 .direita{ 
   width: 45%;
-  padding: 0.3% 0;
+  padding: 0.5% 0;
 }
 
 .fileira1.esquerda,
 .fileira1.direita {
   justify-content: end;
   align-items: center;
-  padding-right: 3%;
+  padding-right: 2%;
 }
 
 /* Label dos computadores (dentro tem 'a' e o 'svg') */
 .btn-outline-dark { 
-  height: 85%;
-  width: 18%;
-  padding: 0;
+  height: 100%;
+  width: 20%;
+  padding: 2% 0;
 }
 
 .btn-outline-dark svg{
-  height: 60%;
-  width: 100%;
+  height: auto;
+  width: 75%;
 }
 
 textarea {
@@ -226,8 +227,8 @@ textarea {
 
 /* Pocisionamento botões */
 .btns_wrap {
-  width: 50%;
-  margin: auto auto;
+  width: 48%;
+  margin: auto;
 }
 
 /* Posicionamento botões */
