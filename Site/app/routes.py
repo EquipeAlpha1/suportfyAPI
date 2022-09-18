@@ -21,12 +21,12 @@ email = Mail(app)
 @app.route('/home', methods=['GET','POST'])
 def home():
     if request.method == 'POST':
-        name = request.form.get('name')
+        name = request.form.get('name') # Aonde tem 'name' entra o nome da váriavel, que está dentro do dicionário 'data' do jQuery.js
         mail = request.form.get('mail')
         pc = request.form.get('pc')
         subject = request.form.get('subject')
         description = request.form.get('description')
-        if bool(name) and bool(mail) and bool(pc) and bool(subject) and bool(description):
+        if name != '' and mail != '' and pc != '' and subject != '' and description != '':
             ## Envia um e-mail para o usuário
             msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
             msg.html = "<!DOCTYPE html><html><body>" \
@@ -67,6 +67,7 @@ def home():
                         "GRUPO ALPHA" \
                         "<br /><br />" \
                         "<table style='border-top:1px solid #dddddd;border-collapse:collapse' cellpadding='0' cellspacing='0' width='100%'>" \
+                        "<td style='line-height:12px;color:#808080;font-size:10px'>" \
                         "<b>Este é um e-mail de notificação e foi gerado automaticamente. Por favor, não responda esta mensagem!</b><br />" \
                         "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [api.ads.2022@gmail.com] porque este e-mail foi registrado para a equipe de suporte na FATEC - SJC.</a><br />" \
                         "</table></div></body></html>".format(name, pc, subject, description)
