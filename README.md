@@ -51,7 +51,7 @@
 * [Backlog Sprint 1](#backlog-sprint-1)
 * [Burndown Sprint 1](#burndown)
 * [Tecnologias e ferramentas utilizadas](#tecnologias-e-ferramentas)
-* [App da Sprint 1](app-da-sprint-1)
+* [App da Sprint 1](#app-da-sprint-1)
 * [Software em funcionamento](#software-em-funcionamento)
 * [Agradecimentos](#agradecimentos)
 
