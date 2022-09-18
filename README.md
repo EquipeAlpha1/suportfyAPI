@@ -37,13 +37,14 @@
 
 
 * Murilo Mendonça Custódio da Silva (Dev team)
-#### [Github](https://github.com/murillomendoncaa)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
+#### [Linked](https://www.linkedin.com/in/murillo-silveira-57903215a/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/murillomendoncaa)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
 
 
 
 ### Disciplina Focal Point: Programação em Microinformática
 * M2 (Master dos Masters): Prof. Jean Carlos Costa
 * P2 (PO dos PO´s): Prof. Antônio Egydio
+
 ## Índice
 * [Objetivo do Projeto](#Objetivo-do-Projeto)
 * [Backlog Total](#backlog-total)
@@ -56,3 +57,9 @@
 
 ## Objetivo do Projeto
 O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como principal objetivo facilitar a identificação de problemas de quaisquer origens nos computadores da faculdade, por meio de um software. A ideia é que a identificação do PC e do problema sejam simples para quem abrirá o chamado e também para quem fará a manutenção.
+
+
+## Backlog total
+
+![Backlog total](https://user-images.githubusercontent.com/111616660/190879818-7063c42b-8c20-4404-8b14-e524a64352ad.png)
+
