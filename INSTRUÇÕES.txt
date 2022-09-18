@@ -8,9 +8,9 @@ Para rodar o projeto a partir do GitHub Desktop no VS Code.
 
 1º - Após abrir o projeto no VS Code, aperte "Ctrl + J" para abrir um TERMINAL.
 
-2º - No terminal, escreva o comando "cd Site" para selecionar a pasta onde você vai trabalhar.
+2º - No terminal, escreva o comando "cd Site" e aperte ENTER para selecionar a pasta onde você vai trabalhar.
 
-3º - Em seguida, escreva o comando "python -m venv venv" e aperte ENTER para criar seu próprio ambiente virtual.
+3º - Em seguida, escreva o comando "python -m venv venv" para criar seu próprio ambiente virtual.
 
 4º - Escreva o comando "venv\scripts\activate" para ativar a execução de scripts dentro do seu ambiente virtual.
 
