@@ -50,8 +50,9 @@
 * [Backlog Total](#backlog-total)
 * [Backlog Sprint 1](#backlog-sprint-1)
 * [Burndown Sprint 1](#burndown)
-* [Tecnologias e ferramentas utilizadas](#ferramentas)
-* [Cronograma de Entregas](#cronograma-de-entregas)
+* [Tecnologias e ferramentas utilizadas](#tecnologias-e-ferramentas)
+* [App da Sprint 1](app-da-sprint-1)
+* [Software em funcionamento](#software-em-funcionamento)
 * [Agradecimentos](#agradecimentos)
 
 
@@ -73,3 +74,54 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 |    Montagem página formatação dos computadores em sala com botões seletivos   | 16 | Montagem da sala com botões seleção de computador |
 |    Montagem de campo para descrição do problema da máquina   | 10 | Página funcional para inserção do problema da máquina |
 |    Envio de e-mail com dados cadastrados para o usuário   | 12 | Remoção dos dados imputados e envio de e-mail para usuário | 
+
+
+## Burndown
+
+O Burndown da equipe foi baseado nas horas disponíveis para estar trabalhando no projeto, levando em conta o backlog da Sprint 1, para entregar um produto de valor ao cliente.
+
+| Dia	| Datas	| Ideal (h) |	Trabalhado (h)	| Real (h) |
+|:---: | :-----------: | :----------: | :-------------: | :-------------: |
+| 1	| 29/08/2022 |	167	| 0	| 167 |
+| 2	| 30/08/2022	| 158,65	| 3	| 164 |
+| 3	| 31/08/2022	| 150,3	| 2	| 162 |
+| 4	| 01/09/2022	| 141,95	| 0	| 162 |
+| 5	| 02/09/2022	| 133,6	| 0	| 162 |
+| 6	| 03/09/2022	| 125,25	| 44	| 118 |
+| 7	| 04/09/2022	| 116,9	| 25	| 93 |
+| 8	| 05/09/2022	| 108,55	| 0	| 93 |
+| 9	| 06/09/2022	| 100,2	| 0	| 93 |
+| 10 | 07/09/2022	| 91,85	| 0	| 93 |
+| 11	| 08/09/2022	| 83,5	| 0	| 93 |
+| 12	| 09/09/2022	| 75,15	| 0	| 93 |
+| 13	| 10/09/2022	| 66,8	| 0	| 93 |
+| 14	| 11/09/2022	| 58,45	| 17	| 76 |
+| 15	| 12/09/2022	| 50,1	| 20	| 56 |
+| 16	| 13/09/2022	| 41,75	| 18	| 38 |
+| 17	| 14/09/2022	| 33,4	| 0	| 38 |
+| 18	| 15/09/2022	| 25,05	| 0	| 38 |
+| 19	| 16/09/2022	| 16,7	| 0	| 38 |
+| 20	| 17/09/2022	| 8,35	| 0	| 38 |
+| 21	| 18/09/2022	| 6,03961E-14	| 0	| 38 |
+
+
+![Burndown-grafico](https://user-images.githubusercontent.com/111616660/190922296-544ff341-6509-4875-8b96-fcf8f066d83e.png)
+
+
+## Tecnologias e ferramentas
+* HTML;
+* CSS Puro;
+* BootStrap CSS;
+* JavaScript;
+* JQuery;
+* Flask.
+
+## App da Sprint 1
+[App Sprint 1](https://sprint1-grupo-alpha.herokuapp.com/)
+
+
+## Software em funcionamento
+
+
+## Agradecimentos
+Agradecemos pelo corpo docente da Fatec-SJC, que nos auxiliou no trabalho com as tecnologias envolvidas no projeto e também com a disponibilidade dos laborátórios, para mapeamento e utilização dos computadores.
