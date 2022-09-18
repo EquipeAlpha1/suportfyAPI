@@ -51,6 +51,7 @@
 * [Backlog Sprint 1](#backlog-sprint-1)
 * [Burndown Sprint 1](#burndown)
 * [Tecnologias e ferramentas utilizadas](#tecnologias-e-ferramentas)
+* [App da Sprint 1](app-da-sprint-1)
 * [Software em funcionamento](#software-em-funcionamento)
 * [Agradecimentos](#agradecimentos)
 
@@ -114,6 +115,10 @@ O Burndown da equipe foi baseado nas horas disponíveis para estar trabalhando n
 * JavaScript;
 * JQuery;
 * Flask.
+
+## App da Sprint 1
+[App Sprint 1](https://sprint1-grupo-alpha.herokuapp.com/)
+
 
 ## Software em funcionamento
 
