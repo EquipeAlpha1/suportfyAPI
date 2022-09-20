@@ -2,7 +2,8 @@ OBS: TODOS OS COMANDOS NÃO TEM "ASPAS"
 
 
 
-Para rodar o projeto a partir do GitHub Desktop no VS Code.
+Para rodar o projeto a partir do GitHub Desktop no VS Code, 
+Você deve no mínimo, ter a extensão do Python instalada no seu VS Code.
 
 
 
@@ -19,7 +20,7 @@ Obs: Caso ocorra um erro nessa etapa:
 	1º - Você deve clicar no botão INICIAR do Windows com o botão direito do mouse.
 	2º - Clicar em 'Windows PowerShell (Admin)'.
 	3º - Escreva o comando "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned" e aperte ENTER.
-	4º - Escreva "A" e aperte ENTER.
+	4º - Em seguida, responda a pergunta com a letra "A" e aperte ENTER.
 	5º - Feche o Windows PowerShell
 	6º - No terminal do VS Code, escreva o comando "venv\scripts\activate" novamente.
 

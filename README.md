@@ -51,7 +51,7 @@
 * [Backlog Sprint 1](#backlog-sprint-1)
 * [Burndown Sprint 1](#burndown)
 * [Tecnologias e ferramentas utilizadas](#tecnologias-e-ferramentas)
-* [App da Sprint 1](app-da-sprint-1)
+* [App da Sprint 1](#app-da-sprint-1)
 * [Software em funcionamento](#software-em-funcionamento)
 * [Agradecimentos](#agradecimentos)
 
@@ -117,11 +117,13 @@ O Burndown da equipe foi baseado nas horas disponíveis para estar trabalhando n
 * Flask.
 
 ## App da Sprint 1
+
 [App Sprint 1](https://sprint1-grupo-alpha.herokuapp.com/)
 
 
 ## Software em funcionamento
 
+[Software Sprint 1](https://youtu.be/yWSd8k3RCxw)
 
 ## Agradecimentos
 Agradecemos pelo corpo docente da Fatec-SJC, que nos auxiliou no trabalho com as tecnologias envolvidas no projeto e também com a disponibilidade dos laborátórios, para mapeamento e utilização dos computadores.
