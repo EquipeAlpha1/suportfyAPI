@@ -57,6 +57,7 @@ section {
 }
 
 .conteudo {
+  background: yellow;;
   height: 100%;
   width: 70%; /* 70% do formEmail */
   margin: 0 auto;
@@ -92,6 +93,7 @@ section {
 }
 
 .botoes {
+  background: green;
   display: flex;
   align-items: center;
   height: 100%;
@@ -205,63 +207,64 @@ footer {
 }
 
 .btn-group {  
+  background: orange;
   display: grid;
-  grid-template-rows: 20% 20% 20% 20% 20%;
-  height: 70%; /* 70% do form_2 data_info */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10%;
+  height: 83%; /* 83% do form_2 data_info */
   width: 100%;
   margin: 0 auto;
   padding: 0;
 }
 
-.fileira1,
-.fileira2,
-.fileira3,
-.fileira4,
-.fileira5 {  
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0.5% 0;
+.left_computers,
+.right_computers {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  column-gap: 2%;
+  row-gap: 5%;
+  margin: 0;
+  padding: 0;
 }
 
-.esquerda,
-.direita{ 
-  width: 50%; /* 50% da fileira */
-  padding: 0.5% 0;
-}
-
-.esquerda {
-  padding-right: 2%;
-}
-
-.direita {
-  padding-left: 2%;
-}
-
-.fileira1.esquerda,
-.fileira1.direita {
-  justify-content: end;
+.computerSlot {
+  display: flex;  
   align-items: center;
-  padding-right: 4%;
+  min-height: 100%;
 }
 
 /* Label dos computadores (dentro tem 'a' e o 'svg') */
 .btn-outline-dark { 
+  display: grid;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.6vh;
   height: 100%;
-  width: 20%;
-  padding: 2% 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.porta {
+  height: auto;
+  width: 100%;
+  margin: auto auto;
+  padding: 0;
 }
 
 .btn-group a {
-  height: 50%;
+  height: auto;
   width: 80%;
-  font-size: 1vw;
-  padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  padding: 0;  
 }
 
 .btn-outline-dark svg{
-  height: 3vh;
+  height: auto;
   width: 80%;
+  margin: 0 auto;
+  padding: 0;
 }
 
 textarea {
