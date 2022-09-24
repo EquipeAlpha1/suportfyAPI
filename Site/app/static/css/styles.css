@@ -217,23 +217,31 @@ footer {
 .fileira2,
 .fileira3,
 .fileira4,
-.fileira5 {
+.fileira5 {  
   display: flex;
   justify-content: space-evenly;
-  padding: 0.5% 1%;
+  padding: 0.5% 0;
 }
 
 .esquerda,
 .direita{ 
-  width: 45%;
+  width: 50%; /* 50% da fileira */
   padding: 0.5% 0;
+}
+
+.esquerda {
+  padding-right: 2%;
+}
+
+.direita {
+  padding-left: 2%;
 }
 
 .fileira1.esquerda,
 .fileira1.direita {
   justify-content: end;
   align-items: center;
-  padding-right: 2%;
+  padding-right: 4%;
 }
 
 /* Label dos computadores (dentro tem 'a' e o 'svg') */
