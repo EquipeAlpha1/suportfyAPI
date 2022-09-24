@@ -17,7 +17,7 @@ Você deve no mínimo, ter a extensão do Python instalada no seu VS Code.
 
 Obs: Caso ocorra um erro nessa etapa: 
 
-	1º - Você deve clicar no botão INICIAR do Windows com o botão direito do mouse.
+	1º - Você deve clicar no botão INICIAR do Windows com o botão direito do mouse. (Esse é somente Windows 10, para Windows 11 procure o comando na internet)
 	2º - Clicar em 'Windows PowerShell (Admin)'.
 	3º - Escreva o comando "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned" e aperte ENTER.
 	4º - Em seguida, responda a pergunta com a letra "A" e aperte ENTER.

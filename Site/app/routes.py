@@ -20,7 +20,7 @@ email = Mail(app)
 @app.route('/', methods=['GET','POST'])
 @app.route('/home', methods=['GET','POST'])
 def home():
-    if request.method == 'POST':
+    '''if request.method == 'POST':
         name = request.form.get('name') # Aonde tem 'name' entra o nome da váriavel, que está dentro do dicionário 'data' do jQuery.js
         mail = request.form.get('mail')
         pc = request.form.get('pc')
@@ -71,5 +71,5 @@ def home():
                         "<b>Este é um e-mail de notificação e foi gerado automaticamente. Por favor, não responda esta mensagem!</b><br />" \
                         "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [api.ads.2022@gmail.com] porque este e-mail foi registrado para a equipe de suporte na FATEC - SJC.</a><br />" \
                         "</table></div></body></html>".format(name, pc, subject, description)
-            email.send(msg)
+            email.send(msg)'''
     return render_template('content.html')
