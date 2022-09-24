@@ -57,7 +57,6 @@ section {
 }
 
 .conteudo {
-  background: yellow;;
   height: 100%;
   width: 70%; /* 70% do formEmail */
   margin: 0 auto;
@@ -93,7 +92,6 @@ section {
 }
 
 .botoes {
-  background: green;
   display: flex;
   align-items: center;
   height: 100%;
@@ -207,7 +205,6 @@ footer {
 }
 
 .btn-group {  
-  background: orange;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10%;
