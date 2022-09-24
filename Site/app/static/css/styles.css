@@ -40,7 +40,7 @@ section {
   padding: 0;
 }
 
-.etapas {
+.steps {
   height: 100%;
   width: 70%; /* 70% do section */
   margin: 0px auto;
@@ -56,14 +56,14 @@ section {
   padding: 0;
 }
 
-.conteudo {
+.content {
   height: 100%;
   width: 70%; /* 70% do formEmail */
   margin: 0 auto;
   padding: 5% 5% 0;
 }
 
-.conteudo h4 {
+.content h4 {
   text-align: center;
 }
 
@@ -72,26 +72,21 @@ section {
 .form_3.data_info,
 .form_4.data_info {
   height: 100%;
-  width: 100%; /* 100% do conteudo */
+  width: 100%; /* 100% do content */
   margin: 0;
   padding: 0;
 }
 
-.content_pg4 {
+.success {
   text-align: center;
 }
 
-.content_pg4 img{
+.success img{
   height: auto;
   width: 10%;
 }
 
-.col-6 {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.botoes {
+.buttons {
   display: flex;
   align-items: center;
   height: 100%;
@@ -135,7 +130,7 @@ footer {
   color: white;
 }
 
-/* Posicionamento etapas */
+/* Posicionamento steps */
 .wrapper {
   width: 100px;
   max-width: 100%;
@@ -150,13 +145,13 @@ footer {
   height: 40px;
 }
 
-/* Quebra linha etapas */
+/* Quebra linha steps */
 .header ul {
   display: flex;
   list-style: none;
 }
 
-/* Distanciamento etapas */
+/* Distanciamento steps */
 .header ul li {
   margin-right: 50px;
   position: relative;
@@ -173,17 +168,17 @@ footer {
   background: #abd7db;
 }
 
-/* Limite etapas */
+/* Limite steps */
 .header ul li:last-child:before {
   display: none;
 }
 
-/* Encaixe etapas */
+/* Encaixe steps */
 .header ul li div {
   border-radius: 50%;
 }
 
-/* Custumização etapas */
+/* Custumização steps */
 .header ul li p {
   width: 40px;
   height: 40px;
@@ -194,12 +189,12 @@ footer {
   border-radius: 50%;
 }
 
-/* Cor etapas (linhas) */
+/* Cor steps (linhas) */
 .header ul li.active:before {
   background: #708688;
 }
 
-/* Cor etapas (bolas) */
+/* Cor steps (bolas) */
 .header ul li.active p {
   background: #708688;
 }
@@ -214,8 +209,8 @@ footer {
   padding: 0;
 }
 
-.left_computers,
-.right_computers {
+.left_side,
+.right_side {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
