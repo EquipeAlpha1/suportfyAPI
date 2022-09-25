@@ -1,31 +1,29 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 <div class="steps"> <!-- ETAPAS DO PROCESSO -->
-  <div class="wrapper">
-    <div class="header">
-      <ul>
-        <li class="active form_1_progessbar"> <!-- ETAPA 1 -->
-          <div>
-            <p><strong>1</strong></p>
-          </div>          
-        </li>
-        <li class="form_2_progessbar"> <!-- ETAPA 2 -->
-          <div>
-            <p><strong>2</strong></p>
-          </div> 
-        </li>
-        <li class="form_3_progessbar"> <!-- ETAPA 3 -->
-          <div>
-            <p><strong>3</strong></p>
-          </div> 
-        </li>
-        <li class="form_4_progessbar"> <!-- ETAPA 4 -->
-          <div>
-            <p><strong>4</strong></p>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="steps_wrapper">
+    <ul>
+      <li class="form_1_progessbar active"> <!-- ETAPA 1 -->
+        <div>
+          <p><strong>1</strong></p>
+        </div>          
+      </li>
+      <li class="form_2_progessbar"> <!-- ETAPA 2 -->
+        <div>
+          <p><strong>2</strong></p>
+        </div> 
+      </li>
+      <li class="form_3_progessbar"> <!-- ETAPA 3 -->
+        <div>
+          <p><strong>3</strong></p>
+        </div> 
+      </li>
+      <li class="form_4_progessbar"> <!-- ETAPA 4 -->
+        <div>
+          <p><strong>4</strong></p>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
 <form action="/" method="POST" class="formEmail" id="formEmail"> <!-- FORMULÁRIO DE SUPORTE -->
@@ -399,19 +397,19 @@
     </div>  
   </div>
   <div class="buttons"> <!-- BOTÕES PARA TROCA DE CONTEÚDO -->
-    <div class="btns_wrap">
-      <div class="common_btns form_1_btns"> <!-- BOTÕES PARA A PÁGINA 1 -->
+    <div class="buttons_wrapper">
+      <div class="form_1_btns common_btns"> <!-- BOTÕES PARA A PÁGINA 1 -->
         <button type="button" class="btn_next">Avançar</button>
       </div>
-      <div class="common_btns form_2_btns" style="display: none;"> <!-- BOTÕES PARA A PÁGINA 2 -->
+      <div class="form_2_btns common_btns" style="display: none;"> <!-- BOTÕES PARA A PÁGINA 2 -->
         <button type="button" class="btn_back">Voltar</button>
         <button type="button" class="btn_next">Avançar</button>
       </div>
-      <div class="common_btns form_3_btns" style="display: none;"> <!-- BOTÕES PARA A PÁGINA 3 -->
+      <div class="form_3_btns common_btns" style="display: none;"> <!-- BOTÕES PARA A PÁGINA 3 -->
         <button type="button" class="btn_back">Voltar</button>
         <button type="submit" class="btn_next" value="SendMail">Avançar</button>      
       </div>
-      <div class="common_btns form_4_btns" style="display: none;"> <!-- BOTÕES PARA A PÁGINA 4 -->
+      <div class="form_4_btns common_btns" style="display: none;"> <!-- BOTÕES PARA A PÁGINA 4 -->
         <button type="submit" class="btn_done" value="Refresh">Concluir</button>
       </div>
     </div>

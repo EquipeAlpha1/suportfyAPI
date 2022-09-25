@@ -41,6 +41,8 @@ section {
 }
 
 .steps {
+  display: flex;
+  align-items: center;
   height: 100%;
   width: 70%; /* 70% do section */
   margin: 0px auto;
@@ -83,7 +85,7 @@ section {
 
 .success img{
   height: auto;
-  width: 10%;
+  width: 15%;
 }
 
 .buttons {
@@ -95,7 +97,7 @@ section {
   padding: 0 5%;
 }
 
-.btns_wrap {
+.buttons_wrapper {
   height: auto;
   width: 100%;
   margin: 0;
@@ -131,34 +133,26 @@ footer {
 }
 
 /* Posicionamento steps */
-.wrapper {
-  width: 100px;
-  max-width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 0px auto;
-}
-
-.header {
-  margin: auto 0;
+.steps_wrapper {
   height: 40px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 /* Quebra linha steps */
-.header ul {
+.steps_wrapper ul {
   display: flex;
   list-style: none;
 }
 
 /* Distanciamento steps */
-.header ul li {
+.steps_wrapper ul li {
   margin-right: 50px;
   position: relative;
 }
 
 /* Criação linhas das */
-.header ul li:before {
+.steps_wrapper ul li:before {
   content: "";
   position: absolute;
   top: 35%;
@@ -169,17 +163,17 @@ footer {
 }
 
 /* Limite steps */
-.header ul li:last-child:before {
+.steps_wrapper ul li:last-child:before {
   display: none;
 }
 
 /* Encaixe steps */
-.header ul li div {
+.steps_wrapper ul li div {
   border-radius: 50%;
 }
 
 /* Custumização steps */
-.header ul li p {
+.steps_wrapper ul li p {
   width: 40px;
   height: 40px;
   background: #abd7db;
@@ -190,12 +184,12 @@ footer {
 }
 
 /* Cor steps (linhas) */
-.header ul li.active:before {
+.steps_wrapper ul li.active:before {
   background: #708688;
 }
 
 /* Cor steps (bolas) */
-.header ul li.active p {
+.steps_wrapper ul li.active p {
   background: #708688;
 }
 
