@@ -193,7 +193,7 @@ footer {
   background: #708688;
 }
 
-.btn-group {  
+.layout_computers {  
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10%;
@@ -201,6 +201,13 @@ footer {
   width: 100%;
   margin: 0 auto;
   padding: 0;
+}
+
+.layout_computers a {
+  height: auto;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;  
 }
 
 .left_side,
@@ -232,24 +239,17 @@ footer {
   padding: 0;
 }
 
-.porta {
-  height: auto;
-  width: 100%;
-  margin: auto auto;
-  padding: 0;
-}
-
-.btn-group a {
-  height: auto;
-  width: 80%;
-  margin: 0 auto;
-  padding: 0;  
-}
-
 .btn-outline-dark svg{
   height: auto;
   width: 80%;
   margin: 0 auto;
+  padding: 0;
+}
+
+.porta {
+  height: auto;
+  width: 100%;
+  margin: auto auto;
   padding: 0;
 }
 
