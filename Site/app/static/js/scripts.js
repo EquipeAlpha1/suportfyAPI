@@ -1,3 +1,8 @@
+/* STEPS */
+var form_2_progessbar = document.querySelector(".form_2_progessbar");
+var form_3_progessbar = document.querySelector(".form_3_progessbar");
+var form_4_progessbar = document.querySelector(".form_4_progessbar");
+
 /* DIV CONTENTS */
 var form_1 = document.querySelector(".form_1");
 var form_2 = document.querySelector(".form_2");
@@ -16,11 +21,6 @@ var form_2_back_btn = document.querySelector(".form_2_btns .btn_back");
 var form_2_next_btn = document.querySelector(".form_2_btns .btn_next");
 var form_3_back_btn = document.querySelector(".form_3_btns .btn_back");
 var form_3_next_btn = document.querySelector(".form_3_btns .btn_next");
-
-/* STEPS */
-var form_2_progessbar = document.querySelector(".form_2_progessbar");
-var form_3_progessbar = document.querySelector(".form_3_progessbar");
-var form_4_progessbar = document.querySelector(".form_4_progessbar");
 
 form_1_next_btn.addEventListener("click", function(){
 
