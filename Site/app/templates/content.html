@@ -29,14 +29,14 @@
 <form action="/" method="POST" class="formEmail" id="formEmail"> <!-- FORMULÁRIO DE SUPORTE -->
   <div class="content"> <!-- CONTEÚDOS DO FORMULÁRIO -->
     <div class="form_1 data_info"> <!-- CONTEÚDO DA PÁGINA 1 -->
-      <div class="name"> <!-- NOME -->
-        <h4>INSIRA SEUS DADOS:</h4>
-        <br>
+      <h4>INSIRA SEUS DADOS:</h4>
+      <br>
+      <div class="name"> <!-- NOME -->        
         <label for="c1_name" class="form-label">Nome:</label>
         <input class="form-control" placeholder="Digite seu nome aqui" id="c1_name"> <!-- ÁREA PARA DIGITAR O NOME DO USUÁRIO -->
       </div>
-      <div class="email"> <!-- E-MAIL -->
-        <br>
+      <br>
+      <div class="email"> <!-- E-MAIL -->        
         <label for="c1_email" class="form-label">E-mail:</label>
         <input class="form-control" type ="email" placeholder="Digite seu e-mail aqui" id="c1_email"> <!-- ÁREA PARA DIGITAR O E-MAIL DO USUÁRIO -->
       </div>
@@ -361,9 +361,9 @@
       </div>
     </div>
     <div class="form_3 data_info" style="display: none;"> <!-- CONTEÚDO DA PÁGINA 3 -->
-      <div class="subject"> <!-- ASSUNTO -->
-        <h4>DESCREVA O PROBLEMA:</h4>
-        <br>
+      <h4>DESCREVA O PROBLEMA:</h4>
+      <br>
+      <div class="subject"> <!-- ASSUNTO -->        
         <label for="c3_assunto" class="form-label textos">Selecione o assunto:</label> 
         <input class="form-control" list="datalistOptions" id="c3_assunto" placeholder="Clique aqui para selecionar"> <!-- ÁREA PARA SELEÇÃO DE ASSUNTO -->
           <datalist id="datalistOptions"> <!-- LISTA DE ASSUNTOS -->
@@ -375,8 +375,8 @@
             <option value="Outros">
           </datalist>
       </div>
-      <div class="description"> <!-- DESCRIÇÃO -->
-        <br>
+      <br>
+      <div class="description"> <!-- DESCRIÇÃO -->        
         <label for="c3_texto" class="form-label textos">Descrição:</label>
         <textarea class="form-control" id="c3_texto" placeholder="Escreva uma breve descrição do problema" rows="3"></textarea> <!-- ÁREA PARA O USUÁRIO DESCREVER O PROBLEMA -->
       </div>  
