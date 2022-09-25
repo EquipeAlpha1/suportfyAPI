@@ -197,7 +197,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10%;
-  height: 75%; /* 75% do form_2 data_info */
+  height: 72%; /* 72% do form_2 data_info */
   width: 100%;
   border-radius: 6px;
   margin: auto 0;
