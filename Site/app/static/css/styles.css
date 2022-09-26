@@ -224,7 +224,7 @@ footer {
 }
 
 /* Label dos computadores (dentro tem 'a' e o 'svg') */
-.btn-outline-dark { 
+.btn { 
   font-size: 1.6vh;
   height: 100%;
   width: 100%;
@@ -232,7 +232,7 @@ footer {
   padding: 0;
 }
 
-.btn-outline-dark a {
+.btn a {
   display: block;
   height: auto;
   width: 80%;
@@ -240,7 +240,7 @@ footer {
   padding: 0;  
 }
 
-.btn-outline-dark svg{
+.btn svg{
   height: auto;
   width: 80%;
   margin: 0 auto;
