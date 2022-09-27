@@ -204,8 +204,8 @@ footer {
   padding: 0;
 }
 
-.left_side,
-.right_side {
+.leftSide,
+.rightSide {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -222,6 +222,16 @@ footer {
   border-radius: 6px;
   min-height: 100%;
 }
+
+/* 
+.slot_4x4 label{
+  visibility: hidden;
+}
+
+.slot_4x4 {
+  border: 1px solid #212529; ### ESSA É A COR PADRÃO DA BORDA DO BOOTSTRAP 
+}
+*/
 
 /* Label dos computadores (dentro tem 'a' e o 'svg') */
 .btn { 
