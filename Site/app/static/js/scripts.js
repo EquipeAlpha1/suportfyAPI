@@ -1,11 +1,3 @@
-const rooms = {
-	larger: [402], /* 4x4 - 4 */
-	medium: [301, 302, 401], /* 3x3 - 4 */
-	small: [303, 404, 405, 406, 407, 408, 409, 411, 412] /* 3x3 - 3 */
-}
-
-const lines = ['firstColumn','tenthColumn','secondColumn','ninthColumn','fifthRow'];
-
 /* STEPS */
 var form_2_progessbar = document.querySelector(".form_2_progessbar");
 var form_3_progessbar = document.querySelector(".form_3_progessbar");
@@ -30,28 +22,25 @@ var form_2_next_btn = document.querySelector(".form_2_btns .btn_next");
 var form_3_back_btn = document.querySelector(".form_3_btns .btn_back");
 var form_3_next_btn = document.querySelector(".form_3_btns .btn_next");
 
-function loadLayout(target) {
-	for(var size in rooms){ /* FAZ UM LOOP PELOS TAMANHOS DE SALA */
-		rooms[size].forEach(room => { /* FAZ UM LOOP POR CADA TAMANHO, A PROCURA DA SALA */
+const sizeRooms = {
+	larger: [402], /* 4x4 - 4 */
+	medium: [301, 302, 401], /* 3x3 - 4 */
+	small: [303, 404, 405, 406, 407, 408, 409, 411, 412] /* 3x3 - 3 */
+}
+
+const lines = ['firstColumn','tenthColumn','secondColumn','ninthColumn','fifthRow'];
+
+function loadLayout(target) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOUT DOS COMPUTADORES */
+	for(var size in sizeRooms){ /* FAZ UM LOOP PELOS TAMANHOS DE SALA */
+		sizeRooms[size].forEach(room => { /* FAZ UM LOOP A PROCURA DA SALA */
 			if(room === target){ /* SE ACHOU A SALA */
-				if (size === 'small') { /* SE O TAMANHO DA SALA É P */
-					for(var i in lines){
-						[].forEach.call(document.querySelectorAll('.'+lines[i]), function (el) {
-							el.style.visibility = 'hidden';
-						});
-					};
-				} else if (size === 'medium') { /* SE O TAMANHO DA SALA É M */
-					for(var i = 0; i < 4; i++){
-						[].forEach.call(document.querySelectorAll('.'+lines[i]), function (el) {
-							el.style.visibility = 'hidden';
-						});
-					};
-				} else { /* SE O TAMANHO DA SALA É G */
-					for(var i = 0; i < 2; i++){
-						[].forEach.call(document.querySelectorAll('.'+lines[i]), function (el) {
-							el.style.visibility = 'hidden';
-						});
-					};
+				var limit = 0;
+				size === 'small' ? limit = 5 :
+				size === 'medium' ? limit = 4 : limit = 2;			
+				for(var i = 0; i < limit; i++){
+					[].forEach.call(document.querySelectorAll('.'+lines[i]), function (el) {
+						el.style.visibility = 'hidden';
+					});
 				};
 			};
 		});
@@ -69,12 +58,12 @@ form_1_next_btn.addEventListener("click", function(){
 	} */
 
 	/* 
-	402 ### 4x4 - 4
-	301, 302, 401 ### 3x3 - 4
-	303, 404, 405, 406, 407, 408, 409, 411, 412 ### 3x3 - 3 
+	4x4 - 4 ##### 402 
+	3x3 - 4 ##### 301, 302, 401
+	3x3 - 3 ##### 303, 404, 405, 406, 407, 408, 409, 411, 412
 	*/
 
-	const target = 303;	
+	const target = 402;	
 
 	loadLayout(target);
 
