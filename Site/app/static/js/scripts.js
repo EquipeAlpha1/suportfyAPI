@@ -31,15 +31,15 @@ const sizeRooms = {
 const lines = ['firstColumn','tenthColumn','secondColumn','ninthColumn','fifthRow'];
 
 function loadLayout(target) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOUT DOS COMPUTADORES */
-	for(var size in sizeRooms){ /* FAZ UM LOOP PELOS TAMANHOS DE SALA */
-		sizeRooms[size].forEach(room => { /* FAZ UM LOOP A PROCURA DA SALA */
+	for(var currentSize in sizeRooms){ /* FAZ UM LOOP PELOS TAMANHOS DE SALA */
+		sizeRooms[currentSize].forEach(room => { /* FAZ UM LOOP A PROCURA DA SALA */
 			if(room === target){ /* SE ACHOU A SALA */
 				var limit = 0;
-				size === 'small' ? limit = 5 :
-				size === 'medium' ? limit = 4 : limit = 2;			
+				currentSize === 'small' ? limit = 5 :
+				currentSize === 'medium' ? limit = 4 : limit = 2;			
 				for(var i = 0; i < limit; i++){
 					[].forEach.call(document.querySelectorAll('.'+lines[i]), function (el) {
-						el.style.visibility = 'hidden';
+						el.style.visibility = 'hidden';						
 					});
 				};
 			};
