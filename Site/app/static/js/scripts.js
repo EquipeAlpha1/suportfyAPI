@@ -26,7 +26,7 @@ const sizeRooms = {
 	larger: [402], /* 4x4 - 4 */
 	medium: [301, 302, 401], /* 3x3 - 4 */
 	small: [303, 404, 405, 406, 407, 408, 409, 411, 412] /* 3x3 - 3 */
-}
+};
 
 const lines = ['firstColumn','tenthColumn','secondColumn','ninthColumn','fifthRow'];
 
@@ -38,10 +38,11 @@ function loadLayout(target) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOUT DO
 				currentSize === 'small' ? limit = 5 :
 				currentSize === 'medium' ? limit = 4 : limit = 2;			
 				for(var i = 0; i < limit; i++){
-					[].forEach.call(document.querySelectorAll('.'+lines[i]), function (el) {
-						el.style.visibility = 'hidden';						
+					[].forEach.call(document.querySelectorAll('.'+lines[i]), function (element) {
+						element.style.visibility = 'hidden';						
 					});
 				};
+				return;
 			};
 		});
 	};

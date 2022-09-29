@@ -205,36 +205,37 @@ footer {
 }
 
 .leftSide,
-.rightSide {
+.rightSide {  
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  column-gap: 2%;
   row-gap: 5%;
   border-radius: 6px;
   margin: 0;
   padding: 0;
 }
 
+.row-1,
+.row-2,
+.row-3,
+.row-4,
+.row-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 2%;
+  border-radius: 6px;
+}
+
 .computerSlot {
-  display: flex;  
+  display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   border-radius: 6px;
   min-height: 100%;
 }
 
-/* 
-.slot_4x4 label{
-  visibility: hidden;
-}
-
-.slot_4x4 {
-  border: 1px solid #212529; ### ESSA É A COR PADRÃO DA BORDA DO BOOTSTRAP 
-}
-*/
-
 /* Label dos computadores (dentro tem 'a' e o 'svg') */
-.btn { 
+.btn {
   font-size: 1.6vh;
   height: 100%;
   width: 100%;
@@ -257,10 +258,11 @@ footer {
   padding: 0;
 }
 
+.prof,
 .porta {
   height: auto;
   width: 100%;
-  margin: auto auto;
+  margin: auto;
   padding: 0;
 }
 
@@ -313,3 +315,65 @@ textarea {
 .common_btns button.btn_done:hover {
   background: #708688;
 }
+
+
+
+
+
+/* AG-GRID */
+.outer {
+  display: flex;
+  height: 100%;
+}
+
+.inner-col {
+  width: 0;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.factory-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.factory {
+  padding: 10px;
+  margin: 10px;
+  flex-grow: 1;
+}
+
+.factory-red {
+  background-color: #ffdddd;
+  border: 1px solid #ff8888;
+}
+
+.factory-green {
+  background-color: #ddffdd;
+  border: 1px solid #88ff88;
+}
+
+.factory-blue {
+  background-color: #ddddff;
+  border: 1px solid #8888ff;
+}
+
+.factory-bin {
+  background-color: lightgray;
+  border: 1px solid #888888;
+}
+
+.green-row {
+  background-color: #ddffdd !important;
+}
+
+.red-row {
+  background-color: #ffdddd !important;
+}
+
+.blue-row {
+  background-color: #ddddff !important;
+}
+/* AG-GRID */
+
+
