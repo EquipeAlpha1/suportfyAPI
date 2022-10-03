@@ -40,6 +40,28 @@
         <label for="c1_email" class="form-label">E-mail:</label>
         <input class="form-control" type ="email" placeholder="Digite seu e-mail aqui" id="c1_email"> <!-- ÁREA PARA DIGITAR O E-MAIL DO USUÁRIO -->
       </div>
+<<<<<<< Updated upstream
+=======
+      <br>
+      <div class="roomChoice">
+        <div class="selectionFloor"> <!--SELEÇÃO DE ANDAR -->
+          <label for="c1_Floor" class="form-label floor">Selecine o andar:</label> 
+          <input class="form-control" list="datalistOptionsFloor" id="c1_Floor" placeholder="Clique aqui para selecionar" onChange="loadRooms(this.value)" onkeypress="return false;"> <!-- ÁREA PARA SELEÇÃO DE ANDAR -->
+            <datalist id="datalistOptionsFloor"> <!-- LISTA DE ANDAR -->
+              <option value="3º Andar">
+              <option value="4º Andar">
+            </datalist>
+        </div>
+        <div class="selectionRoom"> <!--SELEÇÃO DE SALA  -->
+          <label for="c1_Room" class="form-label room">Selecione a sala:</label>
+          <input class="form-control" list="datalistOptionsRoom" id="c1_Room" placeholder="Clique aqui para selecionar" onkeypress="return false;"> <!-- ÁREA PARA SELEÇÃO DE SALAS -->
+            <datalist id="datalistOptionsRoom"><!-- LISTA DE SALAS -->
+            </datalist>
+        </div>
+      </div>
+      
+    
+>>>>>>> Stashed changes
     </div>
     <div class="form_2 data_info" style="display: none;"> <!-- CONTEÚDO DA PÁGINA 2 -->
       <h4>ESCOLHA A MÁQUINA COM PROBLEMA:</h4>
