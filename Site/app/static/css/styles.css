@@ -25,12 +25,6 @@ header {
   padding: 0px 30px;
 }
 
-.roomChoice {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .logoHeader {
   height: 50%;
   width: auto;
@@ -83,6 +77,22 @@ section {
   width: 100%; /* 100% do content */
   margin: 0;
   padding: 0;
+}
+
+.roomChoice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.requiredField,
+.subtitleRequiredField {
+  color: red;
+}
+
+.subtitleRequiredField {
+  font-size: medium;
+  text-align: end;
 }
 
 .success {
@@ -381,5 +391,3 @@ textarea {
   background-color: #ddddff !important;
 }
 /* AG-GRID */
-
-
