@@ -49,7 +49,10 @@ def home():
                         "Se você não deseja mais receber esse tipo de e-mail, clique " \
                         "<a href='https://www.rataalada.com/' style='color: rgb(71, 124, 204); text-decoration: none; display: inline;'>aqui</a>." \
                         "</table></div></body></html>".format(name, pc, subject, description, mail)
+            with app.open_resource("C:/Users/luis_/Desktop/TESTE.png") as fp:
+                msg.attach("Image.png", "image/png", fp.read())
             email.send(msg)
+            
 
             ## Envia um e-mail para a equipe de suporte
             msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['api.ads.2022@gmail.com'])
