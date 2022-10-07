@@ -73,7 +73,7 @@ function loadRooms(targetFloor) { /* FUNÇÃO QUE CRIA AS OPÇÕES DE SALA, PARA
 			dataList.appendChild(option);
 		});
 	} else { /* SE APAGOU A ESCOLHA DO ANDAR, APAGA A LISTA DE SALAS */			
-		document.getElementById('c1_Room').value = ''; /* APAGA O INPUT DA SALA */
+		document.getElementById('c1_room').value = ''; /* APAGA O INPUT DA SALA */
 		dataList.innerHTML = '';
 	};
 };
@@ -94,7 +94,7 @@ form_1_next_btn.addEventListener("click", function(){
 	3x3 - 3 ##### 303, 404, 405, 406, 407, 408, 409, 411, 412
 	*/	
 	
-	var targetR = parseInt(document.getElementById("c1_Room").value); /* parseInt converte o valor que é uma string, para integer */
+	var targetR = parseInt(document.getElementById("c1_room").value); /* parseInt converte o valor que é uma string, para integer */
 
 	loadLayout(targetR);
 

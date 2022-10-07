@@ -47,7 +47,7 @@ def create_request():
         subject = request.form.get('subject')
         description = request.form.get('description')
         if name and mail and floor and room and pc and subject and description:
-            ## Envia um e-mail para o usuário
+            """ ## Envia um e-mail para o usuário
             msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
             msg.html = "<!DOCTYPE html><html><body>" \
                         "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
@@ -91,7 +91,7 @@ def create_request():
                         "<b>Este é um e-mail de notificação e foi gerado automaticamente. Por favor, não responda esta mensagem!</b><br />" \
                         "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [api.ads.2022@gmail.com] porque este e-mail foi registrado para a equipe de suporte na FATEC - SJC.</a><br />" \
                         "</table></div></body></html>".format(name, pc, subject, description)
-            email.send(msg)
+            email.send(msg) """
 
             ## Faz o registro do chamado no banco de dados
             conn = get_db_connection()
