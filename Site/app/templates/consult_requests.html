@@ -1,50 +1,39 @@
-<!-- {% extends 'base.html' %}
-{% block content %}  
-           
-{% endblock %} -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <table>
-        <tr>
-            <th>Protocolo</th>
-            <th>Data</th>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Piso</th>
-            <th>Sala</th>
-            <th>Computador</th>
-            <th>Assunto</th>
-            <th>Descrição</th>
-            <th>Ações</th>
-        </tr>
-        {% for issue in issue_history %}
+{% extends 'base.html' %}
+{% block conteudo %}
+    <div class="container_t"> <!-- REFAZER -->
+        <table>
             <tr>
-                <td>{{ issue['id'] }}</td>
-                <td>{{ issue['created'] }}</td>
-                <td>{{ issue['names'] }}</td>
-                <td>{{ issue['mails'] }}</td>
-                <td>{{ issue['floors'] }}</td>
-                <td>{{ issue['rooms'] }}</td>
-                <td>{{ issue['pcs'] }}</td>
-                <td>{{ issue['subjects'] }}</td>
-                <td>{{ issue['descriptions'] }}</td>
-                <td>
-                    <form action="{{ url_for('delete_request', id=issue['id']) }}" method="post">
-                        <input type="submit" 
-                                value="Deletar"
-                                onclick="return confirm('Você tem certeza que quer deletar essa solicitação?')">
-                    </form>
-                </td>
+                <th>Protocolo</th>
+                <th>Data</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Piso</th>
+                <th>Sala</th>
+                <th>Computador</th>
+                <th>Assunto</th>
+                <th>Descrição</th>
+                <th>Ações</th>
             </tr>
-        {% endfor %}
-    </table> 
-</body>
-</html>
+            {% for issue in issue_history %}
+                <tr>
+                    <td>{{ issue['id'] }}</td>
+                    <td>{{ issue['created'] }}</td>
+                    <td>{{ issue['names'] }}</td>
+                    <td>{{ issue['mails'] }}</td>
+                    <td>{{ issue['floors'] }}</td>
+                    <td>{{ issue['rooms'] }}</td>
+                    <td>{{ issue['pcs'] }}</td>
+                    <td>{{ issue['subjects'] }}</td>
+                    <td>{{ issue['descriptions'] }}</td>
+                    <td>
+                        <form action="{{ url_for('delete_request', id=issue['id']) }}" method="post">
+                            <input type="submit" 
+                                    value="Deletar"
+                                    onclick="return confirm('Você tem certeza que quer deletar essa solicitação?')">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>  
+    </div>      
+{% endblock %}
