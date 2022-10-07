@@ -1,10 +1,12 @@
-from traceback import print_tb
+import sqlite3
 from app import app
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import url_for
 from flask import flash
 from flask import redirect
+from flask import abort
 from flask_mail import Mail
 from flask_mail import Message
 
@@ -17,16 +19,34 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 email = Mail(app)
 
-@app.route('/', methods=['GET','POST'])
-@app.route('/home', methods=['GET','POST'])
+""" @app.route('/')
+@app.route('/home')
 def home():
-    '''if request.method == 'POST':
-        name = request.form.get('name') # Aonde tem 'name' entra o nome da váriavel, que está dentro do dicionário 'data' do jQuery.js
+    return render_template('home.html') """
+
+""" @app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+        if email == 'admin' and password == 'admin':
+            return redirect(url_for('home'))
+        else:
+            return redirect(url_for('login'))
+    return render_template('login.html') """
+
+@app.route('/', methods=['GET','POST']) # excluir essa rota
+@app.route('/create_request', methods=['GET','POST'])
+def create_request():
+    if request.method == 'POST':
+        name = request.form.get('name')
         mail = request.form.get('mail')
+        floor = request.form.get('floor')
+        room = request.form.get('room')
         pc = request.form.get('pc')
         subject = request.form.get('subject')
         description = request.form.get('description')
-        if name != '' and mail != '' and pc != '' and subject != '' and description != '':
+        if name and mail and floor and room and pc and subject and description:
             ## Envia um e-mail para o usuário
             msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
             msg.html = "<!DOCTYPE html><html><body>" \
@@ -71,5 +91,51 @@ def home():
                         "<b>Este é um e-mail de notificação e foi gerado automaticamente. Por favor, não responda esta mensagem!</b><br />" \
                         "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [api.ads.2022@gmail.com] porque este e-mail foi registrado para a equipe de suporte na FATEC - SJC.</a><br />" \
                         "</table></div></body></html>".format(name, pc, subject, description)
-            email.send(msg)'''
-    return render_template('content.html')
+            email.send(msg)
+
+            ## Faz o registro do chamado no banco de dados
+            conn = get_db_connection()
+            conn.execute('INSERT INTO issue_history \
+                         (names, mails, floors, rooms, pcs, subjects, descriptions) VALUES (?, ?, ?, ?, ?, ?, ?)',
+                         (name, mail, floor, room, pc, subject, description))
+            conn.commit()
+            conn.close()
+            
+    return render_template('create_request.html')
+
+@app.route('/consult_requests', methods=['GET','POST'])
+def consult_requests():
+    conn = get_db_connection()
+    issue_history = conn.execute('SELECT * FROM issue_history').fetchall()
+    conn.close()
+    return render_template('consult_requests.html', issue_history=issue_history)
+
+@app.route('/<int:id>/delete_request/', methods=('POST',))
+def delete_request(id):
+    issue = get_issue(id)
+    conn = get_db_connection()
+    conn.execute('DELETE FROM issue_history WHERE id = ?', (id,))
+    conn.commit()
+    conn.close()
+    flash('A solicitação "{}" foi deletada com sucesso!'.format(issue['id']))
+    return redirect(url_for('consult_requests'))
+
+""" @app.route('/faqs', methods=['GET','POST'])
+def faqs():
+    if request.method == 'POST':
+        x = 1
+    return render_template('faqs.html') """
+
+def get_db_connection():
+    conn = sqlite3.connect('database.db')    
+    conn.row_factory = sqlite3.Row
+    return conn
+
+def get_issue(issue_id):
+    conn = get_db_connection()
+    issue = conn.execute('SELECT * FROM issue_history WHERE id = ?',
+                        (issue_id,)).fetchone()
+    conn.close()
+    if issue is None:
+        abort(404)
+    return issue
