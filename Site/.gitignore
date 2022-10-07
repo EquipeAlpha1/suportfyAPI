@@ -1,5 +1,2 @@
 /venv
-/app/templates/x.html
-/app/templates/x2.html
-/app/static/js/index.js
-/app/static/js/main.js
+*.pyc
