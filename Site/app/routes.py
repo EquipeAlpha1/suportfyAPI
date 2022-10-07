@@ -95,8 +95,7 @@ def create_request():
 
             ## Faz o registro do chamado no banco de dados
             conn = get_db_connection()
-            conn.execute('INSERT INTO issue_history \
-                         (names, mails, floors, rooms, pcs, subjects, descriptions) VALUES (?, ?, ?, ?, ?, ?, ?)',
+            conn.execute('INSERT INTO issue_history (names, mails, floors, rooms, pcs, subjects, descriptions) VALUES (?, ?, ?, ?, ?, ?, ?)',
                          (name, mail, floor, room, pc, subject, description))
             conn.commit()
             conn.close()
