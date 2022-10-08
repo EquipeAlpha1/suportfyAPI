@@ -19,10 +19,10 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 email = Mail(app) """
 
-""" @app.route('/')
+@app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html') """
+    return render_template('home.html')
 
 """ @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -34,8 +34,7 @@ def login():
         else:
             return redirect(url_for('login'))
     return render_template('login.html') """
-
-@app.route('/', methods=['GET','POST']) # excluir essa rota quando inserir a função home
+    
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
     if request.method == 'POST':
