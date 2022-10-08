@@ -35,7 +35,7 @@ def login():
             return redirect(url_for('login'))
     return render_template('login.html') """
 
-@app.route('/', methods=['GET','POST']) # excluir essa rota
+@app.route('/', methods=['GET','POST']) # excluir essa rota quando inserir a função home
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
     if request.method == 'POST':
@@ -111,7 +111,6 @@ def consult_requests():
 
 @app.route('/<int:id>/delete_request/', methods=('POST',))
 def delete_request(id):
-    issue = get_issue(id)
     conn = get_db_connection()
     conn.execute('DELETE FROM issue_history WHERE id = ?', (id,))
     conn.commit()
@@ -130,11 +129,11 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
-def get_issue(issue_id):
+""" def get_issue(issue_id):
     conn = get_db_connection()
     issue = conn.execute('SELECT * FROM issue_history WHERE id = ?',
                         (issue_id,)).fetchone()
     conn.close()
     if issue is None:
         abort(404)
-    return issue
+    return issue """
