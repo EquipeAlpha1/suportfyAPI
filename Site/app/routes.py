@@ -10,14 +10,14 @@ from flask import abort
 from flask_mail import Mail
 from flask_mail import Message
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+""" app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = '465'
 app.config['MAIL_DEFAULT_SENDER'] = 'Grupo Alpha - API <ads.2sem.2022@gmail.com>'
 app.config['MAIL_USERNAME'] = 'ads.2sem.2022@gmail.com'
 app.config['MAIL_PASSWORD'] = 'szlfrwtumwhlwwrm' # ESSA É UMA 'SENHA DE APP' GERADA NAS CONFIGURAÇÕES DE SEGURANÇA DO GOOGLE SÓ PARA ENVIOS DE EMAIL PELO FLASK
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-email = Mail(app)
+email = Mail(app) """
 
 """ @app.route('/')
 @app.route('/home')
