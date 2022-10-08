@@ -1,39 +1,49 @@
 {% extends 'base.html' %}
 {% block conteudo %}
     <div class="container_t"> <!-- REFAZER -->
-        <table>
-            <tr>
-                <th>Protocolo</th>
-                <th>Data</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Piso</th>
-                <th>Sala</th>
-                <th>Computador</th>
-                <th>Assunto</th>
-                <th>Descrição</th>
-                <th>Ações</th>
-            </tr>
-            {% for issue in issue_history %}
-                <tr>
-                    <td>{{ issue['id'] }}</td>
-                    <td>{{ issue['created'] }}</td>
-                    <td>{{ issue['names'] }}</td>
-                    <td>{{ issue['mails'] }}</td>
-                    <td>{{ issue['floors'] }}</td>
-                    <td>{{ issue['rooms'] }}</td>
-                    <td>{{ issue['pcs'] }}</td>
-                    <td>{{ issue['subjects'] }}</td>
-                    <td>{{ issue['descriptions'] }}</td>
-                    <td>
-                        <form action="{{ url_for('delete_request', id=issue['id']) }}" method="post">
-                            <input type="submit" 
-                                    value="Deletar"
-                                    onclick="return confirm('Você tem certeza que quer deletar essa solicitação?')">
-                        </form>
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>  
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger" role="alert">{{ message }}</div>
+            <br>
+        {% endfor %}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Protocolo</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Piso</th>
+                    <th scope="col">Sala</th>
+                    <th scope="col">Computador</th>
+                    <th scope="col">Assunto</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for issue in issue_history %}
+                        <tr>
+                            <td scope="row">{{ issue['id'] }}</td>
+                            <td>{{ issue['created'] }}</td>
+                            <td>{{ issue['names'] }}</td>
+                            <td>{{ issue['mails'] }}</td>
+                            <td>{{ issue['floors'] }}</td>
+                            <td>{{ issue['rooms'] }}</td>
+                            <td>{{ issue['pcs'] }}</td>
+                            <td>{{ issue['subjects'] }}</td>
+                            <td>{{ issue['descriptions'] }}</td>
+                            <td>
+                                <form action="{{ url_for('delete_request', id=issue['id']) }}" method="post">
+                                    <input type="submit" 
+                                            value="Deletar"
+                                            onclick="return confirm('Você tem certeza que quer deletar essa solicitação?')">
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>        
     </div>      
 {% endblock %}

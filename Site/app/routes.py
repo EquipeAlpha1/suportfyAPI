@@ -116,7 +116,7 @@ def delete_request(id):
     conn.execute('DELETE FROM issue_history WHERE id = ?', (id,))
     conn.commit()
     conn.close()
-    flash('A solicitação "{}" foi deletada com sucesso!'.format(issue['id']))
+    flash('A solicitação "{}" foi deletada com sucesso!'.format(id))
     return redirect(url_for('consult_requests'))
 
 """ @app.route('/faqs', methods=['GET','POST'])
