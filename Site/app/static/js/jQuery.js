@@ -24,5 +24,5 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- ESSE SCRIPT IMPEDE O F
         if (c1_name && c1_email && c1_floor && c1_room && c3_assunto && c3_texto) {      
             $('#formEmail')[0].reset(); /* Reseta o formulário para não enviar e-mail atoa */
         };
-    }
+    };
 });
