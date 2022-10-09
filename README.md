@@ -36,11 +36,6 @@
 
 
 
-* Murilo Mendonça Custódio da Silva (Dev team)
-#### [Linked](https://www.linkedin.com/in/murillo-silveira-57903215a/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/murillomendoncaa)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
-
-
-
 ### Disciplina Focal Point: Programação em Microinformática
 * M2 (Master dos Masters): Prof. Jean Carlos Costa
 * P2 (PO dos PO´s): Prof. Antônio Egydio
@@ -48,10 +43,10 @@
 ## Índice
 * [Objetivo do Projeto](#objetivo-do-projeto)
 * [Backlog Total](#backlog-total)
-* [Backlog Sprint 1](#backlog-sprint-1)
-* [Burndown Sprint 1](#burndown)
+* [Backlog Sprint 2](#backlog-sprint-2)
+* [Burndown Sprint 2](#burndown)
 * [Tecnologias e ferramentas utilizadas](#tecnologias-e-ferramentas)
-* [App da Sprint 1](#app-da-sprint-1)
+* [App da Sprint 2](#app-da-sprint-2)
 * [Software em funcionamento](#software-em-funcionamento)
 * [Agradecimentos](#agradecimentos)
 
@@ -65,15 +60,16 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 ![Backlog total](https://user-images.githubusercontent.com/111616660/190879818-7063c42b-8c20-4404-8b14-e524a64352ad.png)
 
 
-## Backlog Sprint 1
+## Backlog Sprint 2
 
 | US | Estimativa de esforço | Critério de aceitação |
 |:--------------:  | :----------:|:---------------------------------:|
-|    Layout do site   | 3 | Documento com formatação das páginas |
-|    Montagem da página inserção de dados do usuário  | 10 | Página funcional com os dados do usuário |
-|    Montagem página formatação dos computadores em sala com botões seletivos   | 16 | Montagem da sala com botões seleção de computador |
-|    Montagem de campo para descrição do problema da máquina   | 10 | Página funcional para inserção do problema da máquina |
-|    Envio de e-mail com dados cadastrados para o usuário   | 12 | Remoção dos dados imputados e envio de e-mail para usuário | 
+| Bloqueio das caixas para inserção de dados | 6 | Não serem colocadas informações desnecessárias |
+| Inserir asteriscos vermelhos para inputs obrigatórios | 8 | Sinalizar que é um campo obrigatório |
+| Criação de campos para seleção de sala em página de inserção de dados do usuário | 6 | Facilitar a seleção do problema  |
+| Atualização da página home | 8 | Página home mais adequado ao suporte |
+| Início Implementação do banco de dados | 12 | Registrar pedidos e gerar o ID de chamado |
+| Estruturação visual do funcionamento do banco de dados | 4 | Melhorar a visualização do banco de dados |
 
 
 ## Burndown
@@ -82,30 +78,31 @@ O Burndown da equipe foi baseado nas horas disponíveis para estar trabalhando n
 
 | Dia	| Datas	| Ideal (h) |	Trabalhado (h)	| Real (h) |
 |:---: | :-----------: | :----------: | :-------------: | :-------------: |
-| 1	| 29/08/2022 |	167	| 0	| 167 |
-| 2	| 30/08/2022	| 158,65	| 3	| 164 |
-| 3	| 31/08/2022	| 150,3	| 2	| 162 |
-| 4	| 01/09/2022	| 141,95	| 0	| 162 |
-| 5	| 02/09/2022	| 133,6	| 0	| 162 |
-| 6	| 03/09/2022	| 125,25	| 44	| 118 |
-| 7	| 04/09/2022	| 116,9	| 25	| 93 |
-| 8	| 05/09/2022	| 108,55	| 0	| 93 |
-| 9	| 06/09/2022	| 100,2	| 0	| 93 |
-| 10 | 07/09/2022	| 91,85	| 0	| 93 |
-| 11	| 08/09/2022	| 83,5	| 0	| 93 |
-| 12	| 09/09/2022	| 75,15	| 0	| 93 |
-| 13	| 10/09/2022	| 66,8	| 0	| 93 |
-| 14	| 11/09/2022	| 58,45	| 17	| 76 |
-| 15	| 12/09/2022	| 50,1	| 20	| 56 |
-| 16	| 13/09/2022	| 41,75	| 18	| 38 |
-| 17	| 14/09/2022	| 33,4	| 0	| 38 |
-| 18	| 15/09/2022	| 25,05	| 0	| 38 |
-| 19	| 16/09/2022	| 16,7	| 0	| 38 |
-| 20	| 17/09/2022	| 8,35	| 0	| 38 |
-| 21	| 18/09/2022	| 6,03961E-14	| 0	| 38 |
+| 1	| 19/09/2022 | 82 | 0	| 82 |
+| 2	| 20/09/2022	| 77,9 | 0	| 82 |
+| 3	| 21/09/2022	| 73,8 | 0	| 82 |
+| 4	| 22/09/2022	| 69,7 | 0	| 82 |
+| 5	| 23/09/2022	| 65,6 | 0	| 82 |
+| 6	| 24/09/2022	| 61,5 | 8	| 74 |
+| 7	| 25/09/2022	| 57,4 | 6	| 68 |
+| 8	| 26/09/2022	| 53,3 | 0	| 68 |
+| 9	| 27/09/2022	| 49,2 | 0	| 68 |
+| 10 | 28/09/2022	| 45,1 | 28	| 40 |
+| 11 | 29/09/2022	|  41  | 6	| 34 |
+| 12 | 30/09/2022	| 36,9 | 0	| 34 |
+| 13 | 01/10/2022	| 32,8 | 0	| 34 |
+| 14 | 02/10/2022	| 28,7 | 0	| 34 |
+| 15 | 03/10/2022	| 24,6 | 0	| 34 |
+| 16 | 04/10/2022	| 20,5 | 0	| 34 |
+| 17 | 05/10/2022	| 16,4 | 0	| 34 |
+| 18 | 06/10/2022	| 12,3 | 0	| 34 |
+| 19 | 07/10/2022	| 8,2  | 0	| 34 |
+| 20 | 08/10/2022	| 4,1  | 0	| 26 |
+| 21 | 09/10/2022	| 7,10543E-15 | 10	| 0|
 
 
-![Burndown-grafico](https://user-images.githubusercontent.com/111616660/190922296-544ff341-6509-4875-8b96-fcf8f066d83e.png)
+![Burndown 2](https://user-images.githubusercontent.com/111616660/194783693-8772f62e-12c6-4c52-9164-6247a5264eee.jpeg)
+
 
 
 ## Tecnologias e ferramentas
@@ -114,16 +111,17 @@ O Burndown da equipe foi baseado nas horas disponíveis para estar trabalhando n
 * BootStrap CSS;
 * JavaScript;
 * JQuery;
-* Flask.
+* Flask;
+* SQLite.
 
-## App da Sprint 1
+## App da Sprint 2
 
-[App Sprint 1](https://sprint1-grupo-alpha.herokuapp.com/)
+[App Sprint 2](https://sprint1-grupo-alpha.herokuapp.com/)
 
 
 ## Software em funcionamento
 
-[Software Sprint 1](https://youtu.be/yWSd8k3RCxw)
+[Vídeo Sprint 2](https://www.youtube.com/watch?v=d3ppp_STsG8)
 
 ## Agradecimentos
 Agradecemos pelo corpo docente da Fatec-SJC, que nos auxiliou no trabalho com as tecnologias envolvidas no projeto e também com a disponibilidade dos laborátórios, para mapeamento e utilização dos computadores.
