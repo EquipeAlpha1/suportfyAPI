@@ -13,7 +13,7 @@ $(document).on('submit','#formEmail',function(e) /* <!-- ESSE SCRIPT IMPEDE O FL
     $.ajax
     ({
       type:'POST',
-      url:'/', /* URL para rota flask */
+      url:'/create_request', /* URL para rota flask */
       data: /* A função 'def home()' no Flask vai puxar os dados desse 'dicionário' */
       {
         name:$("#c1_name").val(), /* Na onde tem # vai o ID do objeto HTML que está dentro do 'formEmail' no 'content.html' */
