@@ -116,7 +116,7 @@ O Burndown da equipe foi baseado nas horas disponíveis para estar trabalhando n
 
 ## App da Sprint 2
 
-[App Sprint 2](https://sprint1-grupo-alpha.herokuapp.com/)
+[App Sprint 2](https://sprint2-grupo-alpha.herokuapp.com/)
 
 
 ## Software em funcionamento
