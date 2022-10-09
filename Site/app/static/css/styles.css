@@ -48,6 +48,10 @@ section {
   padding: 0;
 }
 
+main {
+  height: 85%;
+}
+
 .steps {
   display: flex;
   align-items: center;
@@ -259,7 +263,7 @@ footer {
 }
 
 /* Label dos computadores (dentro tem 'a' e o 'svg') */
-.btn {
+.computerLabel {
   font-size: 1.6vh;
   height: 100%;
   width: 100%;
@@ -267,7 +271,7 @@ footer {
   padding: 0;
 }
 
-.btn a {
+.computerLabel a {
   display: block;
   height: auto;
   width: 80%;
@@ -275,7 +279,7 @@ footer {
   padding: 0;  
 }
 
-.btn svg{
+.computerLabel svg{
   height: auto;
   width: 80%;
   margin: 0 auto;
@@ -349,24 +353,28 @@ textarea {
 }
 
 .img_home img {
-  height: 75%;
+  height: 70%;
   width: 100%;
   object-fit: cover;
+  filter: sepia(20%) grayscale(20%);
 }
 
 /* Posicionamento botão home */
 .btn_home {
-  box-sizing: border-box;
-  position: relative;
-  top: -24.5rem;
-  width: 200px;
-  margin-left: 44%;
+  display: flex;
+  justify-content: center;
 }
 
-.textreport {
+.btn_home button {  
+  position: relative;
+  top: -18rem;
+  width: 200px;
+}
+
+.textReport {
   color: white;
   position: relative;
-  top: -24.5rem;
+  top: -18rem;
   text-align: center;
 }
 
@@ -384,4 +392,9 @@ textarea {
   padding: 10px;
   color: black;
   text-decoration: none;
+}
+
+.btnDeleteRequest {
+  height: 28px !important;
+  padding: 0 5px 0 !important;
 }
