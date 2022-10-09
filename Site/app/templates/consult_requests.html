@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block title %} Histórico de Solicitações {% endblock %}
 {% block conteudo %}    
-<div class="container_t">
+<section class="sectionConsultRequest">
+    <br>
     <div class="table_wrapper">
-        <br>
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
@@ -43,11 +43,12 @@
                     {% endfor %}
                 </tbody>
             </table>
-        </div>      
-        {% for message in get_flashed_messages() %}
-            <br>
-            <div class="alert alert-danger" role="alert">{{ message }}</div>
-        {% endfor %}  
-    </div>    
-</div>      
+        </div>
+    </div>
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-danger alertDeleteRequest" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}  
+</section>
 {% endblock %}

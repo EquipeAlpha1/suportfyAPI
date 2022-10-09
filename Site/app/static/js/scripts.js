@@ -35,13 +35,13 @@ function loadLayout(targetRoom) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOU
 	/* RESETA O ESTILO DOS COMPUTADORES */
 	document.querySelectorAll('.computerSlot').forEach(pc => {pc.style.visibility = 'visible';});
 
-	for(var currentSize in sizeRooms){ /* FAZ UM LOOP PELOS TAMANHOS DE SALA */
+	for(var currentSize in sizeRooms) { /* FAZ UM LOOP PELOS TAMANHOS DE SALA */
 		sizeRooms[currentSize].forEach(currentRoom => { /* FAZ UM LOOP A PROCURA DA SALA */
-			if(currentRoom === targetRoom){ /* SE ACHOU A SALA */
+			if(currentRoom === targetRoom) { /* SE ACHOU A SALA */
 				var limit = 0;
 				currentSize === 'small' ? limit = 5 :
 				currentSize === 'medium' ? limit = 4 : limit = 2;			
-				for(var i = 0; i < limit; i++){
+				for(var i = 0; i < limit; i++) {
 					[].forEach.call(document.querySelectorAll('.'+lines[i]), function (el) {
 						el.style.visibility = 'hidden';						
 					});
@@ -78,15 +78,17 @@ function loadRooms(targetFloor) { /* FUNÇÃO QUE CRIA AS OPÇÕES DE SALA, PARA
 	};
 };
 
-form_1_next_btn.addEventListener("click", function(){
+form_1_next_btn.addEventListener("click", function() {
 
 	/* const name = document.getElementById("c1_name").value;
 	const email = document.getElementById("c1_email").value;
+	const floorz = document.getElementById("c1_floor").value;
+	const roomz = document.getElementById("c1_room").value;
 
-	if (name === '' || email === '') {
+	if (!name || !email || !floorz || !roomz) {
 		alert("ERRO: Você não preencheu os dados necessários!");
-		return;  ## BLOQUEIA O RESTO DO SCRIPT ##
-	} */
+		return; /*  ## BLOQUEIA O RESTO DO SCRIPT ## */
+	
 
 	/* 
 	4x4 - 4 ##### 402 
@@ -107,7 +109,7 @@ form_1_next_btn.addEventListener("click", function(){
 	form_2_progressbar.classList.add("active");
 });
 
-form_2_back_btn.addEventListener("click", function(){
+form_2_back_btn.addEventListener("click", function() {
 	form_1.style.display = "block";
 	form_2.style.display = "none";
 
@@ -117,20 +119,20 @@ form_2_back_btn.addEventListener("click", function(){
 	form_2_progressbar.classList.remove("active");
 });
 
-form_2_next_btn.addEventListener("click", function(){
+form_2_next_btn.addEventListener("click", function() {
 
-	/* var pcChecked = false;
-	const pcs = document.getElementsByName("c2_computadores"); ## CRIA UM DICIONÁRIO COM TODOS OS ELEMENTOS NO HTML QUE TEM O ATRIBUTO name="c2_computadores" ##
+	var pcChecked = false;
+	const pcs = document.getElementsByName("c2_computadores");/*  ## CRIA UM DICIONÁRIO COM TODOS OS ELEMENTOS NO HTML QUE TEM O ATRIBUTO name="c2_computadores" ## */
 
-	## FAZ UM LOOP PRA VER SE TEM UM COMPUTADOR SELECIONADO ##
-	pcs.forEach(pc => {
-		if (pc.checked === true) {
+	/* ## FAZ UM LOOP PRA VER SE TEM UM COMPUTADOR SELECIONADO ## */
+	/* pcs.forEach(pc => {
+		if (pc.checked) {
 			pcChecked = true;
 			return; ## SAI DO LOOP ##
 		}
 	});
 
-	if (pcChecked === false) {
+	if (!pcChecked) {
 		alert("ERRO: Você não escolheu o computador!");
 		return; ## BLOQUEIA O RESTO DO SCRIPT ##
 	} */
@@ -144,7 +146,8 @@ form_2_next_btn.addEventListener("click", function(){
 	form_3_progressbar.classList.add("active");
 });
 
-form_3_back_btn.addEventListener("click", function(){
+form_3_back_btn.addEventListener("click", function() {
+
 	form_2.style.display = "block";
 	form_3.style.display = "none";
 
@@ -154,12 +157,12 @@ form_3_back_btn.addEventListener("click", function(){
 	form_3_progressbar.classList.remove("active");
 });
 
-form_3_next_btn.addEventListener("click", function(){
+form_3_next_btn.addEventListener("click", function() {
 
-	/* const subject = document.getElementById("c3_assunto").value;
+	const subject = document.getElementById("c3_assunto").value;
 	const description = document.getElementById("c3_texto").value;
-	
-	if (subject === '' || description === '') {
+	/* 
+	if (!subject || !description) {
 		alert("ERRO: Você não preencheu os dados necessários!");
 		return; ## BLOQUEIA O RESTO DO SCRIPT ##
 	} */

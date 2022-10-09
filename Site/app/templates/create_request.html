@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %} Abrir Solicitação {% endblock %}
 {% block conteudo %}
-<section>
+<section class="sectionCreateRequest">
     <form method="post" class="formEmail" id="formEmail"> <!-- FORMULÁRIO DE SUPORTE -->
         <div class="steps"> <!-- ETAPAS DO PROCESSO -->
             <div class="steps_wrapper">
@@ -28,7 +28,7 @@
                     </li>
                 </ul>
             </div>
-        </div>    
+        </div>
         <div class="form"> <!-- CONTEÚDOS DO FORMULÁRIO -->
             <div class="form_wrapper">
                 <div class="form_1 data_info"> <!-- CONTEÚDO DA PÁGINA 1 -->
@@ -505,6 +505,11 @@
                             Descrição: <span class="requiredField">*</span>
                         </label>
                         <textarea class="form-control" id="c3_texto" placeholder="Escreva uma breve descrição do problema" rows="3"></textarea> <!-- ÁREA PARA O USUÁRIO DESCREVER O PROBLEMA -->
+                    </div>
+                    <br>
+                    <div class="attach"> <!-- ANEXO -->
+                        <label for="formFile" class="form-label">Anexo:</label>
+                        <input class="form-control" type="file" id="formFile">
                     </div>
                     <br>
                     <div class="subtitleRequiredField">* Campo Obrigatório</div>  
