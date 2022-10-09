@@ -65,15 +65,17 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 ![Backlog total](https://user-images.githubusercontent.com/111616660/190879818-7063c42b-8c20-4404-8b14-e524a64352ad.png)
 
 
-## Backlog Sprint 1
+## Backlog Sprint 2
 
 | US | Estimativa de esforço | Critério de aceitação |
 |:--------------:  | :----------:|:---------------------------------:|
-|    Layout do site   | 3 | Documento com formatação das páginas |
-|    Montagem da página inserção de dados do usuário  | 10 | Página funcional com os dados do usuário |
-|    Montagem página formatação dos computadores em sala com botões seletivos   | 16 | Montagem da sala com botões seleção de computador |
-|    Montagem de campo para descrição do problema da máquina   | 10 | Página funcional para inserção do problema da máquina |
-|    Envio de e-mail com dados cadastrados para o usuário   | 12 | Remoção dos dados imputados e envio de e-mail para usuário | 
+| Bloqueio das caixas para inserção de dados | 6 | Não serem colocadas informações desnecessárias |
+| Inserir asteriscos vermelhos para inputs obrigatórios | 8 | Sinalizar que é um campo obrigatório |
+| Criação de campos para seleção de sala em página de inserção de dados do usuário | 6 | Facilitar a seleção do problema  |
+| Atualização da página home | 8 | Página home mais adequado ao suporte |
+| Início Implementação do banco de dados | 12 | Registrar pedidos e gerar o ID de chamado |
+| Estruturação visual do funcionamento do banco de dados | 4 | Melhorar a visualização do banco de dados | 					
+
 
 
 ## Burndown
@@ -114,12 +116,17 @@ O Burndown da equipe foi baseado nas horas disponíveis para estar trabalhando n
 * BootStrap CSS;
 * JavaScript;
 * JQuery;
-* Flask.
+* Flask;
+* SQLite;
 
 ## App da Sprint 1
 
 [App Sprint 1](https://sprint1-grupo-alpha.herokuapp.com/)
 
+
+## Vídeo do app da Sprint 2
+
+[Vídeo Sprint 2](https://www.youtube.com/watch?v=d3ppp_STsG8)
 
 ## Software em funcionamento
 
