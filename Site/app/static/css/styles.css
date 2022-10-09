@@ -3,17 +3,11 @@ html, body {
   width: 100%;
 }
 
-/* REFAZER */
-.container_t {
-  height: 85%;
-  width: 70%;
-  padding: 1% 1% 0;
-  margin: auto;
-}
-
 body {
   font-size: 1.2rem;
   font-family: Arial, Helvetica, sans-serif;      
+  padding: 80px 0 0 0;
+  margin: 0;
 }
 
 h4 {
@@ -22,34 +16,55 @@ h4 {
   padding: 0;
 }
 
+main {
+  height: 85%;
+}
+
 header {
-  background: #97BEC2;  
+  background: #97BEC2;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 15%;
+  height: 80px;
   width: 100%;
   margin: 0;
-  padding: 0px 30px;
+  padding: 0 30px;
+  z-index: 9999;
 }
 
 .logoHeader {
-  height: 50%;
+  height: 48px;
   width: auto;
 }
 
-section {
-  background: #dbdbdb;  
-  display: grid;
-  grid-template-rows: 10% 90%;
-  height: 85%; /* 85% do body */
-  width: 70%; /* 70% do body */
-  margin: 0px auto;
-  padding: 0;
+header nav {
+  height: 48px;
+  width: auto;
 }
 
-main {
-  height: 85%;
+section {  
+  height: 864px; /* 85% do body */  
+  margin: 0px auto;
+  padding: 0 0;
+}
+
+.sectionCreateRequest {
+  background: #dbdbdb;  
+  width: 70%; /* 70% do body */
+}
+
+.sectionConsultRequest {
+  padding: 20px;
+  width: 70%; /* 70% do body */
+}
+
+.form_wrapper {
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .steps {
@@ -63,21 +78,21 @@ main {
 
 .formEmail {
   display: grid;
-  grid-template-rows: 83% 17%; 
-  height: 100%;
+  grid-template-rows: 15% 70% 15%; 
+  height: 100%; /* 100% do section */
   width: 70%; /* 70% do section */
   margin: 0px auto;
   padding: 0;
 }
 
-.content {
+.form {
   height: 100%;
   width: 70%; /* 70% do formEmail */
   margin: 0 auto;
-  padding: 5% 5% 0;
+  padding: 20px;
 }
 
-.content h4 {
+.form h4 {
   text-align: center;
 }
 
@@ -122,14 +137,14 @@ main {
   height: 100%;
   width: 70%; /* 70% do formEmail */
   margin: 0 auto;
-  padding: 0 5%;
+  padding: 0;
 }
 
 .buttons_wrapper {
   height: auto;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
 }
 
 footer {
@@ -137,8 +152,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 30%;
-  padding: 0px 30px;
+  height: 200px;
+  padding: 0px 20px;
 }
 
 .logoFooter {
@@ -380,8 +395,9 @@ textarea {
 
 .menu {
   display: flex;
-  align-items: center;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .menu li {
@@ -398,4 +414,12 @@ textarea {
 .btnDeleteRequest {
   height: 28px !important;
   padding: 0 5px 0 !important;
+}
+
+.alertDeleteRequest {
+  margin-top: 20px;
+}
+
+.capa_wrapper {
+  height: 100%;
 }

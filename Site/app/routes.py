@@ -90,6 +90,8 @@ def create_request():
                         "<b>Este é um e-mail de notificação e foi gerado automaticamente. Por favor, não responda esta mensagem!</b><br />" \
                         "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [api.ads.2022@gmail.com] porque este e-mail foi registrado para a equipe de suporte na FATEC - SJC.</a><br />" \
                         "</table></div></body></html>".format(name, pc, subject, description)
+            with app.open_resource("C:/Users/luis_/Desktop/TESTE.png") as fp:
+                msg.attach("Image.png", "image/png", fp.read())
             email.send(msg) """
 
             ## Faz o registro do chamado no banco de dados
