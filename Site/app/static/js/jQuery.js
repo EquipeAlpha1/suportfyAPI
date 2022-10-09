@@ -1,4 +1,4 @@
-$(document).on('submit','#formEmail',function(e)
+$(document).on('submit','#formEmail',function(e) /* <!-- ESSE SCRIPT IMPEDE O FLASK DE ATUALIZAR A PÁGINA, QUANDO ENVIAR O EMAIL --> */
 {
   var c1_name = $('#c1_name')[0].value;
   var c1_email = $('#c1_email')[0].value; 
