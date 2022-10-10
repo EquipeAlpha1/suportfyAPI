@@ -24,16 +24,49 @@ email = Mail(app) """
 def home():
     return render_template('home.html')
 
-""" @app.route('/login', methods=['GET', 'POST'])
-def login():
+""" @app.route('/sign_in', methods=['GET', 'POST'])
+def sign_in():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
-        if email == 'admin' and password == 'admin':
-            return redirect(url_for('home'))
+        if not email:
+            flash('E-mail inválido!')
+        elif not password:
+            flash('Senha inválida!')
         else:
-            return redirect(url_for('login'))
-    return render_template('login.html') """
+            flash('Bem-vindo(a)!')
+            return redirect(url_for('home'))
+    return render_template('sign_in.html') """
+
+""" @app.route('/sign_up', methods=['GET', 'POST'])
+def sign_up():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        repeatPassword = request.form.get('repeatPassword')
+        if not name:
+            flash('Nome inválido!')
+        elif not email:
+            flash('E-mail inválido!')
+        elif not password:
+            flash('Senha inválida!')
+        elif not repeatPassword:
+            flash('Repetição de senha inválida!')
+        elif password != repeatPassword:
+            flash('A senha e a repetição de senha, não conferem!')
+        else:          
+            ## Faz o registro do usuário no banco de dados
+            conn = get_db_connection()
+            conn.execute('INSERT INTO users (names, mails, passwords) VALUES (?, ?, ?)',
+                         (name, mail, password))
+            conn.commit()
+            conn.close()
+
+            flash('Bem-vindo(a) {}!'.format(name)')
+
+            return redirect(url_for('home'))
+    return render_template('sign_up.html') """
     
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
@@ -119,11 +152,13 @@ def delete_request(id):
     flash('A solicitação "{}" foi deletada com sucesso!'.format(id))
     return redirect(url_for('consult_requests'))
 
-""" @app.route('/faqs', methods=['GET','POST'])
-def faqs():
-    if request.method == 'POST':
-        x = 1
-    return render_template('faqs.html') """
+""" @app.route('/about_us')
+def about_us():
+    return render_template('about_us.html') """
+
+""" @app.route('/faq', methods=['GET','POST'])
+def faq():
+    return render_template('faq.html') """
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')    
@@ -138,3 +173,12 @@ def get_db_connection():
     if issue is None:
         abort(404)
     return issue """
+
+""" def get_user(user_id):
+    conn = get_db_connection()
+    user = conn.execute('SELECT * FROM users WHERE id = ?',
+                        (user_id,)).fetchone()
+    conn.close()
+    if user is None:
+        abort(404)
+    return user """

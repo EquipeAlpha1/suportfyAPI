@@ -1,4 +1,13 @@
+DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS issue_history;
+
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created DATE DEFAULT (datetime('now','localtime')),
+    names TEXT NOT NULL,
+    mails TEXT NOT NULL,
+    passwords TEXT NOT NULL
+);
 
 CREATE TABLE issue_history (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
