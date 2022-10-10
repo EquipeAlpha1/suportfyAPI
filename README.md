@@ -121,7 +121,7 @@ O Burndown da equipe foi baseado nas horas disponíveis para estar trabalhando n
 
 ## Software em funcionamento
 
-[Vídeo Sprint 2](https://www.youtube.com/watch?v=d3ppp_STsG8)
+[Vídeo Sprint 2](https://youtu.be/gmeIEx5pVIk)
 
 ## Agradecimentos
 Agradecemos pelo corpo docente da Fatec-SJC, que nos auxiliou no trabalho com as tecnologias envolvidas no projeto e também com a disponibilidade dos laborátórios, para mapeamento e utilização dos computadores.
