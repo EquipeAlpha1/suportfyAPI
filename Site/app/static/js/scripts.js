@@ -45,7 +45,7 @@ function loadLayout(targetRoom) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOU
 				currentSize === 'medium' ? limit = 4 : limit = 2;		
 				for(var i = 0; i < limit; i++) {
 					[].forEach.call(document.querySelectorAll('.'+lines[i]), function (el) {
-						if (currentSize == 'small' && lines[i] == 'fifthRow') {
+						if (currentSize === 'small' && lines[i] === 'fifthRow') {
 							el.style.display = 'none';
 						} else {
 							el.style.border = '1px solid black';
