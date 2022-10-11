@@ -34,8 +34,18 @@ def sign_in():
         elif not password:
             flash('Senha inválida!')
         else:
-            flash('Bem-vindo(a)!')
-            return redirect(url_for('home'))
+            ## Verifica se já existe o usuário no banco de dados
+            conn = get_db_connection()
+            user = conn.execute('SELECT emails,passwords FROM users_data WHERE emails={} and passwords={}'.format(email,password)).fetchone()
+            conn.close()
+
+            if not len(user['emails']):
+                flash("Usuário não cadastrado!")
+            elif not len(user['password']):
+                flash("Senha incorreta!")
+            else:
+                flash('Bem-vindo(a) {}!'.format(user['names']))
+                return render_template("logged_in.html")
     return render_template('sign_in.html') """
 
 """ @app.route('/sign_up', methods=['GET', 'POST'])
@@ -56,16 +66,23 @@ def sign_up():
         elif password != repeatPassword:
             flash('A senha e a repetição de senha, não conferem!')
         else:          
-            ## Faz o registro do usuário no banco de dados
+            ## Verifica se já existe o usuário no banco de dados
             conn = get_db_connection()
-            conn.execute('INSERT INTO users (names, mails, passwords) VALUES (?, ?, ?)',
-                         (name, mail, password))
-            conn.commit()
+            user = conn.execute('SELECT emails FROM users_data WHERE emails={}'.format(email)).fetchone()
             conn.close()
 
-            flash('Bem-vindo(a) {}!'.format(name)')
+            if len(user):
+                flash("Já existe um usuário com esse e-mail cadastrado!")
+            else:
+                ## Faz o registro do usuário no banco de dados
+                conn = get_db_connection()
+                conn.execute('INSERT INTO users_data (names, emails, passwords) VALUES (?, ?, ?)',
+                            (name, email, password))
+                conn.commit()
+                conn.close()
 
-            return redirect(url_for('home'))
+                flash('Bem-vindo(a) {}!'.format(name))
+                return render_template("logged_in.html")
     return render_template('sign_up.html') """
     
 @app.route('/create_request', methods=['GET','POST'])
@@ -176,7 +193,7 @@ def get_db_connection():
 
 """ def get_user(user_id):
     conn = get_db_connection()
-    user = conn.execute('SELECT * FROM users WHERE id = ?',
+    user = conn.execute('SELECT * FROM users_data WHERE id = ?',
                         (user_id,)).fetchone()
     conn.close()
     if user is None:
