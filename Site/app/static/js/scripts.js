@@ -33,7 +33,7 @@ const lines = ['firstColumn','tenthColumn','secondColumn','ninthColumn','fifthRo
 function loadLayout(targetRoom) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOUT DOS COMPUTADORES */
 	
 	/* RESETA O ESTILO DOS COMPUTADORES */
-	/* document.querySelectorAll('.computerSlot').forEach(pc => {pc.style.visibility = 'visible';}); /* REMOVER */
+	document.querySelectorAll('.computerSlot').forEach(pc => {pc.style.display = 'block';});
 	document.querySelectorAll('.computerSlot').forEach(pc => {pc.style.border = 'none';});
 	document.querySelectorAll('.computerLabel').forEach(pc => {pc.style.visibility = 'visible';});
 
@@ -47,9 +47,10 @@ function loadLayout(targetRoom) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOU
 					[].forEach.call(document.querySelectorAll('.'+lines[i]), function (el) {
 						if (currentSize == 'small' && lines[i] == 'fifthRow') {
 							el.style.display = 'none';
-						}
-						el.style.border = '1px solid black';
-						el.querySelector('.computerLabel').style.visibility = 'hidden';
+						} else {
+							el.style.border = '1px solid black';
+							el.querySelector('.computerLabel').style.visibility = 'hidden';
+						}						
 					});
 				};
 			};
