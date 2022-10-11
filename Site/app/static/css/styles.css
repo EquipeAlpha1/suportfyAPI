@@ -20,6 +20,10 @@ main {
   height: 85%;
 }
 
+h1 {
+  border: none;
+}
+
 header {
   background: #97BEC2;
   position: fixed;
@@ -56,7 +60,7 @@ section {
   width: 70%; /* 70% do body */
 }
 
-.sectionConsultRequest {
+.sectionConsultRequests {
   padding: 20px;
   width: 70%; /* 70% do body */
 }

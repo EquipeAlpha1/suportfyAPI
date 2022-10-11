@@ -33,17 +33,23 @@ const lines = ['firstColumn','tenthColumn','secondColumn','ninthColumn','fifthRo
 function loadLayout(targetRoom) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOUT DOS COMPUTADORES */
 	
 	/* RESETA O ESTILO DOS COMPUTADORES */
-	document.querySelectorAll('.computerSlot').forEach(pc => {pc.style.visibility = 'visible';});
+	/* document.querySelectorAll('.computerSlot').forEach(pc => {pc.style.visibility = 'visible';}); /* REMOVER */
+	document.querySelectorAll('.computerSlot').forEach(pc => {pc.style.border = 'none';});
+	document.querySelectorAll('.computerLabel').forEach(pc => {pc.style.visibility = 'visible';});
 
 	for(var currentSize in sizeRooms) { /* FAZ UM LOOP PELOS TAMANHOS DE SALA */
 		sizeRooms[currentSize].forEach(currentRoom => { /* FAZ UM LOOP A PROCURA DA SALA */
 			if(currentRoom === targetRoom) { /* SE ACHOU A SALA */
 				var limit = 0;
 				currentSize === 'small' ? limit = 5 :
-				currentSize === 'medium' ? limit = 4 : limit = 2;			
+				currentSize === 'medium' ? limit = 4 : limit = 2;		
 				for(var i = 0; i < limit; i++) {
 					[].forEach.call(document.querySelectorAll('.'+lines[i]), function (el) {
-						el.style.visibility = 'hidden';						
+						if (currentSize == 'small' && lines[i] == 'fifthRow') {
+							el.style.display = 'none';
+						}
+						el.style.border = '1px solid black';
+						el.querySelector('.computerLabel').style.visibility = 'hidden';
 					});
 				};
 			};
