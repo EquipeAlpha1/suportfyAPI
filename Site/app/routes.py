@@ -48,7 +48,7 @@ def sign_in():
                 return render_template("logged_in.html")
     return render_template('sign_in.html') """
 
-""" @app.route('/sign_up', methods=['GET', 'POST'])
+@app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
         name = request.form.get('name')
@@ -83,7 +83,7 @@ def sign_up():
 
                 flash('Bem-vindo(a) {}!'.format(name))
                 return render_template("logged_in.html")
-    return render_template('sign_up.html') """
+    return render_template('sign_up.html')
     
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
