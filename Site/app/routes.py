@@ -9,6 +9,8 @@ from flask import redirect
 from flask import abort
 from flask_mail import Mail
 from flask_mail import Message
+import os
+from werkzeug.utils import secure_filename
 
 """ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = '465'
@@ -84,7 +86,7 @@ def sign_up():
                 flash('Bem-vindo(a) {}!'.format(name))
                 return render_template("logged_in.html")
     return render_template('sign_up.html')
-    
+
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
     if request.method == 'POST':
@@ -143,6 +145,11 @@ def create_request():
             with app.open_resource("C:/Users/luis_/Desktop/TESTE.png") as fp:
                 msg.attach("Image.png", "image/png", fp.read())
             email.send(msg) """
+            
+            file = request.files['file']
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
             ## Faz o registro do chamado no banco de dados
             conn = get_db_connection()
@@ -199,3 +206,35 @@ def get_db_connection():
     if user is None:
         abort(404)
     return user """
+
+
+
+
+
+
+UPLOAD_FOLDER = os.path.join(os.getcwd(), 'app/static/uploads')
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    return '''
+    <!doctype html>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Upload>
+    </form>
+    '''
+ 

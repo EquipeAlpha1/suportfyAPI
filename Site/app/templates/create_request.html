@@ -2,7 +2,7 @@
 {% block title %} Abrir solicitação {% endblock %}
 {% block conteudo %}
         <section class="sectionCreateRequest">
-            <form method="post" class="formEmail" id="formEmail"> <!-- FORMULÁRIO DE SUPORTE -->
+            <form method="post" class="formEmail" id="formEmail" enctype=multipart/form-data> <!-- FORMULÁRIO DE SUPORTE -->
                 <div class="steps"> <!-- ETAPAS DO PROCESSO -->
                     <div class="steps_wrapper">
                         <ul> <!-- LISTA DE ETAPAS -->
@@ -509,7 +509,7 @@
                             <br>
                             <div class="attach"> <!-- ANEXO -->
                                 <label for="formFile" class="form-label">Anexo:</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <input class="form-control" type=file name=file id="formFile">
                             </div>
                             <br>
                             <div class="subtitleRequiredField">* Campo Obrigatório</div>  

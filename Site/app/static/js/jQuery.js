@@ -18,7 +18,7 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- ESSE SCRIPT IMPEDE O F
                 room:$("#c1_room").val(),
                 pc:$("input[name='c2_computadores']:checked").val(),
                 subject:$("#c3_assunto").val(),
-                description:$("#c3_texto").val()          
+                description:$("#c3_texto").val()
             }
         });
         if (c1_name && c1_email && c1_floor && c1_room && c3_assunto && c3_texto) {      
