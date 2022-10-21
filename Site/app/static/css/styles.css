@@ -42,14 +42,15 @@ header, nav {
 }
 
 header {
-  background-image: linear-gradient(to bottom, #97BEC2, #ABD4DB, #B5E4E8, #BFF0F5);
+  background-image: linear-gradient(to bottom, #76acb3, #ABD4DB, #B5E4E8, #BFF0F5);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.541);
 }
 
-.login {
+.login > button {
   position: fixed;
   left: 85%;
+  top: 2.5%;
 }
-
 .logoHeader {
   height: 48px;
   width: auto;
