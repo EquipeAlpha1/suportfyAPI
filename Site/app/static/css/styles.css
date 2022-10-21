@@ -1,3 +1,11 @@
+/* CORES
+  #485A5C
+  #97BEC2
+  #ABD4DB
+  #B5E4E8
+  #BFF0F5
+  */
+
 html, body {
   height: 100%;
   width: 100%;
@@ -20,19 +28,26 @@ main {
   height: 85%;
 }
 
-header {
-  background: #97BEC2;
+header, nav {
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 80px;
   width: 100%;
   margin: 0;
   padding: 0 30px;
   z-index: 9999;
+}
+
+header {
+  background-image: linear-gradient(to bottom, #97BEC2, #ABD4DB, #B5E4E8, #BFF0F5);
+}
+
+.login {
+  position: fixed;
+  left: 85%;
 }
 
 .logoHeader {
