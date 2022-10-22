@@ -24,19 +24,10 @@ email = Mail(app) """
 def home():
     return render_template('home.html')
 
-""" @app.route('/sign_in', methods=['GET', 'POST'])
-def sign_in():
-    if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('password')
-        if not email:
-            flash('E-mail inválido!')
-        elif not password:
-            flash('Senha inválida!')
-        else:
-            flash('Bem-vindo(a)!')
-            return redirect(url_for('home'))
-    return render_template('sign_in.html') """
+@app.route('/edit_layout', methods=['GET', 'POST'])
+def edit_layout():
+    
+    return render_template('edit_layout.html')
 
 """ @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
