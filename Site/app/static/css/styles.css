@@ -423,3 +423,35 @@ textarea {
 .capa_wrapper {
   height: 100%;
 }
+
+/* sign_in */
+.sectionsignin{
+  display: flex;
+  justify-content: center;
+}
+
+#designsignin{
+  background: #83a6aa;
+  height: 800px; width: 600px;
+  display: flex; align-items: center; justify-content: center; position: relative;
+  top: 35px;
+  border-radius: 25px;
+  box-shadow: 30px -16px 5px teal;
+}
+
+#conect{
+  display: flex;
+  font-size: 1.7rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, 'Arial Narrow', Arial, sans-serif;
+  justify-content: center;
+  margin-bottom: 110px; margin-top: 40px;
+}
+
+#informsignin{
+  height: 700px; width: 500px;
+  border-radius: 25px;
+}
+
+.mb-3 {
+  margin-bottom: 4rem!important;
+}
