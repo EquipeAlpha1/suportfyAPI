@@ -24,7 +24,7 @@ email = Mail(app) """
 def home():
     return render_template('home.html')
 
-""" @app.route('/sign_in', methods=['GET', 'POST'])
+@app.route('/sign_in', methods=['GET', 'POST'])
 def sign_in():
     if request.method == 'POST':
         email = request.form.get('email')
@@ -36,7 +36,7 @@ def sign_in():
         else:
             flash('Bem-vindo(a)!')
             return redirect(url_for('home'))
-    return render_template('sign_in.html') """
+    return render_template('sign_in.html')
 
 """ @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
