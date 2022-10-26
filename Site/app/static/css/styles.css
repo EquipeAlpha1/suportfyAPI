@@ -423,3 +423,28 @@ textarea {
 .capa_wrapper {
   height: 100%;
 }
+
+@media(max-width: 450px) {
+
+  header{
+    height: 150px;
+    display: block;
+    padding: 0px;
+  }
+
+  .logoHeader{
+    display: block;
+    margin: 15px auto;
+
+  }
+
+  .menu {
+    margin: 0px;
+    font-size: 18px;
+  }
+
+}
+
+
+
+
