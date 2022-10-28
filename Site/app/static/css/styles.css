@@ -426,7 +426,6 @@ textarea {
 
 @media(max-width: 450px) {
 
-<<<<<<< Updated upstream
   header{
     height: 150px;
     display: block;
@@ -444,7 +443,6 @@ textarea {
     font-size: 18px;
   }
 
-=======
   .logoHeader{
     display: block;
     margin: 16px auto;
@@ -485,7 +483,6 @@ textarea {
   .buttons{
     width: 100%;
   }
->>>>>>> Stashed changes
 }
 
 
