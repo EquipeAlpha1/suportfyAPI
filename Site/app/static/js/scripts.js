@@ -85,10 +85,10 @@ form_1_next_btn.addEventListener("click", function() {
 	const floorz = document.getElementById("c1_floor").value;
 	const roomz = document.getElementById("c1_room").value;
 
-	if (!name || !email || !floorz || !roomz) {
+	/* if (!name || !email || !floorz || !roomz) {
 		alert("ERRO: Você não preencheu os dados necessários!");
-		return;  /* ## BLOQUEIA O RESTO DO SCRIPT ## */
-	}
+		return; 
+	} */
 	
 
 	/* 
@@ -126,17 +126,17 @@ form_2_next_btn.addEventListener("click", function() {
 	const pcs = document.getElementsByName("c2_computadores");/*  ## CRIA UM DICIONÁRIO COM TODOS OS ELEMENTOS NO HTML QUE TEM O ATRIBUTO name="c2_computadores" ## */
 
 	/* ## FAZ UM LOOP PRA VER SE TEM UM COMPUTADOR SELECIONADO ## */
-	pcs.forEach(pc => {
+	/* pcs.forEach(pc => {
 		if (pc.checked) {
 			pcChecked = true;
-			return;/*  ## SAI DO LOOP ## */
+			return;
 		}
-	});
+	}); */
 
-	if (!pcChecked) {
+	/* if (!pcChecked) {
 		alert("ERRO: Você não escolheu o computador!");
-		return;/*  ## BLOQUEIA O RESTO DO SCRIPT ## */
-	}
+		return;
+	} */
 
 	form_2.style.display = "none";
 	form_3.style.display = "block";
@@ -163,10 +163,10 @@ form_3_next_btn.addEventListener("click", function() {
 	const subject = document.getElementById("c3_assunto").value;
 	const description = document.getElementById("c3_texto").value;
 	
-	if (!subject || !description) {
+	/* if (!subject || !description) {
 		alert("ERRO: Você não preencheu os dados necessários!");
-		return; /* ## BLOQUEIA O RESTO DO SCRIPT ## */
-	}
+		return; 
+	} */
 
 	form_3.style.display = "none";
 	form_4.style.display = "block";

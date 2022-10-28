@@ -426,6 +426,7 @@ textarea {
 
 @media(max-width: 450px) {
 
+<<<<<<< Updated upstream
   header{
     height: 150px;
     display: block;
@@ -443,6 +444,48 @@ textarea {
     font-size: 18px;
   }
 
+=======
+  .logoHeader{
+    display: block;
+    margin: 16px auto;
+  }
+  .menu {
+    margin: 0px;
+    font-size: 16px;
+  }
+  .sectionHome {
+    height: 95%;
+  }
+  .sectionCreateRequest {
+    background: #dbdbdb; 
+    width: 100%; /* 70% do body */
+  }
+  .form{
+    width: 100% !important;
+  }
+  .formEmail {
+    display: grid;
+    grid-template-rows: 10% 50% 10%; 
+    height: 100%; /* 100% do section */
+    width: 100%; /* 70% do section */
+    margin: 0px auto;
+    padding: 0;
+  }
+  .steps {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%; /* 70% do section */
+    margin: 0px auto;
+    padding: 0 0 0 5%;
+  }
+  .roomChoice {
+    gap: 10%;
+  }
+  .buttons{
+    width: 100%;
+  }
+>>>>>>> Stashed changes
 }
 
 
