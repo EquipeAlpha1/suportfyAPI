@@ -97,6 +97,9 @@ def create_request():
         pc = request.form.get('pc')
         subject = request.form.get('subject')
         description = request.form.get('description')
+        file = request.files['file']
+        print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+        print(name,mail,floor,room,pc,subject,description, file)
         if name and mail and floor and room and pc and subject and description:
             """ ## Envia um e-mail para o usuário
             msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
@@ -145,11 +148,11 @@ def create_request():
             with app.open_resource("C:/Users/luis_/Desktop/TESTE.png") as fp:
                 msg.attach("Image.png", "image/png", fp.read())
             email.send(msg) """
-            
-            file = request.files['file']
-            if file and allowed_file(file.filename):
-                filename = secure_filename(file.filename)
-                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            h
+            """ file = request.files['file'] """
+            if request.files['file'] and allowed_file(request.files['file'].filename):
+                filename = secure_filename(request.files['file'].filename)
+                request.files['file'].save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
             ## Faz o registro do chamado no banco de dados
             conn = get_db_connection()
@@ -162,6 +165,7 @@ def create_request():
 
 @app.route('/consult_requests', methods=['GET','POST'])
 def consult_requests():
+    print('conAJAXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
     conn = get_db_connection()
     issue_history = conn.execute('SELECT * FROM issue_history').fetchall()
     conn.close()
@@ -221,20 +225,12 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/upload', methods=['GET', 'POST'])
+""" @app.route('/upload', methods=['GET', 'POST']) """
 def upload_file():
     if request.method == 'POST':
         file = request.files['file']
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    return '''
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
-    '''
+    return
  
