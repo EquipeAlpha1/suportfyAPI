@@ -1,23 +1,41 @@
 $(function() {
-    $('#SendMail').click(function(e) {
-        var form_data = new FormData();      
-        form_data.append('name', $("#c1_name").val()); 
-        form_data.append('mail', $('#c1_email').val()); 
-        form_data.append('floor', $('#c1_floor').val()); 
-        form_data.append('room', $('#c1_room').val()); 
-        form_data.append('pc', $("input[name='c2_computadores']:checked").val()); 
-        form_data.append('subject', $('#c3_subject').val()); 
-        form_data.append('description', $('#c3_description').val());         
-        form_data.append('file', $('#formEmail')[0].files[0]);  
 
+    var form;
+    $('#formFile').change(function (event) {        
+        var form_data = new FormData($('#formEmail')[0]);
+        var filename = event.target.files[0].content.name; // para capturar o nome do arquivo com sua extenção
+        $.ajax({
+            type: 'POST',
+            url: '/upload_file',
+            data: form_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(data) {
+                console.log('Success!');
+            },
+        });
+    });
+
+    $('#SendMail').click(function(e) {
         e.preventDefault();
         $.ajax({
             type: 'POST',
             url: '/create_request',
-            data: form_data,
+            data: {
+                name: $('#c1_name').val(),
+                mail: $('#c1_email').val(),
+                floor: $('#c1_floor').val(),
+                room: $('#c1_room').val(),
+                pc: $("input[name='c2_computadores']:checked").val(),
+                subject: $('#c3_subject').val(),
+                description: $('#c3_description').val(),
+                filename: filename
+                /* file:$('#formEmail')[0].files[0] */
+            }/* ,
             contentType: false,
             cache: false,
-            processData: false
+            processData: false */
         });
     });
 });
