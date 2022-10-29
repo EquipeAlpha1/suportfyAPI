@@ -1,4 +1,4 @@
-$(document).on('submit','#formEmail',function(e) {/* <!-- ESSE SCRIPT IMPEDE O FLASK DE ATUALIZAR A PÁGINA, QUANDO ENVIAR O EMAIL --> */
+$(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será ativada, quando o usuário clicar em qualquer botão 'Submit' do formulário --> */
 
     var c1_name = $("#c1_name").val();
     var c1_email = $("#c1_email").val();
@@ -8,7 +8,7 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- ESSE SCRIPT IMPEDE O F
     var c3_assunto = $("#c3_subject").val();
     var c3_texto = $("#c3_description").val();
 
-    var btn = ($(document.activeElement).val());
+    var btn = ($(document.activeElement).val()); /* Salva o valor do botão, para verificar */
 
     if (btn == 'SendMail') {
 
