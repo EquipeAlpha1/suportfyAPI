@@ -173,8 +173,6 @@ def upload_file():
         global tempFilename, tempEvent
         tempFilename = filename
         tempEvent = True
-    else:
-        flash('Formato de arquivo não permitido!')
     return redirect(url_for('create_request'))
 
 def get_db_connection():
