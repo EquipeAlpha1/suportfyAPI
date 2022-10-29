@@ -16,14 +16,14 @@ UPLOAD_FOLDER = 'app/static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-""" app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = '465'
-app.config['MAIL_DEFAULT_SENDER'] = 'Grupo Alpha - API <ads.2sem.2022@gmail.com>'
-app.config['MAIL_USERNAME'] = 'ads.2sem.2022@gmail.com'
-app.config['MAIL_PASSWORD'] = 'szlfrwtumwhlwwrm' # ESSA É UMA 'SENHA DE APP' GERADA NAS CONFIGURAÇÕES DE SEGURANÇA DO GOOGLE SÓ PARA ENVIOS DE EMAIL PELO FLASK
+app.config['MAIL_DEFAULT_SENDER'] = 'Grupo Alpha - API <luisebf01@gmail.com>'
+app.config['MAIL_USERNAME'] = 'luisebf01@gmail.com'
+app.config['MAIL_PASSWORD'] = 'bteusbrxhsimnlza' # ESSA É UMA 'SENHA DE APP' GERADA NAS CONFIGURAÇÕES DE SEGURANÇA DO GOOGLE SÓ PARA ENVIOS DE EMAIL PELO FLASK
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-email = Mail(app) """
+email = Mail(app)
 
 tempFilename = '' # Caminho do arquivo da solicitação atual
 tempEvent = False # Se a solicitação atual tiver um arquivo, essa terá o valor 'True' e com ela a função create_request anexará o arquivo
@@ -74,11 +74,10 @@ def create_request():
         description = request.form.get('description')
 
         if not name and not mail and not floor and not room and not pc and not subject and not description:
-            flash('Formato de arquivo não permitido!')
             return redirect(url_for('create_request'))
         else:                        
             ## Envia um e-mail de notificação para o usuário
-            """ msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
+            msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
             msg.html = "<!DOCTYPE html><html><body>" \
                         "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
                         "Fala {}, Beleza?<br /><br />" \
@@ -102,10 +101,10 @@ def create_request():
                         "<a href='https://www.rataalada.com/' style='color: rgb(71, 124, 204); text-decoration: none; display: inline;'>aqui</a>." \
                         "</table></div></body></html>".format(name, floor, room, pc, subject, description, mail)
 
-            email.send(msg) """
+            email.send(msg)
 
             ## Envia um e-mail de notificação para a equipe de suporte
-            """ msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['api.ads.2022@gmail.com'])
+            msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['luisebf01@gmail.com'])
             msg.html = "<!DOCTYPE html><html><body>" \
                     "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
                         "Fala Suporte Alpha, Beleza?<br /><br />" \
@@ -124,16 +123,16 @@ def create_request():
                         "<td style='line-height:12px;color:#808080;font-size:10px'>" \
                         "<b>Este é um e-mail de notificação e foi gerado automaticamente. Por favor, não responda esta mensagem!</b><br />" \
                         "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [api.ads.2022@gmail.com] porque este e-mail foi registrado para a equipe de suporte na FATEC - SJC.</a><br />" \
-                        "</table></div></body></html>".format(name, mail, floor, room, pc, subject, description) """
+                        "</table></div></body></html>".format(name, mail, floor, room, pc, subject, description)
             
             ## Se houver uma imagem na solicitação, faz o upload do arquivo e anexa no e-mail para a equipe de suporte
-            """ global tempFilename, tempEvent
+            global tempFilename, tempEvent
             if tempEvent:
                 extension = tempFilename.rsplit('.', 1)[1].lower()
-                with app.open_resource(os.path.join(app.config['UPLOAD_FOLDER'], tempFilename)) as fp:
+                with app.open_resource(UPLOAD_FOLDER, tempFilename) as fp:
                     msg.attach("Image."+extension, "image/"+extension, fp.read())                
                 tempFilename = ''
-                tempEvent = False """
+                tempEvent = False
 
             """ email.send(msg) """   
             ## Faz o registro da solicitação no banco de dados
