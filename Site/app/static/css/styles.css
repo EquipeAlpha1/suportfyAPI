@@ -424,43 +424,90 @@ textarea {
   height: 100%;
 }
 
-@media(max-width: 450px) {
+#btn-mobile{
+  display: none;
+}
 
-  header{
-    height: 150px;
+@media(max-width: 450px) { 
+
+  #btn-mobile {
+    display: flex;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 1.5rem;
+  }
+
+  #hamburguer{
+    border-top: 2px solid;
+    width: 20px;
+  }
+
+  #hamburguer::after, #hamburguer::before{
+    content: '';
     display: block;
-    padding: 0px;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: .3s;
+    position: relative;
   }
 
-  .logoHeader{
+  #nav.active #hamburguer {
+    border-top-color: transparent;
+  }
+
+  #nav.active #hamburguer:before {
+    transform: rotate(135deg);
+  }
+
+  #nav.active #hamburguer::after{
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+
+  #menu {
     display: block;
-    margin: 15px auto;
-
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background: #97BEC2;
+    height: 0px;
+    transition: .6s;
+    z-index: 1000;
+    visibility: hidden;
+    overflow-y: hidden;
   }
 
-  .menu {
-    margin: 0px;
-    font-size: 18px;
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
   }
 
-  .logoHeader{
-    display: block;
-    margin: 16px auto;
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid black;
   }
-  .menu {
-    margin: 0px;
-    font-size: 16px;
-  }
+
   .sectionHome {
     height: 95%;
   }
+
   .sectionCreateRequest {
     background: #dbdbdb; 
     width: 100%; /* 70% do body */
   }
+
   .form{
     width: 100% !important;
   }
+
   .formEmail {
     display: grid;
     grid-template-rows: 10% 50% 10%; 
@@ -469,6 +516,7 @@ textarea {
     margin: 0px auto;
     padding: 0;
   }
+
   .steps {
     display: flex;
     align-items: center;
@@ -477,9 +525,11 @@ textarea {
     margin: 0px auto;
     padding: 0 0 0 5%;
   }
+
   .roomChoice {
     gap: 10%;
   }
+
   .buttons{
     width: 100%;
   }
