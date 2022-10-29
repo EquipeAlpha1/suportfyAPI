@@ -69,8 +69,8 @@ def create_request():
         description = request.form.get('description')
 
         if not name and not mail and not floor and not room and not pc and not subject and not description:
-            print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',name,mail,floor,room,pc,subject, description)
-            """ return ('', 204) """
+            flash('Formato de arquivo não permitido!')
+            return redirect(url_for('create_request'))
         else:                        
             ## Envia um e-mail de notificação para o usuário
             """ msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
@@ -131,7 +131,6 @@ def create_request():
                 tempEvent = False """
 
             """ email.send(msg) """   
-            print('//////////////////////////////////////////////',name,mail,floor,room,pc,subject, description)
             ## Faz o registro da solicitação no banco de dados
             conn = get_db_connection()
             conn.execute('INSERT INTO issue_history (names, mails, floors, rooms, pcs, subjects, descriptions) VALUES (?, ?, ?, ?, ?, ?, ?)',

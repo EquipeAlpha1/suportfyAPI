@@ -11,17 +11,16 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- ESSE SCRIPT IMPEDE O F
     var btn = ($(document.activeElement).val());
 
     if (btn == 'SendMail') {
-        e.preventDefault(); /* ESSA FUNÇÃO EVITA DE RECARREGAR A PÁGINA */
-        var nFile = document.getElementById('formFile').files.length;
-
-        if (nFile > 0) {
+        e.preventDefault(); /* Essa função evita de recarregar a página */
+        var nFile = document.getElementById('formFile').files.length;        
+        if (nFile > 0) { /* Verifica se foi inserido um arquivo na solicitação */
             var form_data = new FormData();           
             form_data.append('file', document.getElementById('formFile').files[0]); 
 
             $.ajax ({
                 type:'POST',
                 url:'/upload_file', /* URL para rota flask */
-                data: form_data,
+                data: form_data, /* Arquivo do formulário para o Flask fazer upload */
                 contentType: false,
                 cache: false,
                 processData: false                
@@ -30,8 +29,8 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- ESSE SCRIPT IMPEDE O F
         $.ajax ({
             type:'POST',
             url:'/create_request', /* URL para rota flask */
-            data: { /* A função 'def home()' no Flask vai puxar os dados desse 'dicionário' */
-                name : c1_name, /* Na onde tem # vai o ID do objeto HTML que está dentro do 'formEmail' no 'content.html' */
+            data: { /* Dicionário com os dados da solicitação para o Flask registrar */
+                name : c1_name,
                 mail : c1_email,
                 floor : c1_floor,
                 room : c1_room,
@@ -41,7 +40,7 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- ESSE SCRIPT IMPEDE O F
             }
         });
         if (c1_name && c1_email && c1_floor && c1_room && c2_pc && c3_assunto && c3_texto) {      
-            $('#formEmail')[0].reset(); /* Reseta o formulário para não enviar e-mail atoa */
+            $('#formEmail')[0].reset(); /* Reseta os dados inseridos no formulário */
         };
     };
 });
