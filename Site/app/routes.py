@@ -26,8 +26,8 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 email = Mail(app)
 
-tempFilename # Caminho do arquivo da solicitação atual
-tempEvent # Se a solicitação atual tiver um arquivo, essa terá o valor 'True' e com ela a função create_request anexará o arquivo
+tempFilename = '' # Caminho do arquivo da solicitação atual
+tempEvent = False # Se a solicitação atual tiver um arquivo, essa terá o valor 'True' e com ela a função create_request anexará o arquivo
 
 @app.route('/')
 @app.route('/home')
@@ -165,16 +165,17 @@ def about_us():
 def faq():
     return render_template('faq.html') """
 
-@app.route('/upload_file', methods=['GET', 'POST'])
+@app.route('/upload_file', methods=('POST',))
 def upload_file():
-    if request.method == 'POST':
-        file = request.files['file']        
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            global tempFilename, tempEvent
-            tempFilename = filename
-            tempEvent = True
+    file = request.files['file']        
+    if allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        global tempFilename, tempEvent
+        tempFilename = filename
+        tempEvent = True
+    else:
+        flash('Formato de arquivo não permitido!')
     return redirect(url_for('create_request'))
 
 def get_db_connection():
