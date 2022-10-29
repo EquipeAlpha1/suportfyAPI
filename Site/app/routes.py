@@ -36,13 +36,16 @@ def home():
 @app.route('/sign_in', methods=['GET', 'POST'])
 def sign_in():
     if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('password')
+        email = request.form.get('mailTec')
+        password = request.form.get('passwordTec')
         if not email:
             flash('E-mail inválido!')
+            return redirect(url_for('sign_in'))
         elif not password:
             flash('Senha inválida!')
+            return redirect(url_for('sign_in'))
         else:
+            return 'OK'
             ## Verifica se já existe o usuário no banco de dados
             conn = get_db_connection()
             user = conn.execute('SELECT emails,passwords FROM users_data WHERE emails={} and passwords={}'.format(email,password)).fetchone()
@@ -50,11 +53,13 @@ def sign_in():
 
             if not len(user['emails']):
                 flash("Usuário não cadastrado!")
+                return redirect(url_for('sign_in'))
             elif not len(user['password']):
                 flash("Senha incorreta!")
+                return redirect(url_for('sign_in'))
             else:
                 flash('Bem-vindo(a) {}!'.format(user['names']))
-                return render_template("logged_in.html")
+                return render_template("edit_layout.html")
     return render_template('sign_in.html')
 
 @app.route('/create_request', methods=['GET','POST'])
