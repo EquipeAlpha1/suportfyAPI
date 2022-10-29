@@ -16,14 +16,14 @@ UPLOAD_FOLDER = 'app/static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+""" app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = '465'
-app.config['MAIL_DEFAULT_SENDER'] = 'Grupo Alpha - API <luisebf01@gmail.com>'
-app.config['MAIL_USERNAME'] = 'luisebf01@gmail.com'
-app.config['MAIL_PASSWORD'] = 'dlzfxjllbpyruiho' #'szlfrwtumwhlwwrm' # ESSA É UMA 'SENHA DE APP' GERADA NAS CONFIGURAÇÕES DE SEGURANÇA DO GOOGLE SÓ PARA ENVIOS DE EMAIL PELO FLASK
+app.config['MAIL_DEFAULT_SENDER'] = 'Grupo Alpha - API <ads.2sem.2022@gmail.com>'
+app.config['MAIL_USERNAME'] = 'ads.2sem.2022@gmail.com'
+app.config['MAIL_PASSWORD'] = 'szlfrwtumwhlwwrm' # ESSA É UMA 'SENHA DE APP' GERADA NAS CONFIGURAÇÕES DE SEGURANÇA DO GOOGLE SÓ PARA ENVIOS DE EMAIL PELO FLASK
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-email = Mail(app)
+email = Mail(app) """
 
 tempFilename = '' # Caminho do arquivo da solicitação atual
 tempEvent = False # Se a solicitação atual tiver um arquivo, essa terá o valor 'True' e com ela a função create_request anexará o arquivo
@@ -69,7 +69,8 @@ def create_request():
         description = request.form.get('description')
 
         if not name and not mail and not floor and not room and not pc and not subject and not description:
-            return ('', 204)
+            print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',name,mail,floor,room,pc,subject, description)
+            """ return ('', 204) """
         else:                        
             ## Envia um e-mail de notificação para o usuário
             """ msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
@@ -130,7 +131,7 @@ def create_request():
                 tempEvent = False """
 
             """ email.send(msg) """   
-
+            print('//////////////////////////////////////////////',name,mail,floor,room,pc,subject, description)
             ## Faz o registro da solicitação no banco de dados
             conn = get_db_connection()
             conn.execute('INSERT INTO issue_history (names, mails, floors, rooms, pcs, subjects, descriptions) VALUES (?, ?, ?, ?, ?, ?, ?)',

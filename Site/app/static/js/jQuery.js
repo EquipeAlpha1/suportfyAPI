@@ -12,29 +12,22 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- ESSE SCRIPT IMPEDE O F
 
     if (btn == 'SendMail') {
         e.preventDefault(); /* ESSA FUNÇÃO EVITA DE RECARREGAR A PÁGINA */
-
         var nFile = document.getElementById('formFile').files.length;
 
         if (nFile > 0) {
-
             var form_data = new FormData();           
             form_data.append('file', document.getElementById('formFile').files[0]); 
 
             $.ajax ({
-
                 type:'POST',
                 url:'/upload_file', /* URL para rota flask */
                 data: form_data,
                 contentType: false,
                 cache: false,
-                processData: false
-                
+                processData: false                
             });
-
-        }
-
+        };
         $.ajax ({
-
             type:'POST',
             url:'/create_request', /* URL para rota flask */
             data: { /* A função 'def home()' no Flask vai puxar os dados desse 'dicionário' */
@@ -46,9 +39,7 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- ESSE SCRIPT IMPEDE O F
                 subject : c3_assunto,
                 description : c3_texto
             }
-
         });
-
         if (c1_name && c1_email && c1_floor && c1_room && c2_pc && c3_assunto && c3_texto) {      
             $('#formEmail')[0].reset(); /* Reseta o formulário para não enviar e-mail atoa */
         };
