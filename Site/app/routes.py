@@ -12,7 +12,6 @@ from flask_mail import Message
 import os
 from werkzeug.utils import secure_filename
 
-
 UPLOAD_FOLDER = 'app/static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -70,7 +69,7 @@ def create_request():
         description = request.form.get('description')
 
         if not name and not mail and not floor and not room and not pc and not subject and not description:
-            flash('Um ou mais campos não foram preenchidos!')
+            return ('', 204)
         else:                        
             ## Envia um e-mail de notificação para o usuário
             """ msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
