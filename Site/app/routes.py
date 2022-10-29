@@ -160,9 +160,9 @@ def delete_request(id):
 def about_us():
     return render_template('about_us.html') """
 
-""" @app.route('/faq', methods=['GET','POST'])
+@app.route('/faq')
 def faq():
-    return render_template('faq.html') """
+    return render_template('faq.html')
 
 @app.route('/upload_file', methods=('POST',))
 def upload_file():

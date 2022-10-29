@@ -18,22 +18,6 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
 
         e.preventDefault(); /* Essa função evita de recarregar a página no evento 'Submit' */
 
-        $.ajax ({
-
-            type:'POST',
-            url:'/create_request', /* URL para rota flask */
-            data: { /* Dicionário com os dados do formulário para o Flask registrar */
-                name : c1_name,
-                mail : c1_email,
-                floor : c1_floor,
-                room : c1_room,
-                pc : c2_pc,
-                subject : c3_assunto,
-                description : c3_texto
-            }
-
-        });
-
         var nFile = document.getElementById('formFile').files.length; /* Salva o número de arquivos anexados ao formulário */
 
         if (nFile > 0) { /* Verifica se foi inserido pelo menos um arquivo na solicitação */
@@ -53,6 +37,22 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
             });
 
         };
+
+        $.ajax ({
+
+            type:'POST',
+            url:'/create_request', /* URL para rota flask */
+            data: { /* Dicionário com os dados do formulário para o Flask registrar */
+                name : c1_name,
+                mail : c1_email,
+                floor : c1_floor,
+                room : c1_room,
+                pc : c2_pc,
+                subject : c3_assunto,
+                description : c3_texto
+            }
+
+        });
 
         $('#formEmail')[0].reset(); /* Reseta os dados inseridos no formulário */
     };
