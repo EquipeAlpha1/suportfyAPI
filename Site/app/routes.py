@@ -26,8 +26,8 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 email = Mail(app)
 
-tempFilename
-tempEvent
+tempFilename # Caminho do arquivo da solicitação atual
+tempEvent # Se a solicitação atual tiver um arquivo, essa terá o valor 'True' e com ela a função create_request anexará o arquivo
 
 @app.route('/')
 @app.route('/home')
