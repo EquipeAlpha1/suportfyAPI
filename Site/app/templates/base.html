@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../static/css/styles.css">        
         <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
         <title>{% block title %} {% endblock %} - Suporte Alpha</title>  
+        <!-- JavaScript Bundle with Popper -->
     </head>
     <body>
         <header>
@@ -17,7 +18,13 @@
                     <li><a href="home">Home</a></li>
                     <li><a href="create_request">Abrir Solicitação</a></li>
                     <li><a href="consult_requests">Histórico de Solicitações</a></li>
-                    <li><a href="#">FAQ's</a></li>
+                    <li><a href="faq">FAQ's</a></li>
+                    {% if not session %}
+                        <li><a href="sign_in">Entrar</a></li>
+                    {% else %}
+                        <li><a href="edit_layout">Editar</a></li>
+                        <li><a href="sign_out">Sair</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </header>  
