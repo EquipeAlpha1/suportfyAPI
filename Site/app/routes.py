@@ -40,10 +40,10 @@ def sign_in():
         email = request.form.get('mailTec')
         password = request.form.get('passwordTec')
         if not email:
-            flash('O campo de e-mail está em branco!')
+            flash('O e-mail não foi inserido!')
             return redirect(url_for('sign_in'))
         elif not password:
-            flash('O campo de senha está em branco!')
+            flash('A senha não foi inserida!')
             return redirect(url_for('sign_in'))
         else:
             ## Verifica se existe o usuário no banco de dados
@@ -64,7 +64,7 @@ def sign_in():
                 return redirect(url_for('home'))
     return render_template('sign_in.html')
 
-@app.route('/sign_out', methods=('POST',))
+@app.route('/sign_out')
 def sign_out():
     session.clear()
     return redirect(url_for('home'))
