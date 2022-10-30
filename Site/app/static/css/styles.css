@@ -357,24 +357,6 @@ textarea {
   padding: 10px;
 }
 
-/* Customização do botão */
-.common_btns button.btn_back {  
-  background: #97BEC2;
-}
-
-/* Customização do botão */
-.common_btns button.btn_next,
-.common_btns button.btn_done {  
-  background: #b5e4e8;
-}
-
-/* Cor ao selecionar botão */
-.common_btns button.btn_next:hover,
-.common_btns button.btn_back:hover,
-.common_btns button.btn_done:hover {
-  background: #708688;
-}
-
 /* Customização imagem home */
 .img_home {
   height: 100%;
