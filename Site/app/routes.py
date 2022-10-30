@@ -1,3 +1,4 @@
+from re import X
 import sqlite3
 from app import app
 from flask import Flask
@@ -45,22 +46,27 @@ def sign_in():
             flash('Senha inválida!')
             return redirect(url_for('sign_in'))
         else:
-            return 'OK'
             ## Verifica se já existe o usuário no banco de dados
             conn = get_db_connection()
-            user = conn.execute('SELECT emails,passwords FROM users_data WHERE emails={} and passwords={}'.format(email,password)).fetchone()
+            user = conn.execute("SELECT names,emails,passwords FROM users_data WHERE emails='"+email+"' and passwords='"+password+"'").fetchone()
             conn.close()
 
-            if not len(user['emails']):
-                flash("Usuário não cadastrado!")
-                return redirect(url_for('sign_in'))
-            elif not len(user['password']):
-                flash("Senha incorreta!")
-                return redirect(url_for('sign_in'))
+            if not user:
+                return "Usuário não cadastrado!"
+            elif not user['emails']:
+                return "E-mail não cadastrado!"
+            elif not user['passwords']:
+                return "Senha incorreta!"
             else:
-                flash('Bem-vindo(a) {}!'.format(user['names']))
-                return render_template("edit_layout.html")
+                print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',len(user), user['names'],user['emails'], user['passwords'])
+                """ flash('Bem-vindo(a) {}!'.format(user['names'])) """
+                return render_template("home.html")
     return render_template('sign_in.html')
+
+@app.route('/sign_out', methods=('POST',))
+def sign_out():
+    
+    return
 
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():

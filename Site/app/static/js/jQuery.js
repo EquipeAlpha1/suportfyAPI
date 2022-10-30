@@ -20,7 +20,7 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
 
         var nFile = document.getElementById('formFile').files.length; /* Salva o número de arquivos anexados ao formulário */
 
-        if (nFile > 0) { /* Verifica se foi inserido pelo menos um arquivo na solicitação */
+        if (nFile > 0) { /* Verifica se foi inserido pelo menos um arquivo no formulário */
                 
             var form_data = new FormData();           
             form_data.append('file', document.getElementById('formFile').files[0]); /* Anexa o arquivo ao objeto FormData */
@@ -29,7 +29,7 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
 
                 type:'POST',
                 url:'/upload_file', /* URL para rota flask */
-                data: form_data, /* Objeto com o arquivo do formulário para o Flask fazer o upload */
+                data: form_data, /* Passa o objeto com o arquivo do formulário para o Flask fazer o upload */
                 contentType: false,
                 cache: false,
                 processData: false  
@@ -42,7 +42,7 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
 
             type:'POST',
             url:'/create_request', /* URL para rota flask */
-            data: { /* Dicionário com os dados do formulário para o Flask registrar */
+            data: { /* Passa um dicionário com os dados do formulário para o Flask registrar */
                 name : c1_name,
                 mail : c1_email,
                 floor : c1_floor,

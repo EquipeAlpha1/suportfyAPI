@@ -20,3 +20,11 @@ CREATE TABLE issue_history (
     subjects TEXT NOT NULL,
     descriptions TEXT NOT NULL
 );
+
+/* DROP TABLE IF EXISTS login;
+
+CREATE TABLE login (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email text not null,
+    password text not null
+); */
