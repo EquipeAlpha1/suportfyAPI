@@ -1,11 +1,11 @@
-DROP TABLE IF EXISTS users_data;
+DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS issue_history;
 
-CREATE TABLE users_data (
+CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     created DATE DEFAULT (datetime('now','localtime')),
     names TEXT NOT NULL,
-    emails TEXT NOT NULL,
+    emails TEXT NOT NULL UNIQUE,
     passwords TEXT NOT NULL
 );
 
@@ -20,11 +20,3 @@ CREATE TABLE issue_history (
     subjects TEXT NOT NULL,
     descriptions TEXT NOT NULL
 );
-
-/* DROP TABLE IF EXISTS login;
-
-CREATE TABLE login (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    email text not null,
-    password text not null
-); */

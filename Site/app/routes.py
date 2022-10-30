@@ -1,9 +1,9 @@
-from re import X
 import sqlite3
 from app import app
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import session #############
 from flask import url_for
 from flask import flash
 from flask import redirect
@@ -30,7 +30,7 @@ tempFilename = '' # Caminho do arquivo da solicitação atual
 tempEvent = False # Se a solicitação atual tiver um arquivo, essa terá o valor 'True' e com ela a função create_request anexará o arquivo
 
 @app.route('/')
-@app.route('/home')
+@app.route('/home') ###
 def home():
     return render_template('home.html')
 
@@ -40,35 +40,36 @@ def sign_in():
         email = request.form.get('mailTec')
         password = request.form.get('passwordTec')
         if not email:
-            flash('E-mail inválido!')
+            flash('O campo de e-mail está em branco!')
             return redirect(url_for('sign_in'))
         elif not password:
-            flash('Senha inválida!')
+            flash('O campo de senha está em branco!')
             return redirect(url_for('sign_in'))
         else:
-            ## Verifica se já existe o usuário no banco de dados
+            ## Verifica se existe o usuário no banco de dados
             conn = get_db_connection()
-            user = conn.execute("SELECT names,emails,passwords FROM users_data WHERE emails='"+email+"' and passwords='"+password+"'").fetchone()
+            user = conn.execute('SELECT names,emails,passwords FROM users WHERE emails = ?', (email,)).fetchone()
             conn.close()
 
             if not user:
-                return "Usuário não cadastrado!"
-            elif not user['emails']:
-                return "E-mail não cadastrado!"
-            elif not user['passwords']:
-                return "Senha incorreta!"
+                flash("Usuário não cadastrado!")
+                return redirect(url_for('sign_in'))
+            elif not user['passwords'] == password:
+                flash("Senha incorreta!")
+                return redirect(url_for('sign_in'))
             else:
-                print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',len(user), user['names'],user['emails'], user['passwords'])
+                session['name'] = user['names']
+                session['email'] = user['emails']
                 """ flash('Bem-vindo(a) {}!'.format(user['names'])) """
-                return render_template("home.html")
+                return redirect(url_for('home'))
     return render_template('sign_in.html')
 
 @app.route('/sign_out', methods=('POST',))
 def sign_out():
-    
-    return
+    session.clear()
+    return redirect(url_for('home'))
 
-@app.route('/create_request', methods=['GET','POST'])
+@app.route('/create_request', methods=['GET','POST']) ###
 def create_request():
     if request.method == 'POST':
         name = request.form.get('name')
@@ -150,7 +151,7 @@ def create_request():
             
     return render_template('create_request.html')
 
-@app.route('/consult_requests', methods=['GET','POST'])
+@app.route('/consult_requests', methods=['GET','POST']) ###
 def consult_requests():
     conn = get_db_connection()
     issue_history = conn.execute('SELECT * FROM issue_history').fetchall()
@@ -170,7 +171,7 @@ def delete_request(id):
 def about_us():
     return render_template('about_us.html') """
 
-@app.route('/faq')
+@app.route('/faq') ###
 def faq():
     return render_template('faq.html')
 
@@ -190,6 +191,10 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS 
+
 """ def get_issue(issue_id):
     conn = get_db_connection()
     issue = conn.execute('SELECT * FROM issue_history WHERE id = ?',
@@ -201,13 +206,9 @@ def get_db_connection():
 
 """ def get_user(user_id):
     conn = get_db_connection()
-    user = conn.execute('SELECT * FROM users_data WHERE id = ?',
+    user = conn.execute('SELECT * FROM users WHERE id = ?',
                         (user_id,)).fetchone()
     conn.close()
     if user is None:
         abort(404)
     return user """
-
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS 

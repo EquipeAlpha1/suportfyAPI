@@ -19,7 +19,12 @@
                     <li><a href="create_request">Abrir Solicitação</a></li>
                     <li><a href="consult_requests">Histórico de Solicitações</a></li>
                     <li><a href="faq">FAQ's</a></li>
-                    <li><a href="sign_in">Login</a></li>
+                    {% if not session %}
+                    <li><a href="sign_in">Entrar</a></li>
+                    {% else %}
+                    <li><a href="edit_layout">Editar</a></li>
+                    <li><a href="sign_out">Sair</a></li>
+                    {% end if %}
                 </ul>
             </nav>
         </header>  
