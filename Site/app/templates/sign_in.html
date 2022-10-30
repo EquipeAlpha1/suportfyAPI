@@ -1,32 +1,65 @@
-{% extends 'base.html' %}
-{% block title %} Entrar {% endblock %}
-{% block conteudo %}
-        <section class="sectionSignIn">
-          <main class="form-signin w-100 m-auto">
-            <form method="post" action="/sign_in">
-              <img class="mb-4" src="../static/img/logo.png" alt="" width="50" height="auto">
-              <h1 class="h3 mb-3 fw-normal">Conecte-se</h1>          
-              <div class="form-floating">
-                <input type="email" class="form-control" name="mailTec" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-                  </svg>  Endereço de e-mail</label>
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">     
+        <link rel="stylesheet" href="../static/css/styles_login.css">        
+        <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
+        <title>Login - Suporte Alpha</title>          
+    </head>
+    <body class="bodyLogin">
+        <section class="vh-100" style="background-color: #dbdbdb;">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">                
+                <div class="col col-xl-10">
+                  <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                      <div class="col-md-6 col-lg-5 d-none d-md-block">
+                        <img src="../static/img/rm373-17.webp"
+                          alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                      </div>
+                      <div class="col-md-6 col-lg-7 d-flex align-items-center text-center m-auto">
+                        <main class="form-signin w-100 m-auto">
+                            <form method="post" action="/sign_in">
+                              <img class="mb-4" src="../static/img/logo.png" alt="" width="50" height="auto">
+                              <h1 class="h3 mb-3 fw-normal">Conecte-se</h1>
+                          
+                              <div class="form-floating">
+                                <input type="email" class="form-control" name="mailTec" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                                  </svg>  Endereço de e-mail</label>
+                              </div>
+                              <div class="form-floating">
+                                <input type="password" class="form-control" name="passwordTec" id="floatingPassword" placeholder="Password">
+                                <label for="floatingPassword"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
+                                    <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
+                                    <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                  </svg>  Senha</label>
+                              </div>
+                          
+                              <div class="checkbox mb-3">
+                                <label>
+                                  <input type="checkbox" value="remember-me"> Lembre de mim
+                                </label>
+                              </div>
+                              <button class="w-100 btn btn-lg btn-primary" type="submit">Conectar</button>
+                              <p class="mt-5 mb-3 text-muted">&copy; Grupo Alpha</p>
+                            </form>
+                        </main>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% for message in get_flashed_messages() %}
+                  <div class="alert alert-danger alertDeleteRequest" role="alert">
+                      {{ message }}
+                  </div>
+                {% endfor %}  
               </div>
-              <div class="form-floating">
-                <input type="password" class="form-control" name="passwordTec" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
-                    <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
-                    <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                  </svg>  Senha</label>
-              </div>          
-              <div class="checkbox mb-3">
-                <label>
-                  <input type="checkbox" value="remember-me"> Lembre de mim
-                </label>
-              </div>
-              <button class="w-100 btn btn-lg btn-primary" type="submit">Conectar</button>
-              <p class="mt-5 mb-3 text-muted">&copy; Grupo Alpha</p>
-            </form>
-          </main>
+            </div>
         </section>
-{% endblock %}
+    </body>
+</html>

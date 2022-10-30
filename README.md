@@ -10,12 +10,7 @@
 
 
 
-* Rafael Silva de Oliveira (Scrum Master)
-#### [Linked](https://www.linkedin.com/in/rafael-silva-519b07192/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/rafaelsilvva)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
-
-
-
-* Gustavo Comparotto Minamisako (Dev Team)
+* Gustavo Comparotto Minamisako (Scrum Master)
 
 #### [Linked](https://www.linkedin.com/in/gustavo-comparotto-minamisako-73a98b250/)![logo-linkedin-1](https://user-images.githubusercontent.com/111616660/190717125-207d0f20-03ef-41db-92c3-c5cb2656669e.jpg) [Github](https://github.com/guscomparotto)![logo-github-1](https://user-images.githubusercontent.com/111616660/190719341-f501098e-ce0b-45c1-b17a-7cde552df02e.png)
 
