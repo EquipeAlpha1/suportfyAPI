@@ -1,4 +1,4 @@
-/* STEPS */
+// /* STEPS */
 var form_2_progressbar = document.querySelector(".form_2_progressbar");
 var form_3_progressbar = document.querySelector(".form_3_progressbar");
 var form_4_progressbar = document.querySelector(".form_4_progressbar");
@@ -88,7 +88,7 @@ form_1_next_btn.addEventListener("click", function() {
 	/* if (!name || !email || !floorz || !roomz) {
 		alert("ERRO: Você não preencheu os dados necessários!");
 		return; 
-	} */
+	}
 	
 
 	/* 
