@@ -68,6 +68,12 @@ def sign_out():
     session.clear()
     return redirect(url_for('home'))
 
+@app.route('/edit_layout')
+def edit_layout():
+    if not session:
+        return 'ERRO: Você não tem autorização!'
+    return render_template('edit_layout.html')
+
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
     if request.method == 'POST':
