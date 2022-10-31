@@ -168,16 +168,17 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 200px;
+  height: 110px;
   padding: 0px 20px;
 }
 
 .logoFooter {
   height: 50%;
   width: auto;
+  margin-left: 18%;
 }
 
-.divFooter h4 {
+.divFooter {
   color: white;
 }
 
@@ -187,8 +188,15 @@ footer {
   color: white;
 }
 
-.linksFooter a:hover {
-  color: white;
+.linksFooter {
+  margin-right: 5%;
+}
+
+.nav-item2 {
+  display: inline-block;
+  text-decoration: none;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 /* Posicionamento steps */
