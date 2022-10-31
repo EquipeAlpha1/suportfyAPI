@@ -426,49 +426,85 @@
             <div class="info_layout">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Info</button>
+                      <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="info" aria-selected="true">Infos</button>
+                    </li> 
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="add-tab" data-bs-toggle="tab" data-bs-target="#add" type="button" role="tab" aria-controls="add" aria-selected="false">Add</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Add</button>
+                      <button class="nav-link" id="edit-tab" data-bs-toggle="tab" data-bs-target="#edit" type="button" role="tab" aria-controls="edit" aria-selected="false">Editar</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Edit</button>
+                        <button class="nav-link" id="delete-tab" data-bs-toggle="tab" data-bs-target="#delete" type="button" role="tab" aria-controls="delete" aria-selected="false">Deletar</button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Delete</button>
-                    </li>
-                  </ul>
-                  <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        
-                       <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Launch demo modal
-                        </button>
-                        
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                ...
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+                        <div class="info_slot monitor"> <!-- MONITOR -->        
+                            <label for="monitor" class="form-label">Monitor: <span class="requiredField">*</span></label>
+                            <input class="form-control" placeholder="Vazio" id="monitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
+                        </div> 
+                        <div class="info_slot computador"> <!-- COMPUTADOR -->        
+                            <label for="computador" class="form-label">Computador: <span class="requiredField">*</span></label>
+                            <input class="form-control" placeholder="Vazio" id="computador"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
+                        </div> 
+                        <div class="info_slot teclado"> <!-- TECLADO -->        
+                            <label for="teclado" class="form-label">Teclado: <span class="requiredField">*</span></label>
+                            <input class="form-control" placeholder="Vazio" id="teclado"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
+                        </div> 
+                        <div class="info_slot mouse"> <!-- MOUSE -->        
+                            <label for="mouse" class="form-label">Mouse: <span class="requiredField">*</span></label>
+                            <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
+                        </div> 
                     </div>
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                  </div>
+                    <div class="tab-pane fade" id="add" role="tabpanel" aria-labelledby="add-tab">
+                        <form action="/add_slot" method="post">
+                            <div class="add_slot monitor"> <!-- MONITOR -->
+                                <label for="monitor" class="form-label">Monitor: <span class="requiredField">*</span></label>
+                                <input class="form-control" placeholder="Vazio" id="monitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
+                            </div>
+                            <div class="add_slot computador"> <!-- COMPUTADOR -->
+                                <label for="computador" class="form-label">Computador: <span class="requiredField">*</span></label>
+                                <input class="form-control" placeholder="Vazio" id="computador"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
+                            </div>
+                            <div class="add_slot teclado"> <!-- TECLADO -->
+                                <label for="teclado" class="form-label">Teclado: <span class="requiredField">*</span></label>
+                                <input class="form-control" placeholder="Vazio" id="teclado"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
+                            </div>
+                            <div class="add_slot mouse"> <!-- MOUSE -->
+                                <label for="mouse" class="form-label">Mouse: <span class="requiredField">*</span></label>
+                                <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-lg">Adicionar</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="edit-tab">
+
+                    </div>
+                    <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="delete-tab">
+                        <form action="/delete_slot" method="post">
+                            <div class="delete_slot monitor"> <!-- MONITOR -->
+                                <label for="monitor" class="form-label">Monitor: <span class="requiredField">*</span></label>
+                                <input class="form-control" placeholder="Vazio" id="monitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
+                            </div>
+                            <div class="delete_slot computador"> <!-- COMPUTADOR -->
+                                <label for="computador" class="form-label">Computador: <span class="requiredField">*</span></label>
+                                <input class="form-control" placeholder="Vazio" id="computador"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
+                            </div>
+                            <div class="delete_slot teclado"> <!-- TECLADO -->
+                                <label for="teclado" class="form-label">Teclado: <span class="requiredField">*</span></label>
+                                <input class="form-control" placeholder="Vazio" id="teclado"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
+                            </div>
+                            <div class="delete_slot mouse"> <!-- MOUSE -->
+                                <label for="mouse" class="form-label">Mouse: <span class="requiredField">*</span></label>
+                                <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-lg">Deletar</button>
+                        </form>
+                    </div>
+                </div>
 
             </div>
         </section>
