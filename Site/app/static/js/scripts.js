@@ -176,3 +176,10 @@ form_3_next_btn.addEventListener("click", function() {
 
 	form_4_progressbar.classList.add("active");
 });
+
+var myModal = document.getElementById('exampleModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
