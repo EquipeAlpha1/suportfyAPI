@@ -1,4 +1,4 @@
-/* STEPS */
+// /* STEPS */
 var form_2_progressbar = document.querySelector(".form_2_progressbar");
 var form_3_progressbar = document.querySelector(".form_3_progressbar");
 var form_4_progressbar = document.querySelector(".form_4_progressbar");
@@ -92,7 +92,7 @@ form_1_next_btn.addEventListener("click", function() {
 	const floorz = document.getElementById("c1_floor").value;
 	const roomz = document.getElementById("c1_room").value;
 
-	if (!name || !email || !floorz || !roomz) {
+	/* if (!name || !email || !floorz || !roomz) {
 		alert("ERRO: Você não preencheu os dados necessários!");
 		return;  ## BLOQUEIA O RESTO DO SCRIPT ##
 	} */
@@ -131,9 +131,9 @@ form_2_next_btn.addEventListener("click", function() {
 			pcChecked = true;
 			return; ## SAI DO LOOP ##
 		}
-	});
+	}); */
 
-	if (!pcChecked) {
+	/* if (!pcChecked) {
 		alert("ERRO: Você não escolheu o computador!");
 		return; ## BLOQUEIA O RESTO DO SCRIPT ##
 	} */
@@ -163,7 +163,7 @@ form_3_next_btn.addEventListener("click", function() {
 	/* const subject = document.getElementById("c3_assunto").value;
 	const description = document.getElementById("c3_texto").value;
 	
-	if (!subject || !description) {
+	/* if (!subject || !description) {
 		alert("ERRO: Você não preencheu os dados necessários!");
 		return; ## BLOQUEIA O RESTO DO SCRIPT ##
 	} */
@@ -177,9 +177,13 @@ form_3_next_btn.addEventListener("click", function() {
 	form_4_progressbar.classList.add("active");
 });
 
-var myModal = document.getElementById('exampleModal')
-var myInput = document.getElementById('myInput')
+// Menu mobile
 
-myModal.addEventListener('shown.bs.modal', function () {
-  myInput.focus()
-})
+const btnMobile = document.getElementById('btn-mobile')
+
+function toggleMenu() {
+	const nav = document.getElementById('nav');
+	nav.classList.toggle('active');
+}
+
+btnMobile.addEventListener('click', toggleMenu);
