@@ -15,7 +15,7 @@
               <div class="row d-flex justify-content-center align-items-center h-100 text-center">          
                 <main class="form-signin w-100 m-auto" style="border-radius: 1rem; background: white; border: 1px solid lightgray;">
                   <form method="post" action="/sign_in">
-                    <img class="mb-4" src="../static/img/logo.png" alt="" width="50" height="auto">
+                    <a href="home"><img class="mb-4" src="../static/img/logo.png" alt="" width="50" height="auto"></a>
                     <h1 class="h3 mb-3 fw-normal">Conecte-se</h1>                    
                     <div class="form-floating">
                       <input type="email" class="form-control" name="mailTec" id="floatingInput" placeholder="name@example.com">
@@ -40,8 +40,8 @@
                   </form>
                 </main>
                 {% for message in get_flashed_messages() %}
-                  <div class="alert alert-danger alertDeleteRequest" role="alert">
-                      {{ message }}
+                  <div class="alert alert-danger" style="top: 100px; position: absolute; width: auto;" role="alert">
+                    {{ message }}
                   </div>
                 {% endfor %}  
               </div>

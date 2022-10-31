@@ -3,7 +3,7 @@ from app import app
 from flask import Flask
 from flask import render_template
 from flask import request
-from flask import session #############
+from flask import session
 from flask import url_for
 from flask import flash
 from flask import redirect
@@ -30,7 +30,7 @@ tempFilename = '' # Caminho do arquivo da solicitação atual
 tempEvent = False # Se a solicitação atual tiver um arquivo, essa terá o valor 'True' e com ela a função create_request anexará o arquivo
 
 @app.route('/')
-@app.route('/home') ###
+@app.route('/home')
 def home():
     return render_template('home.html')
 
@@ -60,7 +60,6 @@ def sign_in():
             else:
                 session['name'] = user['names']
                 session['email'] = user['emails']
-                """ flash('Bem-vindo(a) {}!'.format(user['names'])) """
                 return redirect(url_for('home'))
     return render_template('sign_in.html')
 
@@ -69,7 +68,7 @@ def sign_out():
     session.clear()
     return redirect(url_for('home'))
 
-@app.route('/create_request', methods=['GET','POST']) ###
+@app.route('/create_request', methods=['GET','POST'])
 def create_request():
     if request.method == 'POST':
         name = request.form.get('name')
@@ -82,76 +81,76 @@ def create_request():
 
         if not name and not mail and not floor and not room and not pc and not subject and not description:
             return redirect(url_for('create_request'))
-        else:                        
-            ## Envia um e-mail de notificação para o usuário
-            """ msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
-            msg.html = "<!DOCTYPE html><html><body>" \
-                        "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
-                        "Fala {}, Beleza?<br /><br />" \
-                        "Seu pedido de suporte foi registrado! E gostaríamos de parabenizá-lo por promover um ambiente FATEC melhor!<br />" \
-                        "O suporte FATEC costuma resolver os problemas em até 3 dias úteis. E até lá, pedimos paciência.<br />" \
-                        "Inclusive, segue abaixo as informações do registro do pedido de suporte realizado:<br /><br />" \
-                        "         Piso: {}<br />" \
-                        "         Sala: {}<br />" \
-                        "   Computador: {}<br />" \
-                        "      Assunto: {}<br />" \
-                        "    Descrição: {}<br /><br />" \
-                        "Atenciosamente,<br />" \
-                        "GRUPO ALPHA" \
-                        "<br /><br />" \
-                        "<table style='border-top:1px solid #dddddd;border-collapse:collapse' cellpadding='0' cellspacing='0' width='100%'>" \
-                        "<td style='line-height:12px;color:#808080;font-size:10px'>" \
-                        "<b>Este é um e-mail de notificação e foi gerado automaticamente. Por favor, não responda esta mensagem!</b><br />" \
-                        "O Grupo Alpha respeita a sua privacidade e é contra o spam na rede.<br />" \
-                        "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [{}] porque este e-mail foi usado para abrir um chamado de suporte na FATEC - SJC.</a><br />" \
-                        "Se você não deseja mais receber esse tipo de e-mail, clique " \
-                        "<a href='https://www.rataalada.com/' style='color: rgb(71, 124, 204); text-decoration: none; display: inline;'>aqui</a>." \
-                        "</table></div></body></html>".format(name, floor, room, pc, subject, description, mail)
-
-            email.send(msg) """
-
-            ## Envia um e-mail de notificação para a equipe de suporte
-            """ msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['luisebf01@gmail.com'])
-            msg.html = "<!DOCTYPE html><html><body>" \
+                               
+        ## Envia um e-mail de notificação para o usuário
+        """ msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
+        msg.html = "<!DOCTYPE html><html><body>" \
                     "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
-                        "Fala Suporte Alpha, Beleza?<br /><br />" \
-                        "Acabaram de abrir uma solicitação de suporte, e as informações seguem abaixo:<br />" \
-                        "  Solicitante: {}<br />" \
-                        "       E-mail: {}<br />" \
-                        "         Piso: {}<br />" \
-                        "         Sala: {}<br />" \
-                        "   Computador: {}<br />" \
-                        "      Assunto: {}<br />" \
-                        "    Descrição: {}<br /><br />" \
-                        "Atenciosamente,<br />" \
-                        "GRUPO ALPHA" \
-                        "<br /><br />" \
-                        "<table style='border-top:1px solid #dddddd;border-collapse:collapse' cellpadding='0' cellspacing='0' width='100%'>" \
-                        "<td style='line-height:12px;color:#808080;font-size:10px'>" \
-                        "<b>Este é um e-mail de notificação e foi gerado automaticamente. Por favor, não responda esta mensagem!</b><br />" \
-                        "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [api.ads.2022@gmail.com] porque este e-mail foi registrado para a equipe de suporte na FATEC - SJC.</a><br />" \
-                        "</table></div></body></html>".format(name, mail, floor, room, pc, subject, description) """
-            
-            ## Se houver uma imagem na solicitação, faz o upload do arquivo e anexa no e-mail para a equipe de suporte
-            """ global tempFilename, tempEvent
-            if tempEvent:
-                extension = tempFilename.rsplit('.', 1)[1].lower()
-                with app.open_resource(UPLOAD_FOLDER, tempFilename, mode='rt') as fp:
-                    msg.attach("Image."+extension, "image/"+extension, fp.read())                
-                tempFilename = ''
-                tempEvent = False """
+                    "Fala {}, Beleza?<br /><br />" \
+                    "Seu pedido de suporte foi registrado! E gostaríamos de parabenizá-lo por promover um ambiente FATEC melhor!<br />" \
+                    "O suporte FATEC costuma resolver os problemas em até 3 dias úteis. E até lá, pedimos paciência.<br />" \
+                    "Inclusive, segue abaixo as informações do registro do pedido de suporte realizado:<br /><br />" \
+                    "         Piso: {}<br />" \
+                    "         Sala: {}<br />" \
+                    "   Computador: {}<br />" \
+                    "      Assunto: {}<br />" \
+                    "    Descrição: {}<br /><br />" \
+                    "Atenciosamente,<br />" \
+                    "GRUPO ALPHA" \
+                    "<br /><br />" \
+                    "<table style='border-top:1px solid #dddddd;border-collapse:collapse' cellpadding='0' cellspacing='0' width='100%'>" \
+                    "<td style='line-height:12px;color:#808080;font-size:10px'>" \
+                    "<b>Este é um e-mail de notificação e foi gerado automaticamente. Por favor, não responda esta mensagem!</b><br />" \
+                    "O Grupo Alpha respeita a sua privacidade e é contra o spam na rede.<br />" \
+                    "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [{}] porque este e-mail foi usado para abrir um chamado de suporte na FATEC - SJC.</a><br />" \
+                    "Se você não deseja mais receber esse tipo de e-mail, clique " \
+                    "<a href='https://www.rataalada.com/' style='color: rgb(71, 124, 204); text-decoration: none; display: inline;'>aqui</a>." \
+                    "</table></div></body></html>".format(name, floor, room, pc, subject, description, mail)
 
-            """ email.send(msg) """   
-            ## Faz o registro da solicitação no banco de dados
-            conn = get_db_connection()
-            conn.execute('INSERT INTO issue_history (names, mails, floors, rooms, pcs, subjects, descriptions) VALUES (?, ?, ?, ?, ?, ?, ?)',
-                            (name, mail, floor, room, pc, subject, description))
-            conn.commit()
-            conn.close()
+        email.send(msg) """
+
+        ## Envia um e-mail de notificação para a equipe de suporte
+        """ msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['luisebf01@gmail.com'])
+        msg.html = "<!DOCTYPE html><html><body>" \
+                "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
+                    "Fala Suporte Alpha, Beleza?<br /><br />" \
+                    "Acabaram de abrir uma solicitação de suporte, e as informações seguem abaixo:<br />" \
+                    "  Solicitante: {}<br />" \
+                    "       E-mail: {}<br />" \
+                    "         Piso: {}<br />" \
+                    "         Sala: {}<br />" \
+                    "   Computador: {}<br />" \
+                    "      Assunto: {}<br />" \
+                    "    Descrição: {}<br /><br />" \
+                    "Atenciosamente,<br />" \
+                    "GRUPO ALPHA" \
+                    "<br /><br />" \
+                    "<table style='border-top:1px solid #dddddd;border-collapse:collapse' cellpadding='0' cellspacing='0' width='100%'>" \
+                    "<td style='line-height:12px;color:#808080;font-size:10px'>" \
+                    "<b>Este é um e-mail de notificação e foi gerado automaticamente. Por favor, não responda esta mensagem!</b><br />" \
+                    "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [api.ads.2022@gmail.com] porque este e-mail foi registrado para a equipe de suporte na FATEC - SJC.</a><br />" \
+                    "</table></div></body></html>".format(name, mail, floor, room, pc, subject, description) """
+        
+        ## Se houver uma imagem na solicitação, faz o upload do arquivo e anexa no e-mail para a equipe de suporte
+        """ global tempFilename, tempEvent
+        if tempEvent:
+            extension = tempFilename.rsplit('.', 1)[1].lower()
+            with app.open_resource(UPLOAD_FOLDER, tempFilename, mode='rt') as fp:
+                msg.attach("Image."+extension, "image/"+extension, fp.read())                
+            tempFilename = ''
+            tempEvent = False """
+
+        """ email.send(msg) """   
+        ## Faz o registro da solicitação no banco de dados
+        conn = get_db_connection()
+        conn.execute('INSERT INTO issue_history (names, mails, floors, rooms, pcs, subjects, descriptions) VALUES (?, ?, ?, ?, ?, ?, ?)',
+                        (name, mail, floor, room, pc, subject, description))
+        conn.commit()
+        conn.close()
             
     return render_template('create_request.html')
 
-@app.route('/consult_requests', methods=['GET','POST']) ###
+@app.route('/consult_requests', methods=['GET','POST'])
 def consult_requests():
     conn = get_db_connection()
     issue_history = conn.execute('SELECT * FROM issue_history').fetchall()
@@ -171,7 +170,7 @@ def delete_request(id):
 def about_us():
     return render_template('about_us.html') """
 
-@app.route('/faq') ###
+@app.route('/faq')
 def faq():
     return render_template('faq.html')
 
