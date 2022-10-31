@@ -38,6 +38,10 @@ def sign_in():
             return redirect(url_for('home'))
     return render_template('sign_in.html')
 
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
 """ @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':

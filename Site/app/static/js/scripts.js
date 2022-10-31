@@ -176,3 +176,8 @@ form_3_next_btn.addEventListener("click", function() {
 
 	form_4_progressbar.classList.add("active");
 });
+
+var myCollapse = document.getElementById('myCollapse')
+var bsCollapse = new bootstrap.Collapse(myCollapse, {
+  toggle: false
+})

@@ -1,7 +1,77 @@
-{% extends 'base.html' %}
-{% block title %} Dúvidas Frequentes {% endblock %}
-{% block conteudo %}
-        <section class="sectionFaq">
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">     
+        <link rel="stylesheet" href="../static/css/styles.css">        
+        <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
+        <title>Central de Ajuda Alpha</title>  
+    </head>
 
-        </section>
-{% endblock %}
+    <body style="background-color: rgb(154, 232, 243);" class="faqbody">
+        <header>
+                <div id="faqlogo">
+                        <a href="home.html" id="faqnav"><img src="../static/img/logo.png" alt="Logo Header" class="logoHeader">FAQ's Alpha</a>
+                </div>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="home">Home</a></li>
+                        <li><a href="create_request">Abrir Solicitação</a></li>
+                        <li><a href="consult_requests">Histórico de Solicitações</a></li>
+                        <li><a href="faq">FAQ's</a></li>
+                    </ul>
+                </nav>
+        </header>
+        
+        <div class="faqcontent">
+            <div id="faqsidebar">
+                    <ul class="list-unstyled ps-0">
+                      <li class="mb-1">
+                        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                          Problemas com a máquina?
+                        </button>
+                        <div class="collapse show" id="home-collapse">
+                          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Updates</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Reports</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="mb-1">
+                        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                          Problemas de Software?
+                        </button>
+                        <div class="collapse" id="dashboard-collapse" style="">
+                          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="mb-1">
+                        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                          Problemas de rede?
+                        </button>
+                        <div class="collapse" id="orders-collapse">
+                          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Processed</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Shipped</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Returned</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+            </div>
+            <div id="faqsearch">
+                
+            </div>
+        </div>
+    </body>
+</html>
+
