@@ -65,6 +65,23 @@ section {
   width: 70%; /* 70% do body */
 }
 
+.sectionEditLayout { 
+  width: 1040px;
+  display:grid;
+  grid-template-columns:680px 340px;
+  gap: 20px;
+  height: 450px;
+}
+
+.edit_layout{
+  background-color: yellow;
+}
+
+.info_layout{
+  background-color: aqua;
+  border: 1px solid black;
+}
+
 .form_wrapper {
   height: 100%;
   padding: 0;
