@@ -189,8 +189,23 @@ footer {
 }
 
 /* Distanciamento steps */
-.steps_wrapper ul li {
+.form_1_progressbar{
   margin-right: 50px;
+  position: relative;
+}
+
+.form_2_progressbar{
+  margin-right: 50px;
+  position: relative;
+}
+
+.form_3_progressbar{
+  margin-right: 50px;
+  position: relative;
+}
+
+.form_4_progressbar{
+  margin-right: 0px;
   position: relative;
 }
 
@@ -429,7 +444,11 @@ textarea {
 }
 
 @media(max-width: 450px) { 
-  
+
+  header{
+    width: 100%;
+  }
+
   #btn-mobile {
     display: flex;
     padding: .5rem 1rem;
@@ -514,17 +533,23 @@ textarea {
     grid-template-rows: 10% 50% 10%; 
     height: 100%; /* 100% do section */
     width: 100%; /* 70% do section */
-    margin: 0px auto;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
   }
 
   .steps {
     display: flex;
+    justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%; /* 70% do section */
-    margin: 0px auto;
-    padding: 0 0 0 5%;
+  }
+
+  .steps_wrapper{
+    margin: 0px;
+  }
+
+  ul {
+    padding: 0px;
+    margin: 0px;
   }
 
   .roomChoice {
