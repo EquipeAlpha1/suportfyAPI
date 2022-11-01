@@ -182,23 +182,6 @@ footer {
   color: white;
 }
 
-.linksFooter a {
-  display: block;
-  text-decoration: none;
-  color: white;
-}
-
-.linksFooter {
-  margin-right: 5%;
-}
-
-.nav-item2 {
-  display: inline-block;
-  text-decoration: none;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
 /* Posicionamento steps */
 .steps_wrapper {
   height: 40px;
