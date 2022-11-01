@@ -423,3 +423,12 @@ textarea {
 .capa_wrapper {
   height: 100%;
 }
+
+/* faq */
+.sectionFaq{
+  display: flex;
+}
+
+.contentFaq{
+  width: 100%; height: 100%;
+}
