@@ -1,0 +1,4 @@
+
+Site/venv
+Site/database.db
+*.pyc

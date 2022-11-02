@@ -88,7 +88,7 @@ def create_request():
         if not name and not mail and not floor and not room and not pc and not subject and not description:
             return redirect(url_for('create_request'))
                                
-        ## Envia um e-mail de notificação para o usuário
+        """ ## Envia um e-mail de notificação para o usuário
         msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
         msg.html = "<!DOCTYPE html><html><body>" \
                     "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
@@ -147,7 +147,7 @@ def create_request():
             tempFilename = ''
             tempEvent = False
 
-        email.send(msg)        
+        email.send(msg) """        
 
         ## Faz o registro da solicitação no banco de dados
         conn = get_db_connection()
