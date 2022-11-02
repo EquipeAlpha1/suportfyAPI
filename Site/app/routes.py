@@ -113,23 +113,14 @@ def create_request():
                     "<a href='https://www.rataalada.com/' style='color: rgb(71, 124, 204); text-decoration: none; display: inline;'>aqui</a>." \
                     "</table></div></body></html>".format(name, floor, room, pc, subject, description, mail)
 
-        ## Se houver uma imagem na solicitação, faz o upload do arquivo e anexa no e-mail para a equipe de suporte
-        global tempFilename, tempEvent
-        if tempEvent:
-            extension = tempFilename.rsplit('.', 1)[1].lower()             
-            with app.open_resource(os.getcwd().replace('\\', '/')+'/app/static/uploads/'+tempFilename) as fp:
-                msg.attach(tempFilename, "image/"+extension, fp.read())          
-            tempFilename = ''
-            tempEvent = False
-
         email.send(msg)          
 
-        """ ## Envia um e-mail de notificação para a equipe de suporte
+        ## Envia um e-mail de notificação para a equipe de suporte
         msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['luisebf01@gmail.com'])
         msg.html = "<!DOCTYPE html><html><body>" \
                 "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
                     "Fala Suporte Alpha, Beleza?<br /><br />" \
-                    "Acabaram de abrir uma solicitação de suporte, e as informações seguem abaixo:<br />" \
+                    "Acabaram de abrir uma solicitação de suporte, e as informações seguem abaixo:<br /><br />" \
                     "  Solicitante: {}<br />" \
                     "       E-mail: {}<br />" \
                     "         Piso: {}<br />" \
@@ -146,7 +137,17 @@ def create_request():
                     "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [api.ads.2022@gmail.com] porque este e-mail foi registrado para a equipe de suporte na FATEC - SJC.</a><br />" \
                     "</table></div></body></html>".format(name, mail, floor, room, pc, subject, description)
 
-        email.send(msg)    """     
+        ## Se houver uma imagem na solicitação, anexa no e-mail para a equipe de suporte
+        global tempFilename, tempEvent
+        if tempEvent:
+            extension = tempFilename.rsplit('.', 1)[1].lower()
+            filePath = os.getcwd().replace('\\', '/')+'/'+UPLOAD_FOLDER+'/'+tempFilename
+            with app.open_resource(filePath) as fp:
+                msg.attach("Image."+extension, "image/"+extension, fp.read())
+            tempFilename = ''
+            tempEvent = False
+
+        email.send(msg)        
 
         ## Faz o registro da solicitação no banco de dados
         conn = get_db_connection()
