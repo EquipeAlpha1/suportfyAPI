@@ -12,11 +12,11 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
 
     if (btn == 'SendMail') {
         
+        e.preventDefault(); /* Essa função evita de recarregar a página no evento 'Submit' */
+
         if (!c1_name && !c1_email && !c1_floor && !c1_room && !c2_pc && !c3_assunto && !c3_texto) {    
             return; /* Caso falte preencher algum campo do formulário, sai do script */
-        };
-
-        e.preventDefault(); /* Essa função evita de recarregar a página no evento 'Submit' */
+        };        
 
         var nFile = document.getElementById('formFile').files.length; /* Salva o número de arquivos anexados ao formulário */
 
@@ -42,7 +42,7 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
 
             type:'POST',
             url:'/create_request', /* URL para rota flask */
-            data: { /* Passa um dicionário com os dados do formulário para o Flask registrar */
+            data: { /* Passa um dicionário com os dados inseridos no formulário para o Flask registrar */
                 name : c1_name,
                 mail : c1_email,
                 floor : c1_floor,
@@ -56,4 +56,5 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
 
         $('#formEmail')[0].reset(); /* Reseta os dados inseridos no formulário */
     };
+    
 });
