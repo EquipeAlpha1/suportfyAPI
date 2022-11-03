@@ -66,18 +66,16 @@ section {
   display:grid;
   grid-template-columns:680px 340px;
   gap: 20px;
-  height: 450px;
-
-}
-
-.edit_layout{
-background-color: yellow;
-}
-
-.info_layout{
+  height: 550px;
   background-color: aqua;
-  border: 1px solid black;
 }
+
+.sectionEdit_text {
+  background-color: chartreuse;
+  justify-content: center;
+  display: flex;
+}
+
 
 .form_wrapper {
   height: 100%;

@@ -3,7 +3,8 @@
 {% block conteudo %}
         <section class="sectionEditLayout">
             <div class="edit_layout" > <!-- CONTEÚDO DA PÁGINA 2 -->
-                <h4>ESCOLHA A MÁQUINA COM PROBLEMA:</h4>
+                <div class="sectionEdit_text"> <h4>ESCOLHA A MÁQUINA COM PROBLEMA:</h4>
+                </div>
                 <br>
                 <div class="layout_computers"> <!-- LAYOUT DOS COMPUTADORES -->
                     <div class="leftSide"> <!-- COMPUTADORES DO LADO ESQUERDO -->
@@ -480,8 +481,28 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="edit-tab">
-
-                    </div>
+                        <div class="edit_slot">
+                            <div class="config_monitor"> <!--EDITAR MONITOR SLOT -->
+                                <label for="config_monitor" class="form-label">Configuração do Monitor: <span class="requiredField">*</span></label> 
+                                <input class="form-control" list="datalistOptionsMonitor" id="edit_monitor" placeholder="Clique aqui para selecionar" onChange="loadMonitor(this.value)" onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DO MONITOR SLOT -->
+                                    <datalist id="datalistOptionsMonitor"> <!-- LISTA DE OPÇÕES MONITOR -->
+                                        <option value="Monitor 1">
+                                        <option value="Monitor 2">
+                                        <option value="Monitor 3">
+                                    </datalist>
+                            </div>
+                        </div>
+                        <div class="edit_slot">
+                            <div class="config_computador"> <!--EDITAR COMPUTADOR SLOT -->
+                                <label for="config_computadoror" class="form-label">Configuração do Computador: <span class="requiredField">*</span></label> 
+                                <input class="form-control" list="datalistOptionsComputador" id="edit_computador" placeholder="Clique aqui para selecionar" onChange="loadComputador(this.value)" onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DO COMPUTADOR SLOT -->
+                                    <datalist id="datalistOptionsComputador"> <!-- LISTA DE OPÇÕES COMPUTADOR -->
+                                        <option value="Computador 1">
+                                        <option value="Computador 2">
+                                        <option value="Computador 3">
+                                    </datalist>
+                            </div>
+                        </div>
                     <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="delete-tab">
                         <form action="/delete_slot" method="post">
                             <div class="delete_slot monitor"> <!-- MONITOR -->
