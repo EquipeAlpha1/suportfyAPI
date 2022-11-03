@@ -88,14 +88,14 @@ def create_request():
         if not name and not mail and not floor and not room and not pc and not subject and not description:
             return redirect(url_for('create_request'))
                                
-        """ ## Envia um e-mail de notificação para o usuário
+        ## Envia um e-mail de notificação para o usuário
         msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
         msg.html = "<!DOCTYPE html><html><body>" \
                     "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
                     "Fala {}, Beleza?<br /><br />" \
-                    "Seu pedido de suporte foi registrado! E gostaríamos de parabenizá-lo por promover um ambiente FATEC melhor!<br />" \
+                    "Seu pedido de suporte foi registrado! E gostaríamos de parabenizá-lo(a) por promover um ambiente FATEC melhor!<br />" \
                     "O suporte FATEC costuma resolver os problemas em até 3 dias úteis. E até lá, pedimos paciência.<br />" \
-                    "Inclusive, segue abaixo as informações do registro do pedido de suporte realizado:<br /><br />" \
+                    "Inclusive, segue abaixo as informações do pedido de suporte realizado:<br /><br />" \
                     "         Piso: {}<br />" \
                     "         Sala: {}<br />" \
                     "   Computador: {}<br />" \
@@ -147,7 +147,7 @@ def create_request():
             tempFilename = ''
             tempEvent = False
 
-        email.send(msg) """        
+        email.send(msg)        
 
         ## Faz o registro da solicitação no banco de dados
         conn = get_db_connection()
@@ -219,3 +219,14 @@ def allowed_file(filename):
     if user is None:
         abort(404)
     return user """
+
+""" # O CÓDIGO ABAIXO SERVE PARA GERAR THUMBNAILS DOS ARQUIVOS UPADOS
+from PIL import Image
+sizes = [(120,120), (720,720), (1600,1600)]
+files = ['a.jpg','b.jpg','c.jpg']
+
+for image in files:
+    for size in sizes:
+        im = Image.open(image)
+        im.thumbnail(size)
+        im.save("thumbnail_%s_%s" % (image, "_".join(size))) """
