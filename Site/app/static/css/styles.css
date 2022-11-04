@@ -439,3 +439,42 @@ textarea {
 .capa_wrapper {
   height: 100%;
 }
+
+@media(max-width: 450px) {
+
+  .login > button {
+    display: none;
+  }
+  
+
+ #navbarSupportedContent {
+    height: 100%;
+  }
+
+  #navbarSupportedContent {
+    background-color: #76acb3;
+    padding: 5px;
+    border-radius: 0rem 0rem 1rem 1rem;
+    margin-top: 5px;
+  }
+  
+  .container-fluid > a:hover {
+    background: #708688;
+  }
+  
+  .container-fluid > a {
+    border-radius: 1rem;
+    transition-duration: 0.3s;
+    padding: 5px;
+  }
+  
+  .nav-item > a:hover {
+    background:#708688;
+  }
+  
+  .nav-item > a {
+    border-radius: 1rem;
+    transition-duration: 0.5s;
+    padding: 5px;
+  }
+}
