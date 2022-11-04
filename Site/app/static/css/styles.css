@@ -66,16 +66,32 @@ section {
   display:grid;
   grid-template-columns:680px 340px;
   gap: 20px;
-  height: 550px;
-  background-color: aqua;
+  height: 720px;
+  padding: 20px;
 }
 
 .sectionEdit_text {
-  background-color: chartreuse;
   justify-content: center;
   display: flex;
 }
 
+.edit_wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  
+}
+
+.fade{
+  padding: 20px;
+
+}
+
+.info_layout{
+  background-color: #f0f0f0;
+  border-radius: 5px;
+} 
 
 .form_wrapper {
   height: 100%;

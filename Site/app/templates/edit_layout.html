@@ -442,38 +442,38 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
                         <div class="info_slot monitor"> <!-- MONITOR -->        
-                            <label for="monitor" class="form-label">Monitor: <span class="requiredField">*</span></label>
+                            <label for="monitor" class="form-label">Monitor:</label>
                             <input class="form-control" placeholder="Vazio" id="monitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
                         </div> 
                         <div class="info_slot computador"> <!-- COMPUTADOR -->        
-                            <label for="computador" class="form-label">Computador: <span class="requiredField">*</span></label>
+                            <label for="computador" class="form-label">Computador:</label>
                             <input class="form-control" placeholder="Vazio" id="computador"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
                         </div> 
                         <div class="info_slot teclado"> <!-- TECLADO -->        
-                            <label for="teclado" class="form-label">Teclado: <span class="requiredField">*</span></label>
+                            <label for="teclado" class="form-label">Teclado:</label>
                             <input class="form-control" placeholder="Vazio" id="teclado"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
                         </div> 
                         <div class="info_slot mouse"> <!-- MOUSE -->        
-                            <label for="mouse" class="form-label">Mouse: <span class="requiredField">*</span></label>
+                            <label for="mouse" class="form-label">Mouse:</label>
                             <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
                         </div> 
                     </div>
                     <div class="tab-pane fade" id="add" role="tabpanel" aria-labelledby="add-tab">
                         <form action="/add_slot" method="post">
                             <div class="add_slot monitor"> <!-- MONITOR -->
-                                <label for="monitor" class="form-label">Monitor: <span class="requiredField">*</span></label>
+                                <label for="monitor" class="form-label">Monitor:</label>
                                 <input class="form-control" placeholder="Vazio" id="monitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
                             </div>
                             <div class="add_slot computador"> <!-- COMPUTADOR -->
-                                <label for="computador" class="form-label">Computador: <span class="requiredField">*</span></label>
+                                <label for="computador" class="form-label">Computador:</label>
                                 <input class="form-control" placeholder="Vazio" id="computador"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
                             </div>
                             <div class="add_slot teclado"> <!-- TECLADO -->
-                                <label for="teclado" class="form-label">Teclado: <span class="requiredField">*</span></label>
+                                <label for="teclado" class="form-label">Teclado:</label>
                                 <input class="form-control" placeholder="Vazio" id="teclado"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
                             </div>
                             <div class="add_slot mouse"> <!-- MOUSE -->
-                                <label for="mouse" class="form-label">Mouse: <span class="requiredField">*</span></label>
+                                <label for="mouse" class="form-label">Mouse:</label>
                                 <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
                             </div>
                             <br>
@@ -481,45 +481,83 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="edit-tab">
-                        <div class="edit_slot">
-                            <div class="config_monitor"> <!--EDITAR MONITOR SLOT -->
-                                <label for="config_monitor" class="form-label">Configuração do Monitor: <span class="requiredField">*</span></label> 
-                                <input class="form-control" list="datalistOptionsMonitor" id="edit_monitor" placeholder="Clique aqui para selecionar" onChange="loadMonitor(this.value)" onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DO MONITOR SLOT -->
-                                    <datalist id="datalistOptionsMonitor"> <!-- LISTA DE OPÇÕES MONITOR -->
-                                        <option value="Monitor 1">
-                                        <option value="Monitor 2">
-                                        <option value="Monitor 3">
-                                    </datalist>
+                        <form action="/edit_slot" method="post">
+                            <div class="edit_wrapper">
+                                <div class="edit_config">
+                                    <label for="edit_monitor" class="form-label">Editar o monitor:</label>
+                                    <input class="form-control" list="datalistOptionsMonitor" id="edit_monitor" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DE MONITOR -->
+                                        <datalist id="datalistOptionsFloor"> <!-- LISTA DE MONITORES -->
+                                            <option value="Monitor 1">
+                                            <option value="Monitor 2">
+                                            <option value="Monitor 3">
+                                        </datalist>
+                                    <label for="edit_computador" class="form-label">Editar o computador:</label>
+                                    <input class="form-control" list="datalistOptionsComputador" id="edit_computador" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DE COMPUTADOR -->
+                                        <datalist id="datalistOptionsFloor"> <!-- LISTA DE COMPUTADORES -->
+                                            <option value="Computador 1">
+                                            <option value="Computador 2">
+                                            <option value="Computador 3">
+                                        </datalist>
+                                    <label for="edit_teclado" class="form-label">Editar o Teclado:</label>
+                                    <input class="form-control" list="datalistOptionsTeclado" id="edit_teclado" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DE TECLADO -->
+                                        <datalist id="datalistOptionsFloor"> <!-- LISTA DE TECLADOS -->
+                                            <option value="3º Andar">
+                                            <option value="4º Andar">
+                                        </datalist>
+                                    <label for="c1_floor" class="form-label">Selecine o andar:</label>
+                                    <input class="form-control" list="datalistOptionsFloor" id="c1_floor" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA SELEÇÃO DE ANDAR -->
+                                        <datalist id="datalistOptionsFloor"> <!-- LISTA DE ANDAR -->
+                                            <option value="3º Andar">
+                                            <option value="4º Andar">
+                                        </datalist>
+                                </div>
+                                <div class="edit_status">
+                                    <label for="c1_floor" class="form-label">Selecine o andar:</label>
+                                    <input class="form-control" list="datalistOptionsFloor" id="c1_floor" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA SELEÇÃO DE ANDAR -->
+                                        <datalist id="datalistOptionsFloor"> <!-- LISTA DE ANDAR -->
+                                            <option value="3º Andar">
+                                            <option value="4º Andar">
+                                        </datalist>
+                                    <label for="c1_floor" class="form-label">Selecine o andar:</label>
+                                    <input class="form-control" list="datalistOptionsFloor" id="c1_floor" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA SELEÇÃO DE ANDAR -->
+                                        <datalist id="datalistOptionsFloor"> <!-- LISTA DE ANDAR -->
+                                            <option value="3º Andar">
+                                            <option value="4º Andar">
+                                        </datalist>
+                                    <label for="c1_floor" class="form-label">Selecine o andar:</label>
+                                    <input class="form-control" list="datalistOptionsFloor" id="c1_floor" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA SELEÇÃO DE ANDAR -->
+                                        <datalist id="datalistOptionsFloor"> <!-- LISTA DE ANDAR -->
+                                            <option value="3º Andar">
+                                            <option value="4º Andar">
+                                        </datalist>
+                                    <label for="c1_floor" class="form-label">Selecine o andar:</label>
+                                    <input class="form-control" list="datalistOptionsFloor" id="c1_floor" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA SELEÇÃO DE ANDAR -->
+                                        <datalist id="datalistOptionsFloor"> <!-- LISTA DE ANDAR -->
+                                            <option value="3º Andar">
+                                            <option value="4º Andar">
+                                        </datalist>
+                                </div>
                             </div>
-                        </div>
-                        <div class="edit_slot">
-                            <div class="config_computador"> <!--EDITAR COMPUTADOR SLOT -->
-                                <label for="config_computadoror" class="form-label">Configuração do Computador: <span class="requiredField">*</span></label> 
-                                <input class="form-control" list="datalistOptionsComputador" id="edit_computador" placeholder="Clique aqui para selecionar" onChange="loadComputador(this.value)" onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DO COMPUTADOR SLOT -->
-                                    <datalist id="datalistOptionsComputador"> <!-- LISTA DE OPÇÕES COMPUTADOR -->
-                                        <option value="Computador 1">
-                                        <option value="Computador 2">
-                                        <option value="Computador 3">
-                                    </datalist>
-                            </div>
-                        </div>                        
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-lg">Editar</button>
+                        </form>
                     </div>
                     <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="delete-tab">
                         <form action="/delete_slot" method="post">
                             <div class="delete_slot monitor"> <!-- MONITOR -->
-                                <label for="monitor" class="form-label">Monitor: <span class="requiredField">*</span></label>
+                                <label for="monitor" class="form-label">Monitor:</label>
                                 <input class="form-control" placeholder="Vazio" id="monitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
                             </div>
                             <div class="delete_slot computador"> <!-- COMPUTADOR -->
-                                <label for="computador" class="form-label">Computador: <span class="requiredField">*</span></label>
+                                <label for="computador" class="form-label">Computador:</label>
                                 <input class="form-control" placeholder="Vazio" id="computador"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
                             </div>
                             <div class="delete_slot teclado"> <!-- TECLADO -->
-                                <label for="teclado" class="form-label">Teclado: <span class="requiredField">*</span></label>
+                                <label for="teclado" class="form-label">Teclado:</label>
                                 <input class="form-control" placeholder="Vazio" id="teclado"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
                             </div>
                             <div class="delete_slot mouse"> <!-- MOUSE -->
-                                <label for="mouse" class="form-label">Mouse: <span class="requiredField">*</span></label>
+                                <label for="mouse" class="form-label">Mouse:</label>
                                 <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
                             </div>
                             <br>
@@ -527,6 +565,7 @@
                         </form>
                     </div>
                 </div>
+
             </div>
         </section>
 {% endblock %}
