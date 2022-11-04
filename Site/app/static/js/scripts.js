@@ -1,3 +1,14 @@
+// Menu mobile
+
+const btnMobile = document.getElementById('btn-mobile')
+
+function toggleMenu() {
+	const nav = document.getElementById('nav');
+	nav.classList.toggle('active');
+}
+
+btnMobile.addEventListener('click', toggleMenu);
+
 // /* STEPS */
 var form_2_progressbar = document.querySelector(".form_2_progressbar");
 var form_3_progressbar = document.querySelector(".form_3_progressbar");
@@ -177,13 +188,3 @@ form_3_next_btn.addEventListener("click", function() {
 	form_4_progressbar.classList.add("active");
 });
 
-// Menu mobile
-
-const btnMobile = document.getElementById('btn-mobile')
-
-function toggleMenu() {
-	const nav = document.getElementById('nav');
-	nav.classList.toggle('active');
-}
-
-btnMobile.addEventListener('click', toggleMenu);
