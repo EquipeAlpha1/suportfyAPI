@@ -448,7 +448,7 @@ textarea {
 }
 
 .searchinputFaq{
-  height: 100px;
+  height: 80px;
   background: #e6e6e6;
   border-radius: 40px;
   display: flex;
@@ -458,7 +458,7 @@ textarea {
 
 .inputFaq{
   font-family: 'Times New Roman', Times, serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background: 0;
   outline: 0;
   border: none;
