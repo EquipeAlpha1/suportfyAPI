@@ -455,3 +455,9 @@ textarea {
 .capa_wrapper {
   height: 100%;
 }
+
+@media(max-width: 450px) { 
+
+  
+
+}
