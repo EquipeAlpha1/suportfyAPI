@@ -230,3 +230,34 @@ for image in files:
         im = Image.open(image)
         im.thumbnail(size)
         im.save("thumbnail_%s_%s" % (image, "_".join(size))) """
+
+@app.route('/<int:id>/consult_slot', methods=('POST',))
+def consult_slot(id):
+    conn = get_db_connection()
+    slot_info = conn.execute('SELECT monitor_status_id, computer_status_id, keyboard_status_id, mouse_status_id FROM room_{} WHERE id = ?', (id,)).fetchone()
+    conn.close()
+    return redirect(url_for('edit_layout', slot_info=slot_info))
+
+@app.route('/<int:id>/add_slot', methods=('POST',))
+def add_slot(id):
+    
+    conn = get_db_connection()
+    conn.execute('INSERT INTO room_{} (names, mails, floors, rooms, pcs, subjects, descriptions) VALUES (?, ?, ?, ?, ?, ?, ?)',
+                    (name, mail, floor, room, pc, subject, description))
+    conn.commit()
+    conn.close()
+    return render_template('edit_layout.html')
+
+@app.route('/<int:id>/edit_slot', methods=('POST',))
+def edit_slot(id):
+
+    return render_template('edit_layout.html')
+
+@app.route('/<int:id>/delete_slot/', methods=('POST',))
+def delete_slot(id):
+    conn = get_db_connection()
+    conn.execute('DELETE FROM room_{} WHERE id = ?', (id,))
+    conn.commit()
+    conn.close()
+    flash('A solicitação "{}" foi deletada com sucesso!'.format(id))
+    return render_template('edit_layout.html')
