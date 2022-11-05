@@ -422,3 +422,31 @@ textarea {
 .capa_wrapper {
   height: 100%;
 }
+
+@media only screen and (min-width: 450px) {
+  nav {
+      width: 70%;
+  }
+  .menuMobile {
+      padding: 0 1rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .nav-item .nav-link {
+      padding: 0.5rem 0;   
+      margin: 0;            
+  }
+  .navbar-nav {
+      width: 80%;
+      margin: 0 auto;
+  }
+  .dropdown-item {
+      padding: 0.5rem 1rem;
+  }
+  .navbar img, button {
+      margin: 0.5rem 1rem;
+  }
+  .container-fluid {
+      padding: 0;
+  }
+}

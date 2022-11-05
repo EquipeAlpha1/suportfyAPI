@@ -8,35 +8,6 @@
         <link rel="stylesheet" href="../static/css/styles.css">      
         <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
         <title>{% block title %} {% endblock %} - Suporte Alpha</title>  
-        <style>
-            @media only screen and (min-width: 450px) {
-                nav {
-                    width: 70%;
-                }
-                .menuMobile {
-                    padding: 0 1rem;
-                }
-            }
-            @media only screen and (max-width: 450px) {
-                .nav-item .nav-link {
-                    padding: 0.5rem 0;   
-                    margin: 0;            
-                }
-                .navbar-nav {
-                    width: 80%;
-                    margin: 0 auto;
-                }
-                .dropdown-item {
-                    padding: 0.5rem 1rem;
-                }
-                .navbar img, button {
-                    margin: 0.5rem 1rem;
-                }
-                .container-fluid {
-                    padding: 0;
-                }
-            }
-        </style>
     </head>
     <body>        
         <div class="navbarWrapper" style="width: 100%; height: auto; background: #e7e7e7;">
@@ -69,10 +40,19 @@
                                 <a class="nav-link" href="faq">FAQ</a>
                             </li>
                             <hr>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="sign_in">Login</a>
-                            </li>
-                        </ul>                
+                            </li> -->                            
+                        </ul>     
+                        <!-- <form action="/sign_in" method="post">
+                            <button class="btn btn-outline-dark" type="submit">Login</button>
+                        </form>   -->      
+                        <form action="/edit_layout" method="post">
+                            <button class="btn btn-outline-dark" type="submit">Editar Layout</button>
+                        </form>  
+                        <form action="/sign_out" method="post">
+                            <button class="btn btn-outline-dark" type="submit">Sair</button>
+                        </form>      
                     </div>
                 </div>
             </nav>
