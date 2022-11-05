@@ -38,10 +38,6 @@ def sign_in():
             return redirect(url_for('home'))
     return render_template('sign_in.html')
 
-@app.route('/faq')
-def faq():
-    return render_template('faq.html')
-
 """ @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
@@ -163,6 +159,44 @@ def about_us():
 """ @app.route('/faq', methods=['GET','POST'])
 def faq():
     return render_template('faq.html') """
+
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
+@app.route('/monitorFaq')
+def monitor():
+    return render_template('monitorFaq.html')
+
+@app.route('/mouseFaq')
+def mouse():
+    return render_template('mouseFaq.html')
+
+@app.route('/tecladoFaq')
+def teclado():
+    return render_template('tecladoFaq.html')
+
+@app.route('/modemFaq')
+def modem():
+    return render_template('modemFaq.html')
+
+@app.route('/conexaoFaq')
+def conexao():
+    return render_template('conexaoFaq.html')
+
+@app.route('/configFaq')
+def config():
+    return render_template('configFaq.html')
+
+@app.route('/appFaq')
+def appFaq():
+    return render_template('appFaq.html')
+
+@app.route('/soFaq')
+def soFaq():
+    return render_template('soFaq.html')
+
+
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')    

@@ -23,23 +23,23 @@
                     </button>
                     <div class="collapse" id="home-collapse" style="">
                       <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monitor</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Teclado</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Mouse</a></li>
+                        <li><a href="/monitorFaq" class="link-dark d-inline-flex text-decoration-none rounded">Monitor</a></li>
+                        <li><a href="/mouseFaq" class="link-dark d-inline-flex text-decoration-none rounded">Mouse</a></li>
+                        <li><a href="/tecladoFaq" class="link-dark d-inline-flex text-decoration-none rounded">Teclado</a></li>
                       </ul>
                     </div>
                   </li>
                   <li class="mb-1">
                     <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
                       Problemas na Rede
-                    </button> 
-                      <div class="collapse show" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Modem</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Lentidão</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sem Conexão</a></li>
-                        </ul>
-                      </div>
+                    </button>
+                    <div class="collapse show" id="dashboard-collapse" style="">
+                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="/modemFaq" class="link-dark d-inline-flex text-decoration-none rounded">Modem</a></li>
+                        <li><a href="/conexaoFaq" class="link-dark d-inline-flex text-decoration-none rounded">Conexão</a></li>
+                        <li><a href="/configFaq" class="link-dark d-inline-flex text-decoration-none rounded">Configurações</a></li>
+                      </ul>
+                    </div>
                   </li>
                   <li class="mb-1">
                     <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
@@ -47,9 +47,8 @@
                     </button>
                     <div class="collapse" id="orders-collapse">
                       <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sistema Operacional</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Aplicativos</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Configurações</a></li>
+                        <li><a href="/appFaq" class="link-dark d-inline-flex text-decoration-none rounded">Aplicativos</a></li>
+                        <li><a href="/soFaq" class="link-dark d-inline-flex text-decoration-none rounded">Sistema Operacional</a></li>
                       </ul>
                     </div>
                   </li>
@@ -57,19 +56,18 @@
             </div>
             <div class="contentFaq">
               <div class="informscontentFaq">
-                <div class="titlesearchFaq">
-                  <h1 style="font-family: Arial, Helvetica, sans-serif;font-size: 3rem;">Como podemos ajudar?</h1>
-                </div>
-                <div class="searchinputFaq">
+                  <div class="titlesearchFaq">
+                    <h1 style="font-family: Arial, Helvetica, sans-serif;font-size: 3rem;">Como podemos ajudar?</h1>
+                  </div>
+                  <div class="searchinputFaq">
                     <input type="search" class="inputFaq" placeholder="Pesquisar...">
                     <a href="#" class="loupeFaq">
                       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-search " viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                       </svg>
                     </a>
-                </div>
+                  </div>
               </div>
-            </div>
         </section>
         
 {% endblock %}

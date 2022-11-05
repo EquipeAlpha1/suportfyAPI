@@ -438,8 +438,7 @@ textarea {
 
 .informscontentFaq{
   width: 85%; height: 85%;
-  display: flexbox;
-  margin-top: 19%;
+  padding-top: 10%;
 }
 
 
