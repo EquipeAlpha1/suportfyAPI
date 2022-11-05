@@ -231,33 +231,90 @@ for image in files:
         im.thumbnail(size)
         im.save("thumbnail_%s_%s" % (image, "_".join(size))) """
 
-@app.route('/<int:id>/consult_slot', methods=('POST',))
-def consult_slot(id):
+@app.route('/<int:slot_id>/consult_slot', methods=('POST',))
+def consult_slot(slot_id):
+    
+    room = x
+
     conn = get_db_connection()
-    slot_info = conn.execute('SELECT monitor_status_id, computer_status_id, keyboard_status_id, mouse_status_id FROM room_{} WHERE id = ?', (id,)).fetchone()
+    slot_info = conn.execute('SELECT \
+                                    monitor_config_id, \
+                                    monitor_status_id, \
+                                    computer_config_id, \
+                                    computer_status_id, \
+                                    keyboard_config_id, \
+                                    keyboard_status_id, \
+                                    mouse_config_id, \
+                                    mouse_status_id \
+                                FROM \
+                                    "'+room+'" \
+                                WHERE \
+                                    id = ?', (slot_id,)).fetchone()
     conn.close()
     return redirect(url_for('edit_layout', slot_info=slot_info))
 
-@app.route('/<int:id>/add_slot', methods=('POST',))
-def add_slot(id):
-    
+@app.route('/<int:slot_id>/add_slot', methods=('POST',))
+def add_slot(slot_id):    
+
     conn = get_db_connection()
-    conn.execute('INSERT INTO room_{} (names, mails, floors, rooms, pcs, subjects, descriptions) VALUES (?, ?, ?, ?, ?, ?, ?)',
-                    (name, mail, floor, room, pc, subject, description))
+    conn.execute('UPDATE \
+                        [room_xxx] \
+                    SET \
+                        monitor_config_id = ?, \
+                        monitor_status_id = ?, \
+                        computer_config_id = ?, \
+                        computer_status_id = ?, \
+                        keyboard_config_id = ?, \
+                        keyboard_status_id = ?, \
+                        mouse_config_id = ?, \
+                        mouse_status_id = ? \
+                    WHERE \
+                        id = ?', 
+                        (monitor_config, 'OK', computer_config, 'OK', keyboard_config, 'OK', mouse_config, 'OK', slot_id))
     conn.commit()
     conn.close()
-    return render_template('edit_layout.html')
+    return redirect(url_for('edit_layout'))
 
-@app.route('/<int:id>/edit_slot', methods=('POST',))
-def edit_slot(id):
+@app.route('/<int:slot_id>/edit_slot', methods=('POST',))
+def edit_slot(slot_id):
 
-    return render_template('edit_layout.html')
-
-@app.route('/<int:id>/delete_slot/', methods=('POST',))
-def delete_slot(id):
     conn = get_db_connection()
-    conn.execute('DELETE FROM room_{} WHERE id = ?', (id,))
+    conn.execute('UPDATE \
+                        [room_xxx] \
+                    SET \
+                        monitor_config_id = ?, \
+                        monitor_status_id = ?, \
+                        computer_config_id = ?, \
+                        computer_status_id = ?, \
+                        keyboard_config_id = ?, \
+                        keyboard_status_id = ?, \
+                        mouse_config_id = ?, \
+                        mouse_status_id = ? \
+                    WHERE \
+                        id = ?', 
+                        (monitor_config, 'OK', computer_config, 'OK', keyboard_config, 'OK', mouse_config, 'OK', slot_id))
     conn.commit()
     conn.close()
-    flash('A solicitação "{}" foi deletada com sucesso!'.format(id))
-    return render_template('edit_layout.html')
+    return redirect(url_for('edit_layout'))
+
+@app.route('/<int:slot_id>/delete_slot/', methods=('POST',))
+def delete_slot(slot_id):
+
+    conn = get_db_connection()
+    conn.execute('UPDATE \
+                        [room_xxx] \
+                    SET \
+                        monitor_config_id = ?, \
+                        monitor_status_id = ?, \
+                        computer_config_id = ?, \
+                        computer_status_id = ?, \
+                        keyboard_config_id = ?, \
+                        keyboard_status_id = ?, \
+                        mouse_config_id = ?, \
+                        mouse_status_id = ? \
+                    WHERE \
+                        id = ?', 
+                        (monitor_config, 'OK', computer_config, 'OK', keyboard_config, 'OK', mouse_config, 'OK', slot_id))
+    conn.commit()
+    conn.close()
+    return redirect(url_for('edit_layout'))
