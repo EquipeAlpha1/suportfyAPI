@@ -14,8 +14,8 @@ html, body {
 body {
   font-size: 1.2rem;
   font-family: Arial, Helvetica, sans-serif;      
-  padding: 80px 0 0 0;
-  margin: 0;
+  /* padding: 80px 0 0 0;
+  margin: 0; */
 }
 
 h4 {
@@ -28,7 +28,7 @@ main {
   height: 85%;
 }
 
-header, nav {
+header {
   position: fixed;
   top: 0;
   left: 0;
@@ -61,13 +61,6 @@ header nav {
   width: auto;
 }
 
-#navbarSupportedContent {
-  background-color: #76acb3;
-  padding: 5px;
-  border-radius: 0rem 0rem 1rem 1rem;
-  margin-top: 5px;
-}
-
 .container-fluid > a:hover {
   background: #708688;
 }
@@ -75,16 +68,6 @@ header nav {
 .container-fluid > a {
   border-radius: 1rem;
   transition-duration: 0.3s;
-  padding: 5px;
-}
-
-.nav-item > a:hover {
-  background:#708688;
-}
-
-.nav-item > a {
-  border-radius: 1rem;
-  transition-duration: 0.5s;
   padding: 5px;
 }
 
@@ -438,43 +421,4 @@ textarea {
 
 .capa_wrapper {
   height: 100%;
-}
-
-@media(max-width: 450px) {
-
-  .login > button {
-    display: none;
-  }
-  
-
- #navbarSupportedContent {
-    height: 100%;
-  }
-
-  #navbarSupportedContent {
-    background-color: #76acb3;
-    padding: 5px;
-    border-radius: 0rem 0rem 1rem 1rem;
-    margin-top: 5px;
-  }
-  
-  .container-fluid > a:hover {
-    background: #708688;
-  }
-  
-  .container-fluid > a {
-    border-radius: 1rem;
-    transition-duration: 0.3s;
-    padding: 5px;
-  }
-  
-  .nav-item > a:hover {
-    background:#708688;
-  }
-  
-  .nav-item > a {
-    border-radius: 1rem;
-    transition-duration: 0.5s;
-    padding: 5px;
-  }
 }

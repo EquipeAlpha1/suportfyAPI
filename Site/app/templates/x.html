@@ -1,0 +1,35 @@
+<div class="navbarWrapper" style="width: 100%; height: auto; background: #e7e7e7;">
+    <nav class="navbar navbar-expand-lg m-auto" style="width: 70%;">
+        <img src="../static/img/logo.png" alt="Logo Header" class="logoHeader">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent" style="padding: 0.5rem 2.5rem 0.5rem;">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="home">Home</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Solicitações
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="create_request">Abrir Solicitação</a></li>
+                        <li><a class="dropdown-item" href="consult_requests">Consultar Solicitações</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="faq">FAQ</a>
+                </li>
+                <li class="nav-item d-none">
+                    <a class="nav-link" href="sign_in">Login</a>
+                </li>
+            </ul>
+            <form action="/sign_in" method="post" class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Login</button>
+            </form>
+        </div>
+    </nav>
+</div>
