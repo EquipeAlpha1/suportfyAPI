@@ -184,10 +184,6 @@ def modem():
 def conexao():
     return render_template('conexaoFaq.html')
 
-@app.route('/configFaq')
-def config():
-    return render_template('configFaq.html')
-
 @app.route('/appFaq')
 def appFaq():
     return render_template('appFaq.html')

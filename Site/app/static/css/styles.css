@@ -470,3 +470,29 @@ textarea {
 .loupeFaq{
   margin-right: 40px;
 }
+
+.informsFaq{
+  width: 80%; height: 80%;
+  padding-top: 7%;
+  display: flexbox;
+  justify-content: center;
+}
+
+.titleFaq{
+  margin-bottom: 50px;
+  margin-left: 25%;
+  width: auto; height: auto;
+}
+
+.solucionFaq{
+  height: auto; width: 50%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  margin-left: 25%;
+}
+
+.informsmodemFaq{
+  width: 80%; height: 80%;
+  display: flexbox;
+  justify-content: center;
+}

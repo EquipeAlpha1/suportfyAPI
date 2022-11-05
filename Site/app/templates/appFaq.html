@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %} Problemas em Aplicativos {% endblock %}
+{% block styles_faq %}
+    <link rel="stylesheet" href="../static/css/sidebar_faq.css">
+    <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+{% endblock %}
+{% block conteudo %}
+        <section class="sectionFaq">
+            <div class="sidebarFaq flex-shrink-0 p-3 bg-white" style="width: 280px; height: 100%; background: #e7e7e7 !important;">
+                <a href="/faq" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                  <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                  <span class="fs-5 fw-semibold">FAQ's Alpha</span>
+                </a>
+                <ul class="list-unstyled ps-0">
+                  <li class="mb-1">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                      Problemas de Hardware
+                    </button>
+                    <div class="collapse" id="home-collapse" style="">
+                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="/monitorFaq" class="link-dark d-inline-flex text-decoration-none rounded">Monitor</a></li>
+                        <li><a href="/mouseFaq" class="link-dark d-inline-flex text-decoration-none rounded">Mouse</a></li>
+                        <li><a href="/tecladoFaq" class="link-dark d-inline-flex text-decoration-none rounded">Teclado</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="mb-1">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+                      Problemas na Rede
+                    </button>
+                    <div class="collapse show" id="dashboard-collapse" style="">
+                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="/modemFaq" class="link-dark d-inline-flex text-decoration-none rounded">Modem</a></li>
+                        <li><a href="/conexaoFaq" class="link-dark d-inline-flex text-decoration-none rounded">Conexão</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="mb-1">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                      Problemas no Software
+                    </button>
+                    <div class="collapse" id="orders-collapse">
+                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="/appFaq" class="link-dark d-inline-flex text-decoration-none rounded">Aplicativos</a></li>
+                        <li><a href="/soFaq" class="link-dark d-inline-flex text-decoration-none rounded">Sistema Operacional</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+            <div class="contentFaq">
+                <div class="informsFaq">
+                    <div class="titleFaq">
+                        <h1 style="font-family: Arial, Helvetica, sans-serif;font-size: 2.5rem; font-weight: bold;">Problemas em Aplicativos:</h1>
+                    </div>
+                    <div class="solucionFaq">
+                        <p>Geralmente os problemas no aplicativos são causados <br> por configurações inadequadas feitas nos computadores. <br><a href="/create_request">Abra um chamado</a> e aguarde a visita do técnico para a <br> manutenção do mesmo.
+                        </p>
+                    </div>
+                </div>
+            </div>    
+        </section>
+{% endblock %}
