@@ -438,24 +438,18 @@ textarea {
 
 .informscontentFaq{
   width: 85%; height: 85%;
-  background-color: darkgray;
+  display: flexbox;
+  margin-top: 19%;
 }
 
-.searchFaq{
-  display: flexbox;
-  justify-content: center;
-  height: 35%;
-  background-color: cornsilk;
-}
 
 .titlesearchFaq{
-  width: auto; height: auto;
+  width: 100%; height: auto;
   margin-bottom: 20px;
 }
 
 .searchinputFaq{
   height: 100px;
-  max-width: auto;
   background: #e6e6e6;
   border-radius: 40px;
   display: flex;
@@ -470,7 +464,7 @@ textarea {
   outline: 0;
   border: none;
   padding-left: 30px;
-  width: 1000px;
+  width: 1500px;
   text-decoration: none;
 }
 
