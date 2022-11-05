@@ -458,6 +458,26 @@ textarea {
 
 @media(max-width: 450px) { 
 
-  
+  .sectionEditLayout{
+    display: block;
+    width: 100%;
+  }
+
+  .info_layout{
+    display: block;
+    margin: 90px 0px;
+    height: 550px;
+  }
+
+   .sectionEdit_text{
+    display: flex;
+    text-align: center;
+   }
+
+    footer{
+    margin-top: 230px;
+   }
+
+
 
 }
