@@ -2,29 +2,218 @@
 {% block title %} Entrar {% endblock %}
 {% block conteudo %}
         <section class="sectionEditLayout">
-            <div class="edit_layout" > <!-- CONTEÚDO DA PÁGINA 2 -->
-                <div class="sectionEdit_text"> <h4>ESCOLHA A MÁQUINA COM PROBLEMA:</h4>
-                </div>
-                <br>
-                <div class="layout_computers"> <!-- LAYOUT DOS COMPUTADORES -->
-                    <div class="leftSide"> <!-- COMPUTADORES DO LADO ESQUERDO -->
-                        <div class="row-1"> <!-- LINHA 1 -->
-                            <div class="computerSlot firstRow tenthColumn slot_1x10"> <!-- 1ª LINHA - 10ª COLUNA --- SLOT VAZIO -->            
-                            </div> 
-                            <div class="computerSlot firstRow ninthColumn slot_1x9"> <!-- 1ª LINHA - 9ª COLUNA --- SLOT VAZIO -->            
-                            </div> 
-                            <div class="computerSlot firstRow eighthColumn slot_1x8"> <!-- 1ª LINHA - 8ª COLUNA --- SLOT VAZIO -->            
-                            </div> 
-                            <div class="computerSlot firstRow seventhColumn slot_1x7"> <!-- 1ª LINHA - 7ª COLUNA --- SLOT VAZIO -->            
-                            </div> 
-                            <div class="computerSlot firstRow sixthColumn slot_1x6"> <!-- 1ª LINHA - 6ª COLUNA --- COMPUTADOR DO(A) PROFESSOR(A) -->
-                                <input type="radio" class="btn-check" name="c2_computadores" id="computadorprof" autocomplete="off" value="Professor">
-                                <label class="btn btn-outline-dark computerLabel" for="computadorprof">
-                                    <a>Prof.</a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="prof" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
-                                        <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
-                                    </svg>
-                                </label>
+            <div class="wrapper_editLayout">
+                <div class="edit_layout" > <!-- CONTEÚDO DA PÁGINA 2 -->
+                    <h4>ESCOLHA A MÁQUINA COM PROBLEMA:</h4>
+                    <br>
+                    <div class="layout_computers"> <!-- LAYOUT DOS COMPUTADORES -->
+                        <div class="leftSide"> <!-- COMPUTADORES DO LADO ESQUERDO -->
+                            <div class="row-1"> <!-- LINHA 1 -->
+                                <div class="computerSlot firstRow tenthColumn slot_1x10"> <!-- 1ª LINHA - 10ª COLUNA --- SLOT VAZIO -->            
+                                </div> 
+                                <div class="computerSlot firstRow ninthColumn slot_1x9"> <!-- 1ª LINHA - 9ª COLUNA --- SLOT VAZIO -->            
+                                </div> 
+                                <div class="computerSlot firstRow eighthColumn slot_1x8"> <!-- 1ª LINHA - 8ª COLUNA --- SLOT VAZIO -->            
+                                </div> 
+                                <div class="computerSlot firstRow seventhColumn slot_1x7"> <!-- 1ª LINHA - 7ª COLUNA --- SLOT VAZIO -->            
+                                </div> 
+                                <div class="computerSlot firstRow sixthColumn slot_1x6"> <!-- 1ª LINHA - 6ª COLUNA --- COMPUTADOR DO(A) PROFESSOR(A) -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computadorprof" autocomplete="off" value="Professor">
+                                    <label class="btn btn-outline-dark computerLabel" for="computadorprof">
+                                        <a>Prof.</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="prof" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row-2"> <!-- LINHA 2 -->
+                                <div class="computerSlot secondRow tenthColumn slot_2x10"> <!-- 2ª LINHA - 10ª COLUNA --- COMPUTADOR 10 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador10" autocomplete="off" value="10">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador10">
+                                        <a>10</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div>  
+                                <div class="computerSlot secondRow ninthColumn slot_2x9"> <!-- 2ª LINHA - 9ª COLUNA --- COMPUTADOR 09 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador09" autocomplete="off" value="09">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador09">
+                                        <a>09</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div> 
+                                <div class="computerSlot secondRow eighthColumn slot_2x8"> <!-- 2ª LINHA - 8ª COLUNA --- COMPUTADOR 08 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador08" autocomplete="off" value="08">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador08">
+                                        <a>08</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div> 
+                                <div class="computerSlot secondRow seventhColumn slot_2x7"> <!-- 2ª LINHA - 7ª COLUNA --- COMPUTADOR 07 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador07" autocomplete="off" value="07">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador07">
+                                        <a>07</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div> 
+                                <div class="computerSlot secondRow sixthColumn slot_2x6"> <!-- 2ª LINHA - 6ª COLUNA --- COMPUTADOR 06 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador06" autocomplete="off" value="06">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador06">
+                                        <a>06</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row-3"> <!-- LINHA 3 -->
+                                <div class="computerSlot thirdRow tenthColumn slot_3x10"> <!-- 3ª LINHA - 10ª COLUNA --- COMPUTADOR 20 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador20" autocomplete="off" value="20">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador20">
+                                        <a>20</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div> 
+                                <div class="computerSlot thirdRow ninthColumn slot_3x9"> <!-- 3ª LINHA - 9ª COLUNA --- COMPUTADOR 19 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador19" autocomplete="off" value="19">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador19">
+                                        <a>19</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div> 
+                                <div class="computerSlot thirdRow eighthColumn slot_3x8"> <!-- 3ª LINHA - 8ª COLUNA --- COMPUTADOR 18 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador18" autocomplete="off" value="18">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador18">
+                                        <a>18</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div> 
+                                <div class="computerSlot thirdRow seventhColumn slot_3x7"> <!-- 3ª LINHA - 7ª COLUNA --- COMPUTADOR 17 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador17" autocomplete="off" value="17">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador17">
+                                        <a>17</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div> 
+                                <div class="computerSlot thirdRow sixthColumn slot_3x6"> <!-- 3ª LINHA - 6ª COLUNA --- COMPUTADOR 16 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador16" autocomplete="off" value="16">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador16">
+                                        <a>16</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row-4"> <!-- LINHA 4 -->
+                                <div class="computerSlot fourthRow tenthColumn slot_4x10"> <!-- 4ª LINHA - 10ª COLUNA --- COMPUTADOR 30 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador30" autocomplete="off" value="30">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador30">
+                                        <a>30</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div> 
+                                <div class="computerSlot fourthRow ninthColumn slot_4x9"> <!-- 4ª LINHA - 9ª COLUNA --- COMPUTADOR 29 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador29" autocomplete="off" value="29">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador29">
+                                        <a>29</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div> 
+                                <div class="computerSlot fourthRow eighthColumn slot_4x8"> <!-- 4ª LINHA - 8ª COLUNA --- COMPUTADOR 28 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador28" autocomplete="off" value="28">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador28">
+                                        <a>28</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div> 
+                                <div class="computerSlot fourthRow seventhColumn slot_4x7"> <!-- 4ª LINHA - 7ª COLUNA --- COMPUTADOR 27 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador27" autocomplete="off" value="27">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador27">
+                                        <a>27</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div> 
+                                <div class="computerSlot fourthRow sixthColumn slot_4x6">  <!-- 4ª LINHA - 6ª COLUNA --- COMPUTADOR 26 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador26" autocomplete="off" value="26">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador26">
+                                        <a>26</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row-5"> <!-- LINHA 5 -->
+                                <div class="computerSlot fifthRow tenthColumn slot_5x10">  <!-- 5ª LINHA - 10ª COLUNA --- COMPUTADOR 40 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador40" autocomplete="off" value="40">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador40">
+                                        <a>40</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div>
+                                <div class="computerSlot fifthRow ninthColumn slot_5x9">  <!-- 5ª LINHA - 9ª COLUNA --- COMPUTADOR 39 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador39" autocomplete="off" value="39">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador39">
+                                        <a>39</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div>
+                                <div class="computerSlot fifthRow eighthColumn slot_5x8">  <!-- 5ª LINHA - 8ª COLUNA --- COMPUTADOR 38 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador38" autocomplete="off" value="38">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador38">
+                                        <a>38</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div>
+                                <div class="computerSlot fifthRow seventhColumn slot_5x7"> <!-- 5ª LINHA - 7ª COLUNA --- COMPUTADOR 37 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador37" autocomplete="off" value="37">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador37">
+                                        <a>37</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div>
+                                <div class="computerSlot fifthRow sixthColumn slot_5x6"> <!-- 5ª LINHA - 6ª COLUNA --- COMPUTADOR 36 -->
+                                    <input type="radio" class="btn-check" name="c2_computadores" id="computador36" autocomplete="off" value="36">
+                                    <label class="btn btn-outline-dark computerLabel" for="computador36">
+                                        <a>36</a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                        </svg>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="rightSide"> <!-- COMPUTADORES DO LADO DIREITO -->
@@ -235,138 +424,37 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="info_layout">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="info" aria-selected="true">Infos</button>
-                    </li> 
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="add-tab" data-bs-toggle="tab" data-bs-target="#add" type="button" role="tab" aria-controls="add" aria-selected="false">Add</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="edit-tab" data-bs-toggle="tab" data-bs-target="#edit" type="button" role="tab" aria-controls="edit" aria-selected="false">Editar</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="delete-tab" data-bs-toggle="tab" data-bs-target="#delete" type="button" role="tab" aria-controls="delete" aria-selected="false">Deletar</button>
-                    </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
-                        <div class="info_slot monitor"> <!-- MONITOR -->        
-                            <label for="monitor" class="form-label">Monitor:</label>
-                            <input class="form-control" placeholder="Vazio" id="monitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
-                        </div> 
-                        <div class="info_slot computador"> <!-- COMPUTADOR -->        
-                            <label for="computador" class="form-label">Computador:</label>
-                            <input class="form-control" placeholder="Vazio" id="computador"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
-                        </div> 
-                        <div class="info_slot teclado"> <!-- TECLADO -->        
-                            <label for="teclado" class="form-label">Teclado:</label>
-                            <input class="form-control" placeholder="Vazio" id="teclado"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
-                        </div> 
-                        <div class="info_slot mouse"> <!-- MOUSE -->        
-                            <label for="mouse" class="form-label">Mouse:</label>
-                            <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
-                        </div> 
-                    </div>
-                    <div class="tab-pane fade" id="add" role="tabpanel" aria-labelledby="add-tab">
-                        <form action="/add_slot" method="post">
-                            <div class="add_slot monitor"> <!-- MONITOR -->
+                <div class="info_layout">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="info" aria-selected="true">Infos</button>
+                        </li> 
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="add-tab" data-bs-toggle="tab" data-bs-target="#add" type="button" role="tab" aria-controls="add" aria-selected="false">Add</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="edit-tab" data-bs-toggle="tab" data-bs-target="#edit" type="button" role="tab" aria-controls="edit" aria-selected="false">Editar</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="delete-tab" data-bs-toggle="tab" data-bs-target="#delete" type="button" role="tab" aria-controls="delete" aria-selected="false">Deletar</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+                            <br>
+                            <div class="info_slot monitor"> <!-- MONITOR -->        
                                 <label for="monitor" class="form-label">Monitor:</label>
                                 <input class="form-control" placeholder="Vazio" id="monitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
-                            </div>
-                            <div class="add_slot computador"> <!-- COMPUTADOR -->
+                            </div> 
+                            <div class="info_slot computador"> <!-- COMPUTADOR -->        
                                 <label for="computador" class="form-label">Computador:</label>
                                 <input class="form-control" placeholder="Vazio" id="computador"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
-                            </div>
-                            <div class="add_slot teclado"> <!-- TECLADO -->
+                            </div> 
+                            <div class="info_slot teclado"> <!-- TECLADO -->        
                                 <label for="teclado" class="form-label">Teclado:</label>
                                 <input class="form-control" placeholder="Vazio" id="teclado"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
-                            </div>
-                            <div class="add_slot mouse"> <!-- MOUSE -->
-                                <label for="mouse" class="form-label">Mouse:</label>
-                                <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
-                            </div>
-                            <br>
-                            <button type="submit" class="btn btn-primary btn-lg">Adicionar</button>
-                        </form>
-                    </div>
-                    <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="edit-tab">
-                        <form action="/edit_slot" method="post">
-                            <div class="edit_wrapper">
-                                <div class="edit_config">
-                                    <label for="edit_monitor" class="form-label">Editar o monitor:</label>
-                                    <input class="form-control" list="datalistOptionsMonitor" id="edit_monitor" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DE MONITOR -->
-                                        <datalist id="datalistOptionsMonitor"> <!-- LISTA DE MONITORES -->
-                                            <option value="Monitor 1">
-                                            <option value="Monitor 2">
-                                            <option value="Monitor 3">
-                                        </datalist>
-                                    <label for="edit_computador" class="form-label">Editar o computador:</label>
-                                    <input class="form-control" list="datalistOptionsComputador" id="edit_computador" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DE COMPUTADOR -->
-                                        <datalist id="datalistOptionsComputador"> <!-- LISTA DE COMPUTADORES -->
-                                            <option value="Computador 1">
-                                            <option value="Computador 2">
-                                            <option value="Computador 3">
-                                        </datalist>
-                                    <label for="edit_teclado" class="form-label">Editar o Teclado:</label>
-                                    <input class="form-control" list="datalistOptionsTeclado" id="edit_teclado" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DE TECLADO -->
-                                        <datalist id="datalistOptionsTeclado"> <!-- LISTA DE TECLADOS -->
-                                            <option value="Teclado 1">
-                                            <option value="Teclado 2">
-                                            <option value="Teclado 3">
-                                        </datalist>
-                                    <label for="edit_mouse" class="form-label">Editar o mouse:</label>
-                                    <input class="form-control" list="datalistOptionsMouse" id="c1_floor" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO MOUSE -->
-                                        <datalist id="datalistOptionsMouse"> <!-- LISTA DE MOUSE -->
-                                            <option value="Mouse 1">
-                                            <option value="Mouse 2">
-                                            <option value="Mouse 3"></option>
-                                        </datalist>
-                                </div>
-                                <div class="status_monitor">
-                                    <label for="status_monitor" class="form-label">Status do monitor:</label>
-                                    <input class="form-control" list="datalistStatusMonitor" id="status_monitor" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA STATUS MONITOR -->
-                                        <datalist id="datalistStatusMonitor"> <!-- STATUS MONITOR -->
-                                            <option value="Monitor Atual">
-                                        </datalist>
-                                    <label for="status_computador" class="form-label">Status Computador:</label>
-                                    <input class="form-control" list="datalistStatusComputador" id="status_computador" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA STATUS DO COMPUTADOR -->
-                                        <datalist id="datalistStatusComputador"> <!-- STATUS COMPUTADOR -->
-                                            <option value="Computador Atual">
-                                        </datalist>
-                                    <label for="status_teclado" class="form-label">Status Teclado:</label>
-                                    <input class="form-control" list="datalistStatusTeclado" id="status_teclado" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA STATUS TECLADO -->
-                                        <datalist id="datalistStatusTeclado"> <!-- STATUS TECLADO -->
-                                            <option value="Teclado Atual">
-                                        </datalist>
-                                    <label for="status_mouse" class="form-label">Status Mouse:</label>
-                                    <input class="form-control" list="datalistStatusMouse" id="status_mouse" placeholder="Clique aqui para selecionar"  onkeypress="return false;"> <!-- ÁREA PARA STATUS MOUSE -->
-                                        <datalist id="datalistStatusMouse"> <!-- STATUS MOUSE -->
-                                            <option value="Mouse Atual">
-                                        </datalist>
-                                </div>
-                            </div>
-                            <br>
-                            <button type="submit" class="btn btn-primary btn-lg">Editar</button>
-                        </form>
-                    </div>
-                    <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="delete-tab">
-                        <form action="/delete_slot" method="post">
-                            <div class="delete_slot monitor"> <!-- MONITOR -->
-                                <label for="monitor" class="form-label">Monitor:</label>
-                                <input class="form-control" placeholder="Vazio" id="monitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
-                            </div>
-                            <div class="delete_slot computador"> <!-- COMPUTADOR -->
-                                <label for="computador" class="form-label">Computador:</label>
-                                <input class="form-control" placeholder="Vazio" id="computador"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
-                            </div>
-                            <div class="delete_slot teclado"> <!-- TECLADO -->
-                                <label for="teclado" class="form-label">Teclado:</label>
-                                <input class="form-control" placeholder="Vazio" id="teclado"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
-                            </div>
-                            <div class="delete_slot mouse"> <!-- MOUSE -->
+                            </div> 
+                            <div class="info_slot mouse"> <!-- MOUSE -->        
                                 <label for="mouse" class="form-label">Mouse:</label>
                                 <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
                             </div> 
