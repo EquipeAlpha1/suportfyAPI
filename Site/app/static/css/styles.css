@@ -1,3 +1,11 @@
+/* CORES
+  #485A5C
+  #97BEC2
+  #ABD4DB
+  #B5E4E8
+  #BFF0F5
+  */
+
 html, body {
   height: 100%;
   width: 100%;
@@ -6,8 +14,8 @@ html, body {
 body {
   font-size: 1.2rem;
   font-family: Arial, Helvetica, sans-serif;      
-  padding: 80px 0 0 0;
-  margin: 0;
+  /* padding: 80px 0 0 0;
+  margin: 0; */
 }
 
 h4 {
@@ -25,12 +33,10 @@ h1 {
 }
 
 header {
-  background: #97BEC2;
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 80px;
   width: 100%;
@@ -39,6 +45,16 @@ header {
   z-index: 9999;
 }
 
+header {
+  background-color: #76acb3;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.541);
+}
+
+.login > button {
+  position: fixed;
+  left: 85%;
+  top: 2.5%;
+}
 .logoHeader {
   height: 48px;
   width: auto;
@@ -47,6 +63,16 @@ header {
 header nav {
   height: 48px;
   width: auto;
+}
+
+.container-fluid > a:hover {
+  background: #708688;
+}
+
+.container-fluid > a {
+  border-radius: 1rem;
+  transition-duration: 0.3s;
+  padding: 5px;
 }
 
 section {  
@@ -184,26 +210,17 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 200px;
+  height: 110px;
   padding: 0px 20px;
 }
 
 .logoFooter {
   height: 50%;
   width: auto;
+  margin-left: 18%;
 }
 
-.divFooter h4 {
-  color: white;
-}
-
-.linksFooter a {
-  display: block;
-  text-decoration: none;
-  color: white;
-}
-
-.linksFooter a:hover {
+.divFooter {
   color: white;
 }
 
@@ -373,24 +390,6 @@ textarea {
   padding: 10px;
 }
 
-/* Customização do botão */
-.common_btns button.btn_back {  
-  background: #97BEC2;
-}
-
-/* Customização do botão */
-.common_btns button.btn_next,
-.common_btns button.btn_done {  
-  background: #b5e4e8;
-}
-
-/* Cor ao selecionar botão */
-.common_btns button.btn_next:hover,
-.common_btns button.btn_back:hover,
-.common_btns button.btn_done:hover {
-  background: #708688;
-}
-
 /* Customização imagem home */
 .img_home {
   height: 100%;
@@ -454,4 +453,45 @@ textarea {
 
 .capa_wrapper {
   height: 100%;
+}
+
+.btnDesktop {
+  display: block;
+}
+.btnMobile {
+  display: none;
+}
+.container-fluid {
+  padding: 0.5rem 0;
+}
+
+@media only screen and (min-width: 450px) {
+  nav {
+    width: 70%;
+  }
+  .menuMobile {
+    padding: 0 1rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .nav-item .nav-link {
+    padding: 0.5rem 0;   
+    margin: 0;            
+  }
+  .navbar-nav {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .dropdown-item {
+    padding: 0.5rem 1rem;
+  }
+  .navbar img, button {
+    margin: 0.5rem 1rem;
+  }  
+  .btnDesktop {
+    display: none;
+  }
+  .btnMobile {
+    display: block;
+  }
 }

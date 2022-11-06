@@ -5,45 +5,83 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">     
-        <link rel="stylesheet" href="../static/css/styles.css">        
+        <link rel="stylesheet" href="../static/css/styles.css">      
         <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
         <title>{% block title %} {% endblock %} - Suporte Alpha</title>  
         <!-- JavaScript Bundle with Popper -->
     </head>
-    <body>
-        <header id="header">
-            <img src="../static/img/logo.png" alt="Logo Header" class="logoHeader" id="logoheader">
-            <nav id = "nav">
-                <button id="btn-mobile">
-                    <span id="hamburguer"> </span>
-                </button>
-                <ul class="menu" id="menu">
-                    <li><a href="home">Home</a></li>
-                    <li><a href="create_request">Abrir Solicitação</a></li>
-                    <li><a href="consult_requests">Histórico de Solicitações</a></li>
-                    <li><a href="faq">FAQ's</a></li>
-                    {% if not session %}
-                        <li><a href="sign_in">Entrar</a></li>
-                    {% else %}
-                        <li><a href="edit_layout">Editar</a></li>
-                        <li><a href="sign_out">Sair</a></li>
-                    {% endif %}
-                </ul>
+    <body>        
+        <div class="navbarWrapper" style="width: 100%; height: auto; background: #e7e7e7;">
+            <nav class="navbar navbar-expand-lg m-auto">
+                <div class="container-fluid">
+                    <img src="../static/img/logo.png" alt="Logo Header" class="logoHeader">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse menuMobile" id="navbarSupportedContent">
+                        <hr>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">                            
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="home">Home</a>
+                            </li>
+                            <hr>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Suporte
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="create_request">Abrir Solicitação</a></li><hr style="margin: 8px 0;">
+                                    <li><a class="dropdown-item" href="consult_requests">Consultar Solicitações</a></li>
+                                </ul>
+                            </li>
+                            <hr>
+                            <li class="nav-item">
+                                <a class="nav-link" href="faq">FAQ</a>
+                            </li>
+                            <hr>
+                            {# if not session #}
+                                <li class="nav-item">
+                                    <a class="nav-link btnMobile" href="sign_in">Login</a>
+                                </li>
+                            {# else #}
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link btnMobile" href="edit_layout">Editar Layout</a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link btnMobile" href="sign_out">Sair</a>
+                                </li> -->
+                            {# endif #} 
+                        </ul>                                  
+                        {# if not session #}
+                            <form action="/sign_in" method="post" class="btnDesktop">
+                                <button class="btn btn-outline-dark" type="submit">Login</button>
+                            </form>
+                        {# else #}
+                            <!-- <form action="/edit_layout" method="post" class="btnDesktop">
+                                <button class="btn btn-outline-dark" type="submit">Editar Layout</button>
+                            </form>
+                            <form action="/sign_out" method="post" class="btnDesktop">
+                                <button class="btn btn-outline-dark" type="submit" style="margin-left: 1rem;">Sair</button>
+                            </form>  -->   
+                        {# endif #} 
+                    </div>
+                </div>
             </nav>
-        </header>  
+        </div>
+        
         {% block conteudo %}
         {% endblock %}
-        <footer>
-            <div class="divFooter">
-                <h4>Contato suporte:</h4>
-                <br>
-                <div class="linksFooter">
-                    <a href="tel:+5512900007777">Telefone: (12) 9 0000-7777</a>
-                    <a href="mailto:ads.2sem.2022@gmail.com">E-mail: ads.2sem.2022@gmail.com</a>
-                </div>      
-            </div>
-            <img src="../static/img/logo.png" alt="Logo Footer" class="logoFooter">
-        </footer>
+        <div class="divFooter">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <p>&copy; 2022 Equipe Alpha</p>
+                <img src="../static/img/logo.png" alt="Logo Header" class="logoFooter">
+            </footer>
+        </div>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../static/js/scripts.js"></script>  
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>        
         <script type="text/javascript" src="../static/js/jQuery.js"></script>
