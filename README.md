@@ -55,49 +55,18 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 ![Backlog total](https://user-images.githubusercontent.com/111616660/190879818-7063c42b-8c20-4404-8b14-e524a64352ad.png)
 
 
-## Backlog Sprint 2
+## Backlog Sprint 3
 
 | US | Estimativa de esforço | Critério de aceitação |
 |:--------------:  | :----------:|:---------------------------------:|
-| Bloqueio das caixas para inserção de dados | 6 | Não serem colocadas informações desnecessárias |
-| Inserir asteriscos vermelhos para inputs obrigatórios | 8 | Sinalizar que é um campo obrigatório |
-| Criação de campos para seleção de sala em página de inserção de dados do usuário | 6 | Facilitar a seleção do problema  |
-| Atualização da página home | 8 | Página home mais adequado ao suporte |
-| Início Implementação do banco de dados | 12 | Registrar pedidos e gerar o ID de chamado |
-| Estruturação visual do funcionamento do banco de dados | 4 | Melhorar a visualização do banco de dados |
-
-
-## Burndown
-
-O Burndown da equipe foi baseado nas horas disponíveis para estar trabalhando no projeto, levando em conta o backlog da Sprint 1, para entregar um produto de valor ao cliente.
-
-| Dia	| Datas	| Ideal (h) |	Trabalhado (h)	| Real (h) |
-|:---: | :-----------: | :----------: | :-------------: | :-------------: |
-| 1	| 19/09/2022 | 82 | 0	| 82 |
-| 2	| 20/09/2022	| 77,9 | 0	| 82 |
-| 3	| 21/09/2022	| 73,8 | 0	| 82 |
-| 4	| 22/09/2022	| 69,7 | 0	| 82 |
-| 5	| 23/09/2022	| 65,6 | 0	| 82 |
-| 6	| 24/09/2022	| 61,5 | 8	| 74 |
-| 7	| 25/09/2022	| 57,4 | 6	| 68 |
-| 8	| 26/09/2022	| 53,3 | 0	| 68 |
-| 9	| 27/09/2022	| 49,2 | 0	| 68 |
-| 10 | 28/09/2022	| 45,1 | 28	| 40 |
-| 11 | 29/09/2022	|  41  | 6	| 34 |
-| 12 | 30/09/2022	| 36,9 | 0	| 34 |
-| 13 | 01/10/2022	| 32,8 | 0	| 34 |
-| 14 | 02/10/2022	| 28,7 | 0	| 34 |
-| 15 | 03/10/2022	| 24,6 | 0	| 34 |
-| 16 | 04/10/2022	| 20,5 | 0	| 34 |
-| 17 | 05/10/2022	| 16,4 | 0	| 34 |
-| 18 | 06/10/2022	| 12,3 | 0	| 34 |
-| 19 | 07/10/2022	| 8,2  | 0	| 34 |
-| 20 | 08/10/2022	| 4,1  | 0	| 26 |
-| 21 | 09/10/2022	| 7,10543E-15 | 10	| 0|
-
-
-![Burndown 2](https://user-images.githubusercontent.com/111616660/194783693-8772f62e-12c6-4c52-9164-6247a5264eee.jpeg)
-
+| Refazer JQuery | 34 |  |
+| Verificar se é necessário a biblioteca flask-login para cadastrar e autenticar usuários | 21 |  |
+| Criar página para administrador editar layout das salas  | 34 |   |
+| Criação da página de login | 3 |  |
+| Criação da página FAQs | 8 |  |
+| Trabalhar responsividade mobile | 34 |  |
+| Trocar o máximo de elementos avulsos por Bootstrap | 13 |  |
+|  | 4 |  |
 
 
 ## Tecnologias e ferramentas
