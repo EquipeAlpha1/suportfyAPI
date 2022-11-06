@@ -220,10 +220,6 @@ footer {
   margin-left: 18%;
 }
 
-.divFooter {
-  color: white;
-}
-
 /* Posicionamento steps */
 .steps_wrapper {
   height: 40px;
@@ -470,16 +466,27 @@ textarea {
   height: 100%;
 }
 
+nav {
+  width: 70%;
+}
+
+.menuMobile {
+  padding: 0 1rem;
+}
+
 .btnDesktop {
   display: block;
 }
+
 .btnMobile {
   display: none;
 }
+
 .container-fluid {
   padding: 0.5rem 0;
 }
-/* @media(max-width: 450px) { 
+
+@media(max-width: 450px) { 
   
   #nav.active #hamburguer:before {
     transform: rotate(135deg);
@@ -532,7 +539,7 @@ textarea {
 
   .formEmail {
     display: grid;
-    grid-template-rows: 10% 50% 10%; 
+    grid-template-rows: 10% 40% 10%; 
     height: 100%;
     width: 100%;
     margin: 0px;
@@ -563,14 +570,7 @@ textarea {
     margin-top: 150px;
   }
 
-} */
-nav {
-  width: 70%;
-}
-.menuMobile {
-  padding: 0 1rem;
-}
-@media only screen and (max-width: 450px) {
+  
   nav {
     width: 100%;
   }

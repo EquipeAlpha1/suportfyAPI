@@ -63,12 +63,12 @@ def sign_in():
                 return redirect(url_for('home'))
     return render_template('sign_in.html')
 
-@app.route('/sign_out', methods=('POST',))
+@app.route('/sign_out')
 def sign_out():
     session.clear()
     return redirect(url_for('home'))
 
-@app.route('/edit_layout', methods=['GET','POST'])
+@app.route('/edit_layout')
 def edit_layout():
     if not session:
         return 'ERRO: Você não tem autorização!'

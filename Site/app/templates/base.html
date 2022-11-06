@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="../static/css/styles.css">      
         <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
         <title>{% block title %} {% endblock %} - Suporte Alpha</title>  
-        <!-- JavaScript Bundle with Popper -->
     </head>
     <body>        
         <div class="navbarWrapper" style="width: 100%; height: auto; background: #e7e7e7;">
@@ -56,29 +55,27 @@
                             {% endif %} 
                         </ul>                                  
                         {% if not session %}
-                            <form action="/sign_in" method="post" class="btnDesktop">
+                            <form action="/sign_in" class="btnDesktop">
                                 <button class="btn btn-outline-dark" type="submit">Login</button>
                             </form>
                         {% else %}
-                            <form action="/edit_layout" method="post" class="btnDesktop">
+                            <form action="/edit_layout" class="btnDesktop">
                                 <button class="btn btn-outline-dark" type="submit">Editar Layout</button>
                             </form>
-                            <form action="/sign_out" method="post" class="btnDesktop">
+                            <form action="/sign_out" class="btnDesktop">
                                 <button class="btn btn-outline-dark" type="submit" style="margin-left: 1rem;">Sair</button>
                             </form>    
                         {% endif %} 
                     </div>
                 </div>
             </nav>
-        </div>        
+        </div>      
         {% block conteudo %}
         {% endblock %}
-        <div class="divFooter">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                <p>&copy; 2022 Equipe Alpha</p>
-                <img src="../static/img/logo.png" alt="Logo Header" class="logoFooter">
-            </footer>
-        </div>
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p style="margin:auto 0;color:white;">Grupo Alpha &copy; 2022</p>
+            <img src="../static/img/logo_white.png" alt="Logo Header" class="logoFooter">
+        </footer>        
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../static/js/scripts.js"></script>  

@@ -2,7 +2,7 @@
 {% block title %} Abrir solicitação {% endblock %}
 {% block conteudo %}
         <section class="sectionCreateRequest">
-            <form method="post" action="/home" class="formEmail" id="formEmail" enctype="multipart/form-data"> <!-- FORMULÁRIO DE SUPORTE -->
+            <form method="post" action="/consult_requests" class="formEmail" id="formEmail" enctype="multipart/form-data"> <!-- FORMULÁRIO DE SUPORTE -->
                 <div class="steps"> <!-- ETAPAS DO PROCESSO -->
                     <div class="steps_wrapper">
                         <ul> <!-- LISTA DE ETAPAS -->
@@ -44,9 +44,9 @@
                                 <input class="form-control" type ="email" placeholder="Digite seu e-mail aqui" id="c1_email" aria-describedby="emailHelp"> <!-- ÁREA PARA DIGITAR O E-MAIL DO USUÁRIO -->
                             </div>
                             <br>
-                            <div class="roomChoice">
+                            <div class="roomChoice"> <!-- ANDAR E SALA -->
                                 <div class="selectionFloor"> <!--SELEÇÃO DE ANDAR -->
-                                    <label for="c1_floor" class="form-label">Selecine a sala:<span class="requiredField">*</span></label> 
+                                    <label for="c1_floor" class="form-label">Selecine a sala: <span class="requiredField">*</span></label> 
                                     <input class="form-control" list="datalistOptionsFloor" id="c1_floor" placeholder="Clique aqui para selecionar" onChange="loadRooms(this.value)" onkeypress="return false;"> <!-- ÁREA PARA SELEÇÃO DE ANDAR -->
                                         <datalist id="datalistOptionsFloor"> <!-- LISTA DE ANDAR -->
                                             <option value="3º Andar">
@@ -54,20 +54,20 @@
                                         </datalist>
                                 </div>
                                 <div class="selectionRoom"> <!--SELEÇÃO DE SALA  -->
-                                    <label for="c1_room" class="form-label">Selecione o andar:<span class="requiredField">*</span></label>
+                                    <label for="c1_room" class="form-label">Selecione o andar: <span class="requiredField">*</span></label>
                                     <input class="form-control" list="datalistOptionsRoom" id="c1_room" placeholder="Clique aqui para selecionar" onkeypress="return false;"> <!-- ÁREA PARA SELEÇÃO DE SALAS -->
-                                        <datalist id="datalistOptionsRoom"><!-- LISTA DE SALAS -->
+                                        <datalist id="datalistOptionsRoom"> <!-- LISTA DE SALAS -->
                                         </datalist>
                                 </div>
                             </div>   
                             <br>
-                            <div class="subtitleRequiredField">* Campo Obrigatório</div>  
+                            <div class="subtitleRequiredField">* Campo Obrigatório</div> <!-- LEGENDA -->
                         </div>
                         <div class="form_2 data_info" style="display: none;"> <!-- CONTEÚDO DA PÁGINA 2 -->
                             <h4>ESCOLHA A MÁQUINA COM PROBLEMA:</h4>
                             <br>
                             <div class="layout_computers"> <!-- LAYOUT DOS COMPUTADORES -->
-                                <div class="leftSide"> <!-- COMPUTADORES DO LADO ESQUERDO -->
+                                <div class="leftSide"> <!-- SLOTS DO LADO ESQUERDO -->
                                     <div class="row-1"> <!-- LINHA 1 -->
                                         <div class="computerSlotX firstRowX tenthColumnX slot_1x10"> <!-- 1ª LINHA - 10ª COLUNA --- SLOT VAZIO -->            
                                         </div> 
@@ -276,7 +276,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="rightSide"> <!-- COMPUTADORES DO LADO DIREITO -->
+                                <div class="rightSide"> <!-- SLOTS DO LADO DIREITO -->
                                     <div class="row-1"> <!-- LINHA 1 -->
                                         <div class="computerSlotX firstRowX fifthColumnX slot_1x5"> <!-- 1ª LINHA - 5ª COLUNA --- SLOT VAZIO -->            
                                         </div>
@@ -512,7 +512,7 @@
                                 <input class="form-control" type="file" name="file" id="formFile" accept="image/png, image/gif, image/jpg, image/jpeg">
                             </div>
                             <br>
-                            <div class="subtitleRequiredField">* Campo Obrigatório</div>  
+                            <div class="subtitleRequiredField">* Campo Obrigatório</div> <!-- LEGENDA -->
                         </div>
                         <div class="form_4 data_info" id="marginm" style="display: none;"> <!-- CONTEÚDO DA PÁGINA 4 -->
                             <div class="success">
