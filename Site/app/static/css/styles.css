@@ -423,30 +423,43 @@ textarea {
   height: 100%;
 }
 
+.btnDesktop {
+  display: block;
+}
+.btnMobile {
+  display: none;
+}
+.container-fluid {
+  padding: 0.5rem 0;
+}
+
 @media only screen and (min-width: 450px) {
   nav {
-      width: 70%;
+    width: 70%;
   }
   .menuMobile {
-      padding: 0 1rem;
+    padding: 0 1rem;
   }
 }
 @media only screen and (max-width: 450px) {
   .nav-item .nav-link {
-      padding: 0.5rem 0;   
-      margin: 0;            
+    padding: 0.5rem 0;   
+    margin: 0;            
   }
   .navbar-nav {
-      width: 80%;
-      margin: 0 auto;
+    width: 80%;
+    margin: 0 auto;
   }
   .dropdown-item {
-      padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
   }
   .navbar img, button {
-      margin: 0.5rem 1rem;
+    margin: 0.5rem 1rem;
+  }  
+  .btnDesktop {
+    display: none;
   }
-  .container-fluid {
-      padding: 0;
+  .btnMobile {
+    display: block;
   }
 }
