@@ -481,6 +481,88 @@ textarea {
   height: 100%;
 }
 
+
+/* faq */
+.sectionFaq{
+  display: flex;
+}
+
+.contentFaq{
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.informscontentFaq{
+  width: 85%; height: 85%;
+  padding-top: 10%;
+}
+
+
+.titlesearchFaq{
+  width: 100%; height: auto;
+  margin-bottom: 20px;
+}
+
+.searchinputFaq{
+  height: 80px;
+  background: #e6e6e6;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputFaq{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  background: 0;
+  outline: 0;
+  border: none;
+  padding-left: 30px;
+  width: 1500px;
+  text-decoration: none;
+}
+
+.loupeFaq{
+  margin-right: 40px;
+}
+
+.informsFaq{
+  width: 80%; height: 80%;
+  padding-top: 7%;
+  display: flexbox;
+  justify-content: center;
+}
+
+.titleFaq{
+  margin-bottom: 50px;
+  margin-left: 25%;
+  width: auto; height: auto;
+}
+
+.solucionFaq{
+  height: auto; width: 50%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  margin-left: 25%;
+}
+
+.informsmodemFaq{
+  width: 80%; height: 80%;
+  display: flexbox;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
 .navbarWrapper {
   position: fixed;
   top: 0;
@@ -505,10 +587,6 @@ nav {
 
 .container-fluid {
   padding: 0.5rem 0;
-}
-
-.navbar-nav .nav-item {
-  
 }
 
 @media(max-width: 450px) { 
@@ -645,3 +723,4 @@ nav {
     height: fit-content; /* 85% do body */  
   }
 }
+
