@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
+
 $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será ativada, quando o usuário clicar em qualquer botão 'Submit' do formulário --> */
 
     var c1_name = $("#c1_name").val();
