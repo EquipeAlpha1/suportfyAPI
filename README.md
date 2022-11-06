@@ -58,13 +58,11 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 
 | US | Estimativa de esforço | Critério de aceitação |
 |:--------------:  | :----------:|:---------------------------------:|
-| Refazer JQuery | 34 |  |
-| Verificar se é necessário a biblioteca flask-login para cadastrar e autenticar usuários | 21 |  |
-| Criar página para administrador editar layout das salas  | 34 |   |
-| Criação da página de login | 3 |  |
-| Criação da página FAQs | 8 |  |
-| Trabalhar responsividade mobile | 34 |  |
-| Trocar o máximo de elementos avulsos por Bootstrap | 13 |  |
+| Criar página para administrador editar layout das salas  | 34 | Dar permissão para o administrador editar, deletar e acrescentar computadores nos laboratórios e editar status dos componentes |
+| Criação da página de login | 3 | Criar outro tipo de usuário para manipular layouts das salas |
+| Criação da página FAQs | 8 | Ter as dúvidas mais pertinentes que o usuário possa ter |
+| Trabalhar responsividade mobile | 34 | Facilitar o acesso do usuário por meio de qualquer aparelho e tamanho de tela |
+| Trocar o máximo de elementos avulsos por Bootstrap | 13 | Dar mais padronização ao software |
 
 
 ## Tecnologias e ferramentas
@@ -78,12 +76,12 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 
 ## App da Sprint 3
 
-[App Sprint 3](https://sprint2-grupo-alpha.herokuapp.com/)
+[App Sprint 3]()
 
 
 ## Software em funcionamento
 
-[Vídeo Sprint 2](https://youtu.be/gmeIEx5pVIk)
+[Vídeo Sprint 3]()
 
 ## Agradecimentos
 Agradecemos pelo corpo docente da Fatec-SJC, que nos auxiliou no trabalho com as tecnologias envolvidas no projeto e também com a disponibilidade dos laborátórios, para mapeamento e utilização dos computadores.
