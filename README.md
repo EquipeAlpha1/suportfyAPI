@@ -38,10 +38,9 @@
 ## Índice
 * [Objetivo do Projeto](#objetivo-do-projeto)
 * [Backlog Total](#backlog-total)
-* [Backlog Sprint 2](#backlog-sprint-2)
-* [Burndown Sprint 2](#burndown)
+* [Backlog Sprint 3](#backlog-sprint-3)
 * [Tecnologias e ferramentas utilizadas](#tecnologias-e-ferramentas)
-* [App da Sprint 2](#app-da-sprint-2)
+* [App da Sprint 3](#app-da-sprint-3)
 * [Software em funcionamento](#software-em-funcionamento)
 * [Agradecimentos](#agradecimentos)
 
@@ -66,7 +65,6 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 | Criação da página FAQs | 8 |  |
 | Trabalhar responsividade mobile | 34 |  |
 | Trocar o máximo de elementos avulsos por Bootstrap | 13 |  |
-|  | 4 |  |
 
 
 ## Tecnologias e ferramentas
@@ -78,9 +76,9 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 * Flask;
 * SQLite.
 
-## App da Sprint 2
+## App da Sprint 3
 
-[App Sprint 2](https://sprint2-grupo-alpha.herokuapp.com/)
+[App Sprint 3](https://sprint2-grupo-alpha.herokuapp.com/)
 
 
 ## Software em funcionamento
