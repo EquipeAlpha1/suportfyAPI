@@ -16,11 +16,11 @@ var form_3_btns = document.querySelector(".form_3_btns");
 var form_4_btns = document.querySelector(".form_4_btns");
 
 /* BUTTONS */
-var form_1_next_btn = document.querySelector(".form_1_btns .btn-primary");
-var form_2_back_btn = document.querySelector(".form_2_btns .btn-secondary");
-var form_2_next_btn = document.querySelector(".form_2_btns .btn-primary");
-var form_3_back_btn = document.querySelector(".form_3_btns .btn-secondary");
-var form_3_next_btn = document.querySelector(".form_3_btns .btn-primary");
+var form_1_next_btn = document.querySelector(".form_1_btns .btn_next");
+var form_2_back_btn = document.querySelector(".form_2_btns .btn_back");
+var form_2_next_btn = document.querySelector(".form_2_btns .btn_next");
+var form_3_back_btn = document.querySelector(".form_3_btns .btn_back");
+var form_3_next_btn = document.querySelector(".form_3_btns .btn_next");
 
 const sizeRooms = {
 	larger: [402], /* 4x4 - 4 */
@@ -176,14 +176,3 @@ form_3_next_btn.addEventListener("click", function() {
 
 	form_4_progressbar.classList.add("active");
 });
-
-// Menu mobile
-
-const btnMobile = document.getElementById('btn-mobile')
-
-function toggleMenu() {
-	const nav = document.getElementById('nav');
-	nav.classList.toggle('active');
-}
-
-btnMobile.addEventListener('click', toggleMenu);

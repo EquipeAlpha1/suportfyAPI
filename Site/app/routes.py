@@ -40,7 +40,7 @@ def sign_in():
         email = request.form.get('mailTec')
         password = request.form.get('passwordTec')
         if not email:
-            flash('O e-mail não foi inserido!')
+            """ flash('O e-mail não foi inserido!') """
             return redirect(url_for('sign_in'))
         elif not password:
             flash('A senha não foi inserida!')
@@ -63,7 +63,7 @@ def sign_in():
                 return redirect(url_for('home'))
     return render_template('sign_in.html')
 
-@app.route('/sign_out')
+@app.route('/sign_out', methods=('POST',))
 def sign_out():
     session.clear()
     return redirect(url_for('home'))
@@ -254,7 +254,7 @@ def consult_slot(slot_id):
     return redirect(url_for('edit_layout', slot_info=slot_info))
 
 @app.route('/<int:slot_id>/add_slot', methods=('POST',))
-def add_slot(slot_id):    
+def add_slot(slot_id):
 
     conn = get_db_connection()
     conn.execute('UPDATE \
