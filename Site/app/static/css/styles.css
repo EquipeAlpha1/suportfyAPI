@@ -461,23 +461,18 @@ textarea {
   .sectionEditLayout{
     display: block;
     width: 100%;
+    height: auto;
   }
 
   .info_layout{
     display: block;
-    margin: 90px 0px;
     height: 550px;
+    margin: 70px 0px 0px 0px
   }
 
    .sectionEdit_text{
     display: flex;
     text-align: center;
    }
-
-    footer{
-    margin-top: 230px;
-   }
-
-
 
 }
