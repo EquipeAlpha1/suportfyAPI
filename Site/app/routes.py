@@ -193,10 +193,6 @@ def upload_file():
         tempEvent = True
     return redirect(url_for('create_request'))
 
-@app.route('/faq')
-def faq():
-    return render_template('faq.html')
-
 @app.route('/monitorFaq')
 def monitor():
     return render_template('monitorFaq.html')

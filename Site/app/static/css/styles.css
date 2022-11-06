@@ -485,6 +485,7 @@ textarea {
 /* faq */
 .sectionFaq{
   display: flex;
+  height: 100%;
 }
 
 .contentFaq{
