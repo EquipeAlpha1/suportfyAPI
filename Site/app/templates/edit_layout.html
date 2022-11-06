@@ -2,10 +2,9 @@
 {% block title %} Entrar {% endblock %}
 {% block conteudo %}
         <section class="sectionEditLayout">
-            <div class="wrapper_editLayout">
+            <h2 class="text-center" style="margin: 1rem 0;">Escolha o slot:</h2>
+            <div class="wrapper_editLayout" style="padding: 0 1rem;">
                 <div class="edit_layout" > <!-- CONTEÚDO DA PÁGINA 2 -->
-                    <h4>ESCOLHA A MÁQUINA COM PROBLEMA:</h4>
-                    <br>
                     <div class="layout_computers"> <!-- LAYOUT DOS COMPUTADORES -->
                         <div class="leftSide"> <!-- COMPUTADORES DO LADO ESQUERDO -->
                             <div class="row-1"> <!-- LINHA 1 -->
@@ -430,7 +429,7 @@
                           <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="info" aria-selected="true">Infos</button>
                         </li> 
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link" id="add-tab" data-bs-toggle="tab" data-bs-target="#add" type="button" role="tab" aria-controls="add" aria-selected="false">Add</button>
+                          <button class="nav-link" id="add-tab" data-bs-toggle="tab" data-bs-target="#add" type="button" role="tab" aria-controls="add" aria-selected="false">Adicionar</button>
                         </li>
                         <li class="nav-item" role="presentation">
                           <button class="nav-link" id="edit-tab" data-bs-toggle="tab" data-bs-target="#edit" type="button" role="tab" aria-controls="edit" aria-selected="false">Editar</button>
@@ -441,26 +440,30 @@
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
-                            <br>
-                            <div class="info_slot monitor"> <!-- MONITOR -->        
-                                <label for="monitor" class="form-label">Monitor:</label>
-                                <input class="form-control" placeholder="Vazio" id="monitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
-                            </div> 
-                            <div class="info_slot computador"> <!-- COMPUTADOR -->        
-                                <label for="computador" class="form-label">Computador:</label>
-                                <input class="form-control" placeholder="Vazio" id="computador"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
-                            </div> 
-                            <div class="info_slot teclado"> <!-- TECLADO -->        
-                                <label for="teclado" class="form-label">Teclado:</label>
-                                <input class="form-control" placeholder="Vazio" id="teclado"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
-                            </div> 
-                            <div class="info_slot mouse"> <!-- MOUSE -->        
-                                <label for="mouse" class="form-label">Mouse:</label>
-                                <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
-                            </div> 
+                            <form action="/refresh_slot">
+                                <div class="info_slot monitor"> <!-- MONITOR -->
+                                    <label for="monitor" class="form-label">Monitor:</label>
+                                    <input class="form-control" placeholder="Vazio" id="monitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
+                                </div>
+                                <div class="info_slot computador"> <!-- COMPUTADOR -->
+                                    <label for="computador" class="form-label">Computador:</label>
+                                    <input class="form-control" placeholder="Vazio" id="computador"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
+                                </div>
+                                <div class="info_slot teclado"> <!-- TECLADO -->
+                                    <label for="teclado" class="form-label">Teclado:</label>
+                                    <input class="form-control" placeholder="Vazio" id="teclado"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
+                                </div>
+                                <div class="info_slot mouse"> <!-- MOUSE -->
+                                    <label for="mouse" class="form-label">Mouse:</label>
+                                    <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
+                                </div>
+                                <hr>
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary btn-lg">Atualizar</button>
+                                </div>                                
+                            </form>
                         </div>
                         <div class="tab-pane fade" id="add" role="tabpanel" aria-labelledby="add-tab">
-                            <br>
                             <form action="/add_slot" method="post">
                                 <div class="add_slot monitor"> <!-- MONITOR -->
                                     <label for="monitor" class="form-label">Monitor:</label>
@@ -478,15 +481,91 @@
                                     <label for="mouse" class="form-label">Mouse:</label>
                                     <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
                                 </div>
-                                <br>
-                                <button type="submit" class="btn btn-primary btn-lg">Adicionar</button>
+                                <hr>
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary btn-lg">Adicionar</button>
+                                </div>
                             </form>
                         </div>
                         <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="edit-tab">
-    
+                            <form action="/edit_slot" method="post">
+                                <div class="edit_slot_wrapper">
+                                    <div class="edit_config">
+                                        <div class="edit_slot monitor">
+                                            <label for="edit_monitor" class="form-label">Editar Monitor:</label>
+                                            <input class="form-control" list="datalistOptionsMonitor" id="edit_monitor" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DE MONITOR -->
+                                                <datalist id="datalistOptionsMonitor"> <!-- LISTA DE MONITORES -->
+                                                    <option value="Monitor 1">
+                                                    <option value="Monitor 2">
+                                                    <option value="Monitor 3">
+                                                </datalist>
+                                        </div>
+                                        <div class="edit_slot computador">
+                                            <label for="edit_computador" class="form-label">Editar Computador:</label>
+                                            <input class="form-control" list="datalistOptionsComputador" id="edit_computador" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DE COMPUTADOR -->
+                                                <datalist id="datalistOptionsComputador"> <!-- LISTA DE COMPUTADORES -->
+                                                    <option value="Computador 1">
+                                                    <option value="Computador 2">
+                                                    <option value="Computador 3">
+                                                </datalist>
+                                        </div>
+                                        <div class="edit_slot teclado">
+                                            <label for="edit_teclado" class="form-label">Editar Teclado:</label>
+                                            <input class="form-control" list="datalistOptionsTeclado" id="edit_teclado" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DE TECLADO -->
+                                                <datalist id="datalistOptionsTeclado"> <!-- LISTA DE TECLADOS -->
+                                                    <option value="Teclado 1">
+                                                    <option value="Teclado 2">
+                                                    <option value="Teclado 3">
+                                                </datalist>
+                                        </div>
+                                        <div class="edit_slot mouse">
+                                            <label for="edit_mouse" class="form-label">Editar Mouse:</label>
+                                            <input class="form-control" list="datalistOptionsMouse" id="edit_mouse" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO MOUSE -->
+                                                <datalist id="datalistOptionsMouse"> <!-- LISTA DE MOUSE -->
+                                                    <option value="Mouse 1">
+                                                    <option value="Mouse 2">
+                                                    <option value="Mouse 3"></option>
+                                                </datalist>
+                                        </div>
+                                    </div>
+                                    <div class="edit_status">
+                                        <div class="edit_slot monitor">
+                                            <label for="status_monitor" class="form-label">Status Monitor:</label>
+                                            <input class="form-control" list="datalistStatusMonitor" id="status_monitor" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA STATUS MONITOR -->
+                                                <datalist id="datalistStatusMonitor"> <!-- STATUS MONITOR -->
+                                                    <option value="Monitor Atual">
+                                                </datalist>
+                                        </div>
+                                        <div class="edit_slot computador">
+                                            <label for="status_computador" class="form-label">Status Computador:</label>
+                                            <input class="form-control" list="datalistStatusComputador" id="status_computador" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA STATUS DO COMPUTADOR -->
+                                                <datalist id="datalistStatusComputador"> <!-- STATUS COMPUTADOR -->
+                                                    <option value="Computador Atual">
+                                                </datalist>
+                                        </div>
+                                        <div class="edit_slot teclado">
+                                            <label for="status_teclado" class="form-label">Status Teclado:</label>
+                                            <input class="form-control" list="datalistStatusTeclado" id="status_teclado" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA STATUS TECLADO -->
+                                                <datalist id="datalistStatusTeclado"> <!-- STATUS TECLADO -->
+                                                    <option value="Teclado Atual">
+                                                </datalist>
+                                        </div>
+                                        <div class="edit_slot mouse">
+                                            <label for="status_mouse" class="form-label">Status Mouse:</label>
+                                            <input class="form-control" list="datalistStatusMouse" id="status_mouse" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA STATUS MOUSE -->
+                                                <datalist id="datalistStatusMouse"> <!-- STATUS MOUSE -->
+                                                    <option value="Mouse Atual">
+                                                </datalist>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary btn-lg">Editar</button>
+                                </div>
+                            </form>
                         </div>
                         <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="delete-tab">
-                            <br>
                             <form action="/delete_slot" method="post">
                                 <div class="delete_slot monitor"> <!-- MONITOR -->
                                     <label for="monitor" class="form-label">Monitor:</label>
@@ -504,11 +583,13 @@
                                     <label for="mouse" class="form-label">Mouse:</label>
                                     <input class="form-control" placeholder="Vazio" id="mouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
                                 </div>
-                                <br>
-                                <button type="submit" class="btn btn-primary btn-lg">Deletar</button>
+                                <hr>
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary btn-lg">Deletar</button>
+                                </div>
                             </form>
                         </div>
-                    </div>    
+                    </div>
                 </div>
             </div>            
         </section>
