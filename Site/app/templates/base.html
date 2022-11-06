@@ -41,32 +41,32 @@
                                 <a class="nav-link" href="faq">FAQ</a>
                             </li>
                             <hr>
-                            {# if not session #}
+                            {% if not session %}
                                 <li class="nav-item">
                                     <a class="nav-link btnMobile" href="sign_in">Login</a>
                                 </li>
-                            {# else #}
-                                <!-- <li class="nav-item">
+                            {% else %}
+                                <li class="nav-item">
                                     <a class="nav-link btnMobile" href="edit_layout">Editar Layout</a>
                                 </li>
                                 <hr>
                                 <li class="nav-item">
                                     <a class="nav-link btnMobile" href="sign_out">Sair</a>
-                                </li> -->
-                            {# endif #} 
+                                </li>
+                            {% endif %} 
                         </ul>                                  
-                        {# if not session #}
+                        {% if not session %}
                             <form action="/sign_in" method="post" class="btnDesktop">
                                 <button class="btn btn-outline-dark" type="submit">Login</button>
                             </form>
-                        {# else #}
-                            <!-- <form action="/edit_layout" method="post" class="btnDesktop">
+                        {% else %}
+                            <form action="/edit_layout" method="post" class="btnDesktop">
                                 <button class="btn btn-outline-dark" type="submit">Editar Layout</button>
                             </form>
                             <form action="/sign_out" method="post" class="btnDesktop">
                                 <button class="btn btn-outline-dark" type="submit" style="margin-left: 1rem;">Sair</button>
-                            </form>  -->   
-                        {# endif #} 
+                            </form>    
+                        {% endif %} 
                     </div>
                 </div>
             </nav>
