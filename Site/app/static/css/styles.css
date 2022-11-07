@@ -185,7 +185,7 @@ section {
   padding: 0;
 }
 
-.roomChoice {
+.roomChoice, .roomChoiceEdit {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -365,6 +365,7 @@ footer {
   width: 100%;
   margin: 0;
   padding: 0;
+  
 }
 
 .computerLabel a {
@@ -380,6 +381,7 @@ footer {
   width: 80%;
   margin: 0 auto;
   padding: 0;
+  
 }
 
 .prof,
@@ -706,8 +708,19 @@ nav {
     margin: 0px;
   }
 
-  .roomChoice {
+  .wrapper_roomChoiceEdit { 
+    width: 100%;
+    display:block;
+    height: auto;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .roomChoiceEdit {
+    background-color: #f5f5f5;
+    border-radius: 8px;
     gap: 10%;
+    padding: 20px;
   }
 
   .buttons{
@@ -719,12 +732,14 @@ nav {
   
   
 
-
+  .sectionEditLayout {
+    height: 140vh;
+  }
 
   .wrapper_editLayout { 
     width: 100%;
     display:block;
-    height: 35vh;
+    height: 38vh;
     padding: 20px;
     margin: 0 auto;
   }
@@ -732,6 +747,9 @@ nav {
     margin-bottom: 1rem;
   }
 
+  .sectionEditLayout .firstH {
+    margin-top: 2rem;
+  }
   
 }
 

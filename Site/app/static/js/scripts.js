@@ -66,7 +66,8 @@ const floors = {
 function loadRooms(targetFloor) { /* FUNÇÃO QUE CRIA AS OPÇÕES DE SALA, PARA CADA ESCOLHA DE ANDAR */
 
 	var dataList = document.getElementById('datalistOptionsRoom');
-	
+	dataList.innerHTML = ''
+
 	if (targetFloor === '3º Andar') {
 		floors.floor3.forEach(room => {
 			var option = document.createElement('option');
@@ -81,7 +82,6 @@ function loadRooms(targetFloor) { /* FUNÇÃO QUE CRIA AS OPÇÕES DE SALA, PARA
 		});
 	} else { /* SE APAGOU A ESCOLHA DO ANDAR, APAGA A LISTA DE SALAS */			
 		document.getElementById('c1_room').value = ''; /* APAGA O INPUT DA SALA */
-		dataList.innerHTML = '';
 	};
 };
 
