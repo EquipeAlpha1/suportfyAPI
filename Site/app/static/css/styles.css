@@ -571,6 +571,7 @@ textarea {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1000;
 }
 
 nav {
@@ -592,6 +593,36 @@ nav {
 .container-fluid {
   padding: 0.5rem 0;
 }
+
+@media(max-width: 991px) {
+  nav {
+    width: 100%;
+  }
+  .menuMobile {
+    padding: 0;
+  }
+  .navbar-nav .nav-item .nav-link {
+    padding: 0.5rem 0;   
+    margin: 0;               
+  }
+  .navbar-nav {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .dropdown-item {
+    padding: 0.5rem 1rem;
+  }
+  .navbar img, button {
+    margin: 0.5rem 1rem;
+  }  
+  .btnDesktop {
+    display: none;
+  }
+  .btnMobile {
+    display: block;
+  }
+}
+
 
 @media(max-width: 450px) { 
 
@@ -682,35 +713,8 @@ nav {
   }
 
   
-  nav {
-    width: 100%;
-  }
-  .menuMobile {
-    padding: 0;
-  }
-  .navbar-nav .nav-item .nav-link {
-    padding: 0.5rem 0;   
-    margin: 0;               
-  }
-  .navbar-nav {
-    width: 80%;
-    margin: 0 auto;
-  }
-  .dropdown-item {
-    padding: 0.5rem 1rem;
-  }
-  .navbar img, button {
-    margin: 0.5rem 1rem;
-  }  
-  .btnDesktop {
-    display: none;
-  }
-  .btnMobile {
-    display: block;
-  }
-  .navbarWrapper{
-    z-index: 1000;
-  }
+  
+  
 
 
 
