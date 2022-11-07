@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Perguntas Frequentes {% endblock %}
+{% block title %} Problemas no Sistema Operacional{% endblock %}
 {% block styles_faq %}
     <link rel="stylesheet" href="../static/css/sidebar_faq.css">
     <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -10,10 +10,8 @@
     <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
 {% endblock %}
 {% block conteudo %}
-        <!-- <a href="javascript:someFunction()">LINK</a> -->
-        <!-- <a href="#" onclick="someFunction(); return false;">LINK</a> -->
         <section class="sectionFaq">
-            <div class="sidebarFaq flex-shrink-0 p-3 bg-white" style="width: 280px; height: 100%; background: rgb(201, 201, 201) !important;">
+            <div class="sidebarFaq flex-shrink-0 p-3 bg-white" style="width: 280px; height: 100%; background: #e7e7e7 !important;">
                 <a href="/faq" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
                   <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
                   <span class="fs-5 fw-semibold">FAQ's Alpha</span>
@@ -23,7 +21,7 @@
                     <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
                       Problemas de Hardware
                     </button>
-                    <div class="collapse" id="home-collapse">
+                    <div class="collapse" id="home-collapse" style="">
                       <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a href="/monitorFaq" class="link-dark d-inline-flex text-decoration-none rounded">Monitor</a></li>
                         <li><a href="/mouseFaq" class="link-dark d-inline-flex text-decoration-none rounded">Mouse</a></li>
@@ -32,14 +30,14 @@
                     </div>
                   </li>
                   <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
                       Problemas na Rede
                     </button>
-                    <div class="collapse" id="dashboard-collapse">
+                    <div class="collapse show" id="dashboard-collapse" style="">
                       <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a href="/modemFaq" class="link-dark d-inline-flex text-decoration-none rounded">Modem</a></li>
                         <li><a href="/conexaoFaq" class="link-dark d-inline-flex text-decoration-none rounded">Conexão</a></li>
-                      </ul>  
+                      </ul>
                     </div>
                   </li>
                   <li class="mb-1">
@@ -56,19 +54,16 @@
                 </ul>
             </div>
             <div class="contentFaq">
-              <div class="informscontentFaq">
-                  <div class="titlesearchFaq">
-                    <h1 style="font-family: Arial, Helvetica, sans-serif;font-size: 2.5rem;">Como podemos ajudar?</h1>
-                  </div>
-                  <!-- <div class="searchinputFaq">
-                    <input type="search" class="inputFaq" placeholder="Pesquisar...">
-                    <a href="#" class="loupeFaq">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-search " viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                      </svg>
-                    </a>
-                  </div> -->
-              </div>
-            </div>
+                <div class="informsFaq">
+                    <div class="titleFaq">
+                        <h1 style="font-family: Arial, Helvetica, sans-serif;font-size: 2.5rem; font-weight: bold;">Problemas no Sistema Operacional:
+                        </h1>
+                    </div>
+                    <div class="solucionFaq">
+                        <p>Por ser um problema complexo pedimos que imediatamente <br> <a href="/create_request">abra um chamado</a> para que o técnico realize a manutenção <br> do mesmo.
+                        </p>
+                    </div>
+                </div>
+            </div>    
         </section>
 {% endblock %}

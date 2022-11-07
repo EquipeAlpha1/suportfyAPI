@@ -5,37 +5,156 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">     
-        <link rel="stylesheet" href="../static/css/styles.css">        
+        <link rel="stylesheet" href="../static/css/styles.css">      
         <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
+        {% block styles_faq %} {% endblock %}     
         <title>{% block title %} {% endblock %} - Suporte Alpha</title>  
     </head>
-    <body>
-        <header>
-            <img src="../static/img/logo.png" alt="Logo Header" class="logoHeader">
-            <nav>
-                <ul class="menu">
-                    <li><a href="home">Home</a></li>
-                    <li><a href="create_request">Abrir Solicitação</a></li>
-                    <li><a href="consult_requests">Histórico de Solicitações</a></li>
-                    <li><a href="#">FAQ's</a></li>
-                </ul>
+    <body>        
+        <div class="navbarWrapper" style="width: 100%; height: auto; background: #e7e7e7;">
+            <nav class="navbar navbar-expand-lg m-auto">
+                <div class="container-fluid">
+                    <img src="../static/img/logo.png" alt="Logo Header" class="logoHeader">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse menuMobile" id="navbarSupportedContent">
+                        <hr>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">                            
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="home">Home</a>
+                            </li>
+                            <hr>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Suporte
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="create_request">Abrir Solicitação</a></li><hr style="margin: 8px 0;">
+                                    <li><a class="dropdown-item" href="consult_requests">Consultar Solicitações</a></li>
+                                </ul>
+                            </li>
+                            <hr>
+                            <li class="nav-item">
+                                <a class="nav-link" href="faq">Perguntas Frequentes</a>
+                            </li>
+                            <hr>
+                            {% if not session %}
+                                <li class="nav-item">
+                                    <a class="nav-link btnMobile" href="sign_in">Login</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link btnMobile" href="edit_layout">Editar Layout</a>
+                                </li>
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link btnMobile" href="sign_out">Sair</a>
+                                </li>
+                            {% endif %} 
+                        </ul>                                  
+                        {% if not session %}
+                            <form action="/sign_in" class="btnDesktop">
+                                <button class="btn btn-outline-dark" type="submit">Login</button>
+                            </form>
+                        {% else %}
+                            <form action="/edit_layout" class="btnDesktop">
+                                <button class="btn btn-outline-dark" type="submit">Editar Layout</button>
+                            </form>
+                            <form action="/sign_out" class="btnDesktop">
+                                <button class="btn btn-outline-dark" type="submit" style="margin-left: 1rem;">Sair</button>
+                            </form>    
+                        {% endif %} 
+                    </div>
+                </div>
             </nav>
-        </header>  
+        </div>             
         {% block conteudo %}
         {% endblock %}
-        <footer>
-            <div class="divFooter">
-                <h4>Contato suporte:</h4>
-                <br>
-                <div class="linksFooter">
-                    <a href="tel:+5512900007777">Telefone: (12) 9 0000-7777</a>
-                    <a href="mailto:ads.2sem.2022@gmail.com">E-mail: ads.2sem.2022@gmail.com</a>
-                </div>      
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p style="margin:auto 0;color:white;">Grupo Alpha &copy; 2022</p>
+            <img src="../static/img/logo_white.png" alt="Logo Header" class="logoFooter">
+        </footer>   
+        <!-- <div id="cookieNotice" class="light display-right" style="display: none;">
+            <div id="closeIcon" style="display: none;">
             </div>
-            <img src="../static/img/logo.png" alt="Logo Footer" class="logoFooter">
-        </footer>
+            <div class="title-wrap">
+                <h4>Cookie Consent</h4>
+            </div>
+            <div class="content-wrap">
+                <div class="msg-wrap">
+                    <p>This website uses cookies or similar technologies, to enhance your browsing experience and provide personalized recommendations. By continuing to use our website, you agree to our  <a style="color:#115cfa;" href="/privacy-policy">Privacy Policy</a></p>
+                    <div class="btn-wrap">
+                        <button class="btn btn-primary" onclick="acceptCookieConsent();">Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>              
+        <script type="text/javascript">
+
+            document.addEventListener("DOMContentLoaded", function(e) {
+                // Create cookie
+                function setCookie(cname, cvalue, exdays) {
+                    const d = new Date();
+                    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                    let expires = "expires="+ d.toUTCString();
+                    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                }
+
+                // Delete cookie
+                function deleteCookie(cname) {
+                    const d = new Date();
+                    d.setTime(d.getTime() + (24*60*60*1000));
+                    let expires = "expires="+ d.toUTCString();
+                    document.cookie = cname + "=;" + expires + ";path=/";
+                }
+
+                // Read cookie
+                function getCookie(cname) {
+                    let name = cname + "=";
+                    let decodedCookie = decodeURIComponent(document.cookie);
+                    let ca = decodedCookie.split(';');
+                    for(let i = 0; i <ca.length; i++) {
+                        let c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                            c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                            return c.substring(name.length, c.length);
+                        }
+                    }
+                    return "";
+                }
+
+                // Set cookie consent
+                function acceptCookieConsent(){
+                    deleteCookie('user_cookie_consent');
+                    setCookie('user_cookie_consent', 1, 30);
+                    document.getElementById("cookieNotice").style.display = "none";
+                }
+
+                let cookie_consent = getCookie("user_cookie_consent");
+                if(cookie_consent != ""){
+                    document.getElementById("cookieNotice").style.display = "none";
+                }else{
+                    document.getElementById("cookieNotice").style.display = "block";
+                }
+            });
+            
+        </script> -->
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../static/js/scripts.js"></script>  
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>        
         <script type="text/javascript" src="../static/js/jQuery.js"></script>
     </body>
 </html>
+
+
+
+
+
+
+

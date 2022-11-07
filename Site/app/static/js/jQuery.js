@@ -1,28 +1,64 @@
-$(document).on('submit','#formEmail',function(e) {/* <!-- ESSE SCRIPT IMPEDE O FLASK DE ATUALIZAR A PÁGINA, QUANDO ENVIAR O EMAIL --> */
-    var c1_name = $('#c1_name')[0].value;
-    var c1_email = $('#c1_email')[0].value;
-    var c1_floor = $('#c1_floor')[0].value;
-    var c1_room = $('#c1_room')[0].value;
-    var c3_assunto = $('#c3_assunto')[0].value;
-    var c3_texto = $('#c3_texto')[0].value;
-    var btn = ($(document.activeElement).val());
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
+
+$(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será ativada, quando o usuário clicar em qualquer botão 'Submit' do formulário --> */
+
+    var c1_name = $("#c1_name").val();
+    var c1_email = $("#c1_email").val();
+    var c1_floor = $("#c1_floor").val();
+    var c1_room = $("#c1_room").val();
+    var c2_pc = $("input[name='c2_computadores']:checked").val(); /* Pega o valor(número) do computador que está selecionado */
+    var c3_assunto = $("#c3_subject").val();
+    var c3_texto = $("#c3_description").val();
+
+    var btn = ($(document.activeElement).val()); /* Salva o valor do botão 'Submit', para verificar qual deles foi clicado */
+
     if (btn == 'SendMail') {
-        e.preventDefault(); /* ESSA FUNÇÃO EVITA DE RECARREGAR A PÁGINA */
+        
+        e.preventDefault(); /* Essa função evita de recarregar a página no evento 'Submit' */
+
+        if (!c1_name && !c1_email && !c1_floor && !c1_room && !c2_pc && !c3_assunto && !c3_texto) {    
+            return; /* Caso falte preencher algum campo do formulário, sai do script */
+        };        
+
+        var nFile = document.getElementById('formFile').files.length; /* Salva o número de arquivos anexados ao formulário */
+
+        if (nFile > 0) { /* Verifica se foi inserido pelo menos um arquivo no formulário */
+                
+            var form_data = new FormData();           
+            form_data.append('file', document.getElementById('formFile').files[0]); /* Anexa o arquivo ao objeto FormData */
+
+            $.ajax ({
+
+                type:'POST',
+                url:'/upload_file', /* URL para rota flask */
+                data: form_data, /* Passa o objeto com o arquivo do formulário para o Flask fazer o upload */
+                contentType: false,
+                cache: false,
+                processData: false  
+                            
+            });
+
+        };
+
         $.ajax ({
+
             type:'POST',
             url:'/create_request', /* URL para rota flask */
-            data: { /* A função 'def home()' no Flask vai puxar os dados desse 'dicionário' */
-                name:$("#c1_name").val(), /* Na onde tem # vai o ID do objeto HTML que está dentro do 'formEmail' no 'content.html' */
-                mail:$("#c1_email").val(),
-                floor:$("#c1_floor").val(),
-                room:$("#c1_room").val(),
-                pc:$("input[name='c2_computadores']:checked").val(),
-                subject:$("#c3_assunto").val(),
-                description:$("#c3_texto").val()          
+            data: { /* Passa um dicionário com os dados inseridos no formulário para o Flask registrar */
+                name : c1_name,
+                mail : c1_email,
+                floor : c1_floor,
+                room : c1_room,
+                pc : c2_pc,
+                subject : c3_assunto,
+                description : c3_texto
             }
+
         });
-        if (c1_name && c1_email && c1_floor && c1_room && c3_assunto && c3_texto) {      
-            $('#formEmail')[0].reset(); /* Reseta o formulário para não enviar e-mail atoa */
-        };
+
+        $('#formEmail')[0].reset(); /* Reseta os dados inseridos no formulário */
     };
+    
 });

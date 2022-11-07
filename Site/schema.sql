@@ -5,7 +5,7 @@ CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     created DATE DEFAULT (datetime('now','localtime')),
     names TEXT NOT NULL,
-    mails TEXT NOT NULL,
+    emails TEXT NOT NULL UNIQUE,
     passwords TEXT NOT NULL
 );
 
