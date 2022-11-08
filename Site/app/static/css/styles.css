@@ -92,14 +92,18 @@ section {
   padding: 8px;
 } */
 
-.wrapper_editLayout { 
+.wrapper_EditLayout { 
   width: 70%;
   display:grid;
-  grid-template-columns:2fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 40px;
-  height: 90%;
+  height: 864px;
   padding: 20px;
   margin: 0 auto;
+}
+
+.info_layout {
+  height: 100%;
 }
 
 .edit_slot_wrapper {
@@ -630,126 +634,160 @@ nav {
 
 
 @media(max-width: 450px) { 
+.html {
+  margin: 6rem 0 0;
+}
 
-  .edit_layout h4 {
-    text-align: center;
+.edit_layout h4 {
+  text-align: center;
+}
+
+#nav.active #hamburguer:before {
+  transform: rotate(135deg);
+}
+
+#nav.active #hamburguer::after{
+  transform: rotate(-135deg);
+  top: -7px;
+}
+
+#menu {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 70px;
+  right: 0px;
+  background: #97BEC2;
+  height: 0px;
+  transition: .6s;
+  z-index: 1000;
+  visibility: hidden;
+  overflow-y: hidden;
+}
+
+#nav.active #menu {
+  height: calc(100vh - 70px);
+  visibility: visible;
+  overflow-y: auto;
+}
+
+#menu a {
+  padding: 1rem 0;
+  margin: 0 1rem;
+  border-bottom: 2px solid black;
+}
+
+.sectionHome {
+  height: 80%;
+}
+
+.sectionCreateRequest {
+  background: #dbdbdb; 
+  width: 100%;
+  height: fit-content;
+}
+
+.form{
+  width: 100% !important;
+}
+
+.formEmail {
+  display: grid;
+  grid-template-rows: 10% 40% 10%; 
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.steps_wrapper{
+  margin: 0px;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+.wrapper_roomChoiceEdit { 
+  width: 100%;
+  display:block;
+  height: auto;
+  margin: 0 auto;
+}
+
+.roomChoiceEdit {
+  background: #f5f5f5;
+  border-radius: 8px;
+  gap: 20px;
+  padding: 20px;
+}
+
+.buttons{
+  width: 100%;
+  margin-top: 150px;
+}
+
+
+
+
+
+.wrapper_Layout h2 {
+  margin: 1rem 0 ;
+}
+.roomChoiceEdit {
+  justify-content: space-around;
+}
+
+.sectionEditLayout {
+  height: 140vh;
+} 
+
+.wrapper_EditLayout { 
+  width: 100%;
+  display: block;
+  height: 140vh;
+  padding: 20px;
+}
+.wrapper_Layout {
+  height: 66vh;
+}
+.wrapper_Edit {
+  height: 74vh;
+}
+.wrapper_roomChoiceEdit {
+  height: 20vh;
+}
+.wrapper_layoutComputers {
+  height: 50vh;
+}
+.info_layout {
+  height: 70vh;
+}
+.edit_layout {
+  margin-bottom: 1rem;
+}
+.layout_computers {
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+}
+.layout_computers {
+  height: 35vh;
+}
+
+
+
+.tab-content {
+  font-size: 0.95rem;
   }
 
-  #nav.active #hamburguer:before {
-    transform: rotate(135deg);
-  }
-
-  #nav.active #hamburguer::after{
-    transform: rotate(-135deg);
-    top: -7px;
-  }
-
-  #menu {
-    display: block;
-    position: absolute;
-    width: 100%;
-    top: 70px;
-    right: 0px;
-    background: #97BEC2;
-    height: 0px;
-    transition: .6s;
-    z-index: 1000;
-    visibility: hidden;
-    overflow-y: hidden;
-  }
-
-  #nav.active #menu {
-    height: calc(100vh - 70px);
-    visibility: visible;
-    overflow-y: auto;
-  }
-
-  #menu a {
-    padding: 1rem 0;
-    margin: 0 1rem;
-    border-bottom: 2px solid black;
-  }
-
-  .sectionHome {
-    height: 95%;
-  }
-
-  .sectionCreateRequest {
-    background: #dbdbdb; 
-    width: 100%;
-    height: fit-content;
-  }
-
-  .form{
-    width: 100% !important;
-  }
-
-  .formEmail {
-    display: grid;
-    grid-template-rows: 10% 40% 10%; 
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-  }
-
-  .steps {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .steps_wrapper{
-    margin: 0px;
-  }
-
-  ul {
-    padding: 0px;
-    margin: 0px;
-  }
-
-  .wrapper_roomChoiceEdit { 
-    width: 100%;
-    display:block;
-    height: auto;
-    padding: 20px;
-    margin: 0 auto;
-  }
-
-  .roomChoiceEdit {
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    gap: 10%;
-    padding: 20px;
-  }
-
-  .buttons{
-    width: 100%;
-    margin-top: 150px;
-  }
-
-  
-  
-  
-
-  .sectionEditLayout {
-    height: 140vh;
-  }
-
-  .wrapper_editLayout { 
-    width: 100%;
-    display:block;
-    height: 38vh;
-    padding: 20px;
-    margin: 0 auto;
-  }
-  .edit_layout {
-    margin-bottom: 1rem;
-  }
-
-  .sectionEditLayout .firstH {
-    margin-top: 2rem;
-  }
-  
 }
 
