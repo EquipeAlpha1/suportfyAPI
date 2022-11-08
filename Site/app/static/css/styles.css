@@ -102,17 +102,21 @@ section {
   margin: 0 auto;
 }
 
+.wrapper_Layout{
+  padding: 0;
+}
+
 .wrapper_Layout,
 .wrapper_Edit {
-  height: 864px;
+  height: 824px;
 }
 
 .wrapper_roomChoiceEdit {
-  height: 144px;
+  height: 185px;
 }
 
 .wrapper_layoutComputers {
-  height: 720px;
+  height: 639px;
 }
 
 /* .wrapper_layoutComputers .layout_computers {
@@ -156,6 +160,11 @@ section {
   border-radius: 8px;
 }
 
+.wrapper_layoutComputers .layout_computers {
+  height: 554px;
+  block-size: fit-content;  
+}
+
 .roomChoiceEdit,
 .info_layout,
 .wrapper_layoutComputers .layout_computers{
@@ -163,8 +172,9 @@ section {
   border-radius: 8px;
 }
 
+
 .form_wrapper {
-  height: 100%;
+  height: 100%; /* 100% do .form */
   padding: 0;
   margin: 0;
 }
@@ -181,14 +191,14 @@ section {
 .formEmail {
   display: grid;
   grid-template-rows: 15% 70% 15%; 
-  height: 100%; /* 100% do section */
-  width: 70%; /* 70% do section */
+  height: 100%; /* 100% do sectionCreateRequest */
+  width: 70%; /* 70% do sectionCreateRequest */
   margin: 0px auto;
   padding: 0;
 }
 
 .form {
-  height: 100%;
+  height: 100%; /* de 70% do sectionCreateRequest */
   width: 70%; /* 70% do formEmail */
   margin: 0 auto;
   padding: 20px;
@@ -218,6 +228,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: 20px;
+  gap: 1rem;
 }
 
 .requiredField,
@@ -350,11 +362,10 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10%;
-  height: 620px; /* 72% do form_2 data_info */
+  height: 100%;
   width: 100%;
   border-radius: 6px;
-  margin: auto 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 
 .leftSide,
@@ -743,18 +754,12 @@ ul {
   margin: 0px;
 }
 
-.wrapper_roomChoiceEdit { 
-  width: 100%;
-  display:block;
-  height: auto;
-  margin: 0 auto;
-}
+
 
 .roomChoiceEdit {
   background: #f5f5f5;
   border-radius: 8px;
   gap: 20px;
-  padding: 20px;
 }
 
 .buttons{
@@ -765,10 +770,6 @@ ul {
 
 
 
-
-.wrapper_Layout h2 {
-  margin: 1rem 0 ;
-}
 .roomChoiceEdit {
   justify-content: space-around;
 }
@@ -781,19 +782,21 @@ ul {
   width: 100%;
   display: block;
   height: 140vh;
-  padding: 20px;
+  padding: 0 20px;
 }
 .wrapper_Layout {
-  height: 66vh;
+  height: 70vh;
 }
 .wrapper_Edit {
-  height: 74vh;
+  height: 70vh;
 }
-.wrapper_roomChoiceEdit {
-  height: 20vh;
+.wrapper_roomChoiceEdit { 
+  height: 25vh;
+  width: 100%;
+  display:block;
 }
 .wrapper_layoutComputers {
-  height: 50vh;
+  height: 45vh;
 }
 .info_layout {
   height: 70vh;
@@ -806,6 +809,7 @@ ul {
   border-radius: 8px;
   margin: 0;
   padding: 0;
+  height: 35vh;
 }
 .layout_computers {
   height: 35vh;

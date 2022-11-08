@@ -5,7 +5,9 @@
             <div class="wrapper_EditLayout"> <!-- GRID / BLOCK -->
                 <div class="wrapper_Layout">
                     <div class="wrapper_roomChoiceEdit">
-                        <h2 class="text-center">Escolha a sala:</h2>
+                        <div class="h2_roomChoiceEdit">
+                            <h2 class="text-center">Escolha a sala:</h2>
+                        </div>
                         <div class="roomChoiceEdit"> <!-- ANDAR E SALA -->
                             <div class="selectionFloor"> <!--SELEÇÃO DE ANDAR -->
                                 <label for="c1_floor" class="form-label">Selecine o andar:</label>
@@ -21,10 +23,15 @@
                                 <datalist id="datalistOptionsRoom"> <!-- LISTA DE SALAS -->
                                 </datalist>
                             </div>
+                            <form action="/refresh_layout" class="d-flex align-items-center">
+                                <button type="submit" class="btn btn-primary" id="" style="bottom: 0;">Atualizar</button>  
+                            </form>
                         </div>
                     </div>
                     <div class="wrapper_layoutComputers">
-                        <h2 class="text-center">Escolha o slot:</h2>
+                        <div class="h2_layoutComputers">
+                            <h2 class="text-center" pa>Escolha o slot:</h2>
+                        </div>
                         <div class="layout_computers"> <!-- LAYOUT DOS COMPUTADORES -->
                             <div class="leftSide"> <!-- COMPUTADORES DO LADO ESQUERDO -->
                                 <div class="row-1"> <!-- LINHA 1 -->
