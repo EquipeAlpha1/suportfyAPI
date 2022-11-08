@@ -1,10 +1,50 @@
-/* CORES
-  #485A5C
-  #97BEC2
-  #ABD4DB
-  #B5E4E8
-  #BFF0F5
-  */
+/* 
+Aspect Ratio: 16:9
+
+########## Full HD ##########
+ 100% = 1920px x 1080px = 120rem x 67.5rem
+  95% = 1824px x 1026px = 114rem x 64rem
+  90% = 1728px x 972px  = 108rem x 60.5rem
+  85% = 1632px x 918px  = 102rem x 57rem
+  80% = 1536px x 864px  = 96rem x 54rem
+  75% = 1440px x 810px  = 90rem x 50.5rem
+  70% = 1344px x 756px  = 84rem x 47rem
+  65% = 1248px x 702px  = 78rem x 43.5rem
+  60% = 1152px x 648px  = 72rem x 40rem
+  55% = 1056px x 594px  = 66rem x 36.5rem
+  50% = 960px x 540px   = 60rem x 33rem
+  45% = 864px x 486px   = 54rem x 29.5rem
+  40% = 768px x 432px   = 48rem x 26rem
+  35% = 672px x 378px   = 42rem x 22.5rem
+  30% = 576px x 324px   = 36rem x 19rem
+  25% = 480px x 270px   = 30rem x 15.5rem
+  20% = 384px x 216px   = 24rem x 12rem
+  15% = 288px x 162px   = 18rem x 8.5rem
+  10% = 192px x 108px   = 12rem x 5rem
+   5% = 96px x 54px     = 6rem x 3rem
+
+########## HD ##########
+ 100% = 1366px x 768px  = 85.375rem x 48rem
+  95% = 1298px x 729px  = 81.375rem x 45.5625rem
+  90% = 1230px x 690px  = 77.375rem x 43.125rem
+  85% = 1162px x 651px  = 73.375rem x 40.6875rem
+  80% = 1094px x 612px  = 68.375rem x 38.25rem
+  75% = 1026px x 573px  = 64.375rem x 35.8125rem
+  70% = 958px x 534px   = 59.375rem x 33.375rem
+  65% = 890px x 495px   = 55.375rem x 30.9375rem
+  60% = 822px x 456px   = 51.375rem x 28.5rem
+  55% = 754px x 417px   = 47.375rem x 26.0625rem
+  50% = 686px x 378px   = 42.375rem x 23.625rem
+  45% = 618px x 339px   = 38.375rem x 21.1875rem
+  40% = 550px x 300px   = 34.375rem x 18.75rem
+  35% = 482px x 261px   = 30.375rem x 16.3125rem
+  30% = 414px x 222px   = 25.875rem x 13.875rem
+  25% = 346px x 183px   = 21.875rem x 11.4375rem
+  20% = 278px x 144px   = 17.375rem x 9rem
+  15% = 210px x 105px   = 13.125rem x 6.5625rem
+  10% = 142px x 66px    = 8.875rem x 4.125rem
+   5% = 74px x 27px     = 4.625rem x 1.6875rem
+*/
 
 html, body {
   height: 100%;
@@ -119,10 +159,6 @@ section {
   height: 639px;
 }
 
-/* .wrapper_layoutComputers .layout_computers {
-  height: 620px;
-} */
-
 .info_layout {
   height: 824px;
 }
@@ -161,7 +197,6 @@ section {
 }
 
 .wrapper_layoutComputers .layout_computers {
-  height: 554px;
   block-size: fit-content;  
 }
 
@@ -172,6 +207,9 @@ section {
   border-radius: 8px;
 }
 
+.form_2 .layout_computers {
+  block-size: fit-content;
+}
 
 .form_wrapper {
   height: 100%; /* 100% do .form */
@@ -190,7 +228,7 @@ section {
 
 .formEmail {
   display: grid;
-  grid-template-rows: 15% 70% 15%; 
+  grid-template-rows: 10% 75% 15%; 
   height: 100%; /* 100% do sectionCreateRequest */
   width: 70%; /* 70% do sectionCreateRequest */
   margin: 0px auto;
@@ -809,10 +847,6 @@ ul {
   border-radius: 8px;
   margin: 0;
   padding: 0;
-  height: 35vh;
-}
-.layout_computers {
-  height: 35vh;
 }
 
 .computerLabel {
