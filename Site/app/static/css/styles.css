@@ -45,6 +45,23 @@
 |||  10% = 96px x 54px     = 6rem x 3.375rem     |||  10% = 64px x 48px     = 4rem x 3rem             |||
 |||   5% = 48px x 27px     = 3rem x 1.6875rem    |||   5% = 32px x 24px     = 2rem x 1.5rem           |||
 
+######### AQUI É A RESPONSIVIDADE ENTRE MONITORES #########
+##### SÓ USAR O MESMO LAYOUT, MAS COM OUTRAS DIMENSÕES ####
+
+@media (max-width: 1920px) {
+
+}
+@media (max-width: 1366px) {
+
+}
+
+########### AQUI É A RESPONSIVIDADE MOBILE ##########
+######### ENVOLVE MONTAR O LAYOUT DIFERENTE #########
+
+@media (max-width: 450px) {
+
+}
+
 */
 
 html, body {
