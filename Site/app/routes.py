@@ -261,10 +261,10 @@ for image in files:
         im.thumbnail(size)
         im.save("thumbnail_%s_%s" % (image, "_".join(size))) """
 
-@app.route('/<int:slot_id>/consult_slot', methods=('POST',))
-def consult_slot(slot_id):
-    
-    room = x
+@app.route('/refresh_layout', methods=['GET','POST'])
+def refresh_layout():
+    #floor = request.form.get('floor')
+    #room = request.form.get('room')
 
     conn = get_db_connection()
     slot_info = conn.execute('SELECT \
@@ -283,9 +283,36 @@ def consult_slot(slot_id):
     conn.close()
     return redirect(url_for('edit_layout', slot_info=slot_info))
 
-@app.route('/<int:slot_id>/add_slot', methods=('POST',))
+@app.route('/consult_slot', methods=['GET','POST'])
+def consult_slot(slot_id):
+    
+    #slot = request.form.get('slot')
+
+    conn = get_db_connection()
+    slot_info = conn.execute('SELECT \
+                                    monitor_config_id, \
+                                    monitor_status_id, \
+                                    computer_config_id, \
+                                    computer_status_id, \
+                                    keyboard_config_id, \
+                                    keyboard_status_id, \
+                                    mouse_config_id, \
+                                    mouse_status_id \
+                                FROM \
+                                    "'+room+'" \
+                                WHERE \
+                                    id = ?', (slot_id,)).fetchone()
+    conn.close()
+    return redirect(url_for('edit_layout', slot_info=slot_info))
+
+@app.route('/add_slot', methods=['GET','POST'])
 def add_slot(slot_id):
 
+    #monitor = request.form.get('monitor')
+    #computer = request.form.get('computer')
+    #keyboard = request.form.get('keyboard')
+    #mouse = request.form.get('mouse')
+
     conn = get_db_connection()
     conn.execute('UPDATE \
                         [room_xxx] \
@@ -305,9 +332,18 @@ def add_slot(slot_id):
     conn.close()
     return redirect(url_for('edit_layout'))
 
-@app.route('/<int:slot_id>/edit_slot', methods=('POST',))
+@app.route('/edit_slot', methods=['GET','POST'])
 def edit_slot(slot_id):
 
+    #monitorConfig = request.form.get('monitorConfig')
+    #computerConfig = request.form.get('computerConfig')
+    #keyboardConfig = request.form.get('keyboardConfig')
+    #mouseConfig = request.form.get('mouseConfig')
+    #monitorStatus = request.form.get('monitorStatus')
+    #computerStatus = request.form.get('computerStatus')
+    #keyboardStatus = request.form.get('keyboardStatus')
+    #mouseStatus = request.form.get('mouseStatus')
+
     conn = get_db_connection()
     conn.execute('UPDATE \
                         [room_xxx] \
@@ -327,8 +363,13 @@ def edit_slot(slot_id):
     conn.close()
     return redirect(url_for('edit_layout'))
 
-@app.route('/<int:slot_id>/delete_slot/', methods=('POST',))
+@app.route('/delete_slot', methods=['GET','POST'])
 def delete_slot(slot_id):
+
+    #monitor = request.form.get('monitor')
+    #computer = request.form.get('computer')
+    #keyboard = request.form.get('keyboard')
+    #mouse = request.form.get('mouse')
 
     conn = get_db_connection()
     conn.execute('UPDATE \

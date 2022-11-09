@@ -2,6 +2,138 @@ $( document ).ready(function() {
     console.log( "ready!" );
 });
 
+$(document).on('submit','#refreshLayout',function(e) {
+    
+    var consultFloor = $("#consultFloor").val();
+    var consultRoom = $("#consultRoom").val();
+
+    e.preventDefault(); /* Essa função evita de recarregar a página no evento 'Submit' */
+
+    if (!consultFloor && !consultRoom) {    
+        return; /* Caso falte preencher algum campo do formulário, sai do script */
+    }; 
+
+    $.ajax ({
+
+        type:'POST',
+        url:'/refresh_layout', /* URL para rota flask */
+        data: { /* Passa um dicionário com os dados inseridos no formulário para o Flask registrar */
+            floor : consultFloor,
+            room : consultRoom
+        }
+
+    });
+});
+
+$(document).on('submit','#consultSlot',function(e) {
+    
+    var consultSlot = $("input[name='slotComputer']:checked").val();
+
+    e.preventDefault(); /* Essa função evita de recarregar a página no evento 'Submit' */
+
+    if (!consultSlot) {    
+        return; /* Caso falte preencher algum campo do formulário, sai do script */
+    }; 
+
+    $.ajax ({
+
+        type:'POST',
+        url:'/consult_slot', /* URL para rota flask */
+        data: { slot : consultSlot } /* Passa um dicionário com os dados inseridos no formulário para o Flask registrar */
+
+    });
+});
+
+$(document).on('submit','#addSlot',function(e) {
+    
+    var addMonitor = $("#addMonitor").val();
+    var addComputer = $("#addComputer").val();
+    var addKeyboard = $("#addKeyboard").val();
+    var addMouse = $("#addMouse").val();
+
+    e.preventDefault(); /* Essa função evita de recarregar a página no evento 'Submit' */
+
+    if (!addMonitor && !addComputer && !addKeyboard && !addMouse) {    
+        return; /* Caso falte preencher algum campo do formulário, sai do script */
+    }; 
+
+    $.ajax ({
+
+        type:'POST',
+        url:'/add_slot', /* URL para rota flask */
+        data: { /* Passa um dicionário com os dados inseridos no formulário para o Flask registrar */
+            monitor : addMonitor,
+            computer : addComputer,
+            keyboard : addKeyboard,
+            mouse : addMouse
+        }
+
+    });
+});
+
+$(document).on('submit','#editSlot',function(e) {
+    
+    var editMonitorConfig = $("#editMonitorConfig").val();
+    var editComputerConfig = $("#editComputerConfig").val();
+    var editKeyboardConfig = $("#editKeyboardConfig").val();
+    var editMouseConfig = $("#editMouseConfig").val();
+
+    var editMonitorStatus = $("#editMonitorStatus").val();
+    var editComputerStatus = $("#editComputerStatus").val();
+    var editKeyboardStatus = $("#editKeyboardStatus").val();
+    var editMouseStatus = $("#editMouseStatus").val();
+
+    e.preventDefault(); /* Essa função evita de recarregar a página no evento 'Submit' */
+
+    if (!editMonitorConfig && !editComputerConfig && !editKeyboardConfig && !editMouseConfig && !editMonitorStatus && !editComputerStatus && !editKeyboardStatus && !editMouseStatus) {    
+        return; /* Caso falte preencher algum campo do formulário, sai do script */
+    }; 
+
+    $.ajax ({
+
+        type:'POST',
+        url:'/edit_slot', /* URL para rota flask */
+        data: { /* Passa um dicionário com os dados inseridos no formulário para o Flask registrar */
+            monitorConfig : editMonitorConfig,
+            computerConfig : editComputerConfig,
+            keyboardConfig : editKeyboardConfig,
+            mouseConfig : editMouseConfig,
+            monitorStatus : editMonitorStatus,
+            computerStatus : editComputerStatus,
+            keyboardStatus : editKeyboardStatus,
+            mouseStatus : editMouseStatus
+        }
+
+    });
+});
+
+$(document).on('submit','#deleteSlot',function(e) {
+    
+    var deleteMonitor = $("#deleteMonitor").val();
+    var deleteComputer = $("#deleteComputer").val();
+    var deleteKeyboard = $("#deleteKeyboard").val();
+    var deleteMouse = $("#deleteMouse").val();
+
+    e.preventDefault(); /* Essa função evita de recarregar a página no evento 'Submit' */
+
+    if (!deleteMonitor && !deleteComputer && !deleteKeyboard && !deleteMouse) {    
+        return; /* Caso falte preencher algum campo do formulário, sai do script */
+    }; 
+
+    $.ajax ({
+
+        type:'POST',
+        url:'/delete_slot', /* URL para rota flask */
+        data: { /* Passa um dicionário com os dados inseridos no formulário para o Flask registrar */
+            monitor : deleteMonitor,
+            computer : deleteComputer,
+            keyboard : deleteKeyboard,
+            mouse : deleteMouse
+        }
+
+    });
+});
+
 $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será ativada, quando o usuário clicar em qualquer botão 'Submit' do formulário --> */
 
     var c1_name = $("#c1_name").val();
