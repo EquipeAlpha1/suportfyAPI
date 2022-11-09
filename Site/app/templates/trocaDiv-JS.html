@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            background: rgba(0, 0, 0, .15);
+        }
+        li:not(ol li) {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="display: flex; gap: 1rem;">
+        <div class="sidebar" style="height: 27rem; width:18rem; border:1px solid black; box-sizing:border-box; background: cyan;">
+            <ul style="padding: 1rem;">
+                <li><b>Hardware</b>
+                    <ol>
+                        <li><a href="#" onclick="onClickSidebar()" id="hardware-1">Monitor não liga</a></li>
+                        <li><a href="#" onclick="onClickSidebar()" id="hardware-2">Computador fazendo barulho</a></li>
+                        <li><a href="#" onclick="onClickSidebar()" id="hardware-3">Computador não liga</a></li>
+                    </ol>
+                </li>
+                <li><b>Software</b>
+                    <ol>
+                        <li><a href="#" onclick="onClickSidebar()" id="software-4">Não achei o VS Code</a></li>
+                        <li><a href="#" onclick="onClickSidebar()" id="software-5">Photoshop não abre</a></li>
+                        <li><a href="#" onclick="onClickSidebar()" id="software-6">Disco com uso de 100%</a></li>
+                    </ol>
+                </li>
+                <li><b>Rede</b>
+                    <ol>
+                        <li><a href="#" onclick="onClickSidebar()" id="rede-7">Internet lenta</a></li>
+                        <li><a href="#" onclick="onClickSidebar()" id="rede-8">Computador não conecta</a></li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div class="content" style="height: 27rem; width:36rem; border:1px solid black; box-sizing:border-box; background: tomato;">
+            <div class="categoria-1">
+                <div class="hardware-1 active">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, similique laborum adipisci nemo fugit fugiat alias perspiciatis ullam? Voluptatem enim laborum quo cupiditate at minus quas voluptatum distinctio dolores dolorum.</div>
+                <div class="hardware-2" style="display: none;"><h1>DIV 2</h1></div>
+                <div class="hardware-3" style="display: none;"><h1>div 3 teste</h1></div>
+            </div>        
+            <div class="categoria-2">
+                <div class="software-4" style="display: none;"><h1>div4444</h1></div>
+                <div class="software-5" style="display: none;"><h1>D 5</h1></div>
+                <div class="software-6" style="display: none;"><h1>div 666</h1></div>
+            </div>
+                
+            <div class="categoria-3">
+                <div class="rede-7" style="display: none;"><h1>d77</h1></div>
+                <div class="rede-8" style="display: none;"><h1>DIV 88</h1></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+
+    function onClickSidebar() {
+
+        var activeProblem = document.querySelector('.active');
+        var chosedProblem = document.activeElement.id;
+        
+        activeProblem.classList.remove('active');
+        activeProblem.style.display = "none";
+	    
+        document.querySelector('.'+chosedProblem).classList.add('active');
+        document.querySelector('.'+chosedProblem).style.display = "block";
+    }
+
+</script>
+</html>
