@@ -898,10 +898,11 @@ ul {
 }
 
 .btn_home2 {
-  display: block;
+  display: block !important;
 }
 
-.btn_home3 button {
+.btn_home3 button,
+.btn_home2 button {
   margin: 0 !important;
 }
 
