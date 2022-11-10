@@ -87,15 +87,15 @@ function loadRooms(targetFloor) { /* FUNÇÃO QUE CRIA AS OPÇÕES DE SALA, PARA
 
 form_1_next_btn.addEventListener("click", function() {
 
-	/* const name = document.getElementById("c1_name").value;
+	 const name = document.getElementById("c1_name").value;
 	const email = document.getElementById("c1_email").value;
 	const floorz = document.getElementById("c1_floor").value;
 	const roomz = document.getElementById("c1_room").value;
 
-	/* if (!name || !email || !floorz || !roomz) {
+	 if (!name || !email || !floorz || !roomz) {
 		alert("ERRO: Você não preencheu os dados necessários!");
 		return;  ## BLOQUEIA O RESTO DO SCRIPT ##
-	} */
+	} ;
 	
 	var targetR = parseInt(document.getElementById("c1_room").value); /* parseInt converte o valor que é uma string, para integer */
 
