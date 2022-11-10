@@ -537,6 +537,14 @@ textarea {
 
 .text_img_home {
   height: auto;
+  margin: 0 auto;
+}
+
+.wrap_textimg {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 60%;
 }
 
 /* Posicionamento botão home */
@@ -546,16 +554,12 @@ textarea {
 }
 
 .btn_home button {  
-  position: relative;
-  top: -18rem;
   width: 200px;
 }
 
 
 .textReport {
   color: white;
-  position: relative;
-  top: -18rem;
   text-align: center;
 }
 
@@ -876,5 +880,33 @@ ul {
   font-size: 0.95rem;
   }
 
+.imgtech {
+  width: 100%;
 }
 
+#imgtechfather {
+  margin-top: 3rem;
+}
+
+.sectionHome, 
+.wrap_textimg {
+  display: none;
+}
+
+#hanging-icons {
+  padding: 3rem 1.5rem 0 !important; 
+}
+
+.btn_home2 {
+  display: block;
+}
+
+.btn_home3 button {
+  margin: 0 !important;
+}
+
+}
+
+.btn_home2 {
+  display: none;
+}
