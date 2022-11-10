@@ -597,47 +597,63 @@ textarea {
   height: 100%;
 }
 
-.contentFaq{
-  width: 100%; height: 100%;
+.articlefaq{
   display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionfaq{
+  width: 50%;
+  height: 50%;
+  display: block;
+  margin: 0;
+  margin-bottom: 10%;
+}
+
+.titlefaq{
+  display: flex;
+  align-items: center;
+  padding-left: 27%;
+  width: 100%;
+  height: 20%;
+}
+
+.navfaq{
+  display: flex;
+  height: 80%;
+  width: 100%;
+  padding-left: 20%;
+  padding-right: 10%;
   align-items: center;
   justify-content: center;
 }
 
-.informscontentFaq{
-  width: 85%; height: 85%;
-  padding-top: 10%;
-}
-
-
-.titlesearchFaq{
-  width: 100%; height: auto;
-  margin-bottom: 20px;
-}
-
-.searchinputFaq{
-  height: 80px;
-  background: #e6e6e6;
-  border-radius: 40px;
+.ulfaq{
+  width: 80%;
+  height: 80%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  padding: 0;
 }
 
-.inputFaq{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 1.5rem;
-  background: 0;
-  outline: 0;
-  border: none;
-  padding-left: 30px;
-  width: 1500px;
-  text-decoration: none;
+.lifaq{
+  height: 20%;
+  list-style: none;
 }
 
-.loupeFaq{
-  margin-right: 40px;
+.btnfaq{
+  border: 0;
+  background-color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 3rem;
+  color: #86a9ad;
+  box-sizing: content-box;
 }
+
+
 
 .informsFaq{
   width: 80%; height: 80%;
@@ -646,17 +662,11 @@ textarea {
   justify-content: center;
 }
 
-.titleFaq{
-  margin-bottom: 50px;
-  margin-left: 25%;
-  width: auto; height: auto;
-}
-
 .solucionFaq{
-  height: auto; width: 50%;
+  height: auto; width: 60%;
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.5rem;
-  margin-left: 25%;
+  margin-top: 5%;
 }
 
 .informsmodemFaq{
@@ -664,6 +674,14 @@ textarea {
   display: flexbox;
   justify-content: center;
 }
+
+.pfaq{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 3rem;
+}
+
+
+
 
 
 
