@@ -606,11 +606,19 @@ textarea {
 }
 
 .sectionfaq{
-  width: 50%;
-  height: 50%;
-  display: block;
+  width: 70%;
+  height: 65%;
+  display: flex;
   margin: 0;
   margin-bottom: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentfaq{
+  width: 80%;
+  height: 75%;
+  display: block;
 }
 
 .titlefaq{
@@ -652,6 +660,9 @@ textarea {
   color: #86a9ad;
   box-sizing: content-box;
 }
+
+
+
 
 
 

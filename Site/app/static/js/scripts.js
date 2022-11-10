@@ -176,3 +176,10 @@ form_3_next_btn.addEventListener("click", function() {
 
 	form_4_progressbar.classList.add("active");
 });
+
+
+var btnfaqmonitor = document.querySelector(".btnfaqmonitor");
+btnfaqmonitor.addEventListener("click", function() {
+	monitorfaq.style.display = 'flex';
+
+});
