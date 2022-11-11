@@ -85,28 +85,47 @@ function loadRooms(targetFloor) { /* FUNÇÃO QUE CRIA AS OPÇÕES DE SALA, PARA
 	};
 };
 
-form_1_next_btn.addEventListener("click", function() {
-
-	 const name = document.getElementById("c1_name").value;
+function validation() {
+	var divEmail = document.getElementById("divEmail");
 	const email = document.getElementById("c1_email").value;
-	const floorz = document.getElementById("c1_floor").value;
-	const roomz = document.getElementById("c1_room").value;
+
+	console.log(email);
 
 	var text= document.getElementById("text");
 	var pattern= /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-	if (email.mach(pattern))
+	if (email.match(pattern))
 	{
-		text.innerHTML = "Seu e-mail é válido";
+		divEmail.classList.add("valid");
+		divEmail.classList.remove("invalid");
+		text.innerHTML = "Seu e-mail é válido.";
 		text.style.color = "#00ff00";
 	}
 	else
 	{
-		text.innerHTML = "Por favor, digite um e-mail válido";
+		divEmail.classList.add("invalid");
+		divEmail.classList.remove("valid");
+		text.innerHTML = "Por favor, digite um e-mail válido.";
 		text.style.color = "#ff0000";
 	}
+	if (email == "")
+	{
+		divEmail.classList.remove("valid");
+		divEmail.classList.remove("invalid");
+		text.innerHTML = "Por favor, digite um e-mail válido.";
+		text.style.color = "#ff0000";
+	}
+}
 
-	 if (!name || !email || !floorz || !roomz) {
+form_1_next_btn.addEventListener("click", function() {
+
+	const name = document.getElementById("c1_name").value;
+	const email = document.getElementById("c1_email").value;
+	const floorz = document.getElementById("c1_floor").value;
+	const roomz = document.getElementById("c1_room").value;
+	
+
+	if (!name || !email || !floorz || !roomz) {
 		alert("ERRO: Você não preencheu os dados necessários!");
 		return; 
 	} ;

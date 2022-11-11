@@ -31,7 +31,7 @@
                 </div>
                 <div class="form"> <!-- CONTEÚDOS DO FORMULÁRIO -->
                     <div class="form_wrapper">
-                        <div class="form_1 data_info"> <!-- CONTEÚDO DA PÁGINA 1 -->
+                        <div class="form_1 data_info" id="divEmail"> <!-- CONTEÚDO DA PÁGINA 1 -->
                             <h4>PREENCHA O FORMULÁRIO:</h4>
                             <br>
                             <div class="name"> <!-- NOME -->        
@@ -41,7 +41,8 @@
                             <br>
                             <div class="email"> <!-- E-MAIL -->        
                                 <label for="c1_email" class="form-label">E-mail: <span class="requiredField">*</span></label>
-                                <input class="form-control" type ="email" placeholder="Digite seu e-mail aqui" id="c1_email" aria-describedby="emailHelp"> <!-- ÁREA PARA DIGITAR O E-MAIL DO USUÁRIO -->
+                                <input class="form-control" type ="email" placeholder="Digite seu e-mail aqui" id="c1_email" aria-describedby="emailHelp" oninput="validation()"> <!-- ÁREA PARA DIGITAR O E-MAIL DO USUÁRIO -->
+                                <span id="text"></span>
                             </div>
                             <br>
                             <div class="roomChoice"> <!-- ANDAR E SALA -->
