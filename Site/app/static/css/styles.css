@@ -607,9 +607,7 @@ textarea {
   "sidebar content"
   "sidebar footer";
 }
-h1 {
-  margin: 0;
-}        
+  
 header {
   background: green;
   grid-area: header;
@@ -620,25 +618,42 @@ header {
 }
 .content {
   grid-area: content;
+  position: relative;
+  left: 15%;
+  top: 15%;
+  width: 60%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.articles{
+  display: flex;
+  height: auto;
+  width: 50%;
+}
+
+.contentprincipal{
+  padding-top: 10px;
+}
+
+.imgfaq{
+  height: auto;
+  width: auto;
 }
 
 .content a {
   color: #02a698;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 2.4rem;
 }
 .content a:hover {
   text-decoration: underline;
 }
-.content h1 {
-  font-size: 1.5rem;
-}
-.content h2 {
-  font-size: 1.25rem;
-  font-weight: 500;
-}
+
 a {
   color: black;
   text-decoration: none;
@@ -650,16 +665,37 @@ li:not(ol li) {
   list-style: none;
 }
 
-#problem {
-  background: yellow;
-  height: 9rem;
-  width: 18rem;      
+#problemsolucion{
+  margin-left: 12%;
+  width: 70%;
+  height: auto;
 }
+
+.h2faq{
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+}
+
+.contentfaq{
+  font-size: 1.3rem;
+}
+
+.chamadofaq{
+  font-size: 1.3rem !important;
+}
+
+
+
 #problem.active {
   animation-name: slide;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
+
+.articlesTitle{
+  margin-bottom: 30px;
+}
+
 @keyframes slide {
   from {
       transform: translateY(-9rem);
