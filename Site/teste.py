@@ -13,7 +13,7 @@ counter = 1
 for i in range(1, 56):
     if i in emptySlots: # slots que por padrão ficarão vazios
         cur.execute("INSERT INTO room \
-                         (slot_name, general_status, \
+                         (name, general_status, \
                          monitor_config, monitor_status, \
                          computer_config, computer_status, \
                          keyboard_config, keyboard_status, \
@@ -30,7 +30,7 @@ for i in range(1, 56):
                         '#','#'))
     elif i == 5: # slot do professor
         cur.execute("INSERT INTO room \
-                         (slot_name, general_status, \
+                         (name, general_status, \
                          monitor_config, monitor_status, \
                          computer_config, computer_status, \
                          keyboard_config, keyboard_status, \
@@ -47,7 +47,7 @@ for i in range(1, 56):
                         'CABONNET [350 mbps]', 'OK'))
     else: # slots dos alunos
         cur.execute("INSERT INTO room \
-                         (slot_name, general_status, \
+                         (name, general_status, \
                          monitor_config, monitor_status, \
                          computer_config, computer_status, \
                          keyboard_config, keyboard_status, \

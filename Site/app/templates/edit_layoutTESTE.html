@@ -35,28 +35,27 @@
                         <div class="layout_computers_edit"> <!-- LAYOUT DOS COMPUTADORES -->
                             {% for slot in room_layout %}                            
                                 {% if slot['id'] not is 5 and slot['id'] not is 11 %} 
-                                    {% if slot['computer_config'] not is '#' %} <!-- SLOT COMUM --> 
+                                    {% if slot['computer_config'] not is '#' and %} <!-- SLOT COMUM --> 
                                         <div style="height: 80%; width: 90%; display: flex;">
                                         {% if slot['general_status'] is 0 %}
-                                            <label class="btn btn-outline-dark" for="computador{{slot['id']}}">
+                                            <label class="btn btn-outline-dark" for="computer{{slot['id']}}">
                                         {% elif slot['general_status'] is 1 %}
-                                            <label class="btn btn-outline-warning" for="computador{{slot['id']}}">
+                                            <label class="btn btn-outline-warning" for="computer{{slot['id']}}">
                                         {% else %}
-                                            <label class="btn btn-outline-danger" for="computador{{slot['id']}}">
+                                            <label class="btn btn-outline-danger" for="computer{{slot['id']}}">
                                         {% endif %}
-                                                <input type="radio" class="btn-check" name="slotComputer" id="computador{{slot['id']}}" autocomplete="off" value="{{slot['name'].split('_')[1]}}">
+                                                <input type="radio" class="btn-check" name="slotComputer" id="computer{{slot['id']}}" autocomplete="off" value="{{slot['name'].split('_')[1]}}">
                                                 <a>{{slot['name'].split('_')[1]}}</a>
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
                                                     <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
                                                 </svg>    
                                             </label> 
                                         </div>
-
                                     {% elif slot['computer_config'] is '#' %} <!-- SLOT VAZIO POR PADRÃO -->
                                         <div style="visibility: hidden;"></div>
                                     {% else %} <!-- SLOT APAGADO -->
                                         <div style="height: 80%; width: 90%; display: flex;">
-                                            <label class="btn btn-outline-dark" for="">
+                                            <label class="btn btn-outline-dark" for="computer{{slot['id']}}">
                                                 <input type="radio" class="btn-check" name="slotComputer" id="computador{{slot['id']}}" autocomplete="off" value="{{slot['name'].split('_')[1]}}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                                                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>

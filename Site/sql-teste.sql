@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS room;
 CREATE TABLE room (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	last_alteration DATE DEFAULT (datetime('now','localtime')),
-	slot_name TEXT NOT NULL,
+	name TEXT NOT NULL,
 	general_status INTEGER NOT NULL DEFAULT 0,
 	monitor_config TEXT NOT NULL DEFAULT 0,
 	monitor_status TEXT NOT NULL DEFAULT 0,
