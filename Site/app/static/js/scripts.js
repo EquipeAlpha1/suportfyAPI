@@ -92,9 +92,23 @@ form_1_next_btn.addEventListener("click", function() {
 	const floorz = document.getElementById("c1_floor").value;
 	const roomz = document.getElementById("c1_room").value;
 
+	var text= document.getElementById("text");
+	var pattern= /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+	if (email.mach(pattern))
+	{
+		text.innerHTML = "Seu e-mail é válido";
+		text.style.color = "#00ff00";
+	}
+	else
+	{
+		text.innerHTML = "Por favor, digite um e-mail válido";
+		text.style.color = "#ff0000";
+	}
+
 	 if (!name || !email || !floorz || !roomz) {
 		alert("ERRO: Você não preencheu os dados necessários!");
-		return;  ## BLOQUEIA O RESTO DO SCRIPT ##
+		return; 
 	} ;
 	
 	var targetR = parseInt(document.getElementById("c1_room").value); /* parseInt converte o valor que é uma string, para integer */

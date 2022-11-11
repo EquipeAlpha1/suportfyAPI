@@ -895,7 +895,7 @@ ul {
   font-style: 18px;
 }
 
-#form #inputBox
+#form .inputBox
 {
   position: relative;
 }
@@ -909,11 +909,28 @@ ul {
   padding: 5px;
 }
 
-#form #inputBox:before
+#form.invalid .inputBox:before
 {
   content: '';
   position: absolute;
   right: 12px;
   top: 12px;
-  
+  width: 24px;
+  height: 24px;
+  background: url(invalid.png);
+  background-size:cover ;
+  z-index: 1000;
+}
+
+#form.valid .inputBox:before
+{
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  background: url(valid.png);
+  background-size:cover ;
+  z-index: 1000;
 }
