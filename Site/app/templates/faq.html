@@ -26,9 +26,9 @@
                     </button>
                     <div class="collapse" id="home-collapse">
                       <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/monitorFaq" class="link-dark d-inline-flex text-decoration-none rounded">Monitor</a></li>
-                        <li><a href="/mouseFaq" class="link-dark d-inline-flex text-decoration-none rounded">Mouse</a></li>
-                        <li><a href="/tecladoFaq" class="link-dark d-inline-flex text-decoration-none rounded">Teclado</a></li>
+                        <li><a href="#" onclick="onClickSidebar()" id="hardware-1" class="link-dark d-inline-flex text-decoration-none rounded">Monitor</a></li>
+                        <li><a href="#" onclick="onClickSidebar()" id="hardware-2" class="link-dark d-inline-flex text-decoration-none rounded">Mouse</a></li>
+                        <li><a href="#" onclick="onClickSidebar()" id="hardware-3" class="link-dark d-inline-flex text-decoration-none rounded">Teclado</a></li>
                       </ul>
                     </div>
                   </li>
@@ -38,8 +38,8 @@
                     </button>
                     <div class="collapse" id="dashboard-collapse">
                       <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/modemFaq" class="link-dark d-inline-flex text-decoration-none rounded">Modem</a></li>
-                        <li><a href="/conexaoFaq" class="link-dark d-inline-flex text-decoration-none rounded">Conexão</a></li>
+                        <li><a href="#" onclick="onClickSidebar()" id="rede-7" class="link-dark d-inline-flex text-decoration-none rounded">Modem</a></li>
+                        <li><a href="#" onclick="onClickSidebar()" id="rede-8" class="link-dark d-inline-flex text-decoration-none rounded">Conexão</a></li>
                       </ul>  
                     </div>
                   </li>
@@ -49,55 +49,89 @@
                     </button>
                     <div class="collapse" id="orders-collapse">
                       <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/appFaq" class="link-dark d-inline-flex text-decoration-none rounded">Aplicativos</a></li>
-                        <li><a href="/soFaq" class="link-dark d-inline-flex text-decoration-none rounded">Sistema Operacional</a></li>
+                        <li><a href="#" onclick="onClickSidebar()" id="software-4" class="link-dark d-inline-flex text-decoration-none rounded">Aplicativos</a></li>
+                        <li><a href="#" onclick="onClickSidebar()" id="software-5" class="link-dark d-inline-flex text-decoration-none rounded">Sistema Operacional</a></li>
                       </ul>
                     </div>
                   </li>
                 </ul>
             </div>
-            <article class="articlefaq">
-              <section class="sectionfaq">
-                <div class="contentfaq">
-                  <div class="titlefaq">
-                  <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: 5rem;"> Artigos mais procurados:</h1>
+            <div class="content">
+              <div class="default active" style="height: auto; width: max-content; margin: 3rem auto 0;">
+                  <div class="title">
+                      <h1 class="" dir="auto">Como podemos ajudar?</h1>
                   </div>
-                  <nav class="navfaq">
-                  <ul class="ulfaq">
-                      <li class="lifaq"><button class="btnfaqmonitor">Problemas no monitor</button></li>
-                      <li class="lifaq"><button class="btnfaq">Problemas nos aplicativos</button></li>
-                      <li class="lifaq"><button class="btnfaq">Problemas na conexão</button></li>
-                      <li class="lifaq"><button class="btnfaq">Problemas no mouse</button></li>
-                      <li class="lifaq"><button class="btnfaq">Problemas no modem</button></li>
-                  </ul>
-                  </nav>
-                </div>
-                <div class="monitorfaq" style="display: none;">
-                  <div class="titleFaq">
-                        <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: 5rem;">Problemas no monitor:
-                        </h1>
-                    </div>
-                    <div class="solucionFaq">
-                        <p>Geralmente esse problema é causado por problemas <br> nos cabos de conexão ou pela má conexão dos mesmos, <br> tente conecta-los corretamente, se o problema persistir <br> <a href="/create_request">abra um chamado</a> e aguarde a visita do técnico.
-                        </p>
-                    </div>
-                </div>
-              </section>
-            </article>
-            <!-- <div class="contentFaq">
-              <div class="informscontentFaq">
-                  <div class="titlesearchFaq">
-                    <h1 style="font-family: Arial, Helvetica, sans-serif;font-size: 2.5rem;">Como podemos ajudar?</h1>
+                  <div class="search" style="height:7rem;">
+                      <div class="">
+                          <label class="">
+                              <div class="">
+                                  <i data-visualcompletion="css-img" class="" style="background-image:url('https://static.whatsapp.net/rsrc.php/v3/yC/r/Co4DI2hUmaK.png');background-position:0 -125px;background-size:auto;width:24px;height:24px;background-repeat:no-repeat;display:inline-block"></i>
+                              </div>
+                              <input dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-label="Artigos sugeridos" role="combobox" autocomplete="off" placeholder="Pesquisar artigos de ajuda..." spellcheck="false" class="" type="search" value="">
+                          </label>
+                      </div>
                   </div>
-                  <div class="searchinputFaq">
-                    <input type="search" class="inputFaq" placeholder="Pesquisar...">
-                    <a href="#" class="loupeFaq">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-search " viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                      </svg>
-                    </a>
+                  <div class="articles">
+                      <div class="" style="display: flex; gap:2rem;">
+                          <div>
+                              <div class="articlesTitle">
+                                  <h2 class="" dir="auto">Artigos mais lidos</h2>
+                              </div>
+                              <div class="chamadasVideo">
+                                  <span class="" dir="auto"><a class="" href="/1862285217468140/?helpref=topq" role="link" tabindex="0">Como fazer chamadas de vídeo</a></span>
+                              </div>
+                              <div class="segurancaWhatsApp">
+                                  <span class="" dir="auto"><a class="" href="/1313491802751163/?helpref=topq" role="link" tabindex="0">Como manter a segurança no WhatsApp</a></span>
+                              </div>
+                              <div class="banimentoTemporario">
+                                  <span class="" dir="auto"><a class="" href="/1848531392146538/?helpref=topq" role="link" tabindex="0">Sobre contas temporariamente banidas</a></span>
+                              </div>
+                              <div class="loginDuasEtapas">
+                                  <span class="" dir="auto"><a class="" href="/1278661612895630/?helpref=topq" role="link" tabindex="0">Sobre a confirmação em duas etapas</a></span>
+                              </div>
+                              <div class="historicoConversas">
+                                  <span class="" dir="auto"><a class="" href="/618575946635920/?helpref=topq" role="link" tabindex="0">Como restaurar seu histórico de conversas</a></span>
+                              </div>
+                              <div class="codigoConfirmacao">
+                                  <span class="" dir="auto"><a class="" href="/479314433984258/?helpref=topq" role="link" tabindex="0">Por que recebi um código de confirmação sem solicitá-lo?</a></span>
+                              </div>
+                          </div>
+                          <div class="exampleImgWhatsApp" style="display: flex; ">
+                              <i data-visualcompletion="css-img" aria-label="Produtos do WhatsApp em diversos aparelhos" class="" role="img" style="background-image:url('https://static.whatsapp.net/rsrc.php/v3/yF/r/x5EbXYKsyRa.png'); background-position:0 0; background-size:auto; width:380px; height:268px; background-repeat:no-repeat; display:inline-block; margin: 1rem 0 0;"></i>
+                          </div>
+                      </div>
                   </div>
               </div>
-            </div> -->
+              <div class="categoria-1">
+                  <div class="hardware-1" id="problem" style="display: none;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, similique laborum adipisci nemo fugit fugiat alias perspiciatis ullam? Voluptatem enim laborum quo cupiditate at minus quas voluptatum distinctio dolores dolorum.</div>
+                  <div class="hardware-2" id="problem" style="display: none;"><h1>DIV 2</h1></div>
+                  <div class="hardware-3" id="problem" style="display: none;"><h1>div 3 teste</h1></div>
+              </div>        
+              <div class="categoria-2">
+                  <div class="software-4" id="problem" style="display: none;"><h1>div4444</h1></div>
+                  <div class="software-5" id="problem" style="display: none;"><h1>D 5</h1></div>
+                  <div class="software-6" id="problem" style="display: none;"><h1>div 666</h1></div>
+              </div>                
+              <div class="categoria-3">
+                  <div class="rede-7" id="problem" style="display: none;"><h1>d77</h1></div>
+                  <div class="rede-8" id="problem" style="display: none;"><h1>DIV 88</h1></div>
+              </div>
+          </div>
+            <script type="text/javascript">
+
+              function onClickSidebar() {
+          
+                  var activeProblem = document.querySelector('.active');
+                  var chosedProblem = document.activeElement.id;
+          
+                  activeProblem.classList.remove('active'); 
+                  activeProblem.style.display = 'none';
+          
+                  document.querySelector('.'+chosedProblem).style.display = 'block';
+                  document.querySelector('.'+chosedProblem).classList.add('active'); /* animation */                
+          
+              };
+          
+          </script>
         </section>
 {% endblock %}
