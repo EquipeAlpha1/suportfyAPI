@@ -15,5 +15,6 @@ CREATE TABLE room (
 	os_config TEXT NOT NULL DEFAULT '#',
 	os_status TEXT NOT NULL DEFAULT '#',
 	network_config TEXT NOT NULL DEFAULT '#',
-	network_status TEXT NOT NULL DEFAULT '#'	
+	network_status TEXT NOT NULL DEFAULT '#',
+	general_status INTEGER NOT NULL DEFAULT 0
 );
