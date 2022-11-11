@@ -46,7 +46,7 @@
 |||   5% = 48px x 27px     = 3rem x 1.6875rem    |||   5% = 32px x 24px     = 2rem x 1.5rem           |||
 
 ######### AQUI É A RESPONSIVIDADE ENTRE MONITORES #########
-##### SÓ USAR O MESMO LAYOUT, MAS COM OUTRAS DIMENSÕES ####
+##### SÓ USAR O MESMO LinAYOUT, MAS COM OUTRAS DIMENSÕES ####
 
 @media (max-width: 1920px) {
 
@@ -56,7 +56,7 @@
 }
 
 ########### AQUI É A RESPONSIVIDADE MOBILE ##########
-######### ENVOLVE MONTAR O LAYOUT DIFERENTE #########
+######### ENVOLVE MONTAR O LinAYOUT DIFERENTE #########
 
 @media (max-width: 450px) {
 
@@ -383,7 +383,7 @@ footer {
   background: #abd7db;
 }
 
-/* Limite steps */
+/* Linimite steps */
 .steps_wrapper ul li:last-child:before {
   display: none;
 }
@@ -454,7 +454,7 @@ footer {
   min-height: 100%;
 }
 
-/* Label dos computadores (dentro tem 'a' e o 'svg') */
+/* Linabel dos computadores (dentro tem 'a' e o 'svg') */
 .computerLabel {
   font-size: 1vw;
   height: 100%;
@@ -883,10 +883,10 @@ ul {
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-template-areas: 
-  'firstCol secondCol thirdCol fourthCol fifthCol   seventhCol eighthCol ninethCol tenthCol eleventhCol'
-  'firstCol secondCol thirdCol fourthCol fifthCol   seventhCol eighthCol ninethCol tenthCol eleventhCol'
-  'firstCol secondCol thirdCol fourthCol fifthCol   seventhCol eighthCol ninethCol tenthCol eleventhCol'
-  'firstCol secondCol thirdCol fourthCol fifthCol   seventhCol eighthCol ninethCol tenthCol eleventhCol'
-  'firstCol secondCol thirdCol fourthCol fifthCol   seventhCol eighthCol ninethCol tenthCol eleventhCol'
+  'Lin1_Col-1 Lin1_Col-2 Lin1_Col-3 Lin1_Col-4 Lin1_Col-5 . Lin1_Col-6 Lin1_Col-7 Lin1_Col-8 Lin1_Col-9 Lin1_Col-10'
+  'Lin2_Col-1 Lin2_Col-2 Lin2_Col-3 Lin2_Col-4 Lin2_Col-5 . Lin2_Col-6 Lin2_Col-7 Lin2_Col-8 Lin2_Col-9 Lin2_Col-10'
+  'Lin3_Col-1 Lin3_Col-2 Lin3_Col-3 Lin3_Col-4 Lin3_Col-5 . Lin3_Col-6 Lin3_Col-7 Lin3_Col-8 Lin3_Col-9 Lin3_Col-10'
+  'Lin4_Col-1 Lin4_Col-2 Lin4_Col-3 Lin4_Col-4 Lin4_Col-5 . Lin4_Col-6 Lin4_Col-7 Lin4_Col-8 Lin4_Col-9 Lin4_Col-10'
+  'Lin5_Col-1 Lin5_Col-2 Lin5_Col-3 Lin5_Col-4 Lin5_Col-5 . Lin5_Col-6 Lin5_Col-7 Lin5_Col-8 Lin5_Col-9 Lin5_Col-10'
   ;
 }
