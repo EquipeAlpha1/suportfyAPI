@@ -882,7 +882,7 @@ ul {
   height: 25rem;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 5rem);
   grid-template-areas: 
   'Lin1_Col-1 Lin1_Col-2 Lin1_Col-3 Lin1_Col-4 Lin1_Col-5 . Lin1_Col-6 Lin1_Col-7 Lin1_Col-8 Lin1_Col-9 Lin1_Col-10'
   'Lin2_Col-1 Lin2_Col-2 Lin2_Col-3 Lin2_Col-4 Lin2_Col-5 . Lin2_Col-6 Lin2_Col-7 Lin2_Col-8 Lin2_Col-9 Lin2_Col-10'
