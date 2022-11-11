@@ -16,6 +16,28 @@
         li:not(ol li) {
             list-style: none;
         }
+
+        #problem {
+            background: white;
+            height: 9rem;
+            width: 18rem;      
+        }
+        #problem.active {
+            animation-name: slide;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes slide {
+            from {
+                transform: translateY(-9rem);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -46,19 +68,19 @@
         </div>
         <div class="content" style="height: 27rem; width:36rem; border:1px solid black; box-sizing:border-box; background: tomato;">
             <div class="categoria-1">
-                <div class="hardware-1 active">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, similique laborum adipisci nemo fugit fugiat alias perspiciatis ullam? Voluptatem enim laborum quo cupiditate at minus quas voluptatum distinctio dolores dolorum.</div>
-                <div class="hardware-2" style="display: none;"><h1>DIV 2</h1></div>
-                <div class="hardware-3" style="display: none;"><h1>div 3 teste</h1></div>
+                <div class="hardware-1 active" id="problem" style="display: block;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, similique laborum adipisci nemo fugit fugiat alias perspiciatis ullam? Voluptatem enim laborum quo cupiditate at minus quas voluptatum distinctio dolores dolorum.</div>
+                <div class="hardware-2" id="problem" style="display: none;"><h1>DIV 2</h1></div>
+                <div class="hardware-3" id="problem" style="display: none;"><h1>div 3 teste</h1></div>
             </div>        
             <div class="categoria-2">
-                <div class="software-4" style="display: none;"><h1>div4444</h1></div>
-                <div class="software-5" style="display: none;"><h1>D 5</h1></div>
-                <div class="software-6" style="display: none;"><h1>div 666</h1></div>
+                <div class="software-4" id="problem" style="display: none;"><h1>div4444</h1></div>
+                <div class="software-5" id="problem" style="display: none;"><h1>D 5</h1></div>
+                <div class="software-6" id="problem" style="display: none;"><h1>div 666</h1></div>
             </div>
                 
             <div class="categoria-3">
-                <div class="rede-7" style="display: none;"><h1>d77</h1></div>
-                <div class="rede-8" style="display: none;"><h1>DIV 88</h1></div>
+                <div class="rede-7" id="problem" style="display: none;"><h1>d77</h1></div>
+                <div class="rede-8" id="problem" style="display: none;"><h1>DIV 88</h1></div>
             </div>
         </div>
     </div>
@@ -69,13 +91,18 @@
 
         var activeProblem = document.querySelector('.active');
         var chosedProblem = document.activeElement.id;
-        
-        activeProblem.classList.remove('active');
-        activeProblem.style.display = "none";
-	    
-        document.querySelector('.'+chosedProblem).classList.add('active');
-        document.querySelector('.'+chosedProblem).style.display = "block";
-    }
+
+        console.log('active',activeProblem);
+        console.log('chosed',chosedProblem);
+
+        activeProblem.classList.remove('active'); 
+        activeProblem.style.display = 'none';
+
+        document.querySelector('.'+chosedProblem).style.display = 'block';
+        document.querySelector('.'+chosedProblem).classList.add('active'); /* animation */
+                
+
+    };
 
 </script>
 </html>

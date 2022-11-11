@@ -878,3 +878,15 @@ ul {
 
 }
 
+.layout_computers_edit{
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: 
+  'firstCol secondCol thirdCol fourthCol fifthCol   seventhCol eighthCol ninethCol tenthCol eleventhCol'
+  'firstCol secondCol thirdCol fourthCol fifthCol   seventhCol eighthCol ninethCol tenthCol eleventhCol'
+  'firstCol secondCol thirdCol fourthCol fifthCol   seventhCol eighthCol ninethCol tenthCol eleventhCol'
+  'firstCol secondCol thirdCol fourthCol fifthCol   seventhCol eighthCol ninethCol tenthCol eleventhCol'
+  'firstCol secondCol thirdCol fourthCol fifthCol   seventhCol eighthCol ninethCol tenthCol eleventhCol'
+  ;
+}
