@@ -72,7 +72,14 @@ def sign_out():
 def edit_layout():
     if not session:
         return 'ERRO: Você não tem autorização!'
-    return render_template('edit_layout.html')
+
+
+        
+    conn = sqlite3.connect('teste.db')    
+    conn.row_factory = sqlite3.Row
+    room_layout = conn.execute('SELECT * FROM room').fetchall()
+    conn.close()
+    return render_template('edit_layout.html', room_layout=room_layout)
 
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():

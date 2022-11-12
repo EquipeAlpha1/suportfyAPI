@@ -78,6 +78,25 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.layout_computers_edit .wrapperSlot {
+  width: 100%; height: 100%; display: flex;
+}
+.layout_computers_edit .wrapperSlot label {
+  font-size: 1vw;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.layout_computers_edit .wrapperSlot label a {
+  display: block; height: auto; width: 80%; margin: 0 auto; padding: 0;
+}
+
+.layout_computers_edit .wrapperSlot label svg {
+  height: auto; width: 80%; margin: 0 auto; padding: 0;
+}
+
 .nav-item .nav-link {
   /* border-radius: 8px; */
   margin: 0;
@@ -879,7 +898,7 @@ ul {
 }
 
 .layout_computers_edit{
-  height: 25rem;
+  height: 29rem;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: repeat(5, 5rem);
@@ -890,4 +909,9 @@ ul {
   'Lin4_Col-1 Lin4_Col-2 Lin4_Col-3 Lin4_Col-4 Lin4_Col-5 . Lin4_Col-6 Lin4_Col-7 Lin4_Col-8 Lin4_Col-9 Lin4_Col-10'
   'Lin5_Col-1 Lin5_Col-2 Lin5_Col-3 Lin5_Col-4 Lin5_Col-5 . Lin5_Col-6 Lin5_Col-7 Lin5_Col-8 Lin5_Col-9 Lin5_Col-10'
   ;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  background: #f5f5f5;
+  border-radius: 6px;
 }
+
