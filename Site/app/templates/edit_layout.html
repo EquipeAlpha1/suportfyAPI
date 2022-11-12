@@ -35,21 +35,21 @@
                         <div class="layout_computers_edit"> <!-- LAYOUT DOS COMPUTADORES -->
                             {% for slot in room_layout %}                            
                                 {% if slot['id'] != 5 and slot['id'] != 11 %} 
+                                    {% set slot_num = slot['name'].split('_')[1] | int if slot['computer_config'] != '#' %}
                                     {% if slot['computer_config'] != '#' and slot['computer_config'] != 'EMPTY' %} <!-- SLOT COMUM --> 
-                                        <div class="wrapperSlot">
-                                        {% set slot_num = slot['name'].split('_')[1] | int %}
+                                        <div class="wrapperSlot">                                        
                                         {% if slot_num < 10 %}
                                             {% set slot_num = '0'+slot_num | string %}
                                         {% endif %}
                                         {% set color_num = slot['general_status'] %}
                                         {% if color_num == 0 %}
-                                            <label class="btn btn-outline-dark" for="computer{{slot_num}}">
+                                            <label class="btn btn-outline-dark" for="slot{{slot_num}}">
                                         {% elif color_num == 1 %}
-                                            <label class="btn btn-outline-warning" for="computer{{slot_num}}">
+                                            <label class="btn btn-outline-warning" for="slot{{slot_num}}">
                                         {% else %}
-                                            <label class="btn btn-outline-danger" for="computer{{slot_num}}">
+                                            <label class="btn btn-outline-danger" for="slot{{slot_num}}">
                                         {% endif %}
-                                                <input type="radio" class="btn-check" name="slotComputer" id="computer{{slot_num}}" autocomplete="off" value="{{slot_num}}">
+                                                <input type="radio" class="btn-check" name="slotComputer" id="slot{{slot_num}}" autocomplete="off" value="{{slot_num}}">
                                                 <a>{{slot_num}}</a>                                                
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
                                                     <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
@@ -60,9 +60,10 @@
                                         <div style="visibility: hidden;"></div>
                                     {% else %} <!-- SLOT APAGADO -->
                                         <div class="wrapperSlot">
-                                            <label class="btn btn-outline-dark d-flex" for="computer{{slot['id']}}">
-                                                <input type="radio" class="btn-check" name="slotComputer" id="computer{{slot['id']}}" autocomplete="off" value="{{slot['name'].split('_')[1]}}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg m-auto" viewBox="0 0 16 16">
+                                            <label class="btn btn-outline-dark" for="slot{{slot_num}}">
+                                                <input type="radio" class="btn-check" name="slotComputer" id="slot{{slot_num}}" autocomplete="off" value="{{slot_num}}">
+                                                <a>{{slot_num}}</a> 
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                                                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                                                 </svg>
                                             </label>
@@ -72,13 +73,13 @@
                                     <div class="wrapperSlot">       
                                     {% set prof_color_num = slot['general_status'] %}                            
                                     {% if prof_color_num == 0 %}
-                                        <label class="btn btn-outline-dark" for="computerTeacher">
+                                        <label class="btn btn-outline-dark" for="slotTeacher">
                                     {% elif prof_color_num == 1 %}
-                                        <label class="btn btn-outline-warning" for="computerTeacher">
+                                        <label class="btn btn-outline-warning" for="slotTeacher">
                                     {% else %}
-                                        <label class="btn btn-outline-danger" for="computerTeacher">
+                                        <label class="btn btn-outline-danger" for="slotTeacher">
                                     {% endif %}
-                                            <input type="radio" class="btn-check" name="slotComputer" id="computerTeacher" autocomplete="off" value="Professor">
+                                            <input type="radio" class="btn-check" name="slotComputer" id="slotTeacher" autocomplete="off" value="Professor">
                                             <a>Prof.</a>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="prof bi bi-pc-display-horizontal" viewBox="0 0 16 16">
                                                 <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
