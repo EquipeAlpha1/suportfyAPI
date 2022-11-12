@@ -76,27 +76,8 @@ html {
 body {
   font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
+  
 }
-
-.layout_computers_edit .wrapperSlot {
-  width: 100%; height: 100%; display: flex;
-}
-.layout_computers_edit .wrapperSlot label {
-  font-size: 1vw;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.layout_computers_edit .wrapperSlot label a {
-  display: block; height: auto; width: 80%; margin: 0 auto; padding: 0;
-}
-
-.layout_computers_edit .wrapperSlot label svg {
-  height: auto; width: 80%; margin: 0 auto; padding: 0;
-}
-
 .nav-item .nav-link {
   /* border-radius: 8px; */
   margin: 0;
@@ -170,10 +151,11 @@ section {
 } */
 
 .wrapper_EditLayout { 
-  width: 70%;
-  display:grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
+  width: 50rem;
+  display: grid;
+  grid-template-columns: 8rem 40rem;
+  grid-template-rows: 10rem;
+  gap: 2rem;
   height: 864px;
   padding: 20px;
   margin: 0 auto;
@@ -209,7 +191,8 @@ section {
 .monitor,
 .computador,
 .teclado,
-.mouse label {
+.mouse {
+  padding: 0;
   margin: 0 0 1rem;
 }
 
@@ -303,7 +286,6 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 20px;
   gap: 1rem;
 }
 
@@ -895,23 +877,5 @@ ul {
   font-size: 0.95rem;
   }
 
-}
-
-.layout_computers_edit{
-  height: 29rem;
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: repeat(5, 5rem);
-  grid-template-areas: 
-  'Lin1_Col-1 Lin1_Col-2 Lin1_Col-3 Lin1_Col-4 Lin1_Col-5 . Lin1_Col-6 Lin1_Col-7 Lin1_Col-8 Lin1_Col-9 Lin1_Col-10'
-  'Lin2_Col-1 Lin2_Col-2 Lin2_Col-3 Lin2_Col-4 Lin2_Col-5 . Lin2_Col-6 Lin2_Col-7 Lin2_Col-8 Lin2_Col-9 Lin2_Col-10'
-  'Lin3_Col-1 Lin3_Col-2 Lin3_Col-3 Lin3_Col-4 Lin3_Col-5 . Lin3_Col-6 Lin3_Col-7 Lin3_Col-8 Lin3_Col-9 Lin3_Col-10'
-  'Lin4_Col-1 Lin4_Col-2 Lin4_Col-3 Lin4_Col-4 Lin4_Col-5 . Lin4_Col-6 Lin4_Col-7 Lin4_Col-8 Lin4_Col-9 Lin4_Col-10'
-  'Lin5_Col-1 Lin5_Col-2 Lin5_Col-3 Lin5_Col-4 Lin5_Col-5 . Lin5_Col-6 Lin5_Col-7 Lin5_Col-8 Lin5_Col-9 Lin5_Col-10'
-  ;
-  row-gap: 1rem;
-  column-gap: 1rem;
-  background: #f5f5f5;
-  border-radius: 6px;
 }
 
