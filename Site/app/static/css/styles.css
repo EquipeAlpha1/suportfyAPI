@@ -346,6 +346,7 @@ footer {
   padding: 0;
 }
 
+.
 /* Quebra linha steps */
 .steps_wrapper ul {
   display: flex;
@@ -362,6 +363,7 @@ footer {
   margin-right: 50px;
   position: relative;
 }
+
 
 .form_3_progressbar{
   margin-right: 50px;
@@ -726,7 +728,8 @@ nav {
     display: none;
   }
   .btnMobile {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 }
 

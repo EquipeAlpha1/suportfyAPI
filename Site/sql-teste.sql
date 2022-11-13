@@ -17,24 +17,19 @@ CREATE TABLE room (
 	os_status TEXT NOT NULL DEFAULT 'EMPTY',
 	network_config TEXT NOT NULL DEFAULT 'EMPTY', /* POSSO REMOVER */
 	network_status TEXT NOT NULL DEFAULT 'EMPTY',
-	motherboard_config TEXT NOT NULL DEFAULT 'EMPTY', /* SE REMOVIDO, REMOVE TAMBÉM > OS, CPU, MEMORY, STORAGE */
+/* 	motherboard_config TEXT NOT NULL DEFAULT 'EMPTY',
 	motherboard_status TEXT NOT NULL DEFAULT 'EMPTY',
-	cpu_config TEXT NOT NULL DEFAULT 'EMPTY', /* SE REMOVIDO, GENERAL_STATUS = DANGER */
+	cpu_config TEXT NOT NULL DEFAULT 'EMPTY',
 	cpu_status TEXT NOT NULL DEFAULT 'EMPTY',
-	memory_config TEXT NOT NULL DEFAULT 'EMPTY', /* SE REMOVIDO, GENERAL_STATUS = DANGER */
+	memory_config TEXT NOT NULL DEFAULT 'EMPTY',
 	memory_status TEXT NOT NULL DEFAULT 'EMPTY',
-	storage_config TEXT NOT NULL DEFAULT 'EMPTY', /* SE REMOVIDO, GENERAL_STATUS = DANGER */
+	storage_config TEXT NOT NULL DEFAULT 'EMPTY',
 	storage_status TEXT NOT NULL DEFAULT 'EMPTY',
-	power_status TEXT NOT NULL DEFAULT 'EMPTY', /* BLOQUEADO */
-	CHECK (general_status == 'OK' OR  
-			general_status == 'MONITOR' OR
-			general_status == 'COMPUTADOR' OR
-			general_status == 'REDE' OR
-			general_status == 'REDE + POWER' OR
-			general_status == 'POWER')
+	power_status TEXT NOT NULL DEFAULT 'EMPTY',*/
+	CHECK (CAST(general_status AS INTEGER) >= -1 AND CAST(general_status AS INTEGER) <= 2) 
 );
 
-CREATE TRIGGER case_removed_room1
+/* CREATE TRIGGER case_removed_room1
    AFTER UPDATE ON room1
    WHEN NEW.case_config == 'EMPTY'
 BEGIN
@@ -52,4 +47,4 @@ BEGIN
 			storage_status = 'EMPTY'
 		WHERE
 			id = x;
-END;
+END; */

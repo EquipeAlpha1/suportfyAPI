@@ -15,7 +15,7 @@ for i in range(1, 56):
         cur.execute("INSERT INTO room \
                          (name, general_status, \
                          monitor_config, monitor_status, \
-                         computer_config, computer_status, \
+                         case_config, case_status, \
                          keyboard_config, keyboard_status, \
                          mouse_config, mouse_status, \
                          os_config, os_status, \
@@ -32,7 +32,7 @@ for i in range(1, 56):
         cur.execute("INSERT INTO room \
                          (name, general_status, \
                          monitor_config, monitor_status, \
-                         computer_config, computer_status, \
+                         case_config, case_status, \
                          keyboard_config, keyboard_status, \
                          mouse_config, mouse_status, \
                          os_config, os_status, \
@@ -49,7 +49,7 @@ for i in range(1, 56):
         cur.execute("INSERT INTO room \
                          (name, general_status, \
                          monitor_config, monitor_status, \
-                         computer_config, computer_status, \
+                         case_config, case_status, \
                          keyboard_config, keyboard_status, \
                          mouse_config, mouse_status, \
                          os_config, os_status, \
