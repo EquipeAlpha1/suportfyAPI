@@ -68,16 +68,14 @@ def sign_out():
     session.clear()
     return redirect(url_for('home'))
 
-@app.route('/edit_layout')
-def edit_layout():
+@app.route('/edit_layout', methods=['GET','POST'])
+def refresh_layout():
     if not session:
         return 'ERRO: Você não tem autorização!'
-
-
-        
-    conn = sqlite3.connect('teste.db')    
+    room = 'room_'+str(request.form.get('roomSelected'))
+    conn = sqlite3.connect('database.db')    
     conn.row_factory = sqlite3.Row
-    room_layout = conn.execute('SELECT * FROM room').fetchall()
+    room_layout = conn.execute('SELECT * FROM '+room+'').fetchall()
     conn.close()
     return render_template('edit_layout.html', room_layout=room_layout)
 
@@ -267,15 +265,6 @@ for image in files:
         im = Image.open(image)
         im.thumbnail(size)
         im.save("thumbnail_%s_%s" % (image, "_".join(size))) """
-
-@app.route('/refresh_layout', methods=['GET','POST'])
-def refresh_layout():
-    room = 'room_'+str(request.form.get('roomSelected'))
-    conn = sqlite3.connect('teste.db')    
-    conn.row_factory = sqlite3.Row
-    room_layout = conn.execute('SELECT * FROM '+room+'').fetchall()
-    conn.close()
-    return render_template('edit_layout.html', room_layout=room_layout)
 
 @app.route('/consult_slot', methods=['GET','POST'])
 def consult_slot(slot_id):
