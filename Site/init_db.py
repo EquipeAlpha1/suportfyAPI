@@ -38,7 +38,7 @@ for key in rooms.keys():
     for roomNumber in rooms[key]:
         counter = 10    
         for i in range(1, 56):
-            if i in emptySlots: # slots que por padrão ficarão vazios
+            if i in emptySlots: # slots de espaçamento
                 cur.execute('INSERT INTO room_'+roomNumber+' \
                                 (name, general_status, \
                                 monitor_config, monitor_status, \
@@ -72,7 +72,7 @@ for key in rooms.keys():
                                 'Multilaser Classic [MO300]', 
                                 'OK', 'Windows 10 [22H2]', 'OK', 
                                 'CABONNET [350 mbps]', 'OK'))
-            elif i in tempList:
+            elif i in tempList: # slots vazios ou sem bancada
                 if i <= 44 or key != 'Small':
                     tempSlotStatus = -1
                 else:

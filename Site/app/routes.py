@@ -69,12 +69,11 @@ def sign_out():
     return redirect(url_for('home'))
 
 @app.route('/edit_layout', methods=['GET','POST'])
-def refresh_layout():
+def edit_layout():
     if not session:
         return 'ERRO: Você não tem autorização!'
     room = 'room_'+str(request.form.get('roomSelected'))
-    conn = sqlite3.connect('database.db')    
-    conn.row_factory = sqlite3.Row
+    conn = get_db_connection()
     room_layout = conn.execute('SELECT * FROM '+room+'').fetchall()
     conn.close()
     return render_template('edit_layout.html', room_layout=room_layout)
