@@ -273,7 +273,7 @@ def refresh_layout():
     room = 'room_'+str(request.form.get('roomSelected'))
     conn = sqlite3.connect('teste.db')    
     conn.row_factory = sqlite3.Row
-    room_layout = conn.execute('SELECT * FROM room').fetchall()
+    room_layout = conn.execute('SELECT * FROM '+room+'').fetchall()
     conn.close()
     return render_template('edit_layout.html', room_layout=room_layout)
 

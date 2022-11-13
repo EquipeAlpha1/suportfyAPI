@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS room_409;
 DROP TABLE IF EXISTS room_411;
 DROP TABLE IF EXISTS room_412;
 
+
 CREATE TABLE room_301 (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	last_alteration DATE DEFAULT (datetime('now','localtime')),

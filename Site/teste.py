@@ -16,11 +16,12 @@ rooms = {
 sizes = {
     'emptySlotsRoomLarger': [12, 18, 23, 33, 34, 40, 45, 55],    
     'emptySlotsRoomMedium': [13, 15, 18, 22, 23, 27, 30, 32, 35, 37, 40, 44, 45, 49, 52, 54],
-    'emptySlotsRoomSmall': [13, 15, 18, 22, 23, 27, 30, 32, 35, 37, 40, 44, 45, 46, 47, 48, 49, 51, 52, 53, 54]    
+    'emptySlotsRoomSmall': [13, 15, 18, 22, 23, 27, 30, 32, 35, 37, 40, 44, 45, 46, 47, 48, 49, 51, 52, 53, 54, 55]    
 }
 
 emptySlots = [1,2,3,4,6,7,8,9,10,11,17,28,39,50]
 counter = 10
+tempSlotStatus = 0
 
 for key in rooms.keys():
     tempList = sizes['emptySlotsRoom'+key]
@@ -62,6 +63,10 @@ for key in rooms.keys():
                                 'OK', 'Windows 10 [22H2]', 'OK', 
                                 'CABONNET [350 mbps]', 'OK'))
             elif i in tempList:
+                if i <= 44 or key != 'Small':
+                    tempSlotStatus = -1
+                else:
+                    tempSlotStatus = -2
                 cur.execute('INSERT INTO room_'+roomNumber+' \
                                 (name, general_status, \
                                 monitor_config, monitor_status, \
@@ -71,13 +76,20 @@ for key in rooms.keys():
                                 os_config, os_status, \
                                 network_config, network_status) \
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                                ('slot_'+str(counter), -1,
+                                ('slot_'+str(counter), tempSlotStatus,
                                 '#','#',
                                 '#','#',
                                 '#','#',
                                 '#','#',
                                 '#','#',
                                 '#','#'))
+                counter -= 1
+                if  counter == 0:
+                    counter = 20
+                elif counter == 10:
+                    counter = 30
+                elif counter == 20:
+                    counter = 40
             else: # slots dos alunos
                 cur.execute('INSERT INTO room_'+roomNumber+' \
                                 (name, general_status, \
@@ -95,13 +107,13 @@ for key in rooms.keys():
                                 'Multilaser Classic [MO300]', 'OK', 
                                 'Windows 10 [22H2]', 'OK', 
                                 'CABONNET [350 mbps]', 'OK'))
-                if  counter == 1:
-                    counter = 21
-                elif counter == 11:
-                    counter = 31
-                elif counter == 21:
-                    counter = 41
                 counter -= 1
+                if  counter == 0:
+                    counter = 20
+                elif counter == 10:
+                    counter = 30
+                elif counter == 20:
+                    counter = 40
 
 connection.commit()
 connection.close()
