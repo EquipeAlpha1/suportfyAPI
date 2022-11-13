@@ -175,12 +175,4 @@ form_3_next_btn.addEventListener("click", function() {
 	form_3_btns.style.display = "none";
 
 	form_4_progressbar.classList.add("active");
-});const myModal = document.getElementById('exampleModal');
-
-if (document.querySelector('input[name="slotComputerEdit"]')) {
-	document.querySelectorAll('input[name="slotComputerEdit"]').forEach((elem) => {
-	  elem.addEventListener("change", function(event) {
-		alert('teste');
-	  });
-	});
-  }
+});

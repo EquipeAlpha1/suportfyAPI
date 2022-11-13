@@ -270,25 +270,12 @@ for image in files:
 
 @app.route('/refresh_layout', methods=['GET','POST'])
 def refresh_layout():
-    #floor = request.form.get('floor')
-    #room = request.form.get('room')
-
-    conn = get_db_connection()
-    slot_info = conn.execute('SELECT \
-                                    monitor_config_id, \
-                                    monitor_status_id, \
-                                    computer_config_id, \
-                                    computer_status_id, \
-                                    keyboard_config_id, \
-                                    keyboard_status_id, \
-                                    mouse_config_id, \
-                                    mouse_status_id \
-                                FROM \
-                                    "'+room+'" \
-                                WHERE \
-                                    id = ?', (slot_id,)).fetchone()
+    room = 'room_'+str(request.form.get('roomSelected'))
+    conn = sqlite3.connect('teste.db')    
+    conn.row_factory = sqlite3.Row
+    room_layout = conn.execute('SELECT * FROM room').fetchall()
     conn.close()
-    return redirect(url_for('edit_layout', slot_info=slot_info))
+    return render_template('edit_layout.html', room_layout=room_layout)
 
 @app.route('/consult_slot', methods=['GET','POST'])
 def consult_slot(slot_id):
@@ -369,6 +356,11 @@ def edit_slot(slot_id):
     conn.commit()
     conn.close()
     return redirect(url_for('edit_layout'))
+
+@app.route("/test" , methods=['GET', 'POST'])
+def test():
+    select = request.form.get('roomSelected')
+    return(str(select)) # just to see what select is
 
 @app.route('/delete_slot', methods=['GET','POST'])
 def delete_slot(slot_id):

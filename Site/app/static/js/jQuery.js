@@ -27,7 +27,7 @@ $(document).on('submit','#refreshLayout',function(e) {
 
 $(document).on('submit','#consultSlot',function(e) {
     
-    var consultSlot = $("input[name='slotComputer']:checked").val();
+    var consultSlot = $("input[name='slotComputerEdit']:checked").val();
 
     e.preventDefault(); /* Essa função evita de recarregar a página no evento 'Submit' */
 
