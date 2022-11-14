@@ -50,6 +50,10 @@ for key in rooms.keys():
     for roomNumber in rooms[key]:
         counter = 10    
         for i in range(1, 56):
+            if counter < 10:
+                tempCounter = '0'+str(counter)
+            else:
+                tempCounter = str(counter)
             if i in emptySlots: # slots de espaçamento
                 cur.execute('INSERT INTO room_'+roomNumber+' \
                                 (name, general_status, \
@@ -128,7 +132,7 @@ for key in rooms.keys():
                                 gpu_config, gpu_status, \
                                 psu_config, psu_status) \
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                                ('slot_'+str(counter),tempSlotStatus,
+                                ('slot_'+tempCounter, tempSlotStatus,
                                 '#','#',
                                 '#','#',
                                 '#','#',
@@ -159,7 +163,7 @@ for key in rooms.keys():
                                 gpu_config, gpu_status, \
                                 psu_config, psu_status) \
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                                ('slot_'+str(counter), 0, 
+                                ('slot_'+tempCounter, 0, 
                                 'POSITIVO 22" [22MP55PQ]', 'OK', 
                                 'HP EliteDesk [800 G1 SFF]', 'OK', 
                                 'PCTOP [HK3004]', 'OK', 

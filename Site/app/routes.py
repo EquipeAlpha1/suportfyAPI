@@ -169,6 +169,8 @@ def create_request():
         conn.commit()
         conn.close()
 
+        return ('', 204)
+
     room_id = str(request.args.get('roomSelected'))
     room_layout = load_room(room_id)
     
@@ -184,6 +186,12 @@ def consult_requests():
 @app.route('/<int:id>/delete_request/', methods=('POST',))
 def delete_request(id):
     conn = get_db_connection()
+    issue = get_issue(id)
+    slotName = 'Prof' if issue['pcs'] == 'Professor' else issue['pcs']
+    conn.execute('UPDATE room_'+issue['rooms']+' \
+                    SET general_status = CASE \
+                        WHEN general_status > 0 THEN (general_status - 1) ELSE 0 END \
+                    WHERE name = ?', ('slot_'+slotName,))
     conn.execute('DELETE FROM issue_history WHERE id = ?', (id,))
     conn.commit()
     conn.close()
@@ -248,14 +256,14 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS 
 
-""" def get_issue(issue_id):
+def get_issue(issue_id):
     conn = get_db_connection()
     issue = conn.execute('SELECT * FROM issue_history WHERE id = ?',
                         (issue_id,)).fetchone()
     conn.close()
     if issue is None:
         abort(404)
-    return issue """
+    return issue
 
 """ def get_user(user_id):
     conn = get_db_connection()
