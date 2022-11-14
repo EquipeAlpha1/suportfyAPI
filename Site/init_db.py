@@ -46,11 +46,7 @@ for size in layouts.keys():
                         (roomNumber[0]+'rd', roomNumber))
         counter = 10    
         for i in range(1, 56):
-            if counter < 10:
-                tempCounter = '0'+str(counter)
-            else:
-                tempCounter = str(counter)
-            if i in emptySlots: # slots de espaçamento
+            if i in disabledSlots: # slots de espaçamento
                 cur.execute('INSERT INTO room_'+roomNumber+' \
                                 (name, general_status, \
                                 monitor_config, monitor_status, \
@@ -125,7 +121,7 @@ for size in layouts.keys():
                                 gpu_config, gpu_status, \
                                 psu_config, psu_status) \
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                                ('slot_'+tempCounter, tempSlotStatus,
+                                ('slot_'+str(counter),tempSlotStatus,
                                 '#','#',
                                 '#','#',
                                 '#','#',
@@ -156,7 +152,7 @@ for size in layouts.keys():
                                 gpu_config, gpu_status, \
                                 psu_config, psu_status) \
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                                ('slot_'+tempCounter, 0, 
+                                ('slot_'+str(counter), 0, 
                                 'POSITIVO 22" [22MP55PQ]', 'OK', 
                                 'HP EliteDesk [800 G1 SFF]', 'OK', 
                                 'PCTOP [HK3004]', 'OK', 
@@ -171,6 +167,7 @@ for size in layouts.keys():
                                 'EVGA 450W 80 Plus Bronze [100-BR-0450-K]', 'OK'))
                 counter -= 1
                 counter += 20 if (counter == 0 or counter == 10 or counter == 20) else 0
-                      
+            
+                
 connection.commit()
 connection.close()
