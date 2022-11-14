@@ -182,11 +182,8 @@
                     <div class="layout_computers_edit"> <!-- LAYOUT DOS COMPUTADORES -->
                 {% for slot in room_layout %}                            
                     {% if slot['id'] != 5 and slot['id'] != 11 %} 
-                        {% set slot_num = slot['name'].split('_')[1] | int if slot['general_status'] != '#' and slot['general_status'] != -2 %}
+                        {% set slot_num = slot['name'].split('_')[1] if slot['general_status'] != '#' and slot['general_status'] != -2 %}
                         {% if slot['general_status'] != '#' and slot['general_status'] >= 0 %} <!-- SLOT COMUM --> 
-                            {% if slot_num < 10 %}
-                                {% set slot_num = '0'+slot_num | string %}
-                            {% endif %} 
                             <div class="wrapperSlot slot{{slot_num}}">
                                 <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" autocomplete="off" value="{{slot_num}}">
                             {% set color_num = slot['general_status'] %}
@@ -206,9 +203,6 @@
                         {% elif slot['general_status'] == '#' or slot['general_status'] == -2 %} <!-- SLOT VAZIO POR PADRÃO -->
                             <div style="visibility: hidden;"></div>
                         {% elif slot['general_status'] == -1 %} <!-- SLOT QUE FOI APAGADO -->
-                            {% if slot_num < 10 %}
-                                {% set slot_num = '0'+slot_num | string %}
-                            {% endif %} 
                                 <div class="wrapperSlot slot{{slot_num}}">
                                     <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" autocomplete="off" value="{{slot_num}}">
                                     <label class="btn btn-outline-dark" for="{{slot['id']}}">
