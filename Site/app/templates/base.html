@@ -208,7 +208,7 @@
                                 Suporte
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="create_request">Abrir Solicitação</a></li><hr style="margin: 8px 0;">
+                                    <li><a class="dropdown-item" href="create_request" data-bs-toggle="modal" data-bs-target="#modalCreateRequest">Abrir Solicitação</a></li><hr style="margin: 8px 0;">
                                     <li><a class="dropdown-item" href="consult_requests">Consultar Solicitações</a></li>
                                 </ul>
                             </li>
@@ -259,8 +259,48 @@
             <p style="margin:auto 0;color:white;">Grupo Alpha &copy; 2022</p>
             <img src="../static/img/logo_white.png" alt="Logo Header" class="logoFooter">
         </footer>   
-        <!-- Modal -->
-        <div class="modal fade" style="--bs-modal-width: 300px;" id="modalSelectRoom" tabindex="-1" aria-labelledby="modalSelectRoomLabel" aria-hidden="true">
+        <!-- Modal Abrir Solicitação / HOME --> 
+        <div class="modal fade" style="--bs-modal-width: 300px;" id="modalCreateRequest" tabindex="-1" aria-labelledby="modalSelectRoomLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <form action="/create_request">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Abrir Solicitação</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <select class="form-select" name="roomSelected" aria-label="Default select">
+                                <option value="" disabled selected hidden>Clique para selecionar a sala</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                    <option value="302"> 302 </option>
+                                    <option value="303"> 303 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                    <option value="402"> 402 </option>
+                                    <option value="404"> 404 </option>
+                                    <option value="405"> 405 </option>
+                                    <option value="406"> 406 </option>
+                                    <option value="407"> 407 </option>
+                                    <option value="408"> 408 </option>
+                                    <option value="409"> 409 </option>
+                                    <option value="411"> 411 </option>
+                                    <option value="412"> 412 </option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="modal-footer">                            
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Carregar Layout</button>
+                            </div>                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Edição -->
+        <!-- <div class="modal fade" style="--bs-modal-width: 300px;" id="modalSelectRoom" tabindex="-1" aria-labelledby="modalSelectRoomLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <form action="/edit_layout" method="post">
@@ -298,7 +338,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- <div id="cookieNotice" class="light display-right" style="display: none;">
             <div id="closeIcon" style="display: none;">
             </div>

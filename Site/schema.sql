@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS issue_history;
+DROP TABLE IF EXISTS rooms;
 DROP TABLE IF EXISTS room_301;
 DROP TABLE IF EXISTS room_302;
 DROP TABLE IF EXISTS room_303;
@@ -38,8 +39,7 @@ CREATE TABLE rooms (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     created DATE DEFAULT (datetime('now','localtime')),
     floor TEXT NOT NULL,
-    room TEXT NOT NULL UNIQUE,
-    passwords TEXT NOT NULL
+    room TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE room_301 (

@@ -68,16 +68,23 @@ def sign_out():
     session.clear()
     return redirect(url_for('home'))
 
+@app.route('/load_room', methods=('POST',))
+def load_room(id):
+    conn = get_db_connection()
+    layout = conn.execute('SELECT * FROM room_'+id+'').fetchall()
+    conn.close()
+    return layout
+
 @app.route('/edit_layout', methods=['GET','POST'])
 def edit_layout():
     if not session:
         return 'ERRO: Você não tem autorização!'
-    room = 'room_'+str(request.form.get('roomSelected'))
-    conn = get_db_connection()
-    room_layout = conn.execute('SELECT * FROM '+room+'').fetchall()
-    conn.close()
-    return render_template('edit_layout.html', room_layout=room_layout)
 
+    room_id = str(request.form.get('roomSelected'))
+    room_layout = load_room(room_id)
+
+    return render_template('edit_layout.html', room_layout=room_layout)
+    
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
     if request.method == 'POST':
@@ -160,11 +167,10 @@ def create_request():
         conn.commit()
         conn.close()
 
-    conn = get_db_connection()
-    rooms = conn.execute('SELECT * FROM rooms').fetchall()
-    conn.close()
-
-    return render_template('create_request.html', rooms=rooms)
+    room_id = str(request.args.get('roomSelected'))
+    room_layout = load_room(room_id)
+    
+    return render_template('create_request.html', room_layout=room_layout)
 
 @app.route('/consult_requests', methods=['GET','POST'])
 def consult_requests():

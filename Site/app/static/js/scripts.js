@@ -22,69 +22,6 @@ var form_2_next_btn = document.querySelector(".form_2_btns .btn_next");
 var form_3_back_btn = document.querySelector(".form_3_btns .btn_back");
 var form_3_next_btn = document.querySelector(".form_3_btns .btn_next");
 
-const sizeRooms = {
-	larger: [402], /* 4x4 - 4 */
-	medium: [301, 302, 401], /* 3x3 - 4 */
-	small: [303, 404, 405, 406, 407, 408, 409, 411, 412] /* 3x3 - 3 */
-}
-
-const lines = ['firstColumn','tenthColumn','secondColumn','ninthColumn','fifthRow'];
-
-function loadLayout(targetRoom) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOUT DOS COMPUTADORES */
-	
-	/* RESETA O ESTILO DOS COMPUTADORES */
-	document.querySelectorAll('.computerSlot').forEach(pc => {pc.style.display = 'block';});
-	document.querySelectorAll('.computerSlot').forEach(pc => {pc.style.border = 'none';});
-	document.querySelectorAll('.computerLabel').forEach(pc => {pc.style.visibility = 'visible';});
-
-	for(var currentSize in sizeRooms) { /* FAZ UM LOOP PELOS TAMANHOS DE SALA */
-		sizeRooms[currentSize].forEach(currentRoom => { /* FAZ UM LOOP A PROCURA DA SALA */
-			if(currentRoom === targetRoom) { /* SE ACHOU A SALA */
-				var limit = 0;
-				currentSize === 'small' ? limit = 5 :
-				currentSize === 'medium' ? limit = 4 : limit = 2;		
-				for(var i = 0; i < limit; i++) {
-					[].forEach.call(document.querySelectorAll('.'+lines[i]), function (el) {
-						if (currentSize === 'small' && lines[i] === 'fifthRow') {
-							el.style.display = 'none';
-						} else {
-							el.style.border = '1px solid black';
-							el.querySelector('.computerLabel').style.visibility = 'hidden';
-						}						
-					});
-				};
-			};
-		});
-	};
-};
-
-const floors = {
-	floor3: [301,302, 303],
-	floor4: [401, 402, 404, 405, 406, 407, 408, 409, 411, 412]
-};
-
-function loadRooms(targetFloor) { /* FUNÇÃO QUE CRIA AS OPÇÕES DE SALA, PARA CADA ESCOLHA DE ANDAR */
-
-	var dataList = document.getElementById('datalistOptionsRoom');
-	dataList.innerHTML = ''
-
-	if (targetFloor === '3º Andar') {
-		floors.floor3.forEach(room => {
-			var option = document.createElement('option');
-			option.value = room;
-			dataList.appendChild(option);
-		});
-	} else if (targetFloor === '4º Andar') {
-		floors.floor4.forEach(room => {
-			var option = document.createElement('option');
-			option.value = room;
-			dataList.appendChild(option);
-		});
-	} else { /* SE APAGOU A ESCOLHA DO ANDAR, APAGA A LISTA DE SALAS */			
-		document.getElementById('c1_room').value = ''; /* APAGA O INPUT DA SALA */
-	};
-};
-
 form_1_next_btn.addEventListener("click", function() {
 
 	/* const name = document.getElementById("c1_name").value;
@@ -96,10 +33,6 @@ form_1_next_btn.addEventListener("click", function() {
 		alert("ERRO: Você não preencheu os dados necessários!");
 		return;  ## BLOQUEIA O RESTO DO SCRIPT ##
 	} */
-	
-	var targetR = parseInt(document.getElementById("c1_room").value); /* parseInt converte o valor que é uma string, para integer */
-
-	loadLayout(targetR);
 
 	form_1.style.display = "none";
 	form_2.style.display = "block";

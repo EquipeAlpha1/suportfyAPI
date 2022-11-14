@@ -17,6 +17,18 @@ cur.execute('INSERT INTO users \
             VALUES (?, ?, ?)',
                 ('Gabriela','gabi@uol.com.br','asdfghjk'))
 
+floors = {
+	'3rd': ['301', '302', '303'],
+	'4rd': ['401', '402', '404', '405', '406', '407', '408', '409', '411', '412']
+}
+
+for key in floors.keys():
+    for room in floors[key]:
+        cur.execute('INSERT INTO rooms \
+                        (floor, room) \
+                    VALUES (?, ?)',
+                        (key, room))
+
 rooms = {
 	'Larger': ['402'], 
 	'Medium': ['301', '302', '401'],
