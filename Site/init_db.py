@@ -17,40 +17,36 @@ cur.execute('INSERT INTO users \
             VALUES (?, ?, ?)',
                 ('Gabriela','gabi@uol.com.br','asdfghjk'))
 
-floors = {
-	'3rd': ['301', '302', '303'],
-	'4rd': ['401', '402', '404', '405', '406', '407', '408', '409', '411', '412']
+counter = 10
+tempSlotStatus = 0
+disabledSlots = [1,2,3,4,6,7,8,9,10,11,17,28,39,50]
+lastSlot4thRow = 44
+
+layouts = {
+	'Larger': {
+        'Rooms': ['402'],
+        'EmptySlots': [12, 18, 23, 33, 34, 40, 45, 55]
+        }, 
+	'Medium': {
+        'Rooms': ['301', '302', '401'],
+        'EmptySlots': [13, 15, 18, 22, 23, 27, 30, 32, 35, 37, 40, 44, 45, 49, 52, 54]
+        },
+	'Small': {
+        'Rooms': ['303', '404', '405', '406', '407', '408', '409', '411', '412'],
+        'EmptySlots': [13, 15, 18, 22, 23, 27, 30, 32, 35, 37, 40, 44, 45, 46, 47, 48, 49, 51, 52, 53, 54, 55]
+        } 
 }
 
-for key in floors.keys():
-    for room in floors[key]:
+for size in layouts.keys():
+    emptySlots = layouts[size]['EmptySlots']
+    for roomNumber in layouts[size]['Rooms']:
         cur.execute('INSERT INTO rooms \
                         (floor, room) \
                     VALUES (?, ?)',
-                        (key, room))
-
-rooms = {
-	'Larger': ['402'], 
-	'Medium': ['301', '302', '401'],
-	'Small': ['303', '404', '405', '406', '407', '408', '409', '411', '412'] 
-}
-
-sizes = {
-    'emptySlotsRoomLarger': [12, 18, 23, 33, 34, 40, 45, 55],    
-    'emptySlotsRoomMedium': [13, 15, 18, 22, 23, 27, 30, 32, 35, 37, 40, 44, 45, 49, 52, 54],
-    'emptySlotsRoomSmall': [13, 15, 18, 22, 23, 27, 30, 32, 35, 37, 40, 44, 45, 46, 47, 48, 49, 51, 52, 53, 54, 55]    
-}
-
-emptySlots = [1,2,3,4,6,7,8,9,10,11,17,28,39,50]
-counter = 10
-tempSlotStatus = 0
-
-for key in rooms.keys():
-    tempList = sizes['emptySlotsRoom'+key]
-    for roomNumber in rooms[key]:
+                        (roomNumber[0]+'rd', roomNumber))
         counter = 10    
         for i in range(1, 56):
-            if i in emptySlots: # slots de espaçamento
+            if i in disabledSlots: # slots de espaçamento
                 cur.execute('INSERT INTO room_'+roomNumber+' \
                                 (name, general_status, \
                                 monitor_config, monitor_status, \
@@ -108,11 +104,8 @@ for key in rooms.keys():
                                 'SSD 480 GB Kingston [SA400S37/480G]','OK',
                                 'Radeon™ Graphics [Onboard]','OK',
                                 'EVGA 450W 80 Plus Bronze [100-BR-0450-K]', 'OK'))
-            elif i in tempList: # slots vazios ou sem bancada
-                if i <= 44 or key != 'Small':
-                    tempSlotStatus = -1
-                else:
-                    tempSlotStatus = -2
+            elif i in emptySlots: # slots vazios ou sem bancada
+                tempSlotStatus = -1 if (i <= lastSlot4thRow or size != 'Small') else -2
                 cur.execute('INSERT INTO room_'+roomNumber+' \
                                 (name, general_status, \
                                 monitor_config, monitor_status, \
@@ -174,6 +167,7 @@ for key in rooms.keys():
                                 'EVGA 450W 80 Plus Bronze [100-BR-0450-K]', 'OK'))
                 counter -= 1
                 counter += 20 if (counter == 0 or counter == 10 or counter == 20) else 0
+            
                 
 connection.commit()
 connection.close()

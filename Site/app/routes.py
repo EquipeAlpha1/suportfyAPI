@@ -80,7 +80,7 @@ def edit_layout():
     if not session:
         return 'ERRO: Você não tem autorização!'
 
-    room_id = str(request.form.get('roomSelected'))
+    room_id = str(request.args.get('roomSelected'))
     room_layout = load_room(room_id)
 
     return render_template('edit_layout.html', room_layout=room_layout)
