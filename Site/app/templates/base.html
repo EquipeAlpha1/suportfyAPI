@@ -18,47 +18,58 @@
             }
         </style>
         <style>
+            .testeXXX {
+                padding: 5rem 0 0;
+            }
             .sectionEditLayout {
                 height: 54rem;      
-                width: 80rem;      
+                width: 82rem;      
                 box-sizing: border-box;
                 padding: 0;
                 margin: 0 auto;
                 display: flex;
-            }            
-            .wrapper_EditLayout {
+                gap: 2rem;
+            }         
+            .wrapper_SidebarEdit {
+                height: 54rem;
+                width: 26rem;
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }   
+            .wrapper_Layout {
                 height: 44.5rem;
-                width: 80rem;
+                width: 52rem;
                 box-sizing: border-box;    
                 padding: 1rem;
-                display: grid;
-                grid-template-columns: 19rem 57rem;
+                margin: 0;
                 gap: 2rem;
             }
-            .h2_roomChoiceEdit,
+            .wrapper_roomChoiceEdit,
+            .wrapper_layoutComputers {
+                height: 42.5rem; /* #################### */
+                display: grid;
+                grid-template-rows: 3rem 37.5rem;
+                gap: 1rem;
+            }
             .h2_layoutComputers {
                 text-align: center;
                 display: flex;
                 align-items: center; 
                 justify-content: center;       
             }
-            .h2_roomChoiceEdit h2,
             .h2_layoutComputers h2 {
                 margin: 0;     
-            }
-            .roomChoiceEdit {
-                display: block; 
-                padding: 1rem;              
-            }
-            .wrapper_roomChoiceEdit.active {
-                animation-name: slideLayoutReverse; animation-duration: 1s; animation-fill-mode: forwards; animation-timing-function: ease;
-            }
-
+            } 
+            .info_layout {
+                height: 54rem;
+                background-color: #f5f5f5;
+            }           
             .layout_computers_edit {
-                height: 37.5rem;
+                height: 35rem;
                 display: grid;
                 grid-template-columns: repeat(11, 1fr);
-                grid-template-rows: repeat(5, 5.5rem);
+                grid-template-rows: repeat(5, 5rem);
                 grid-template-areas: 
                 'Lin1_Col-1 Lin1_Col-2 Lin1_Col-3 Lin1_Col-4 Lin1_Col-5 . Lin1_Col-6 Lin1_Col-7 Lin1_Col-8 Lin1_Col-9 Lin1_Col-10'
                 'Lin2_Col-1 Lin2_Col-2 Lin2_Col-3 Lin2_Col-4 Lin2_Col-5 . Lin2_Col-6 Lin2_Col-7 Lin2_Col-8 Lin2_Col-9 Lin2_Col-10'
@@ -72,11 +83,12 @@
                 border-radius: 6px;
                 padding: 1rem;
             }
-
+            .wrapper_roomChoiceEdit.active {
+                animation-name: slideLayoutReverse; animation-duration: 1s; animation-fill-mode: forwards; animation-timing-function: ease;
+            }
             .wrapper_layoutComputers.active {
                 animation-name: slideLayout; animation-duration: 1s; animation-fill-mode: forwards; animation-timing-function: ease;
             }
-
             @keyframes slideLayout {
                 from {
                     opacity: 0;
@@ -95,43 +107,20 @@
                     opacity: 1;                
                 }
             }
-
             .layout_computers_edit .wrapperSlot label {
                 font-size: 1.2rem; height: 100%; width: 100%; padding: 0;
             }
-
             .layout_computers_edit .wrapperSlot label a {
                 display: block; height: auto; width: 80%; margin: 0 auto;
             }
-
             .layout_computers_edit .wrapperSlot label svg {
                 height: auto; width: 80%; 
             }
-
             .btn-check+.btn-outline-warning {
                 color: goldenrod !important; border-color: goldenrod !important;  
             }
             .btn-check:checked+.btn-outline-warning {
                 color: black !important; background-color: goldenrod !important; border-color: goldenrod !important; 
-            }
-
-
-
-
-
-
-            .wrapper_roomChoiceEdit,
-            .wrapper_layoutComputers {
-                height: 42.5rem; /* #################### */
-                display: grid;
-                grid-template-rows: 3rem 37.5rem;
-                gap: 1rem;
-            }
-            .wrapper_Edit {
-                height: 50rem;
-                width: 100%;
-                box-sizing: border-box;   
-                padding: 1rem;  
             }
             @media (max-width:450px) {
                 .sectionEditLayout {
@@ -142,7 +131,7 @@
                     padding: 0;
                     margin: 0 auto;
                 }
-                .wrapper_EditLayout {
+                .wrapper_Layout {
                     border: none;
                     height: 72rem;
                     box-sizing: border-box;   

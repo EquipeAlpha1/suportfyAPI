@@ -176,3 +176,6 @@ form_3_next_btn.addEventListener("click", function() {
 
 	form_4_progressbar.classList.add("active");
 });
+
+document.querySelector('input[name="rate"]:checked').value;
+

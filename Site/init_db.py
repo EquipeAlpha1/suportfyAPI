@@ -46,9 +46,21 @@ for key in rooms.keys():
                                 keyboard_config, keyboard_status, \
                                 mouse_config, mouse_status, \
                                 os_config, os_status, \
-                                network_config, network_status) \
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                                network_config, network_status, \
+                                motherboard_config, motherboard_status, \
+                                cpu_config, cpu_status, \
+                                memory_config, memory_status, \
+                                storage_config, storage_status, \
+                                gpu_config, gpu_status, \
+                                psu_config, psu_status) \
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                                 ('#','#',
+                                '#','#',
+                                '#','#',
+                                '#','#',
+                                '#','#',
+                                '#','#',
+                                '#','#',
                                 '#','#',
                                 '#','#',
                                 '#','#',
@@ -63,15 +75,27 @@ for key in rooms.keys():
                                 keyboard_config, keyboard_status, \
                                 mouse_config, mouse_status, \
                                 os_config, os_status, \
-                                network_config, network_status) \
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                                network_config, network_status, \
+                                motherboard_config, motherboard_status, \
+                                cpu_config, cpu_status, \
+                                memory_config, memory_status, \
+                                storage_config, storage_status, \
+                                gpu_config, gpu_status, \
+                                psu_config, psu_status) \
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                                 ('slot_Prof', 0, 
                                 'POSITIVO 22" [22MP55PQ]', 'OK', 
                                 'HP EliteDesk [800 G1 SFF]', 'OK', 
                                 'PCTOP [HK3004]', 'OK', 
-                                'Multilaser Classic [MO300]', 
-                                'OK', 'Windows 10 [22H2]', 'OK', 
-                                'CABONNET [350 mbps]', 'OK'))
+                                'Multilaser Classic [MO300]', 'OK', 
+                                'Windows 10 [22H2]', 'OK', 
+                                'CABONNET [350 mbps]', 'OK',
+                                'Gigabyte [GA-A320M-H]','OK',
+                                'AMD Ryzen 5 5600G [100-100000252BOX]','OK',
+                                'Corsair Vengeance LPX 8GB 3200MHz DDR4 CL16 [CMK8GX4M1E3200C16]','OK',
+                                'SSD 480 GB Kingston [SA400S37/480G]','OK',
+                                'Radeon™ Graphics [Onboard]','OK',
+                                'EVGA 450W 80 Plus Bronze [100-BR-0450-K]', 'OK'))
             elif i in tempList: # slots vazios ou sem bancada
                 if i <= 44 or key != 'Small':
                     tempSlotStatus = -1
@@ -84,9 +108,21 @@ for key in rooms.keys():
                                 keyboard_config, keyboard_status, \
                                 mouse_config, mouse_status, \
                                 os_config, os_status, \
-                                network_config, network_status) \
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                                ('slot_'+str(counter), tempSlotStatus,
+                                network_config, network_status, \
+                                motherboard_config, motherboard_status, \
+                                cpu_config, cpu_status, \
+                                memory_config, memory_status, \
+                                storage_config, storage_status, \
+                                gpu_config, gpu_status, \
+                                psu_config, psu_status) \
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                                ('slot_'+str(counter),tempSlotStatus,
+                                '#','#',
+                                '#','#',
+                                '#','#',
+                                '#','#',
+                                '#','#',
+                                '#','#',
                                 '#','#',
                                 '#','#',
                                 '#','#',
@@ -94,12 +130,7 @@ for key in rooms.keys():
                                 '#','#',
                                 '#','#'))
                 counter -= 1
-                if  counter == 0:
-                    counter = 20
-                elif counter == 10:
-                    counter = 30
-                elif counter == 20:
-                    counter = 40
+                counter += 20 if (counter == 0 or counter == 10 or counter == 20) else 0                
             else: # slots dos alunos
                 cur.execute('INSERT INTO room_'+roomNumber+' \
                                 (name, general_status, \
@@ -108,22 +139,29 @@ for key in rooms.keys():
                                 keyboard_config, keyboard_status, \
                                 mouse_config, mouse_status, \
                                 os_config, os_status, \
-                                network_config, network_status) \
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                                ('slot_'+str(counter), 0,
+                                network_config, network_status, \
+                                motherboard_config, motherboard_status, \
+                                cpu_config, cpu_status, \
+                                memory_config, memory_status, \
+                                storage_config, storage_status, \
+                                gpu_config, gpu_status, \
+                                psu_config, psu_status) \
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                                ('slot_'+str(counter), 0, 
                                 'POSITIVO 22" [22MP55PQ]', 'OK', 
                                 'HP EliteDesk [800 G1 SFF]', 'OK', 
                                 'PCTOP [HK3004]', 'OK', 
                                 'Multilaser Classic [MO300]', 'OK', 
                                 'Windows 10 [22H2]', 'OK', 
-                                'CABONNET [350 mbps]', 'OK'))
+                                'CABONNET [350 mbps]', 'OK',
+                                'Gigabyte [GA-A320M-H]','OK',
+                                'AMD Ryzen 5 5600G [100-100000252BOX]','OK',
+                                'Corsair Vengeance LPX 8GB 3200MHz DDR4 CL16 [CMK8GX4M1E3200C16]','OK',
+                                'SSD 480 GB Kingston [SA400S37/480G]','OK',
+                                'Radeon™ Graphics [Onboard]','OK',
+                                'EVGA 450W 80 Plus Bronze [100-BR-0450-K]', 'OK'))
                 counter -= 1
-                if  counter == 0:
-                    counter = 20
-                elif counter == 10:
-                    counter = 30
-                elif counter == 20:
-                    counter = 40
-
+                counter += 20 if (counter == 0 or counter == 10 or counter == 20) else 0
+                
 connection.commit()
 connection.close()

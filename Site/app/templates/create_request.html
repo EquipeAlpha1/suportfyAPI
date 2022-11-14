@@ -45,19 +45,28 @@
                             </div>
                             <br>
                             <div class="roomChoice"> <!-- ANDAR E SALA -->
-                                <div class="selectionFloor"> <!--SELEÇÃO DE ANDAR -->
-                                    <label for="c1_floor" class="form-label">Selecine a sala: <span class="requiredField">*</span></label> 
-                                    <input class="form-control" list="datalistOptionsFloor" id="c1_floor" placeholder="Clique aqui para selecionar" onChange="loadRooms(this.value)" onkeypress="return false;"> <!-- ÁREA PARA SELEÇÃO DE ANDAR -->
-                                        <datalist id="datalistOptionsFloor"> <!-- LISTA DE ANDAR -->
-                                            <option value="3º Andar">
-                                            <option value="4º Andar">
-                                        </datalist>
-                                </div>
                                 <div class="selectionRoom"> <!--SELEÇÃO DE SALA  -->
-                                    <label for="c1_room" class="form-label">Selecione o andar: <span class="requiredField">*</span></label>
-                                    <input class="form-control" list="datalistOptionsRoom" id="c1_room" placeholder="Clique aqui para selecionar" onkeypress="return false;"> <!-- ÁREA PARA SELEÇÃO DE SALAS -->
-                                        <datalist id="datalistOptionsRoom"> <!-- LISTA DE SALAS -->
-                                        </datalist>
+                                    <label for="c1_room" class="form-label">Escolha a sala: <span class="requiredField">*</span></label>
+                                    <select class="form-select" name="roomSelected" id="c1_room" aria-label="Default select">
+                                        <option value="" disabled selected hidden>Clique para selecionar</option>
+                                        <optgroup label="Terceiro Andar">
+                                            <option value="301"> 301 </option>
+                                            <option value="302"> 302 </option>
+                                            <option value="303"> 303 </option>
+                                        </optgroup>    
+                                        <optgroup label="Quarto Andar">
+                                            <option value="401"> 401 </option>
+                                            <option value="402"> 402 </option>
+                                            <option value="404"> 404 </option>
+                                            <option value="405"> 405 </option>
+                                            <option value="406"> 406 </option>
+                                            <option value="407"> 407 </option>
+                                            <option value="408"> 408 </option>
+                                            <option value="409"> 409 </option>
+                                            <option value="411"> 411 </option>
+                                            <option value="412"> 412 </option>
+                                        </optgroup>
+                                    </select>
                                 </div>
                             </div>   
                             <br>

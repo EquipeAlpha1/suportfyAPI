@@ -84,8 +84,8 @@ def create_request():
         name = request.form.get('name')
         mail = request.form.get('mail')
         floor = request.form.get('floor')
-        room = request.form.get('room')
-        pc = request.form.get('pc')
+        room = request.form.get('room') # NOME DA TABELA
+        pc = request.form.get('pc') # ID DO SLOT
         subject = request.form.get('subject')
         description = request.form.get('description')
 
@@ -159,8 +159,12 @@ def create_request():
                         (name, mail, floor, room, pc, subject, description))
         conn.commit()
         conn.close()
-            
-    return render_template('create_request.html')
+
+    conn = get_db_connection()
+    rooms = conn.execute('SELECT * FROM rooms').fetchall()
+    conn.close()
+
+    return render_template('create_request.html', rooms=rooms)
 
 @app.route('/consult_requests', methods=['GET','POST'])
 def consult_requests():
@@ -344,11 +348,6 @@ def edit_slot(slot_id):
     conn.commit()
     conn.close()
     return redirect(url_for('edit_layout'))
-
-@app.route("/test" , methods=['GET', 'POST'])
-def test():
-    select = request.form.get('roomSelected')
-    return(str(select)) # just to see what select is
 
 @app.route('/delete_slot', methods=['GET','POST'])
 def delete_slot(slot_id):

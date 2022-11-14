@@ -179,8 +179,8 @@ section {
 }
 
 .info_layout {
-  height: 824px;
-}
+/*   height: 824px;
+ */}
 
 .edit_slot_wrapper {
   display: grid;
@@ -220,8 +220,6 @@ section {
   block-size: fit-content;  
 }
 
-.roomChoiceEdit,
-.info_layout,
 .wrapper_layoutComputers .layout_computers{
   background-color: #f5f5f5;
   border-radius: 8px;
@@ -276,11 +274,7 @@ section {
   padding: 0;
 }
 
-.roomChoice {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 
 .roomChoiceEdit {
   display: flex;
