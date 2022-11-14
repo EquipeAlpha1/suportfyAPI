@@ -90,17 +90,18 @@ def create_request():
     if request.method == 'POST':
         name = request.form.get('name')
         mail = request.form.get('mail')
-        floor = request.form.get('floor')
-        room = request.form.get('room') # NOME DA TABELA
-        pc = request.form.get('pc') # ID DO SLOT
+        floor = request.form.get('floor')+'º Andar'
+        room = request.form.get('room') #
+        pc = request.form.get('pc') 
+        pc_id = request.form.get('pc_id') #
         subject = request.form.get('subject')
         description = request.form.get('description')
 
         if not name and not mail and not floor and not room and not pc and not subject and not description:
             return redirect(url_for('create_request'))
-                               
+    
         ## Envia um e-mail de notificação para o usuário
-        msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
+        """ msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
         msg.html = "<!DOCTYPE html><html><body>" \
                     "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
                     "Fala {}, Beleza?<br /><br />" \
@@ -124,10 +125,10 @@ def create_request():
                     "<a href='https://www.rataalada.com/' style='color: rgb(71, 124, 204); text-decoration: none; display: inline;'>aqui</a>." \
                     "</table></div></body></html>".format(name, floor, room, pc, subject, description, mail)
 
-        email.send(msg)          
+        email.send(msg)           """
 
         ## Envia um e-mail de notificação para a equipe de suporte
-        msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['luisebf01@gmail.com'])
+        """ msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['luisebf01@gmail.com'])
         msg.html = "<!DOCTYPE html><html><body>" \
                 "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
                     "Fala Suporte Alpha, Beleza?<br /><br />" \
@@ -158,19 +159,20 @@ def create_request():
             tempFilename = ''
             tempEvent = False
 
-        email.send(msg)        
+        email.send(msg)         """
 
         ## Faz o registro da solicitação no banco de dados
         conn = get_db_connection()
         conn.execute('INSERT INTO issue_history (names, mails, floors, rooms, pcs, subjects, descriptions) VALUES (?, ?, ?, ?, ?, ?, ?)',
                         (name, mail, floor, room, pc, subject, description))
+        conn.execute('UPDATE room_'+room+' SET general_status = general_status + 1 WHERE id = ?', (pc_id,))
         conn.commit()
         conn.close()
 
     room_id = str(request.args.get('roomSelected'))
     room_layout = load_room(room_id)
     
-    return render_template('create_request.html', room_layout=room_layout)
+    return render_template('create_request.html', room_layout=room_layout, room=room_id)
 
 @app.route('/consult_requests', methods=['GET','POST'])
 def consult_requests():

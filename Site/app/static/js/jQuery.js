@@ -138,9 +138,13 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
 
     var c1_name = $("#c1_name").val();
     var c1_email = $("#c1_email").val();
-    var c1_floor = $("#c1_floor").val();
-    var c1_room = $("#c1_room").val();
-    var c2_pc = $("input[name='c2_computadores']:checked").val(); /* Pega o valor(número) do computador que está selecionado */
+    var pc = $("input[name='c2_computadores']:checked").val(); /* Pega o valor(número) do computador que está selecionado */
+    if (pc) {
+        var c2_floor = pc.split(' ')[1].charAt(0); /* O primeiro caractere do número da sala, é equivalente ao número do andar */
+        var c2_room = pc.split(' ')[1]; /* O  */
+        var c2_pc_label = pc.split(' ')[0];
+        var c2_pc_id = $("input[name='c2_computadores']:checked").attr('id');
+    };    
     var c3_assunto = $("#c3_subject").val();
     var c3_texto = $("#c3_description").val();
 
@@ -150,7 +154,7 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
         
         e.preventDefault(); /* Essa função evita de recarregar a página no evento 'Submit' */
 
-        if (!c1_name && !c1_email && !c1_floor && !c1_room && !c2_pc && !c3_assunto && !c3_texto) {    
+        if (!c1_name && !c1_email && !pc && !c3_assunto && !c3_texto) {    
             return; /* Caso falte preencher algum campo do formulário, sai do script */
         };        
 
@@ -174,6 +178,7 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
 
         };
 
+        console.log(c2_floor, c2_room, c2_pc_label, c2_pc_id);
         $.ajax ({
 
             type:'POST',
@@ -181,9 +186,10 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
             data: { /* Passa um dicionário com os dados inseridos no formulário para o Flask registrar */
                 name : c1_name,
                 mail : c1_email,
-                floor : c1_floor,
-                room : c1_room,
-                pc : c2_pc,
+                floor : c2_floor,
+                room : c2_room,
+                pc : c2_pc_label,
+                pc_id : c2_pc_id,
                 subject : c3_assunto,
                 description : c3_texto
             }

@@ -47,7 +47,7 @@
                             <div class="subtitleRequiredField">* Campo Obrigatório</div> <!-- LEGENDA -->
                         </div>
                         <div class="form_2 data_info" style="display: none;"> <!-- CONTEÚDO DA PÁGINA 2 -->
-                            <h5>ESCOLHA A MÁQUINA COM PROBLEMA:</h5>
+                            <h4>ESCOLHA A MÁQUINA COM PROBLEMA:</h4>
                             <br>
                             <div class="layout_computers_edit"> <!-- LAYOUT DOS COMPUTADORES -->
                                 {% for slot in room_layout %}                            
@@ -58,7 +58,7 @@
                                                 {% set slot_num = '0'+slot_num | string %}
                                             {% endif %} 
                                             <div class="wrapperSlot slot{{slot_num}}">
-                                                <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" autocomplete="off" value="{{slot_num}}">
+                                                <input type="radio" class="btn-check" name="c2_computadores" id="{{slot['id']}}" autocomplete="off" value="{{slot_num}} {{room}}">
                                             {% set color_num = slot['general_status'] %}
                                             {% if color_num == 0 %}
                                                 <label class="btn btn-outline-dark" for="{{slot['id']}}">
@@ -74,13 +74,13 @@
                                                 </label>
                                             </div>
                                         {% elif slot['general_status'] == '#' or slot['general_status'] == -2 %} <!-- SLOT VAZIO POR PADRÃO -->
-                                            <div style="visibility: hidden;"></div>
+                                            <div style="visibility: hidden;" disabled></div>
                                         {% elif slot['general_status'] == -1 %} <!-- SLOT QUE FOI APAGADO -->
                                             {% if slot_num < 10 %}
                                                 {% set slot_num = '0'+slot_num | string %}
                                             {% endif %} 
                                                 <div class="wrapperSlot slot{{slot_num}}">
-                                                    <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" autocomplete="off" value="{{slot_num}}">
+                                                    <input type="radio" class="btn-check" name="c2_computadores" id="{{slot['id']}}" autocomplete="off" value="{{slot_num}} {{room}}" disabled>
                                                     <label class="btn btn-outline-dark" for="{{slot['id']}}">
                                                         <a>{{slot_num}}</a>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -91,7 +91,7 @@
                                         {% endif %}
                                     {% elif slot['id'] == 5 %} <!-- SLOT PROFESSOR -->                                                                      
                                         <div class="wrapperSlot slot{{slot['name'].split('_')[1]}}">   
-                                            <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" autocomplete="off" value="Professor">    
+                                            <input type="radio" class="btn-check" name="c2_computadores" id="{{slot['id']}}" autocomplete="off" value="Professor {{room}}">    
                                         {% set prof_color_num = slot['general_status'] %}                                          
                                         {% if prof_color_num <= 0 %}
                                             <label class="btn btn-outline-dark" for="{{slot['id']}}">

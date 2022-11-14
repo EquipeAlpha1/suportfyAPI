@@ -111,4 +111,3 @@ form_3_next_btn.addEventListener("click", function() {
 });
 
 document.querySelector('input[name="rate"]:checked').value;
-
