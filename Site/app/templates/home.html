@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block title %} Home {% endblock %}
 {% block conteudo %}
-
         <section class="sectionHome">
             <div class="capa_wrapper">
                 <div class="img_home">
@@ -14,9 +13,9 @@
                 <div class="textReport">
                     <h3><strong>Problemas nos computadores?<br>Reporte agora mesmo</strong></h3>
                 </div>
-                    <form action="/create_request" class="btn_home">
-                        <button type="submit" class="btn btn-primary btn-lg">Obter suporte</button>
-                    </form>
+                  <div class="btn_home">
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalCreateRequest">Obter suporte</button>
+                  </div>
             </div>
         </div>
         <div class="container col-xxl-8 px-4" id="imgtechfather">

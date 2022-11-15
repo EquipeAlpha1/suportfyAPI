@@ -124,22 +124,22 @@ section {
 }
 
 .sectionHome{
-  height: 864px;
+  height: 54rem;
 }
 
 .sectionCreateRequest {
   background: #dbdbdb;  
   width: 70%; /* 70% do body */
-  height: 864px; /* 85% do body */  
+  height: 54rem; /* 85% do body */  
 }
 
 .sectionConsultRequests {
   padding: 20px;
   width: 70%; /* 70% do body */
-  height: 864px; /* 85% do body */  
+  height: 54rem; /* 85% do body */  
 }
 .sectionEditLayout {
-  height: 864px; /* 85% do body */  
+  height: 54rem; /* 85% do body */  
 }
 
 /* .row-2,  
@@ -541,7 +541,9 @@ textarea {
   width: 100%;
   height: auto;
   position: absolute;
-  top: 72%;
+  top: 41rem;
+  background: rgba(0, 0, 0, .67);
+  padding: 1rem;
 }
 
 /* Posicionamento botão home */
@@ -882,44 +884,6 @@ ul {
   width: 100%;
 }
 
-#text
-{
-  display:block;
-  color: #000;
-  font-weight: 300;
-  font-style: italic;
-  padding: 5px;
-}
-
-#divEmail {
-  position:  relative;
-}
-
-#divEmail.invalid .email:before
-{
-  content: '';
-  position: absolute;
-  right: 12px;
-  top: 187px;
-  width: 24px;
-  height: 24px;
-  background: url(../img/invalid.png);
-  background-size:cover ;
-  z-index: 1000;
-}
-
-#divEmail.valid .email:before
-{
-  content: '';
-  position: absolute;
-  right: 12px;
-  top: 187px;
-  width: 24px;
-  height: 24px;
-  background: url(../img/valid.png);
-  background-size:cover ;
-  z-index: 1000;
-}
 #imgtechfather {
   margin-top: 3rem;
 }
@@ -946,4 +910,43 @@ ul {
 
 .btn_home2 {
   display: none;
+}
+
+#text
+{
+  display:block;
+  color: #000;
+  font-weight: 300;
+  font-style: italic;
+  padding: 5px;
+}
+
+#divEmail {
+  position:  relative;
+}
+
+#divEmail.invalid .email:before
+{
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 186px;
+  width: 24px;
+  height: 24px;
+  background: url(../img/invalid.png);
+  background-size:cover ;
+  z-index: 1000;
+}
+
+#divEmail.valid .email:before
+{
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 186px;
+  width: 24px;
+  height: 24px;
+  background: url(../img/valid.png);
+  background-size:cover ;
+  z-index: 1000;
 }

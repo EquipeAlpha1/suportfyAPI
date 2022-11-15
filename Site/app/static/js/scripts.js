@@ -34,7 +34,7 @@ function validation() {
 		divEmail.classList.add("valid");
 		divEmail.classList.remove("invalid");
 		text.innerHTML = "Seu e-mail é válido.";
-		text.style.color = "#00ff00";
+		text.style.color = "#00E300";
 	}
 	else
 	{
