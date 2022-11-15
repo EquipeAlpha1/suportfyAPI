@@ -57,10 +57,10 @@ form_1_next_btn.addEventListener("click", function() {
 	const name = document.getElementById("c1_name").value;
 	const email = document.getElementById("c1_email").value;	
 
-	if (!name || !email) {
+	/* if (!name || !email) {
 		alert("ERRO: Você não preencheu os dados necessários!");
 		return;
-	};
+	}; */
 
 	form_1.style.display = "none";
 	form_2.style.display = "block";
@@ -90,13 +90,13 @@ form_2_next_btn.addEventListener("click", function() {
 	pcs.forEach(pc => {
 		if (pc.checked) {
 			pcChecked = true;
-			return; ## SAI DO LOOP ##
+			return;
 		}
-	}); */
-
-	/* if (!pcChecked) {
+	});
+	
+	if (!pcChecked) {
 		alert("ERRO: Você não escolheu o computador!");
-		return; ## BLOQUEIA O RESTO DO SCRIPT ##
+		return;
 	} */
 
 	form_2.style.display = "none";
@@ -124,9 +124,9 @@ form_3_next_btn.addEventListener("click", function() {
 	/* const subject = document.getElementById("c3_assunto").value;
 	const description = document.getElementById("c3_texto").value;
 	
-	/* if (!subject || !description) {
+	if (!subject || !description) {
 		alert("ERRO: Você não preencheu os dados necessários!");
-		return; ## BLOQUEIA O RESTO DO SCRIPT ##
+		return;
 	} */
 
 	form_3.style.display = "none";
