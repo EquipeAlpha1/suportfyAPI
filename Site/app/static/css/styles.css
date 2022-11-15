@@ -541,7 +541,7 @@ textarea {
   width: 100%;
   height: auto;
   position: absolute;
-  top: 41rem;
+  top: 41rem; /* 41 rem */
   background: rgba(0, 0, 0, .67);
   padding: 1rem;
 }
@@ -775,6 +775,9 @@ nav {
     display: flex;
     align-items: center;
   }
+  .imgtech {
+    width: 100%;
+  }
 }
 
 
@@ -924,9 +927,7 @@ ul {
   font-size: 0.95rem;
   }
 
-.imgtech {
-  width: 100%;
-}
+
 
 #imgtechfather {
   margin-top: 3rem;
