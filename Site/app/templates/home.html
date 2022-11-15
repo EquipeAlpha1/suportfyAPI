@@ -6,15 +6,74 @@
             <div class="capa_wrapper">
                 <div class="img_home">
                     <img src="../static/img/capa-home.jpg" alt="capa">
-                </div>
-                <div class="text_img_home">
-                    <div class="textReport">
-                        <h3><strong>Problemas nos computadores?<br>Reporte agora mesmo</strong></h3>
-                    </div>
-                    <div class="btn_home">
-                        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalCreateRequest">Obter suporte</button>
-                    </div>
                 </div>        
             </div>    
-        </section> 
+        </section>
+        <div class="wrap_textimg">
+            <div class="text_img_home">
+                <div class="textReport">
+                    <h3><strong>Problemas nos computadores?<br>Reporte agora mesmo</strong></h3>
+                </div>
+                    <form action="/create_request" class="btn_home">
+                        <button type="submit" class="btn btn-primary btn-lg">Obter suporte</button>
+                    </form>
+            </div>
+        </div>
+        <div class="container col-xxl-8 px-4" id="imgtechfather">
+            <div class="row flex-lg-row-reverse align-items-center g-5">
+                <div class="col-10 col-sm-8 col-lg-6 imgtech">
+                    <img src="../static/img/home2.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-9 fw-bold lh-1 mb-3">Sua melhor ferramenta para abertura de chamados</h1>
+                    <p class="lead">Para quem está no ramo da tecnologia da informação sabe-se que eventualmente computadores que são usados frequentemente apresentarão defeito(s). Visando a facilitar a identificação de problemas nos computadores dos laboratórios da FATEC-SJC, foi criado o Suportfy, um software simples e intuitivo para atender a chamados referente a falhas nos computadores da instituição.</p>
+                    <div class="d-flex justify-content-around" style="gap: 1rem;">
+                        <form action="/create_request" class="btn_home2">
+                            <div class="d-grid gap-2"><button type="submit" class="btn btn-primary btn-lg px-4 me-md-2">Obter suporte</button></div>
+                        </form>
+                        <form action="/faq" class="btn_home3">
+                            <div class="d-grid gap-2"><button type="submit" class="btn btn-primary btn-lg me-md-2">Dúvidas? Clique aqui</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container px-4 py-5" id="hanging-icons">
+            <hr>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <span class="material-symbols-outlined">
+                    lightbulb
+                    </span>
+                </div>
+                <div>
+                  <h3 class="fs-2">Acesso simples e rápido</h3>
+                  <p>A concepção do Suportfy foi pensada para obter o máximo de agilidade e precisão nos reportes das falhas nos computadores, aqui você fará sua requisição da forma mais fácil e simplificada possível.</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <span class="material-symbols-outlined">
+                    manage_accounts
+                    </span>
+                </div>
+                <div>
+                  <h3 class="fs-2">Interface de administrador</h3>
+                  <p>Aqui no Suportfy, logando como administrador, você tem acesso a função de alterar a distribuição de computadores nos laboratórios, caso surja a necessidade.</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <span class="material-symbols-outlined">
+                    timer
+                    </span>
+                </div>
+                <div>
+                  <h3 class="fs-2">Economia de tempo</h3>
+                  <p>O Reporte pelo Suportfy é a forma mais eficaz para a resolução mais rápida do seu problema.</p>
+                </div>
+              </div>
+            </div>
+          </div> 
 {% endblock %}
