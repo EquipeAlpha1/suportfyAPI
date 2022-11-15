@@ -22,17 +22,50 @@ var form_2_next_btn = document.querySelector(".form_2_btns .btn_next");
 var form_3_back_btn = document.querySelector(".form_3_btns .btn_back");
 var form_3_next_btn = document.querySelector(".form_3_btns .btn_next");
 
+function validation() {
+	var divEmail = document.getElementById("divEmail");
+	const email = document.getElementById("c1_email").value;
+
+	console.log(email);
+
+	var text= document.getElementById("text");
+	var pattern= /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+	if (email.match(pattern))
+	{
+		divEmail.classList.add("valid");
+		divEmail.classList.remove("invalid");
+		text.innerHTML = "Seu e-mail é válido.";
+		text.style.color = "#00ff00";
+	}
+	else
+	{
+		divEmail.classList.add("invalid");
+		divEmail.classList.remove("valid");
+		text.innerHTML = "Por favor, digite um e-mail válido.";
+		text.style.color = "#ff0000";
+	}
+	if (email == "")
+	{
+		divEmail.classList.remove("valid");
+		divEmail.classList.remove("invalid");
+		text.innerHTML = "Por favor, digite um e-mail válido.";
+		text.style.color = "#ff0000";
+	}
+}
+
 form_1_next_btn.addEventListener("click", function() {
 
-	/* const name = document.getElementById("c1_name").value;
+	const name = document.getElementById("c1_name").value;
 	const email = document.getElementById("c1_email").value;
 	const floorz = document.getElementById("c1_floor").value;
 	const roomz = document.getElementById("c1_room").value;
+	
 
-	/* if (!name || !email || !floorz || !roomz) {
+	if (!name || !email || !floorz || !roomz) {
 		alert("ERRO: Você não preencheu os dados necessários!");
-		return;  ## BLOQUEIA O RESTO DO SCRIPT ##
-	} */
+		return;
+	};
 
 	form_1.style.display = "none";
 	form_2.style.display = "block";

@@ -876,3 +876,41 @@ ul {
 
 }
 
+#text
+{
+  display:block;
+  color: #000;
+  font-weight: 300;
+  font-style: italic;
+  padding: 5px;
+}
+
+#divEmail {
+  position:  relative;
+}
+
+#divEmail.invalid .email:before
+{
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 187px;
+  width: 24px;
+  height: 24px;
+  background: url(../img/invalid.png);
+  background-size:cover ;
+  z-index: 1000;
+}
+
+#divEmail.valid .email:before
+{
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 187px;
+  width: 24px;
+  height: 24px;
+  background: url(../img/valid.png);
+  background-size:cover ;
+  z-index: 1000;
+}

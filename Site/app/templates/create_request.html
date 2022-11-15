@@ -3,6 +3,13 @@
 {% block conteudo %}
         <section class="sectionCreateRequest">
             <form method="post" action="/consult_requests" class="formEmail" id="formEmail" enctype="multipart/form-data"> <!-- FORMULÁRIO DE SUPORTE -->
+                <script src="https://www.google.com/recaptcha/api.js"></script>
+                <script>
+                    function onSubmit(token) {
+                      document.getElementById("divEmail").submit();
+                    }
+                  </script>
+
                 <div class="steps"> <!-- ETAPAS DO PROCESSO -->
                     <div class="steps_wrapper">
                         <ul> <!-- LISTA DE ETAPAS -->
@@ -31,7 +38,7 @@
                 </div>
                 <div class="form"> <!-- CONTEÚDOS DO FORMULÁRIO -->
                     <div class="form_wrapper">
-                        <div class="form_1 data_info"> <!-- CONTEÚDO DA PÁGINA 1 -->
+                        <div class="form_1 data_info" id="divEmail"> <!-- CONTEÚDO DA PÁGINA 1 -->
                             <h4>PREENCHA O FORMULÁRIO:</h4>
                             <br>
                             <div class="name"> <!-- NOME -->        
@@ -41,8 +48,10 @@
                             <br>
                             <div class="email"> <!-- E-MAIL -->        
                                 <label for="c1_email" class="form-label">E-mail: <span class="requiredField">*</span></label>
-                                <input class="form-control" type ="email" placeholder="Digite seu e-mail aqui" id="c1_email" aria-describedby="emailHelp"> <!-- ÁREA PARA DIGITAR O E-MAIL DO USUÁRIO -->
-                            </div>  
+                                <input class="form-control" type ="email" placeholder="Digite seu e-mail aqui" id="c1_email" aria-describedby="emailHelp" oninput="validation()"> <!-- ÁREA PARA DIGITAR O E-MAIL DO USUÁRIO -->
+                                <span id="text"></span>
+                                <button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key"data-callback='onSubmit'data-action='submit'>Submit</button>
+                            </div>
                             <br>
                             <div class="subtitleRequiredField">* Campo Obrigatório</div> <!-- LEGENDA -->
                         </div>
