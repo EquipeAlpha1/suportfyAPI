@@ -26,8 +26,6 @@ function validation() {
 	var divEmail = document.getElementById("divEmail");
 	const email = document.getElementById("c1_email").value;
 
-	console.log(email);
-
 	var text= document.getElementById("text");
 	var pattern= /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
@@ -57,12 +55,9 @@ function validation() {
 form_1_next_btn.addEventListener("click", function() {
 
 	const name = document.getElementById("c1_name").value;
-	const email = document.getElementById("c1_email").value;
-	const floorz = document.getElementById("c1_floor").value;
-	const roomz = document.getElementById("c1_room").value;
-	
+	const email = document.getElementById("c1_email").value;	
 
-	if (!name || !email || !floorz || !roomz) {
+	if (!name || !email) {
 		alert("ERRO: Você não preencheu os dados necessários!");
 		return;
 	};
