@@ -136,7 +136,7 @@ section {
 .sectionConsultRequests {
   padding: 20px;
   width: 70%; /* 70% do body */
-  height: 864px; /* 85% do body */  
+  height: auto; /* 85% do body */  
 }
 .sectionEditLayout {
   height: 864px; /* 85% do body */  
@@ -580,6 +580,7 @@ textarea {
 .btnDeleteRequest {
   height: 28px !important;
   padding: 0 5px 0 !important;
+  width: 100%;
 }
 
 .alertDeleteRequest {
@@ -702,12 +703,6 @@ nav {
 
 /* CUSTOMIZAÇÃO CONSULTAR REQUISIÇÃO */
 
-
-.sectionConsultRequests{
-  overflow-x: scroll;
-  overflow-x: hidden;
-}
-
 .table-responsive{
   display: flex;
   flex-wrap: wrap;
@@ -715,15 +710,14 @@ nav {
 } 
 
 .card{
-  width: 282px;
+  width: 300px;
   height: 400px;
   padding: 15px;
   background-color: #97BEC2;
   border-radius: 15px;
   border-color: black;
   border-width: 2px;
-  overflow-x: scroll;
-  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .itens{
@@ -748,6 +742,7 @@ nav {
 .btn-outline-danger{
   margin-top: 20px;
 }
+
 
 
 @media(max-width: 991px) {
