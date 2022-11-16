@@ -702,6 +702,12 @@ nav {
 
 /* CUSTOMIZAÇÃO CONSULTAR REQUISIÇÃO */
 
+
+.sectionConsultRequests{
+  overflow-x: scroll;
+  overflow-x: hidden;
+}
+
 .table-responsive{
   display: flex;
   flex-wrap: wrap;
@@ -709,13 +715,15 @@ nav {
 } 
 
 .card{
-  width: 270px;
+  width: 282px;
   height: 400px;
   padding: 15px;
   background-color: #97BEC2;
   border-radius: 15px;
   border-color: black;
   border-width: 2px;
+  overflow-x: scroll;
+  overflow-x: hidden;
 }
 
 .itens{
@@ -769,8 +777,22 @@ nav {
   .btnMobile {
     display: block;
   }
-}
 
+  .sectionConsultRequests{
+  width: auto;
+  height: auto;
+  margin: auto;
+  
+  }
+  
+  .table_wrapper{
+  margin-top: 50px;
+  }
+  
+  .card{
+    margin: auto;
+  }
+}
 
 @media(max-width: 450px) { 
 html {
@@ -917,6 +939,20 @@ ul {
 .tab-content {
   font-size: 0.95rem;
   }
+
+.sectionConsultRequests{
+  width: auto;
+}
+
+.table-responsive{
+  width: auto;
+  display: block;
+}
+
+.card{
+  width: auto;
+  margin-bottom: 20px;
+}
 
 }
 
