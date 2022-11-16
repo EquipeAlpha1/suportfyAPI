@@ -618,11 +618,8 @@ header {
 }
 .content {
   grid-area: content;
-  position: relative;
-  left: 15%;
-  top: 15%;
-  width: 60%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -632,6 +629,7 @@ header {
   display: flex;
   height: auto;
   width: 50%;
+  justify-content: end;
 }
 
 .contentprincipal{
@@ -684,8 +682,6 @@ li:not(ol li) {
   font-size: 1.3rem !important;
 }
 
-
-
 #problem.active {
   animation-name: slide;
   animation-duration: 1s;
@@ -694,6 +690,11 @@ li:not(ol li) {
 
 .articlesTitle{
   margin-bottom: 30px;
+}
+
+#categorias{
+  position: relative;
+  bottom: 7em;
 }
 
 @keyframes slide {
@@ -708,6 +709,31 @@ li:not(ol li) {
 }
 
 
+@media (max-width: 1366px) {
+  .imgfaq{
+    display: none;
+  }
+  .articles{
+    margin-left: 11em;
+  }
+  .content{
+    display: flex;
+    justify-content: center;
+  }
+  #titlefaq{
+    font-size: 50px;
+  }
+  
+}
+
+
+@media(max-width: 991px) {
+ 
+}
+
+@media(max-width: 450px) {
+
+}
 
 
 

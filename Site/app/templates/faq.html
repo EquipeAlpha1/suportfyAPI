@@ -15,7 +15,7 @@
         <!-- <a href="#" onclick="someFunction(); return false;">LINK</a> -->
         <section class="sectionFaq">
             <div class="sidebarFaq flex-shrink-0 p-3 bg-white" style="width: 280px; height: 100%; background: rgb(201, 201, 201) !important;">
-                <a href="/faq" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                <a href="/faq" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom ">
                   <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
                   <span class="fs-5 fw-semibold">FAQ's Alpha</span>
                 </a>
@@ -57,11 +57,11 @@
                 </ul>
             </div>
             <div class="content">
-              <div class="default active" style="height: auto; width:auto; margin: 3rem auto 0; display: flex;">
+              <div class="default active" style="height: auto; width:70%; display: flex; position: relative; bottom: 5em;">
                   <div class="articles">
                     <div class="contentprincipal" style="display: block; gap:2rem;">
                       <div class="articlesTitle">
-                        <h1 class="" dir="auto" style="font-size: 2rem; margin: 0;">Artigos mais visitados</h1>
+                        <h1 class="" dir="auto" id="titlefaq" style="font-size: 2rem; margin: 0;">Artigos mais visitados</h1>
                       </div>
                       <div class="problemcontent">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -99,7 +99,7 @@
                     <img src="../static/img/desktopfaq.jpg" alt="desktops">
                   </div>
               </div>
-              <div class="categoria-1" >
+              <div class="categoria-1" id="categorias">
                   <div class="hardware-1" id="problemsolucion" style="display: none;">
                     <h2 class="h2faq">Problemas no monitor:</h2>
                     <p class="contentfaq">
@@ -120,7 +120,7 @@
                     </p>
                   </div>
               </div>        
-              <div class="categoria-2">
+              <div class="categoria-2" id="categorias">
                   <div class="software-4" id="problemsolucion" style="display: none;">
                     <h2 class="h2faq">Problemas no aplicativo:</h2>
                     <p class="contentfaq">
@@ -134,7 +134,7 @@
                     </p>
                   </div>
               </div>                
-              <div class="categoria-3">
+              <div class="categoria-3" id="categorias">
                   <div class="rede-7" id="problemsolucion" style="display: none;">
                     <h2 class="h2faq">Problemas no modem:</h2>
                     <p class="contentfaq">
