@@ -13,6 +13,9 @@ from flask_mail import Message
 import os
 from werkzeug.utils import secure_filename
 
+SITE_KEY = '6LdSpxMjAAAAABdv0BhaU6jmVuoPOi8lPG9jvxE6'
+SECRET_KEY = '6LdSpxMjAAAAAJBCtWMa8xeWPh3MbqMjjG5MnClG'
+
 UPLOAD_FOLDER = 'app/static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -155,8 +158,8 @@ def create_request():
                         (name, mail, floor, room, pc, subject, description))
         conn.commit()
         conn.close()
-            
-    return render_template('create_request.html')
+             
+    return render_template('create_request.html', site_key=SITE_KEY)
 
 @app.route('/consult_requests', methods=['GET','POST'])
 def consult_requests():

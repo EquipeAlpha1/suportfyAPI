@@ -89,8 +89,6 @@ function validation() {
 	var divEmail = document.getElementById("divEmail");
 	const email = document.getElementById("c1_email").value;
 
-	console.log(email);
-
 	var text= document.getElementById("text");
 	var pattern= /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 

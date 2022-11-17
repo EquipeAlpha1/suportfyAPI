@@ -2,14 +2,7 @@
 {% block title %} Abrir solicitação {% endblock %}
 {% block conteudo %}
         <section class="sectionCreateRequest">
-            <form method="post" action="/consult_requests" class="formEmail" id="formEmail" enctype="multipart/form-data"> <!-- FORMULÁRIO DE SUPORTE -->
-                <script src="https://www.google.com/recaptcha/api.js"></script>
-                <script>
-                    function onSubmit(token) {
-                      document.getElementById("divEmail").submit();
-                    }
-                  </script>
-
+            <form method="post" action="/teste" class="formEmail" id="formEmail"> <!-- FORMULÁRIO DE SUPORTE -->
                 <div class="steps"> <!-- ETAPAS DO PROCESSO -->
                     <div class="steps_wrapper">
                         <ul> <!-- LISTA DE ETAPAS -->
@@ -50,7 +43,7 @@
                                 <label for="c1_email" class="form-label">E-mail: <span class="requiredField">*</span></label>
                                 <input class="form-control" type ="email" placeholder="Digite seu e-mail aqui" id="c1_email" aria-describedby="emailHelp" oninput="validation()"> <!-- ÁREA PARA DIGITAR O E-MAIL DO USUÁRIO -->
                                 <span id="text"></span>
-                                <button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key"data-callback='onSubmit'data-action='submit'>Submit</button>
+                                
                             </div>
                             <br>
                             <div class="roomChoice"> <!-- ANDAR E SALA -->
@@ -556,8 +549,8 @@
                             <button type="button" class="btn btn-secondary btn_next">Avançar</button>
                         </div>
                         <div class="form_3_btns common_btns" style="display: none;"> <!-- BOTÕES PARA A PÁGINA 3 -->
-                            <button type="button" class="btn btn-secondary btn_back">Voltar</button>
-                            <button type="submit" class="btn btn-primary btn_next" id="SendMail" value="SendMail">Enviar</button>   
+                            <button type="button" class="btn btn-secondary btn_back">Voltar</button>  
+                            <button class="g-recaptcha btn btn-primary btn_next" data-sitekey="{{ site_key }}"data-callback='onSubmit'data-action='submit' id="SendMail" value="SendMail">Submit</button>
                         </div>
                         <div class="form_4_btns common_btns" style="display: none;"> <!-- BOTÕES PARA A PÁGINA 4 -->
                             <button type="submit" class="btn btn-primary btn_done" id="Refresh" value="Refresh">Concluir</button>
