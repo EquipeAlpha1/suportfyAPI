@@ -592,7 +592,7 @@ textarea {
 
 
 /* faq */
-.sectionFaq{
+/* .sectionFaq{
   display: flex;
   height: 100%;
 }
@@ -733,13 +733,199 @@ li:not(ol li) {
 
 @media(max-width: 450px) {
 
+} */
+
+#mainfaq{
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#contentfaq{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+#titlefaq{
+  font-size: 2.5rem;
+  margin: 10px 0 20px 0;
+}
+
+.problemcontent{
+  align-items: center;
+}
+
+.afaq{
+  text-decoration: none;
+  color: #02a698;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 2.4rem;
+}
+
+.afaq:hover {
+  background: rgba(0, 0, 0, .15);
+}
+
+.h2faq{
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+}
+
+#problem.active {
+  animation-name: slide;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.articlesTitle{
+  margin-bottom: 30px;
+}
+
+#categorias{
+  position: relative; 
+  bottom: 8em;
+}
+
+#problemsolucion{
+  width: 35em;
+}
+
+@keyframes slide {
+  from {
+      transform: translateY(-9rem);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@media (max-width: 1410px) {
+  .imgfaq{
+    display: none;
+  }
+  .articles{
+    margin-left: 15%;
+  }
+  .afaq{
+    font-size: 1.4rem;
+    line-height: 2.7rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  #problemsolucion{
+    width: 15em;
+  }
+  
+}
+
+
+
+@media (max-width: 450px) {
+  #mainfaq{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  }
+  #sidebarfaq{
+    width: 100%;
+    height: 100%;
+  }
+  #contentfaq{
+    display: none;
+  }
 }
 
 
 
 
 
+/* sidebarfaq */
+#sidebarfaq{
+  background-color: #cccccc;
+  width: 35rem;
+  height: 100%;
+}
 
+#titlesidebar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  height: 5%;
+  margin-top: 16px;
+}
+
+#hrfaq{
+  margin: 0;
+}
+
+#navbarfaq{
+  height: 100%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.asidebarfaq{
+  font-size: 1.3em;
+  margin-bottom: 3px;
+}
+
+.lisidebarfaq{
+  margin-top: 2rem;
+}
+
+.dropdown-toggle { outline: 0; }
+
+.btn-toggle {
+  font-size: 1.2em;
+  padding: .25rem .5rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, .65);
+  background-color: transparent;
+}
+.btn-toggle:hover,
+.btn-toggle:focus {
+  color: rgba(0, 0, 0, .85);
+  background-color: #d2f4ea;
+}
+
+.btn-toggle::before {
+  width: 1.25em;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform .35s ease;
+  transform-origin: .5em 50%;
+}
+
+.btn-toggle[aria-expanded="true"] {
+  color: rgba(0, 0, 0, .85);
+}
+.btn-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.btn-toggle-nav a {
+  padding: .1875rem .5rem;
+  margin-top: .125rem;
+  margin-left: 1.25rem;
+}
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+  background-color: #d2f4ea;
+}
+
+.scrollarea {
+  overflow-y: auto;
+}
 
 
 
