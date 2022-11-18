@@ -592,149 +592,6 @@ textarea {
 
 
 /* faq */
-/* .sectionFaq{
-  display: flex;
-  height: 100%;
-}
-
-.teste {
-  display: grid;
-  height: 100%;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 3.5rem 35rem 12rem;
-  grid-template-areas: 
-  "header header"
-  "sidebar content"
-  "sidebar footer";
-}
-  
-header {
-  background: green;
-  grid-area: header;
-}
-.sidebar {
-  background: pink;
-  grid-area: sidebar;
-}
-.content {
-  grid-area: content;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.articles{
-  display: flex;
-  height: auto;
-  width: 50%;
-  justify-content: end;
-}
-
-.contentprincipal{
-  padding-top: 10px;
-}
-
-.imgfaq{
-  height: auto;
-  width: auto;
-}
-
-.content a {
-  color: #02a698;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.2rem;
-  line-height: 2.4rem;
-}
-.content a:hover {
-  text-decoration: underline;
-}
-
-a {
-  color: black;
-  text-decoration: none;
-}
-a:hover {
-  background: rgba(0, 0, 0, .15);
-}
-li:not(ol li) {
-  list-style: none;
-}
-
-#problemsolucion{
-  margin-left: 12%;
-  width: 70%;
-  height: auto;
-}
-
-.h2faq{
-  font-size: 2.3rem;
-  margin-bottom: 30px;
-}
-
-.contentfaq{
-  font-size: 1.3rem;
-}
-
-.chamadofaq{
-  font-size: 1.3rem !important;
-}
-
-#problem.active {
-  animation-name: slide;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-
-.articlesTitle{
-  margin-bottom: 30px;
-}
-
-#categorias{
-  position: relative;
-  bottom: 7em;
-}
-
-@keyframes slide {
-  from {
-      transform: translateY(-9rem);
-      opacity: 0;
-  }
-  to {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
-
-
-@media (max-width: 1366px) {
-  .imgfaq{
-    display: none;
-  }
-  .articles{
-    margin-left: 11em;
-  }
-  .content{
-    display: flex;
-    justify-content: center;
-  }
-  #titlefaq{
-    font-size: 50px;
-  }
-  
-}
-
-
-@media(max-width: 991px) {
- 
-}
-
-@media(max-width: 450px) {
-
-} */
-
 #mainfaq{
   display: flex;
   height: 100%;
@@ -826,8 +683,6 @@ li:not(ol li) {
   
 }
 
-
-
 @media (max-width: 450px) {
   #mainfaq{
   display: flex;
@@ -835,17 +690,17 @@ li:not(ol li) {
   width: 100%;
   }
   #sidebarfaq{
+    display: none;
+  }
+  #contentfaq{
     width: 100%;
     height: 100%;
   }
-  #contentfaq{
-    display: none;
+  .articles{
+    margin-top: 6em;
+
   }
 }
-
-
-
-
 
 /* sidebarfaq */
 #sidebarfaq{
