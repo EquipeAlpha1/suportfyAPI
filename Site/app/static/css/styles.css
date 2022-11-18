@@ -704,6 +704,7 @@ nav {
 /* CUSTOMIZAÇÃO CONSULTAR REQUISIÇÃO */
 
 .table-responsive{
+  width: 940px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -743,6 +744,14 @@ nav {
   margin-top: 20px;
 }
 
+.card::-webkit-scrollbar {
+  border-radius: 15px;
+}
+
+.card::-webkit-scrollbar-thumb {
+  background: #485a5c;
+  border-radius: 15px;
+}
 
 
 @media(max-width: 991px) {
