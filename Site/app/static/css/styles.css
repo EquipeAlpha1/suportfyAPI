@@ -740,7 +740,7 @@ nav {
   font-weight: bolder;
 }
 
-.btn-outline-danger{
+.btnDeleteRequest{
   margin-top: 20px;
 }
 
@@ -953,10 +953,20 @@ ul {
   display: block;
 }
 
+.chamados{
+  width: 260px;
+}
+
 .card{
-  width: auto;
+  width: 85%;
   margin-bottom: 20px;
+  overflow-x: hidden;
+}
+
+.btnDeleteRequest{
+  width: 100px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 }
-

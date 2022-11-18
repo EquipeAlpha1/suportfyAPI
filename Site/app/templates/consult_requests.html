@@ -4,7 +4,7 @@
         <section class="sectionConsultRequests">
                     <div class="table-responsive">
                         {% for issue in issue_history %}
-                            <div class="card">
+                            <div class="card {{issue['id']}}">
                                 <section class="chamados">
                                     <div class="protocolo">Protocolo: {{ issue['id'] }}</div>
                                     <p class="itens">Data: {{ issue['created'] }} </p>
