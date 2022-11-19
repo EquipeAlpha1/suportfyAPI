@@ -84,11 +84,13 @@ def edit_layout():
     room_id = str(request.args.get('roomSelected'))
     room_layout = load_room(room_id)
 
-    data = []
+    columnNames = ['id','last_alteration','name','general_status','monitor_config','monitor_status','case_config','case_status','keyboard_config','keyboard_status','mouse_config','mouse_status','os_config','os_status','network_config','network_status','motherboard_config','motherboard_status','cpu_config','cpu_status','memory_config','memory_status','storage_config','storage_status','gpu_config','gpu_status','psu_config','psu_status']
+    table_dict = {}
     for slots in room_layout:
-        data.append(list(slots))
+        line_dict = dict(zip(columnNames, list(slots)))
+        table_dict[room_layout.index(slots)+1] = line_dict
 
-    return render_template('edit_layout.html', room_layout=room_layout, data=json.dumps(data))
+    return render_template('edit_layout.html', room_layout=room_layout, table_dict=json.dumps(table_dict))
     
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
