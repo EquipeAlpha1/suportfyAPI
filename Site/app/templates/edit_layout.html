@@ -254,35 +254,103 @@
                 sessionStorage.setItem('table_dict', JSON.stringify(table_dict));           
             };
             test_func({{ table_dict|safe }});
-            
-            var id = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['id'];
-            var last_alteration = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['last_alteration'];
-            var name = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['name'];
-            var general_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['general_status'];
-            var monitor_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_config'];
-            var monitor_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_status'];
-            var case_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_config'];
-            var case_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_status'];
-            var keyboard_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_config'];
-            var keyboard_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_status'];
-            var mouse_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_config'];
-            var mouse_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_status'];
-            var os_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_config'];
-            var os_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_status'];
-            var network_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_config'];
-            var network_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_status'];
-            var motherboard_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_config'];
-            var motherboard_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_status'];
-            var cpu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_config'];
-            var cpu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_status'];
-            var memory_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_config'];
-            var memory_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_status'];
-            var storage_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_config'];
-            var storage_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_status'];
-            var gpu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_config'];
-            var gpu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_status'];
-            var psu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_config'];
-            var psu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_status'];
 
+            function fillSidebar() {
+
+                var id = document.activeElement.id;
+                var last_alteration = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['last_alteration'];
+                var name = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['name'];
+                var general_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['general_status'];
+
+                var monitor_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_config'];
+                var monitor_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_status'];
+                var case_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_config'];
+                var case_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_status'];
+                var keyboard_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_config'];
+                var keyboard_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_status'];
+                var mouse_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_config'];
+                var mouse_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_status'];
+                var os_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_config'];
+                var os_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_status'];
+                var network_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_config'];
+                var network_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_status'];
+                var motherboard_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_config'];
+                var motherboard_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_status'];
+                var cpu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_config'];
+                var cpu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_status'];
+                var memory_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_config'];
+                var memory_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_status'];
+                var storage_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_config'];
+                var storage_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_status'];
+                var gpu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_config'];
+                var gpu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_status'];
+                var psu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_config'];
+                var psu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_status'];
+
+                var input_id = document.activeElement.id;
+                var input_last_alteration = document.getElementById("last_alteration");
+                var input_name = document.getElementById("name");
+                var input_general_status = document.getElementById("general_status");
+
+                var input_monitor_config = document.getElementById("monitor_config");
+                var input_monitor_status = document.getElementById("monitor_status");
+                var input_case_config = document.getElementById("case_config");
+                var input_case_status = document.getElementById("case_status");
+                var input_keyboard_config = document.getElementById("keyboard_config");
+                var input_keyboard_status = document.getElementById("keyboard_status");
+                var input_mouse_config = document.getElementById("mouse_config");
+                var input_mouse_status = document.getElementById("mouse_status");
+                var input_os_config = document.getElementById("os_config");
+                var input_os_status = document.getElementById("os_status");
+                var input_network_config = document.getElementById("network_config");
+                var input_network_status = document.getElementById("network_status");
+                var input_motherboard_config = document.getElementById("motherboard_config");
+                var input_motherboard_status = document.getElementById("motherboard_status");
+                var input_cpu_config = document.getElementById("cpu_config");
+                var input_cpu_status = document.getElementById("cpu_status");
+                var input_memory_config = document.getElementById("memory_config");
+                var input_memory_status = document.getElementById("memory_status");
+                var input_storage_config = document.getElementById("storage_config");
+                var input_storage_status = document.getElementById("storage_status");
+                var input_gpu_config = document.getElementById("gpu_config");
+                var input_gpu_status = document.getElementById("gpu_status");
+                var input_psu_config = document.getElementById("psu_config");
+                var input_psu_status = document.getElementById("psu_status");
+
+
+
+                var infoMonitor = document.getElementById("infoMonitor");
+                var infoComputer = document.getElementById("infoComputer");
+                var infoKeyboard = document.getElementById("infoKeyboard");
+                var infoMouse = document.getElementById("infoMouse");
+
+                var addMonitor = document.getElementById("addMonitor");
+                var addComputer = document.getElementById("addComputer");
+                var addKeyboard = document.getElementById("addKeyboard");
+                var addMouse = document.getElementById("addMouse");
+
+                var editMonitorConfig = document.getElementById("editMonitorConfig");
+                var editComputerConfig = document.getElementById("editComputerConfig");
+                var editKeyboardConfig = document.getElementById("editKeyboardConfig");
+                var editMouseConfig = document.getElementById("editMouseConfig");
+                var editMonitorStatus = document.getElementById("editMonitorStatus");
+                var editComputerStatus = document.getElementById("editComputerStatus");
+                var editKeyboardStatus = document.getElementById("editKeyboardStatus");
+                var editMouseStatus = document.getElementById("editMouseStatus");
+
+                var deleteMonitor = document.getElementById("deleteMonitor");
+                var deleteComputer = document.getElementById("deleteComputer");
+                var deleteKeyboard = document.getElementById("deleteKeyboard");
+                var deleteMouse = document.getElementById("deleteMouse");
+
+
+
+                // Changes the value of the button
+                document.activeElement.value = new Date();
+
+                // Changes the text on the button
+                document.activeElement.innerHTML = new Date();
+
+                }
         </script>
 {% endblock %}
