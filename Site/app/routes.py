@@ -89,7 +89,7 @@ def edit_layout():
     for slots in room_layout:
         line_dict = dict(zip(columnNames, list(slots)))
         table_dict[room_layout.index(slots)+1] = line_dict
-
+    
     return render_template('edit_layout.html', room_layout=room_layout, table_dict=json.dumps(table_dict))
     
 @app.route('/create_request', methods=['GET','POST'])

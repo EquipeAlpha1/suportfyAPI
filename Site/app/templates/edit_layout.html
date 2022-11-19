@@ -1,394 +1,581 @@
+<style>
+    h1 {
+        margin: 0;
+    }
+    .wrapper {
+    height: 54rem;
+    width: 82rem;
+    display: grid;
+    grid-template-columns: 1fr 52rem;
+    grid-template-rows: 1fr 44.5rem 1fr;
+    grid-template-areas:
+    "sidebar layout"
+    "sidebar layout"
+    "sidebar caption"
+    ;
+    column-gap: 2rem;
+    margin: auto;
+    }
+    .headerContent {
+        background: cyan;
+        grid-area: header;
+    }
+    .sidebarContent {
+        grid-area: sidebar;
+        display: grid;
+        height: 39rem;
+        grid-template-rows: 3rem 35rem;
+        gap: 1rem;
+    }
+    .layoutContent {
+        grid-area: layout;
+    }
+    .captionContent {
+        grid-area: caption;
+        background: red;
+    }
+    .infos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    .d-block {
+        display: block;
+    }
+    .d-none {
+        display: none;
+    }
+    .default {
+        font-weight: 500;
+    }
+    .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+    }
+    .config {
+        margin-bottom: .4rem;
+    }
+    .config input,
+    .status input {
+        width: 184px;
+        height: 1.125rem;
+        margin: 0;
+    }
+    .config select,
+    .status select {
+        width: 192px;
+        height: 1.5rem;
+        margin: 0;
+    }
+    .mb-config {
+        margin-bottom: .2rem !important;
+    }
+    .btnBox a {
+        height: 24px;
+        width: 24px;
+    }
+    @media (max-width:450px) {
+    
+        h1 {
+            margin: 0;
+        }
+        .wrapper {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-rows: 1fr 82% 1fr;
+            column-gap: 0;
+        }
+        .sidebarContent {
+            display: none;
+        }
+        .layoutContent {
+            background: red;
+        }
+        .captionContent {
+            background: yellow;
+        }
+        .infos {
+            display: none;
+        }
+        .d-block {
+            display: block;
+        }
+        .d-none {
+            display: none;
+        }
+        .default {
+            font-weight: 500;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48
+        }
+        .config input,
+        .status input {
+            width: 184px;
+        }
+    }
+</style>
 {% extends 'base.html' %}
 {% block title %} Editar Layout {% endblock %}
 {% block conteudo %}
-        <section class="sectionEditLayout" onload="myFunction()">
-            <div class="wrapper_SidebarEdit">
-                <div class="info_layout">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#infoContent" type="button" role="tab" aria-controls="infoContent" aria-selected="true">Infos</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="add-tab" data-bs-toggle="tab" data-bs-target="#addContent" type="button" role="tab" aria-controls="addContent" aria-selected="false">Adicionar</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="edit-tab" data-bs-toggle="tab" data-bs-target="#editContent" type="button" role="tab" aria-controls="editContent" aria-selected="false">Editar</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="delete-tab" data-bs-toggle="tab" data-bs-target="#deleteContent" type="button" role="tab" aria-controls="deleteContent" aria-selected="false">Deletar</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="infoContent" role="tabpanel" aria-labelledby="info-tab">
-                            <div class="info_slot monitor"> <!-- MONITOR -->
-                                <label for="infoMonitor" class="form-label">Monitor:</label>
-                                <input class="form-control" placeholder="Vazio" id="infoMonitor" name="infoMonitor" readonly> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
+    <div class="wrapper">
+        <div class="sidebarContent">
+            <div class="h2_layoutComputers">
+                <h2 class="text-center">Informações</h2>
+            </div>
+            <div class="wrapperInfos" style="background:#f5f5f5; border-radius: 6px;">
+                <div class="infos">
+                    <div class="default">
+                        <div class="config">
+                            <label class="mb-config d-block" for="">Monitor: OK</label>
+                            <input class="mb-config d-block" type="text">
+                            <select class="form-select d-none" name="monitorSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <a href="#"><span class="material-symbols-outlined">add</span></a>
+                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
+                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
                             </div>
-                            <div class="info_slot computador"> <!-- COMPUTADOR -->
-                                <label for="infoComputer" class="form-label">Computador:</label>
-                                <input class="form-control" placeholder="Vazio" id="infoComputer" name="infoComputer" readonly> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
-                            </div>
-                            <div class="info_slot teclado"> <!-- TECLADO -->
-                                <label for="infoKeyboard" class="form-label">Teclado:</label>
-                                <input class="form-control" placeholder="Vazio" id="infoKeyboard" name="infoKeyboard" readonly> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
-                            </div>
-                            <div class="info_slot mouse"> <!-- MOUSE -->
-                                <label for="infoMouse" class="form-label">Mouse:</label>
-                                <input class="form-control" placeholder="Vazio" id="infoMouse" name="infoMouse" readonly> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
-                            </div>
-                            <hr>
-                            <form action="/consultSlot" method="post" id="consultSlot">
-                                <div class="d-grid  btnFormEditLayout" style="width: 100% !important;">
-                                    <button type="submit" class="btn btn-primary btn-lg">Atualizar</button>
-                                </div>
-                            </form>
                         </div>
-                        <div class="tab-pane fade" id="addContent" role="tabpanel" aria-labelledby="add-tab">
-                            <div class="add_slot monitor"> <!-- MONITOR -->
-                                <label for="addMonitor" class="form-label">Monitor:</label>
-                                <input class="form-control" placeholder="Vazio" id="addMonitor" name="addMonitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
+                        <div class="config">
+                            <label class="mb-config d-block" for="">Gabinete: OK</label>
+                            <input class="mb-config d-block" type="text">
+                            <select class="form-select d-none" name="caseSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <a href="#"><span class="material-symbols-outlined">add</span></a>
+                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
+                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
                             </div>
-                            <div class="add_slot computador"> <!-- COMPUTADOR -->
-                                <label for="addComputer" class="form-label">Computador:</label>
-                                <input class="form-control" placeholder="Vazio" id="addComputer" name="addComputer"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
-                            </div>
-                            <div class="add_slot teclado"> <!-- TECLADO -->
-                                <label for="addKeyboard" class="form-label">Teclado:</label>
-                                <input class="form-control" placeholder="Vazio" id="addKeyboard" name="addKeyboard"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
-                            </div>
-                            <div class="add_slot mouse"> <!-- MOUSE -->
-                                <label for="addMouse" class="form-label">Mouse:</label>
-                                <input class="form-control" placeholder="Vazio" id="addMouse" name="addMouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
-                            </div>
-                            <hr>
-                            <form action="/add_slot" method="post" id="addSlot">
-                                <div class="d-grid gap-2 btnFormEditLayout">
-                                    <button type="submit" class="btn btn-primary btn-lg">Adicionar</button>
-                                </div>
-                            </form>
                         </div>
-                        <div class="tab-pane fade" id="editContent" role="tabpanel" aria-labelledby="edit-tab">
-                            <div class="edit_slot_wrapper">
-                                <div class="edit_config">
-                                    <div class="edit_slot_config monitor">
-                                        <label for="editMonitorConfig" class="form-label">Editar Monitor:</label>
-                                        <input class="form-control" list="datalistOptionsMonitor" id="editMonitorConfig" name="editMonitorConfig" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DE MONITOR -->
-                                            <datalist id="datalistOptionsMonitor"> <!-- LISTA DE MONITORES -->
-                                                <option value="Monitor 1">
-                                                <option value="Monitor 2">
-                                                <option value="Monitor 3">
-                                            </datalist>
-                                    </div>
-                                    <div class="edit_slot_config computador">
-                                        <label for="editComputerConfig" class="form-label">Editar Computador:</label>
-                                        <input class="form-control" list="datalistOptionsComputador" id="editComputerConfig" name="editComputerConfig" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DE COMPUTADOR -->
-                                            <datalist id="datalistOptionsComputador"> <!-- LISTA DE COMPUTADORES -->
-                                                <option value="Computador 1">
-                                                <option value="Computador 2">
-                                                <option value="Computador 3">
-                                            </datalist>
-                                    </div>
-                                    <div class="edit_slot_config teclado">
-                                        <label for="editKeyboardConfig" class="form-label">Editar Teclado:</label>
-                                        <input class="form-control" list="datalistOptionsTeclado" id="editKeyboardConfig" name="editKeyboardConfig" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO DE TECLADO -->
-                                            <datalist id="datalistOptionsTeclado"> <!-- LISTA DE TECLADOS -->
-                                                <option value="Teclado 1">
-                                                <option value="Teclado 2">
-                                                <option value="Teclado 3">
-                                            </datalist>
-                                    </div>
-                                    <div class="edit_slot_config mouse">
-                                        <label for="editMouseConfig" class="form-label">Editar Mouse:</label>
-                                        <input class="form-control" list="datalistOptionsMouse" id="editMouseConfig" name="editMouseConfig" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA EDIÇÃO MOUSE -->
-                                            <datalist id="datalistOptionsMouse"> <!-- LISTA DE MOUSE -->
-                                                <option value="Mouse 1">
-                                                <option value="Mouse 2">
-                                                <option value="Mouse 3"></option>
-                                            </datalist>
-                                    </div>
-                                </div>
-                                <div class="edit_status">
-                                    <div class="edit_slot_status monitor">
-                                        <label for="editMonitorStatus" class="form-label">Status Monitor:</label>
-                                        <input class="form-control" list="datalistStatusMonitor" id="editMonitorStatus" name="editMonitorStatus" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA STATUS MONITOR -->
-                                            <datalist id="datalistStatusMonitor"> <!-- STATUS MONITOR -->
-                                                <option value="Monitor Atual">
-                                            </datalist>
-                                    </div>
-                                    <div class="edit_slot_status computador">
-                                        <label for="editComputerStatus" class="form-label">Status Computador:</label>
-                                        <input class="form-control" list="datalistStatusComputador" id="editComputerStatus" name="editComputerStatus" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA STATUS DO COMPUTADOR -->
-                                            <datalist id="datalistStatusComputador"> <!-- STATUS COMPUTADOR -->
-                                                <option value="Computador Atual">
-                                            </datalist>
-                                    </div>
-                                    <div class="edit_slot_status teclado">
-                                        <label for="editKeyboardStatus" class="form-label">Status Teclado:</label>
-                                        <input class="form-control" list="datalistStatusTeclado" id="editKeyboardStatus" name="editKeyboardStatus" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA STATUS TECLADO -->
-                                            <datalist id="datalistStatusTeclado"> <!-- STATUS TECLADO -->
-                                                <option value="Teclado Atual">
-                                            </datalist>
-                                    </div>
-                                    <div class="edit_slot_status mouse">
-                                        <label for="editMouseStatus" class="form-label">Status Mouse:</label>
-                                        <input class="form-control" list="datalistStatusMouse" id="editMouseStatus" name="editMouseStatus" placeholder="Selecionar"  onkeypress="return false;"> <!-- ÁREA PARA STATUS MOUSE -->
-                                            <datalist id="datalistStatusMouse"> <!-- STATUS MOUSE -->
-                                                <option value="Mouse Atual">
-                                            </datalist>
-                                    </div>
-                                </div>
+                        <div class="config">
+                            <label class="mb-config d-block" for="">Teclado: OK</label>
+                            <input class="mb-config d-block" type="text">
+                            <select class="form-select d-none" name="keyboardSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <a href="#"><span class="material-symbols-outlined">add</span></a>
+                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
+                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
                             </div>
-                            <hr>
-                            <form action="/edit_slot" method="post" id="editSlots">
-                                <div class="d-grid gap-2 btnFormEditLayout">
-                                    <button type="submit" class="btn btn-primary btn-lg">Editar</button>
-                                </div>
-                            </form>
                         </div>
-                        <div class="tab-pane fade" id="deleteContent" role="tabpanel" aria-labelledby="delete-tab">
-                            <div class="delete_slot monitor"> <!-- MONITOR -->
-                                <label for="deleteMonitor" class="form-label">Monitor:</label>
-                                <input class="form-control" placeholder="Vazio" id="deleteMonitor" name="deleteMonitor"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MONITOR -->
+                        <div class="config">
+                            <label class="mb-config d-block" for="">Mouse: OK</label>
+                            <input class="mb-config d-block" type="text">
+                            <select class="form-select d-none" name="mouseSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <a href="#"><span class="material-symbols-outlined">add</span></a>
+                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
+                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
                             </div>
-                            <div class="delete_slot computador"> <!-- COMPUTADOR -->
-                                <label for="deleteComputer" class="form-label">Computador:</label>
-                                <input class="form-control" placeholder="Vazio" id="deleteComputer" name="deleteComputer"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO COMPUTADOR -->
+                        </div>
+                        <div class="config">
+                            <label class="mb-config d-block" for="">Sistema: OK</label>
+                            <input class="mb-config d-block" type="text">
+                            <select class="form-select d-none" name="osSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <a href="#"><span class="material-symbols-outlined">add</span></a>
+                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
+                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
                             </div>
-                            <div class="delete_slot teclado"> <!-- TECLADO -->
-                                <label for="deleteKeyboard" class="form-label">Teclado:</label>
-                                <input class="form-control" placeholder="Vazio" id="deleteKeyboard" name="deleteKeyboard"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO TECLADO -->
+                        </div>
+                        <div class="config">
+                            <label class="mb-config d-block" for="">Rede: OK</label>
+                            <input class="mb-config d-block" type="text">
+                            <select class="form-select d-none" name="networkSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <a href="#"><span class="material-symbols-outlined">add</span></a>
+                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
+                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
                             </div>
-                            <div class="delete_slot mouse"> <!-- MOUSE -->
-                                <label for="deleteMouse" class="form-label">Mouse:</label>
-                                <input class="form-control" placeholder="Vazio" id="deleteMouse" name="deleteMouse"> <!-- ÁREA PARA MOSTRAR AS INFORMAÇÕES DO MOUSE -->
+                        </div>                        
+                    </div>
+                    <div class="default">
+                        <div class="config">
+                            <label class="mb-config d-block" for="">Placa Mãe: OK</label>
+                            <input class="mb-config d-block" type="text">
+                            <select class="form-select d-none" name="motherboardSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <a href="#"><span class="material-symbols-outlined">add</span></a>
+                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
+                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
                             </div>
-                            <hr>
-                            <form action="/delete_slot" method="post" id="deleteSlot">
-                                <div class="d-grid gap-2 btnFormEditLayout">
-                                    <button type="submit" class="btn btn-primary btn-lg">Deletar</button>
-                                </div>
-                            </form>
+                        </div>
+                        <div class="config">
+                            <label class="mb-config d-block" for="">Processador: OK</label>
+                            <input class="mb-config d-block" type="text">
+                            <select class="form-select d-none" name="cpuSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <a href="#"><span class="material-symbols-outlined">add</span></a>
+                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
+                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                            </div>
+                        </div>
+                        <div class="config">
+                            <label class="mb-config d-block" for="">Memória RAM: OK</label>
+                            <input class="mb-config d-block" type="text">
+                            <select class="form-select d-none" name="memorySelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <a href="#"><span class="material-symbols-outlined">add</span></a>
+                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
+                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                            </div>
+                        </div>
+                        <div class="config">
+                            <label class="mb-config d-block" for="">Armazenamento: OK</label>
+                            <input class="mb-config d-block" type="text">
+                            <select class="form-select d-none" name="storageSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <a href="#"><span class="material-symbols-outlined">add</span></a>
+                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
+                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                            </div>
+                        </div>
+                        <div class="config">
+                            <label class="mb-config d-block" for="">Placa de Vídeo: OK</label>
+                            <input class="mb-config d-block" type="text">
+                            <select class="form-select d-none" name="gpuSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <a href="#"><span class="material-symbols-outlined">add</span></a>
+                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
+                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                            </div>
+                        </div>
+                        <div class="config">
+                            <label class="mb-config d-block" for="">Fonte: OK</label>
+                            <input class="mb-config d-block" type="text">
+                            <select class="form-select d-none" name="psuSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <a href="#"><span class="material-symbols-outlined">add</span></a>
+                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
+                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="wrapper_Layout">
-                <div class="wrapper_layoutComputers active">
-                    <div class="h2_layoutComputers">
-                        <h2 class="">Escolha o slot</h2>
-                    </div>
-                    <div class="layout_computers_edit"> <!-- LAYOUT DOS COMPUTADORES -->
-                {% for slot in room_layout %}                            
-                    {% if slot['id'] != 5 and slot['id'] != 11 %} 
-                        {% set slot_num = slot['name'].split('_')[1] if slot['general_status'] != '#' and slot['general_status'] != -2 %}
-                        {% if slot['general_status'] != '#' and slot['general_status'] >= 0 %} <!-- SLOT COMUM --> 
+        </div>
+        <div class="layoutContent">
+            <div class="wrapper_layoutComputers active">
+                <div class="h2_layoutComputers">
+                    <h2 class="">Escolha o slot</h2>
+                </div>
+                <div class="layout_computers_edit"> <!-- LAYOUT DOS COMPUTADORES -->
+            {% for slot in room_layout %}                            
+                {% if slot['id'] != 5 and slot['id'] != 11 %} 
+                    {% set slot_num = slot['name'].split('_')[1] if slot['general_status'] != '#' and slot['general_status'] != -2 %}
+                    {% if slot['general_status'] != '#' and slot['general_status'] >= 0 %} <!-- SLOT COMUM --> 
+                        <div class="wrapperSlot slot{{slot_num}}">
+                            <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" onclick="fillSidebar()" autocomplete="off" value="{{slot_num}}">
+                        {% set color_num = slot['general_status'] %}
+                        {% if color_num == 0 %}
+                            <label class="btn btn-outline-dark" for="{{slot['id']}}">
+                        {% elif color_num == 1 %}
+                            <label class="btn btn-outline-warning" for="{{slot['id']}}">
+                        {% elif color_num >= 2 %}
+                            <label class="btn btn-outline-danger" for="{{slot['id']}}">
+                        {% endif %}
+                                <a>{{slot_num}}</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                    <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                </svg>
+                            </label>
+                        </div>
+                    {% elif slot['general_status'] == '#' or slot['general_status'] == -2 %} <!-- SLOT VAZIO POR PADRÃO -->
+                        <div style="visibility: hidden;"></div>
+                    {% elif slot['general_status'] == -1 %} <!-- SLOT QUE FOI APAGADO -->
                             <div class="wrapperSlot slot{{slot_num}}">
                                 <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" onclick="fillSidebar()" autocomplete="off" value="{{slot_num}}">
-                            {% set color_num = slot['general_status'] %}
-                            {% if color_num == 0 %}
                                 <label class="btn btn-outline-dark" for="{{slot['id']}}">
-                            {% elif color_num == 1 %}
-                                <label class="btn btn-outline-warning" for="{{slot['id']}}">
-                            {% elif color_num >= 2 %}
-                                <label class="btn btn-outline-danger" for="{{slot['id']}}">
-                            {% endif %}
                                     <a>{{slot_num}}</a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
-                                        <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                                     </svg>
                                 </label>
                             </div>
-                        {% elif slot['general_status'] == '#' or slot['general_status'] == -2 %} <!-- SLOT VAZIO POR PADRÃO -->
-                            <div style="visibility: hidden;"></div>
-                        {% elif slot['general_status'] == -1 %} <!-- SLOT QUE FOI APAGADO -->
-                                <div class="wrapperSlot slot{{slot_num}}">
-                                    <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" onclick="fillSidebar()" autocomplete="off" value="{{slot_num}}">
-                                    <label class="btn btn-outline-dark" for="{{slot['id']}}">
-                                        <a>{{slot_num}}</a>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                                        </svg>
-                                    </label>
-                                </div>
+                    {% endif %}
+                {% elif slot['id'] == 5 %} <!-- SLOT PROFESSOR -->                                                                      
+                    <div class="wrapperSlot slot{{slot['name'].split('_')[1]}}">   
+                        <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" onclick="fillSidebar()" autocomplete="off" value="Professor">    
+                    {% set prof_color_num = slot['general_status'] %}                                          
+                    {% if prof_color_num <= 0 %}
+                        <label class="btn btn-outline-dark" for="{{slot['id']}}">
+                    {% elif prof_color_num == 1 %}
+                        <label class="btn btn-outline-warning" for="{{slot['id']}}">
+                    {% elif prof_color_num >= 2 %}
+                        <label class="btn btn-outline-danger" for="{{slot['id']}}">
+                    {% endif %}
+                            <a>Prof.</a>
+                        {% if prof_color_num >= 0 %}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="prof bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                                <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                            </svg>
+                        {% else %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                            </svg>
                         {% endif %}
-                    {% elif slot['id'] == 5 %} <!-- SLOT PROFESSOR -->                                                                      
-                        <div class="wrapperSlot slot{{slot['name'].split('_')[1]}}">   
-                            <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" onclick="fillSidebar()" autocomplete="off" value="Professor">    
-                        {% set prof_color_num = slot['general_status'] %}                                          
-                        {% if prof_color_num <= 0 %}
-                            <label class="btn btn-outline-dark" for="{{slot['id']}}">
-                        {% elif prof_color_num == 1 %}
-                            <label class="btn btn-outline-warning" for="{{slot['id']}}">
-                        {% elif prof_color_num >= 2 %}
-                            <label class="btn btn-outline-danger" for="{{slot['id']}}">
-                        {% endif %}
-                                <a>Prof.</a>
-                            {% if prof_color_num >= 0 %}
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="prof bi bi-pc-display-horizontal" viewBox="0 0 16 16">
-                                    <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
-                                </svg>
-                            {% else %}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                                </svg>
-                            {% endif %}
-                            </label>
-                        </div>
-                    {% elif slot['id'] == 11 %} <!-- SLOT PORTA -->
-                        <div class="wrapperSlot">
-                            <label style="display: flex;">
-                                <svg style="width: 100%; height: auto; margin:auto;" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
-                                    <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/> <!-- MAÇANETA DA PORTA -->
-                                    <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"/> <!-- PORTA -->
-                                </svg>
-                            </label>
-                        </div>
-                    {% endif %}                                
-                {% endfor %}                
+                        </label>
                     </div>
-                </div>                         
+                {% elif slot['id'] == 11 %} <!-- SLOT PORTA -->
+                    <div class="wrapperSlot">
+                        <label style="display: flex;">
+                            <svg style="width: 100%; height: auto; margin:auto;" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
+                                <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/> <!-- MAÇANETA DA PORTA -->
+                                <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"/> <!-- PORTA -->
+                            </svg>
+                        </label>
+                    </div>
+                {% endif %}                                
+            {% endfor %}                
+                </div>
             </div>
-        </section>
-        <script type="text/javascript">
+        </div>
+        <div class="captionContent">
+            <h1>LEGENDA</h1>
+        </div>
+    </div>
+    <script type="text/javascript">
+   
+        sessionStorage.setItem('table_dict', JSON.stringify({{table_dict|safe}}));
 
-            sessionStorage.setItem('table_dict', JSON.stringify(table_dict));   
+        function fillSidebar() {
 
-            function fillSidebar() {
+            var id = document.activeElement.id;
+            var last_alteration = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['last_alteration'];
+            var name = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['name'];
+            var general_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['general_status'];
 
-                var id = document.activeElement.id;
-                var last_alteration = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['last_alteration'];
-                var name = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['name'];
-                var general_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['general_status'];
+            var monitor_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_config'];
+            var monitor_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_status'];
+            var case_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_config'];
+            var case_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_status'];
+            var keyboard_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_config'];
+            var keyboard_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_status'];
+            var mouse_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_config'];
+            var mouse_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_status'];
+            var os_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_config'];
+            var os_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_status'];
+            var network_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_config'];
+            var network_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_status'];
+            var motherboard_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_config'];
+            var motherboard_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_status'];
+            var cpu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_config'];
+            var cpu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_status'];
+            var memory_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_config'];
+            var memory_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_status'];
+            var storage_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_config'];
+            var storage_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_status'];
+            var gpu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_config'];
+            var gpu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_status'];
+            var psu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_config'];
+            var psu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_status'];
 
-                var monitor_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_config'];
-                var monitor_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_status'];
-                var case_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_config'];
-                var case_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_status'];
-                var keyboard_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_config'];
-                var keyboard_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_status'];
-                var mouse_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_config'];
-                var mouse_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_status'];
-                var os_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_config'];
-                var os_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_status'];
-                var network_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_config'];
-                var network_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_status'];
-                var motherboard_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_config'];
-                var motherboard_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_status'];
-                var cpu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_config'];
-                var cpu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_status'];
-                var memory_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_config'];
-                var memory_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_status'];
-                var storage_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_config'];
-                var storage_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_status'];
-                var gpu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_config'];
-                var gpu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_status'];
-                var psu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_config'];
-                var psu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_status'];
+            /* var input_id = document.activeElement.id;
+            var input_last_alteration = document.getElementById("last_alteration");
+            var input_name = document.getElementById("name");
+            var input_general_status = document.getElementById("general_status");
 
-                /* var input_id = document.activeElement.id;
-                var input_last_alteration = document.getElementById("last_alteration");
-                var input_name = document.getElementById("name");
-                var input_general_status = document.getElementById("general_status");
+            var input_monitor_config = document.getElementById("monitor_config");
+            var input_monitor_status = document.getElementById("monitor_status");
+            var input_case_config = document.getElementById("case_config");
+            var input_case_status = document.getElementById("case_status");
+            var input_keyboard_config = document.getElementById("keyboard_config");
+            var input_keyboard_status = document.getElementById("keyboard_status");
+            var input_mouse_config = document.getElementById("mouse_config");
+            var input_mouse_status = document.getElementById("mouse_status");
+            var input_os_config = document.getElementById("os_config");
+            var input_os_status = document.getElementById("os_status");
+            var input_network_config = document.getElementById("network_config");
+            var input_network_status = document.getElementById("network_status");
+            var input_motherboard_config = document.getElementById("motherboard_config");
+            var input_motherboard_status = document.getElementById("motherboard_status");
+            var input_cpu_config = document.getElementById("cpu_config");
+            var input_cpu_status = document.getElementById("cpu_status");
+            var input_memory_config = document.getElementById("memory_config");
+            var input_memory_status = document.getElementById("memory_status");
+            var input_storage_config = document.getElementById("storage_config");
+            var input_storage_status = document.getElementById("storage_status");
+            var input_gpu_config = document.getElementById("gpu_config");
+            var input_gpu_status = document.getElementById("gpu_status");
+            var input_psu_config = document.getElementById("psu_config");
+            var input_psu_status = document.getElementById("psu_status"); */
+            
+            var infoMonitor = document.getElementById("infoMonitor");
+            var infoComputer = document.getElementById("infoComputer");
+            var infoKeyboard = document.getElementById("infoKeyboard");
+            var infoMouse = document.getElementById("infoMouse");
 
-                var input_monitor_config = document.getElementById("monitor_config");
-                var input_monitor_status = document.getElementById("monitor_status");
-                var input_case_config = document.getElementById("case_config");
-                var input_case_status = document.getElementById("case_status");
-                var input_keyboard_config = document.getElementById("keyboard_config");
-                var input_keyboard_status = document.getElementById("keyboard_status");
-                var input_mouse_config = document.getElementById("mouse_config");
-                var input_mouse_status = document.getElementById("mouse_status");
-                var input_os_config = document.getElementById("os_config");
-                var input_os_status = document.getElementById("os_status");
-                var input_network_config = document.getElementById("network_config");
-                var input_network_status = document.getElementById("network_status");
-                var input_motherboard_config = document.getElementById("motherboard_config");
-                var input_motherboard_status = document.getElementById("motherboard_status");
-                var input_cpu_config = document.getElementById("cpu_config");
-                var input_cpu_status = document.getElementById("cpu_status");
-                var input_memory_config = document.getElementById("memory_config");
-                var input_memory_status = document.getElementById("memory_status");
-                var input_storage_config = document.getElementById("storage_config");
-                var input_storage_status = document.getElementById("storage_status");
-                var input_gpu_config = document.getElementById("gpu_config");
-                var input_gpu_status = document.getElementById("gpu_status");
-                var input_psu_config = document.getElementById("psu_config");
-                var input_psu_status = document.getElementById("psu_status"); */
+            var addMonitor = document.getElementById("addMonitor");
+            var addComputer = document.getElementById("addComputer");
+            var addKeyboard = document.getElementById("addKeyboard");
+            var addMouse = document.getElementById("addMouse");
+
+            var editMonitorConfig = document.getElementById("editMonitorConfig");
+            var editComputerConfig = document.getElementById("editComputerConfig");
+            var editKeyboardConfig = document.getElementById("editKeyboardConfig");
+            var editMouseConfig = document.getElementById("editMouseConfig");
+            var editMonitorStatus = document.getElementById("editMonitorStatus");
+            var editComputerStatus = document.getElementById("editComputerStatus");
+            var editKeyboardStatus = document.getElementById("editKeyboardStatus");
+            var editMouseStatus = document.getElementById("editMouseStatus");
+
+            var deleteMonitor = document.getElementById("deleteMonitor");
+            var deleteComputer = document.getElementById("deleteComputer");
+            var deleteKeyboard = document.getElementById("deleteKeyboard");
+            var deleteMouse = document.getElementById("deleteMouse");
+
+            infoMonitor.value = monitor_config;
+            infoComputer.value = case_config;
+            infoKeyboard.value = keyboard_config;
+            infoMouse.value = mouse_config;
+
+            if (general_status >= 0) {
                 
-                var infoMonitor = document.getElementById("infoMonitor");
-                var infoComputer = document.getElementById("infoComputer");
-                var infoKeyboard = document.getElementById("infoKeyboard");
-                var infoMouse = document.getElementById("infoMouse");
+                addMonitor.value = ''; addMonitor.disabled = true;
+                addComputer.value = ''; addComputer.disabled = true;
+                addKeyboard.value = ''; addKeyboard.disabled = true;
+                addMouse.value = ''; addMouse.disabled = true;
 
-                var addMonitor = document.getElementById("addMonitor");
-                var addComputer = document.getElementById("addComputer");
-                var addKeyboard = document.getElementById("addKeyboard");
-                var addMouse = document.getElementById("addMouse");
+                editMonitorConfig.disabled = false; editMonitorConfig.value = monitor_config;
+                editComputerConfig.disabled = false; editComputerConfig.value = case_config;
+                editKeyboardConfig.disabled = false; editKeyboardConfig.value = keyboard_config;
+                editMouseConfig.disabled = false; editMouseConfig.value = mouse_config;
+                editMonitorStatus.disabled = false; editMonitorStatus.value = monitor_status;
+                editComputerStatus.disabled = false; editComputerStatus.value = case_status;
+                editKeyboardStatus.disabled = false; editKeyboardStatus.value = keyboard_status;
+                editMouseStatus.disabled = false; editMouseStatus.value = mouse_status;
 
-                var editMonitorConfig = document.getElementById("editMonitorConfig");
-                var editComputerConfig = document.getElementById("editComputerConfig");
-                var editKeyboardConfig = document.getElementById("editKeyboardConfig");
-                var editMouseConfig = document.getElementById("editMouseConfig");
-                var editMonitorStatus = document.getElementById("editMonitorStatus");
-                var editComputerStatus = document.getElementById("editComputerStatus");
-                var editKeyboardStatus = document.getElementById("editKeyboardStatus");
-                var editMouseStatus = document.getElementById("editMouseStatus");
+                deleteMonitor.disabled = false; deleteMonitor.value = monitor_config;
+                deleteComputer.disabled = false; deleteComputer.value = case_config;
+                deleteKeyboard.disabled = false; deleteKeyboard.value = keyboard_config;
+                deleteMouse.disabled = false; deleteMouse.value = mouse_config;
 
-                var deleteMonitor = document.getElementById("deleteMonitor");
-                var deleteComputer = document.getElementById("deleteComputer");
-                var deleteKeyboard = document.getElementById("deleteKeyboard");
-                var deleteMouse = document.getElementById("deleteMouse");
+            } else if (general_status == -1) {
 
-                infoMonitor.value = monitor_config;
-                infoComputer.value = case_config;
-                infoKeyboard.value = keyboard_config;
-                infoMouse.value = mouse_config;
+                addMonitor.disabled = false; addMonitor.value = 'teste monitor'
+                addComputer.disabled = false; addComputer.value = 'teste computer'
+                addKeyboard.disabled = false; addKeyboard.value = 'teste teclado'
+                addMouse.disabled = false; addMouse.value = 'teste mouse'
 
-                if (general_status >= 0) {
+                editMonitorConfig.value = ''; editMonitorConfig.disabled = true;
+                editComputerConfig.value = ''; editComputerConfig.disabled = true;
+                editKeyboardConfig.value = ''; editKeyboardConfig.disabled = true;
+                editMouseConfig.value = ''; editMouseConfig.disabled = true;
+                editMonitorStatus.value = ''; editMonitorStatus.disabled = true;
+                editComputerStatus.value = ''; editComputerStatus.disabled = true;
+                editKeyboardStatus.value = ''; editKeyboardStatus.disabled = true;
+                editMouseStatus.value = ''; editMouseStatus.disabled = true;
 
-                    
-                    addMonitor.disabled = true;
-                    addComputer.disabled = true;
-                    addKeyboard.disabled = true;
-                    addMouse.disabled = true;
+                deleteMonitor.value = ''; deleteMonitor.disabled = true;
+                deleteComputer.value = ''; deleteComputer.disabled = true;
+                deleteKeyboard.value = ''; deleteKeyboard.disabled = true;
+                deleteMouse.value = ''; deleteMouse.disabled = true;
 
-                    editMonitorConfig
-                    editComputerConfig
-                    editKeyboardConfig
-                    editMouseConfig
-                    editMonitorStatus
-                    editComputerStatus
-                    editKeyboardStatus
-                    editMouseStatus
+            };
 
-                    deleteMonitor
-                    deleteComputer
-                    deleteKeyboard
-                    deleteMouse
-
-                } else if (general_status == -1) {
-
-                    addMonitor
-                    addComputer
-                    addKeyboard
-                    addMouse
-
-                    editMonitorConfig.disabled = true;
-                    editComputerConfig.disabled = true;
-                    editKeyboardConfig.disabled = true;
-                    editMouseConfig.disabled = true;
-                    editMonitorStatus.disabled = true;
-                    editComputerStatus.disabled = true;
-                    editKeyboardStatus.disabled = true;
-                    editMouseStatus.disabled = true;
-
-                    deleteMonitor.disabled = true;
-                    deleteComputer.disabled = true;
-                    deleteKeyboard.disabled = true;
-                    deleteMouse.disabled = true;
-
-                }
-
-                }
-        </script>
+            }
+    </script>
 {% endblock %}

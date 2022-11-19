@@ -70,7 +70,7 @@ html, body {
 }
 
 html {
-  margin: 5rem 0 0;
+  padding: 86px 0 0;
 }
 
 body {
@@ -178,9 +178,6 @@ section {
   height: 639px;
 }
 
-.info_layout {
-/*   height: 824px;
- */}
 
 .edit_slot_wrapper {
   display: grid;
