@@ -658,7 +658,7 @@ a {
   color: black;
   text-decoration: none;
 }
-a:hover {
+a:hover:not(.wrapperSlot a) {
   background: rgba(0, 0, 0, .15);
 }
 li:not(ol li) {
@@ -992,3 +992,5 @@ ul {
   background-size:cover ;
   z-index: 1000;
 }
+
+

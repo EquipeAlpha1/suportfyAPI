@@ -38,7 +38,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
-        padding: 0 1rem;
+        padding: 1rem;
     }
     .d-block {
         display: block;
@@ -57,12 +57,12 @@
         'opsz' 48
     }
     .config {
-        margin-bottom: .4rem;
+        margin-bottom: .8rem;
     }
     .config input,
     .status input {
-        width: 184px;
-        height: 1.125rem;
+        width: 192px;
+        height: 1.5rem;
         margin: 0;
     }
     .config select,
@@ -70,14 +70,7 @@
         width: 192px;
         height: 1.5rem;
         margin: 0;
-    }
-    .mb-config {
-        margin-bottom: .2rem !important;
-    }
-    .btnBox a {
-        height: 24px;
-        width: 24px;
-    }
+    };
     @media (max-width:450px) {
     
         h1 {
@@ -136,8 +129,8 @@
                 <div class="infos">
                     <div class="default">
                         <div class="config">
-                            <label class="mb-config d-block" for="">Monitor: OK</label>
-                            <input class="mb-config d-block" type="text">
+                            <label class="mb-config d-block" for="monitorInput">Monitor: <span id="monitorStatus"></span></label>
+                            <input class="mb-config d-block" id="monitorInput" type="text">
                             <select class="form-select d-none" name="monitorSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -148,14 +141,14 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <a href="#"><span class="material-symbols-outlined">add</span></a>
-                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                                <label class="material-symbols-outlined"><a href="#" id="btnAddMonitor">add</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnEditMonitor">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteMonitor">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="">Gabinete: OK</label>
-                            <input class="mb-config d-block" type="text">
+                            <label class="mb-config d-block" for="caseInput">Gabinete: <span id="caseStatus"></span></label>
+                            <input class="mb-config d-block" id="caseInput" type="text">
                             <select class="form-select d-none" name="caseSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -166,14 +159,14 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <a href="#"><span class="material-symbols-outlined">add</span></a>
-                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                                <label class="material-symbols-outlined"><a href="#" id="btnAddCase">add</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnEditCase">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteCase">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="">Teclado: OK</label>
-                            <input class="mb-config d-block" type="text">
+                            <label class="mb-config d-block" for="keyboardInput">Teclado: <span id="keyboardStatus"></span></label>
+                            <input class="mb-config d-block" id="keyboardInput" type="text">
                             <select class="form-select d-none" name="keyboardSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -184,14 +177,14 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <a href="#"><span class="material-symbols-outlined">add</span></a>
-                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                                <label class="material-symbols-outlined"><a href="#" id="btnAddKeyboard">add</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnEditKeyboard">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteKeyboard">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="">Mouse: OK</label>
-                            <input class="mb-config d-block" type="text">
+                            <label class="mb-config d-block" for="mouseInput">Mouse: <span id="mouseStatus"></span></label>
+                            <input class="mb-config d-block" id="mouseInput" type="text">
                             <select class="form-select d-none" name="mouseSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -202,14 +195,14 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <a href="#"><span class="material-symbols-outlined">add</span></a>
-                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                                <label class="material-symbols-outlined"><a href="#" id="btnAddMouse">add</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnEditMouse">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteMouse">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="">Sistema: OK</label>
-                            <input class="mb-config d-block" type="text">
+                            <label class="mb-config d-block" for="osInput">Sistema: <span id="osStatus"></span></label>
+                            <input class="mb-config d-block" id="osInput" type="text">
                             <select class="form-select d-none" name="osSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -220,14 +213,14 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <a href="#"><span class="material-symbols-outlined">add</span></a>
-                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                                <label class="material-symbols-outlined"><a href="#" id="btnAddOs">add</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnEditOs">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteOs">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="">Rede: OK</label>
-                            <input class="mb-config d-block" type="text">
+                            <label class="mb-config d-block" for="networkInput">Rede: <span id="networkStatus"></span></label>
+                            <input class="mb-config d-block" id="networkInput" type="text">
                             <select class="form-select d-none" name="networkSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -238,16 +231,16 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <a href="#"><span class="material-symbols-outlined">add</span></a>
-                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                                <label class="material-symbols-outlined"><a href="#" id="btnAddNetwork">add</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnEditNetwork">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteNetwork">delete</a></label>
                             </div>
                         </div>                        
                     </div>
                     <div class="default">
                         <div class="config">
-                            <label class="mb-config d-block" for="">Placa Mãe: OK</label>
-                            <input class="mb-config d-block" type="text">
+                            <label class="mb-config d-block" for="motherboardInput">Placa Mãe: <span id="motherboardStatus"></span></label>
+                            <input class="mb-config d-block" id="motherboardInput" type="text">
                             <select class="form-select d-none" name="motherboardSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -258,14 +251,14 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <a href="#"><span class="material-symbols-outlined">add</span></a>
-                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                                <label class="material-symbols-outlined"><a href="#" id="btnAddMotherboard">add</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnEditMotherboard">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteMotherboard">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="">Processador: OK</label>
-                            <input class="mb-config d-block" type="text">
+                            <label class="mb-config d-block" for="cpuInput">Processador: <span id="cpuStatus"></span></label>
+                            <input class="mb-config d-block" id="cpuInput" type="text">
                             <select class="form-select d-none" name="cpuSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -276,14 +269,14 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <a href="#"><span class="material-symbols-outlined">add</span></a>
-                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                                <label class="material-symbols-outlined"><a href="#" id="btnAddCpu">add</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnEditCpu">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteCpu">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="">Memória RAM: OK</label>
-                            <input class="mb-config d-block" type="text">
+                            <label class="mb-config d-block" for="memoryInput">Memória RAM: <span id="memoryStatus"></span></label>
+                            <input class="mb-config d-block" id="memoryInput" type="text">
                             <select class="form-select d-none" name="memorySelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -294,14 +287,14 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <a href="#"><span class="material-symbols-outlined">add</span></a>
-                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                                <label class="material-symbols-outlined"><a href="#" id="btnAddMemory">add</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnEditMemory">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteMemory">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="">Armazenamento: OK</label>
-                            <input class="mb-config d-block" type="text">
+                            <label class="mb-config d-block" for="storageInput">Armazenamento: <span id="storageStatus"></span></label>
+                            <input class="mb-config d-block" id="storageInput" type="text">
                             <select class="form-select d-none" name="storageSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -312,14 +305,14 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <a href="#"><span class="material-symbols-outlined">add</span></a>
-                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                                <label class="material-symbols-outlined"><a href="#" id="btnAddStorage">add</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnEditStorage">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteStorage">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="">Placa de Vídeo: OK</label>
-                            <input class="mb-config d-block" type="text">
+                            <label class="mb-config d-block" for="gpuInput">Placa de Vídeo: <span id="gpuStatus"></span></label>
+                            <input class="mb-config d-block" id="gpuInput" type="text">
                             <select class="form-select d-none" name="gpuSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -330,14 +323,14 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <a href="#"><span class="material-symbols-outlined">add</span></a>
-                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                                <label class="material-symbols-outlined"><a href="#" id="btnAddGpu">add</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnEditGpu">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteGpu">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="">Fonte: OK</label>
-                            <input class="mb-config d-block" type="text">
+                            <label class="mb-config d-block" for="psuInput">Fonte: <span id="psuStatus"></span></label>
+                            <input class="mb-config d-block" id="psuInput" type="text">
                             <select class="form-select d-none" name="psuSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -348,9 +341,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <a href="#"><span class="material-symbols-outlined">add</span></a>
-                                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                                <label class="material-symbols-outlined"><a href="#" id="btnAddPsu">add</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnEditPsu">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="#" id="btnDeletePsu">delete</a></label>
                             </div>
                         </div>
                     </div>
@@ -444,9 +437,10 @@
         function fillSidebar() {
 
             var id = document.activeElement.id;
-            var last_alteration = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['last_alteration'];
+
+            /* var last_alteration = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['last_alteration'];
             var name = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['name'];
-            var general_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['general_status'];
+            var general_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['general_status']; */
 
             var monitor_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_config'];
             var monitor_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_status'];
@@ -473,106 +467,177 @@
             var psu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_config'];
             var psu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_status'];
 
-            /* var input_id = document.activeElement.id;
-            var input_last_alteration = document.getElementById("last_alteration");
-            var input_name = document.getElementById("name");
-            var input_general_status = document.getElementById("general_status");
+            /* var last_alteration = document.getElementById("last_alteration");
+            var name = document.getElementById("name");
+            var general_status = document.getElementById("general_status"); */
 
-            var input_monitor_config = document.getElementById("monitor_config");
-            var input_monitor_status = document.getElementById("monitor_status");
-            var input_case_config = document.getElementById("case_config");
-            var input_case_status = document.getElementById("case_status");
-            var input_keyboard_config = document.getElementById("keyboard_config");
-            var input_keyboard_status = document.getElementById("keyboard_status");
-            var input_mouse_config = document.getElementById("mouse_config");
-            var input_mouse_status = document.getElementById("mouse_status");
-            var input_os_config = document.getElementById("os_config");
-            var input_os_status = document.getElementById("os_status");
-            var input_network_config = document.getElementById("network_config");
-            var input_network_status = document.getElementById("network_status");
-            var input_motherboard_config = document.getElementById("motherboard_config");
-            var input_motherboard_status = document.getElementById("motherboard_status");
-            var input_cpu_config = document.getElementById("cpu_config");
-            var input_cpu_status = document.getElementById("cpu_status");
-            var input_memory_config = document.getElementById("memory_config");
-            var input_memory_status = document.getElementById("memory_status");
-            var input_storage_config = document.getElementById("storage_config");
-            var input_storage_status = document.getElementById("storage_status");
-            var input_gpu_config = document.getElementById("gpu_config");
-            var input_gpu_status = document.getElementById("gpu_status");
-            var input_psu_config = document.getElementById("psu_config");
-            var input_psu_status = document.getElementById("psu_status"); */
-            
-            var infoMonitor = document.getElementById("infoMonitor");
-            var infoComputer = document.getElementById("infoComputer");
-            var infoKeyboard = document.getElementById("infoKeyboard");
-            var infoMouse = document.getElementById("infoMouse");
+            var monitorInput = document.getElementById("monitorInput");
+            var monitorStatus = document.getElementById("monitorStatus");
+            var caseInput = document.getElementById("caseInput");
+            var caseStatus = document.getElementById("caseStatus");
+            var keyboardInput = document.getElementById("keyboardInput");
+            var keyboardStatus = document.getElementById("keyboardStatus");
+            var mouseInput = document.getElementById("mouseInput");
+            var mouseStatus = document.getElementById("mouseStatus");
+            var osInput = document.getElementById("osInput");
+            var osStatus = document.getElementById("osStatus");
+            var networkInput = document.getElementById("networkInput");
+            var networkStatus = document.getElementById("networkStatus");
+            var motherboardInput = document.getElementById("motherboardInput");
+            var motherboardStatus = document.getElementById("motherboardStatus");
+            var cpuInput = document.getElementById("cpuInput");
+            var cpuStatus = document.getElementById("cpuStatus");
+            var memoryInput = document.getElementById("memoryInput");
+            var memoryStatus = document.getElementById("memoryStatus");
+            var storageInput = document.getElementById("storageInput");
+            var storageStatus = document.getElementById("storageStatus");
+            var gpuInput = document.getElementById("gpuInput");
+            var gpuStatus = document.getElementById("gpuStatus");
+            var psuInput = document.getElementById("psuInput");
+            var psuStatus = document.getElementById("psuStatus");
 
-            var addMonitor = document.getElementById("addMonitor");
-            var addComputer = document.getElementById("addComputer");
-            var addKeyboard = document.getElementById("addKeyboard");
-            var addMouse = document.getElementById("addMouse");
+            var btnAddMonitor = document.getElementById("btnAddMonitor");
+            var btnEditMonitor = document.getElementById("btnEditMonitor");
+            var btnDeleteMonitor = document.getElementById("btnDeleteMonitor");
+            var btnAddCase = document.getElementById("btnAddCase");
+            var btnEditCase = document.getElementById("btnEditCase");
+            var btnDeleteCase = document.getElementById("btnDeleteCase");
+            var btnAddKeyboard = document.getElementById("btnAddKeyboard");
+            var btnEditKeyboard = document.getElementById("btnEditKeyboard");
+            var btnDeleteKeyboard = document.getElementById("btnDeleteKeyboard");
+            var btnAddMouse = document.getElementById("btnAddMouse");
+            var btnEditMouse = document.getElementById("btnEditMouse");
+            var btnDeleteMouse = document.getElementById("btnDeleteMouse");
+            var btnAddOs = document.getElementById("btnAddOs");
+            var btnEditOs = document.getElementById("btnEditOs");
+            var btnDeleteOs = document.getElementById("btnDeleteOs");
+            var btnAddNetwork = document.getElementById("btnAddNetwork");
+            var btnEditNetwork = document.getElementById("btnEditNetwork");
+            var btnDeleteNetwork = document.getElementById("btnDeleteNetwork");
+            var btnAddMotherboard = document.getElementById("btnAddMotherboard");
+            var btnEditMotherboard = document.getElementById("btnEditMotherboard");
+            var btnDeleteMotherboard = document.getElementById("btnDeleteMotherboard");
+            var btnAddCpu = document.getElementById("btnAddCpu");
+            var btnEditCpu = document.getElementById("btnEditCpu");
+            var btnDeleteCpu = document.getElementById("btnDeleteCpu");
+            var btnAddMemory = document.getElementById("btnAddMemory");
+            var btnEditMemory = document.getElementById("btnEditMemory");
+            var btnDeleteMemory = document.getElementById("btnDeleteMemory");
+            var btnAddStorage = document.getElementById("btnAddStorage");
+            var btnEditStorage = document.getElementById("btnEditStorage");
+            var btnDeleteStorage = document.getElementById("btnDeleteStorage");
+            var btnAddGpu = document.getElementById("btnAddGpu");
+            var btnEditGpu = document.getElementById("btnEditGpu");
+            var btnDeleteGpu = document.getElementById("btnDeleteGpu");
+            var btnAddPsu = document.getElementById("btnAddPsu");
+            var btnEditPsu = document.getElementById("btnEditPsu");
+            var btnDeletePsu = document.getElementById("btnDeletePsu");
 
-            var editMonitorConfig = document.getElementById("editMonitorConfig");
-            var editComputerConfig = document.getElementById("editComputerConfig");
-            var editKeyboardConfig = document.getElementById("editKeyboardConfig");
-            var editMouseConfig = document.getElementById("editMouseConfig");
-            var editMonitorStatus = document.getElementById("editMonitorStatus");
-            var editComputerStatus = document.getElementById("editComputerStatus");
-            var editKeyboardStatus = document.getElementById("editKeyboardStatus");
-            var editMouseStatus = document.getElementById("editMouseStatus");
+            monitorInput.value = monitor_config;
+            caseInput.value = case_config;
+            keyboardInput.value = keyboard_config;
+            mouseInput.value = mouse_config;
+            osInput.value = os_config;
+            networkInput.value = network_config;
+            motherboardInput.value = motherboard_config;
+            cpuInput.value = cpu_config;
+            memoryInput.value = memory_config;
+            storageInput.value = storage_config;
+            gpuInput.value = gpu_config;
+            psuInput.value = psu_config;
 
-            var deleteMonitor = document.getElementById("deleteMonitor");
-            var deleteComputer = document.getElementById("deleteComputer");
-            var deleteKeyboard = document.getElementById("deleteKeyboard");
-            var deleteMouse = document.getElementById("deleteMouse");
-
-            infoMonitor.value = monitor_config;
-            infoComputer.value = case_config;
-            infoKeyboard.value = keyboard_config;
-            infoMouse.value = mouse_config;
+            monitorStatus.innerHTML = monitor_status;
+            caseStatus.innerHTML = case_status;
+            keyboardStatus.innerHTML = keyboard_status;
+            mouseStatus.innerHTML = mouse_status;
+            osStatus.innerHTML = os_status;
+            networkStatus.innerHTML = network_status;
+            motherboardStatus.innerHTML = motherboard_status;
+            cpuStatus.innerHTML = cpu_status;
+            memoryStatus.innerHTML = memory_status;
+            storageStatus.innerHTML = storage_status;
+            gpuStatus.innerHTML = gpu_status;
+            psuStatus.innerHTML = psu_status;
 
             if (general_status >= 0) {
                 
-                addMonitor.value = ''; addMonitor.disabled = true;
-                addComputer.value = ''; addComputer.disabled = true;
-                addKeyboard.value = ''; addKeyboard.disabled = true;
-                addMouse.value = ''; addMouse.disabled = true;
+                btnAddMonitor.disabled = true;
+                btnAddCase.disabled = true;
+                btnAddKeyboard.disabled = true;
+                btnAddMouse.disabled = true;
+                btnAddOs.disabled = true;
+                btnAddNetwork.disabled = true;
+                btnAddMotherboard.disabled = true;
+                btnAddCpu.disabled = true;
+                btnAddMemory.disabled = true;
+                btnAddStorage.disabled = true;
+                btnAddGpu.disabled = true;
+                btnAddPsu.disabled = true;
 
-                editMonitorConfig.disabled = false; editMonitorConfig.value = monitor_config;
-                editComputerConfig.disabled = false; editComputerConfig.value = case_config;
-                editKeyboardConfig.disabled = false; editKeyboardConfig.value = keyboard_config;
-                editMouseConfig.disabled = false; editMouseConfig.value = mouse_config;
-                editMonitorStatus.disabled = false; editMonitorStatus.value = monitor_status;
-                editComputerStatus.disabled = false; editComputerStatus.value = case_status;
-                editKeyboardStatus.disabled = false; editKeyboardStatus.value = keyboard_status;
-                editMouseStatus.disabled = false; editMouseStatus.value = mouse_status;
-
-                deleteMonitor.disabled = false; deleteMonitor.value = monitor_config;
-                deleteComputer.disabled = false; deleteComputer.value = case_config;
-                deleteKeyboard.disabled = false; deleteKeyboard.value = keyboard_config;
-                deleteMouse.disabled = false; deleteMouse.value = mouse_config;
+                btnEditMonitor.disabled = false;
+                btnDeleteMonitor.disabled = false;
+                btnEditCase.disabled = false;
+                btnDeleteCase.disabled = false;
+                btnEditKeyboard.disabled = false;
+                btnDeleteKeyboard.disabled = false;
+                btnEditMouse.disabled = false;
+                btnDeleteMouse.disabled = false;
+                btnEditOs.disabled = false;
+                btnDeleteOs.disabled = false;
+                btnEditNetwork.disabled = false;
+                btnDeleteNetwork.disabled = false;
+                btnEditMotherboard.disabled = false;
+                btnDeleteMotherboard.disabled = false;
+                btnEditCpu.disabled = false;
+                btnDeleteCpu.disabled = false;
+                btnEditMemory.disabled = false;
+                btnDeleteMemory.disabled = false;
+                btnEditStorage.disabled = false;
+                btnDeleteStorage.disabled = false;
+                btnEditGpu.disabled = false;
+                btnDeleteGpu.disabled = false;
+                btnEditPsu.disabled = false;
+                btnDeletePsu.disabled = false;
 
             } else if (general_status == -1) {
 
-                addMonitor.disabled = false; addMonitor.value = 'teste monitor'
-                addComputer.disabled = false; addComputer.value = 'teste computer'
-                addKeyboard.disabled = false; addKeyboard.value = 'teste teclado'
-                addMouse.disabled = false; addMouse.value = 'teste mouse'
+                btnAddMonitor.disabled = false;
+                btnAddCase.disabled = false;
+                btnAddKeyboard.disabled = false;
+                btnAddMouse.disabled = false;
+                btnAddOs.disabled = false;
+                btnAddNetwork.disabled = false;
+                btnAddMotherboard.disabled = false;
+                btnAddCpu.disabled = false;
+                btnAddMemory.disabled = false;
+                btnAddStorage.disabled = false;
+                btnAddGpu.disabled = false;
+                btnAddPsu.disabled = false;
 
-                editMonitorConfig.value = ''; editMonitorConfig.disabled = true;
-                editComputerConfig.value = ''; editComputerConfig.disabled = true;
-                editKeyboardConfig.value = ''; editKeyboardConfig.disabled = true;
-                editMouseConfig.value = ''; editMouseConfig.disabled = true;
-                editMonitorStatus.value = ''; editMonitorStatus.disabled = true;
-                editComputerStatus.value = ''; editComputerStatus.disabled = true;
-                editKeyboardStatus.value = ''; editKeyboardStatus.disabled = true;
-                editMouseStatus.value = ''; editMouseStatus.disabled = true;
-
-                deleteMonitor.value = ''; deleteMonitor.disabled = true;
-                deleteComputer.value = ''; deleteComputer.disabled = true;
-                deleteKeyboard.value = ''; deleteKeyboard.disabled = true;
-                deleteMouse.value = ''; deleteMouse.disabled = true;
+                btnEditMonitor.disabled = true;
+                btnDeleteMonitor.disabled = true;
+                btnEditCase.disabled = true;
+                btnDeleteCase.disabled = true;
+                btnEditKeyboard.disabled = true;
+                btnDeleteKeyboard.disabled = true;
+                btnEditMouse.disabled = true;
+                btnDeleteMouse.disabled = true;
+                btnEditOs.disabled = true;
+                btnDeleteOs.disabled = true;
+                btnEditNetwork.disabled = true;
+                btnDeleteNetwork.disabled = true;
+                btnEditMotherboard.disabled = true;
+                btnDeleteMotherboard.disabled = true;
+                btnEditCpu.disabled = true;
+                btnDeleteCpu.disabled = true;
+                btnEditMemory.disabled = true;
+                btnDeleteMemory.disabled = true;
+                btnEditStorage.disabled = true;
+                btnDeleteStorage.disabled = true;
+                btnEditGpu.disabled = true;
+                btnDeleteGpu.disabled = true;
+                btnEditPsu.disabled = true;
+                btnDeletePsu.disabled = true;
 
             };
 
