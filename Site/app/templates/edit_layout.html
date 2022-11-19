@@ -183,7 +183,7 @@
                         {% set slot_num = slot['name'].split('_')[1] if slot['general_status'] != '#' and slot['general_status'] != -2 %}
                         {% if slot['general_status'] != '#' and slot['general_status'] >= 0 %} <!-- SLOT COMUM --> 
                             <div class="wrapperSlot slot{{slot_num}}">
-                                <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" autocomplete="off" value="{{slot_num}}">
+                                <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" onclick="fillSidebar()" autocomplete="off" value="{{slot_num}}">
                             {% set color_num = slot['general_status'] %}
                             {% if color_num == 0 %}
                                 <label class="btn btn-outline-dark" for="{{slot['id']}}">
@@ -202,7 +202,7 @@
                             <div style="visibility: hidden;"></div>
                         {% elif slot['general_status'] == -1 %} <!-- SLOT QUE FOI APAGADO -->
                                 <div class="wrapperSlot slot{{slot_num}}">
-                                    <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" autocomplete="off" value="{{slot_num}}">
+                                    <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" onclick="fillSidebar()" autocomplete="off" value="{{slot_num}}">
                                     <label class="btn btn-outline-dark" for="{{slot['id']}}">
                                         <a>{{slot_num}}</a>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -213,7 +213,7 @@
                         {% endif %}
                     {% elif slot['id'] == 5 %} <!-- SLOT PROFESSOR -->                                                                      
                         <div class="wrapperSlot slot{{slot['name'].split('_')[1]}}">   
-                            <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" autocomplete="off" value="Professor">    
+                            <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" onclick="fillSidebar()" autocomplete="off" value="Professor">    
                         {% set prof_color_num = slot['general_status'] %}                                          
                         {% if prof_color_num <= 0 %}
                             <label class="btn btn-outline-dark" for="{{slot['id']}}">
@@ -250,10 +250,8 @@
             </div>
         </section>
         <script type="text/javascript">
-            function test_func(table_dict) {
-                sessionStorage.setItem('table_dict', JSON.stringify(table_dict));           
-            };
-            test_func({{ table_dict|safe }});
+
+            sessionStorage.setItem('table_dict', JSON.stringify(table_dict));   
 
             function fillSidebar() {
 
@@ -287,7 +285,7 @@
                 var psu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_config'];
                 var psu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_status'];
 
-                var input_id = document.activeElement.id;
+                /* var input_id = document.activeElement.id;
                 var input_last_alteration = document.getElementById("last_alteration");
                 var input_name = document.getElementById("name");
                 var input_general_status = document.getElementById("general_status");
@@ -315,10 +313,8 @@
                 var input_gpu_config = document.getElementById("gpu_config");
                 var input_gpu_status = document.getElementById("gpu_status");
                 var input_psu_config = document.getElementById("psu_config");
-                var input_psu_status = document.getElementById("psu_status");
-
-
-
+                var input_psu_status = document.getElementById("psu_status"); */
+                
                 var infoMonitor = document.getElementById("infoMonitor");
                 var infoComputer = document.getElementById("infoComputer");
                 var infoKeyboard = document.getElementById("infoKeyboard");
@@ -343,13 +339,55 @@
                 var deleteKeyboard = document.getElementById("deleteKeyboard");
                 var deleteMouse = document.getElementById("deleteMouse");
 
+                infoMonitor.value = monitor_config;
+                infoComputer.value = case_config;
+                infoKeyboard.value = keyboard_config;
+                infoMouse.value = mouse_config;
 
+                if (general_status >= 0) {
 
-                // Changes the value of the button
-                document.activeElement.value = new Date();
+                    
+                    addMonitor.disabled = true;
+                    addComputer.disabled = true;
+                    addKeyboard.disabled = true;
+                    addMouse.disabled = true;
 
-                // Changes the text on the button
-                document.activeElement.innerHTML = new Date();
+                    editMonitorConfig
+                    editComputerConfig
+                    editKeyboardConfig
+                    editMouseConfig
+                    editMonitorStatus
+                    editComputerStatus
+                    editKeyboardStatus
+                    editMouseStatus
+
+                    deleteMonitor
+                    deleteComputer
+                    deleteKeyboard
+                    deleteMouse
+
+                } else if (general_status == -1) {
+
+                    addMonitor
+                    addComputer
+                    addKeyboard
+                    addMouse
+
+                    editMonitorConfig.disabled = true;
+                    editComputerConfig.disabled = true;
+                    editKeyboardConfig.disabled = true;
+                    editMouseConfig.disabled = true;
+                    editMonitorStatus.disabled = true;
+                    editComputerStatus.disabled = true;
+                    editKeyboardStatus.disabled = true;
+                    editMouseStatus.disabled = true;
+
+                    deleteMonitor.disabled = true;
+                    deleteComputer.disabled = true;
+                    deleteKeyboard.disabled = true;
+                    deleteMouse.disabled = true;
+
+                }
 
                 }
         </script>
