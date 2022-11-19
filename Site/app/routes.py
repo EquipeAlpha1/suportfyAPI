@@ -12,6 +12,7 @@ from flask_mail import Mail
 from flask_mail import Message
 import os
 from werkzeug.utils import secure_filename
+import json
 
 UPLOAD_FOLDER = 'app/static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -83,7 +84,11 @@ def edit_layout():
     room_id = str(request.args.get('roomSelected'))
     room_layout = load_room(room_id)
 
-    return render_template('edit_layout.html', room_layout=room_layout)
+    data = []
+    for slots in room_layout:
+        data.append(list(slots))
+
+    return render_template('edit_layout.html', room_layout=room_layout, data=json.dumps(data))
     
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
@@ -216,36 +221,6 @@ def upload_file():
         tempFilename = filename
         tempEvent = True
     return redirect(url_for('create_request'))
-
-@app.route('/monitorFaq')
-def monitor():
-    return render_template('monitorFaq.html')
-
-@app.route('/mouseFaq')
-def mouse():
-    return render_template('mouseFaq.html')
-
-@app.route('/tecladoFaq')
-def teclado():
-    return render_template('tecladoFaq.html')
-
-@app.route('/modemFaq')
-def modem():
-    return render_template('modemFaq.html')
-
-@app.route('/conexaoFaq')
-def conexao():
-    return render_template('conexaoFaq.html')
-
-@app.route('/appFaq')
-def appFaq():
-    return render_template('appFaq.html')
-
-@app.route('/soFaq')
-def soFaq():
-    return render_template('soFaq.html')
-
-
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')    
