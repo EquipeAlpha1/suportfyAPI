@@ -478,41 +478,54 @@
 
         function configModal() {
 
-            let item = document.activeElement;
-            let nameItem = item.classList.toString().slice(3).split(/(?=[A-Z])/).join(' ');
+            let btn = document.activeElement;
+            let nameItem = btn.classList.toString().slice(3).split(/(?=[A-Z])/).join(' ');
             let modal = document.getElementById("modalLabel");
+            let formModal = document.getElementById("formModal");
+            let selectModal = document.getElementById("selectModal");
             let btnModal = document.getElementById("btnModal");
-            
-            if (item.name == 'btnAdd') {
-                modal.innerHTML = "Adicionar "+nameItem;
+
+            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu']  
+
+            if (btn.name == 'btnAdd') {
+
+                modal.innerHTML = 'Adicionar '+nameItem;
+                formModal.action = '/add_slot';
                 btnModal.innerHTML = 'Adicionar';
-            } else if (item.name == 'btnEdit') {
+
+            } else if (btn.name == 'btnEdit') {
+
                 modal.innerHTML = "Editar "+nameItem;
+                formModal.action = '/edit_slot';
                 btnModal.innerHTML = 'Editar';
-            } else if (item.name == 'btnDelete') {
+
+            } else if (btn.name == 'btnDelete') {
+
                 modal.innerHTML = "Deletar "+nameItem;
+                formModal.action = '/delete_slot';
                 btnModal.innerHTML = 'Deletar';
+
             };
 
         };
 
         [].forEach.call(document.getElementsByTagName('a'), function (tag) {
             tag.addEventListener('click', configModal);					
-		});
+		});       
 
     </script>
 
-    <div class="modal fade" style="--bs-modal-width: 300px;" id="modalSlot" tabindex="-1" aria-labelledby="modalAddLabel" aria-hidden="true">
+    <div class="modal fade" style="--bs-modal-width: 400px;" id="modalSlot" tabindex="-1" aria-labelledby="modalAddLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form action="/create_request">
+                <form action="/create_request" id="formModal">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="modalLabel">Adicionar <span id="nameModalAdd"></span></h1>
+                        <h1 class="modal-title fs-5" id="modalLabel"></h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <select class="form-select" name="roomSelected" aria-label="Default select">
-                            <option value="" disabled selected hidden>Clique para selecionar a sala</option>
+                        <select class="form-select" id="selectModal" aria-label="select">
+                            <option value="" disabled selected hidden>Clique para selecionar</option>
                             <optgroup label="Terceiro Andar">
                                 <option value="301"> 301 </option>
                                 <option value="302"> 302 </option>
