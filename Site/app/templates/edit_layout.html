@@ -71,6 +71,7 @@
         height: 1.5rem;
         margin: 0;
     };
+    
     @media (max-width:450px) {
     
         h1 {
@@ -129,9 +130,9 @@
                 <div class="infos">
                     <div class="default">
                         <div class="config">
-                            <label class="mb-config d-block" for="monitorInput">Monitor: <span id="monitorStatus"></span></label>
-                            <input class="mb-config d-block" id="monitorInput" type="text">
-                            <select class="form-select d-none" name="monitorSelect" aria-label="select">
+                            <label class="mb-config d-block" for="MonitorInput">Monitor: <span id="MonitorStatus"></span></label>
+                            <input class="mb-config d-block" id="MonitorInput" type="text">
+                            <select class="form-select d-none" name="MonitorSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
                                     <option value="301"> 301 </option>
@@ -141,15 +142,15 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="#" id="btnAddMonitor">add</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnEditMonitor">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteMonitor">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddMonitor" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditMonitor" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteMonitor" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="caseInput">Gabinete: <span id="caseStatus"></span></label>
-                            <input class="mb-config d-block" id="caseInput" type="text">
-                            <select class="form-select d-none" name="caseSelect" aria-label="select">
+                            <label class="mb-config d-block" for="CaseInput">Gabinete: <span id="CaseStatus"></span></label>
+                            <input class="mb-config d-block" id="CaseInput" type="text">
+                            <select class="form-select d-none" name="CaseSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
                                     <option value="301"> 301 </option>
@@ -159,15 +160,15 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="#" id="btnAddCase">add</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnEditCase">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteCase">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddCase" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditCase" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteCase" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="keyboardInput">Teclado: <span id="keyboardStatus"></span></label>
-                            <input class="mb-config d-block" id="keyboardInput" type="text">
-                            <select class="form-select d-none" name="keyboardSelect" aria-label="select">
+                            <label class="mb-config d-block" for="KeyboardInput">Teclado: <span id="KeyboardStatus"></span></label>
+                            <input class="mb-config d-block" id="KeyboardInput" type="text">
+                            <select class="form-select d-none" name="KeyboardSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
                                     <option value="301"> 301 </option>
@@ -177,15 +178,15 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="#" id="btnAddKeyboard">add</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnEditKeyboard">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteKeyboard">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddKeyboard" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditKeyboard" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteKeyboard" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="mouseInput">Mouse: <span id="mouseStatus"></span></label>
-                            <input class="mb-config d-block" id="mouseInput" type="text">
-                            <select class="form-select d-none" name="mouseSelect" aria-label="select">
+                            <label class="mb-config d-block" for="MouseInput">Mouse: <span id="MouseStatus"></span></label>
+                            <input class="mb-config d-block" id="MouseInput" type="text">
+                            <select class="form-select d-none" name="MouseSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
                                     <option value="301"> 301 </option>
@@ -195,15 +196,15 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="#" id="btnAddMouse">add</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnEditMouse">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteMouse">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddMouse" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditMouse" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteMouse" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="osInput">Sistema: <span id="osStatus"></span></label>
-                            <input class="mb-config d-block" id="osInput" type="text">
-                            <select class="form-select d-none" name="osSelect" aria-label="select">
+                            <label class="mb-config d-block" for="OsInput">Sistema: <span id="OsStatus"></span></label>
+                            <input class="mb-config d-block" id="OsInput" type="text">
+                            <select class="form-select d-none" name="OsSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
                                     <option value="301"> 301 </option>
@@ -213,15 +214,15 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="#" id="btnAddOs">add</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnEditOs">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteOs">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddOs" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditOs" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteOs" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="networkInput">Rede: <span id="networkStatus"></span></label>
-                            <input class="mb-config d-block" id="networkInput" type="text">
-                            <select class="form-select d-none" name="networkSelect" aria-label="select">
+                            <label class="mb-config d-block" for="NetworkInput">Rede: <span id="NetworkStatus"></span></label>
+                            <input class="mb-config d-block" id="NetworkInput" type="text">
+                            <select class="form-select d-none" name="NetworkSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
                                     <option value="301"> 301 </option>
@@ -231,17 +232,17 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="#" id="btnAddNetwork">add</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnEditNetwork">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteNetwork">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddNetwork" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditNetwork" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteNetwork" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
                             </div>
                         </div>                        
                     </div>
                     <div class="default">
                         <div class="config">
-                            <label class="mb-config d-block" for="motherboardInput">Placa Mãe: <span id="motherboardStatus"></span></label>
-                            <input class="mb-config d-block" id="motherboardInput" type="text">
-                            <select class="form-select d-none" name="motherboardSelect" aria-label="select">
+                            <label class="mb-config d-block" for="MotherboardInput">Placa Mãe: <span id="MotherboardStatus"></span></label>
+                            <input class="mb-config d-block" id="MotherboardInput" type="text">
+                            <select class="form-select d-none" name="MotherboardSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
                                     <option value="301"> 301 </option>
@@ -251,15 +252,15 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="#" id="btnAddMotherboard">add</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnEditMotherboard">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteMotherboard">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddMotherboard" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditMotherboard" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteMotherboard" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="cpuInput">Processador: <span id="cpuStatus"></span></label>
-                            <input class="mb-config d-block" id="cpuInput" type="text">
-                            <select class="form-select d-none" name="cpuSelect" aria-label="select">
+                            <label class="mb-config d-block" for="CpuInput">Processador: <span id="CpuStatus"></span></label>
+                            <input class="mb-config d-block" id="CpuInput" type="text">
+                            <select class="form-select d-none" name="CpuSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
                                     <option value="301"> 301 </option>
@@ -269,15 +270,15 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="#" id="btnAddCpu">add</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnEditCpu">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteCpu">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddCpu" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditCpu" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteCpu" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="memoryInput">Memória RAM: <span id="memoryStatus"></span></label>
-                            <input class="mb-config d-block" id="memoryInput" type="text">
-                            <select class="form-select d-none" name="memorySelect" aria-label="select">
+                            <label class="mb-config d-block" for="MemoryInput">Memória RAM: <span id="MemoryStatus"></span></label>
+                            <input class="mb-config d-block" id="MemoryInput" type="text">
+                            <select class="form-select d-none" name="MemorySelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
                                     <option value="301"> 301 </option>
@@ -287,15 +288,15 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="#" id="btnAddMemory">add</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnEditMemory">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteMemory">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddMemory" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditMemory" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteMemory" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="storageInput">Armazenamento: <span id="storageStatus"></span></label>
-                            <input class="mb-config d-block" id="storageInput" type="text">
-                            <select class="form-select d-none" name="storageSelect" aria-label="select">
+                            <label class="mb-config d-block" for="StorageInput">Armazenamento: <span id="StorageStatus"></span></label>
+                            <input class="mb-config d-block" id="StorageInput" type="text">
+                            <select class="form-select d-none" name="StorageSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
                                     <option value="301"> 301 </option>
@@ -305,15 +306,15 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="#" id="btnAddStorage">add</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnEditStorage">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteStorage">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddStorage" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditStorage" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteStorage" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="gpuInput">Placa de Vídeo: <span id="gpuStatus"></span></label>
-                            <input class="mb-config d-block" id="gpuInput" type="text">
-                            <select class="form-select d-none" name="gpuSelect" aria-label="select">
+                            <label class="mb-config d-block" for="GpuInput">Placa de Vídeo: <span id="GpuStatus"></span></label>
+                            <input class="mb-config d-block" id="GpuInput" type="text">
+                            <select class="form-select d-none" name="GpuSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
                                     <option value="301"> 301 </option>
@@ -323,15 +324,15 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="#" id="btnAddGpu">add</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnEditGpu">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnDeleteGpu">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddGpu" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditGpu" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteGpu" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
-                            <label class="mb-config d-block" for="psuInput">Fonte: <span id="psuStatus"></span></label>
-                            <input class="mb-config d-block" id="psuInput" type="text">
-                            <select class="form-select d-none" name="psuSelect" aria-label="select">
+                            <label class="mb-config d-block" for="PsuInput">Fonte: <span id="PsuStatus"></span></label>
+                            <input class="mb-config d-block" id="PsuInput" type="text">
+                            <select class="form-select d-none" name="PsuSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
                                     <option value="301"> 301 </option>
@@ -341,9 +342,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="#" id="btnAddPsu">add</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnEditPsu">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="#" id="btnDeletePsu">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddPsu" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditPsu" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeletePsu" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
                             </div>
                         </div>
                     </div>
@@ -438,209 +439,164 @@
 
             var id = document.activeElement.id;
 
-            /* var last_alteration = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['last_alteration'];
+            var last_alteration = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['last_alteration'];
             var name = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['name'];
-            var general_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['general_status']; */
+            var general_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['general_status'];
 
-            var monitor_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_config'];
-            var monitor_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_status'];
-            var case_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_config'];
-            var case_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_status'];
-            var keyboard_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_config'];
-            var keyboard_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_status'];
-            var mouse_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_config'];
-            var mouse_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_status'];
-            var os_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_config'];
-            var os_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_status'];
-            var network_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_config'];
-            var network_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_status'];
-            var motherboard_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_config'];
-            var motherboard_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_status'];
-            var cpu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_config'];
-            var cpu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_status'];
-            var memory_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_config'];
-            var memory_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_status'];
-            var storage_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_config'];
-            var storage_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_status'];
-            var gpu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_config'];
-            var gpu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_status'];
-            var psu_config = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_config'];
-            var psu_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_status'];
+            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu']          
 
-            /* var last_alteration = document.getElementById("last_alteration");
-            var name = document.getElementById("name");
-            var general_status = document.getElementById("general_status"); */
+            const table = {
+                'Monitor':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_status']],
+                'Case':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_status']],
+                'Keyboard':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_status']],
+                'Mouse':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_status']],
+                'Os':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_status']],
+                'Network':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_status']],
+                'Motherboard':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_status']],
+                'Cpu':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_status']],
+                'Memory':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_status']],
+                'Storage':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_status']],
+                'Gpu':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_status']],
+                'Psu':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_status']]
+            }
 
-            var monitorInput = document.getElementById("monitorInput");
-            var monitorStatus = document.getElementById("monitorStatus");
-            var caseInput = document.getElementById("caseInput");
-            var caseStatus = document.getElementById("caseStatus");
-            var keyboardInput = document.getElementById("keyboardInput");
-            var keyboardStatus = document.getElementById("keyboardStatus");
-            var mouseInput = document.getElementById("mouseInput");
-            var mouseStatus = document.getElementById("mouseStatus");
-            var osInput = document.getElementById("osInput");
-            var osStatus = document.getElementById("osStatus");
-            var networkInput = document.getElementById("networkInput");
-            var networkStatus = document.getElementById("networkStatus");
-            var motherboardInput = document.getElementById("motherboardInput");
-            var motherboardStatus = document.getElementById("motherboardStatus");
-            var cpuInput = document.getElementById("cpuInput");
-            var cpuStatus = document.getElementById("cpuStatus");
-            var memoryInput = document.getElementById("memoryInput");
-            var memoryStatus = document.getElementById("memoryStatus");
-            var storageInput = document.getElementById("storageInput");
-            var storageStatus = document.getElementById("storageStatus");
-            var gpuInput = document.getElementById("gpuInput");
-            var gpuStatus = document.getElementById("gpuStatus");
-            var psuInput = document.getElementById("psuInput");
-            var psuStatus = document.getElementById("psuStatus");
+            items.forEach(element => {
+                document.getElementById(element+'Input').value = table[element][0];
+                document.getElementById(element+'Status').innerHTML = table[element][1];
+            });
 
-            var btnAddMonitor = document.getElementById("btnAddMonitor");
-            var btnEditMonitor = document.getElementById("btnEditMonitor");
-            var btnDeleteMonitor = document.getElementById("btnDeleteMonitor");
-            var btnAddCase = document.getElementById("btnAddCase");
-            var btnEditCase = document.getElementById("btnEditCase");
-            var btnDeleteCase = document.getElementById("btnDeleteCase");
-            var btnAddKeyboard = document.getElementById("btnAddKeyboard");
-            var btnEditKeyboard = document.getElementById("btnEditKeyboard");
-            var btnDeleteKeyboard = document.getElementById("btnDeleteKeyboard");
-            var btnAddMouse = document.getElementById("btnAddMouse");
-            var btnEditMouse = document.getElementById("btnEditMouse");
-            var btnDeleteMouse = document.getElementById("btnDeleteMouse");
-            var btnAddOs = document.getElementById("btnAddOs");
-            var btnEditOs = document.getElementById("btnEditOs");
-            var btnDeleteOs = document.getElementById("btnDeleteOs");
-            var btnAddNetwork = document.getElementById("btnAddNetwork");
-            var btnEditNetwork = document.getElementById("btnEditNetwork");
-            var btnDeleteNetwork = document.getElementById("btnDeleteNetwork");
-            var btnAddMotherboard = document.getElementById("btnAddMotherboard");
-            var btnEditMotherboard = document.getElementById("btnEditMotherboard");
-            var btnDeleteMotherboard = document.getElementById("btnDeleteMotherboard");
-            var btnAddCpu = document.getElementById("btnAddCpu");
-            var btnEditCpu = document.getElementById("btnEditCpu");
-            var btnDeleteCpu = document.getElementById("btnDeleteCpu");
-            var btnAddMemory = document.getElementById("btnAddMemory");
-            var btnEditMemory = document.getElementById("btnEditMemory");
-            var btnDeleteMemory = document.getElementById("btnDeleteMemory");
-            var btnAddStorage = document.getElementById("btnAddStorage");
-            var btnEditStorage = document.getElementById("btnEditStorage");
-            var btnDeleteStorage = document.getElementById("btnDeleteStorage");
-            var btnAddGpu = document.getElementById("btnAddGpu");
-            var btnEditGpu = document.getElementById("btnEditGpu");
-            var btnDeleteGpu = document.getElementById("btnDeleteGpu");
-            var btnAddPsu = document.getElementById("btnAddPsu");
-            var btnEditPsu = document.getElementById("btnEditPsu");
-            var btnDeletePsu = document.getElementById("btnDeletePsu");
-
-            monitorInput.value = monitor_config;
-            caseInput.value = case_config;
-            keyboardInput.value = keyboard_config;
-            mouseInput.value = mouse_config;
-            osInput.value = os_config;
-            networkInput.value = network_config;
-            motherboardInput.value = motherboard_config;
-            cpuInput.value = cpu_config;
-            memoryInput.value = memory_config;
-            storageInput.value = storage_config;
-            gpuInput.value = gpu_config;
-            psuInput.value = psu_config;
-
-            monitorStatus.innerHTML = monitor_status;
-            caseStatus.innerHTML = case_status;
-            keyboardStatus.innerHTML = keyboard_status;
-            mouseStatus.innerHTML = mouse_status;
-            osStatus.innerHTML = os_status;
-            networkStatus.innerHTML = network_status;
-            motherboardStatus.innerHTML = motherboard_status;
-            cpuStatus.innerHTML = cpu_status;
-            memoryStatus.innerHTML = memory_status;
-            storageStatus.innerHTML = storage_status;
-            gpuStatus.innerHTML = gpu_status;
-            psuStatus.innerHTML = psu_status;
-
-            if (general_status >= 0) {
-                
-                btnAddMonitor.disabled = true;
-                btnAddCase.disabled = true;
-                btnAddKeyboard.disabled = true;
-                btnAddMouse.disabled = true;
-                btnAddOs.disabled = true;
-                btnAddNetwork.disabled = true;
-                btnAddMotherboard.disabled = true;
-                btnAddCpu.disabled = true;
-                btnAddMemory.disabled = true;
-                btnAddStorage.disabled = true;
-                btnAddGpu.disabled = true;
-                btnAddPsu.disabled = true;
-
-                btnEditMonitor.disabled = false;
-                btnDeleteMonitor.disabled = false;
-                btnEditCase.disabled = false;
-                btnDeleteCase.disabled = false;
-                btnEditKeyboard.disabled = false;
-                btnDeleteKeyboard.disabled = false;
-                btnEditMouse.disabled = false;
-                btnDeleteMouse.disabled = false;
-                btnEditOs.disabled = false;
-                btnDeleteOs.disabled = false;
-                btnEditNetwork.disabled = false;
-                btnDeleteNetwork.disabled = false;
-                btnEditMotherboard.disabled = false;
-                btnDeleteMotherboard.disabled = false;
-                btnEditCpu.disabled = false;
-                btnDeleteCpu.disabled = false;
-                btnEditMemory.disabled = false;
-                btnDeleteMemory.disabled = false;
-                btnEditStorage.disabled = false;
-                btnDeleteStorage.disabled = false;
-                btnEditGpu.disabled = false;
-                btnDeleteGpu.disabled = false;
-                btnEditPsu.disabled = false;
-                btnDeletePsu.disabled = false;
-
-            } else if (general_status == -1) {
-
-                btnAddMonitor.disabled = false;
-                btnAddCase.disabled = false;
-                btnAddKeyboard.disabled = false;
-                btnAddMouse.disabled = false;
-                btnAddOs.disabled = false;
-                btnAddNetwork.disabled = false;
-                btnAddMotherboard.disabled = false;
-                btnAddCpu.disabled = false;
-                btnAddMemory.disabled = false;
-                btnAddStorage.disabled = false;
-                btnAddGpu.disabled = false;
-                btnAddPsu.disabled = false;
-
-                btnEditMonitor.disabled = true;
-                btnDeleteMonitor.disabled = true;
-                btnEditCase.disabled = true;
-                btnDeleteCase.disabled = true;
-                btnEditKeyboard.disabled = true;
-                btnDeleteKeyboard.disabled = true;
-                btnEditMouse.disabled = true;
-                btnDeleteMouse.disabled = true;
-                btnEditOs.disabled = true;
-                btnDeleteOs.disabled = true;
-                btnEditNetwork.disabled = true;
-                btnDeleteNetwork.disabled = true;
-                btnEditMotherboard.disabled = true;
-                btnDeleteMotherboard.disabled = true;
-                btnEditCpu.disabled = true;
-                btnDeleteCpu.disabled = true;
-                btnEditMemory.disabled = true;
-                btnDeleteMemory.disabled = true;
-                btnEditStorage.disabled = true;
-                btnDeleteStorage.disabled = true;
-                btnEditGpu.disabled = true;
-                btnDeleteGpu.disabled = true;
-                btnEditPsu.disabled = true;
-                btnDeletePsu.disabled = true;
-
-            };
-
+            items.forEach(element => {
+                if (table[element][0] != '#') {
+                    document.getElementById('btnAdd'+element).style.cssText = "pointer-events: none; cursor: default; color: lightgray;";
+                    document.getElementById('btnEdit'+element).style.cssText = "pointer-events: fill; cursor: pointer; color: black;";
+                    document.getElementById('btnDelete'+element).style.cssText = "pointer-events: fill; cursor: pointer; color: black;";
+                } else {
+                    document.getElementById('btnAdd'+element).style.cssText = "pointer-events: fill; cursor: pointer; color: black;";
+                    document.getElementById('btnEdit'+element).style.cssText = "pointer-events: none; cursor: default; color: lightgray;";
+                    document.getElementById('btnDelete'+element).style.cssText = "pointer-events: none; cursor: default; color: lightgray;";
+                }
+            });
+            
             }
     </script>
+
+    <div class="modal fade" style="--bs-modal-width: 300px;" id="modalAdd" tabindex="-1" aria-labelledby="modalAddLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form action="/create_request">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <select class="form-select" name="roomSelected" aria-label="Default select">
+                            <option value="" disabled selected hidden>Clique para selecionar a sala</option>
+                            <optgroup label="Terceiro Andar">
+                                <option value="301"> 301 </option>
+                                <option value="302"> 302 </option>
+                                <option value="303"> 303 </option>
+                            </optgroup>    
+                            <optgroup label="Quarto Andar">
+                                <option value="401"> 401 </option>
+                                <option value="402"> 402 </option>
+                                <option value="404"> 404 </option>
+                                <option value="405"> 405 </option>
+                                <option value="406"> 406 </option>
+                                <option value="407"> 407 </option>
+                                <option value="408"> 408 </option>
+                                <option value="409"> 409 </option>
+                                <option value="411"> 411 </option>
+                                <option value="412"> 412 </option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="modal-footer">                            
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Carregar Formulário</button>
+                        </div>                            
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" style="--bs-modal-width: 300px;" id="modalEdit" tabindex="-1" aria-labelledby="modalEditLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form action="/create_request">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <select class="form-select" name="roomSelected" aria-label="Default select">
+                            <option value="" disabled selected hidden>Clique para selecionar a sala</option>
+                            <optgroup label="Terceiro Andar">
+                                <option value="301"> 301 </option>
+                                <option value="302"> 302 </option>
+                                <option value="303"> 303 </option>
+                            </optgroup>    
+                            <optgroup label="Quarto Andar">
+                                <option value="401"> 401 </option>
+                                <option value="402"> 402 </option>
+                                <option value="404"> 404 </option>
+                                <option value="405"> 405 </option>
+                                <option value="406"> 406 </option>
+                                <option value="407"> 407 </option>
+                                <option value="408"> 408 </option>
+                                <option value="409"> 409 </option>
+                                <option value="411"> 411 </option>
+                                <option value="412"> 412 </option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="modal-footer">                            
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Carregar Formulário</button>
+                        </div>                            
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" style="--bs-modal-width: 300px;" id="modalDelete" tabindex="-1" aria-labelledby="modalDeleteLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form action="/create_request">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Deletar</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <select class="form-select" name="roomSelected" aria-label="Default select">
+                            <option value="" disabled selected hidden>Clique para selecionar a sala</option>
+                            <optgroup label="Terceiro Andar">
+                                <option value="301"> 301 </option>
+                                <option value="302"> 302 </option>
+                                <option value="303"> 303 </option>
+                            </optgroup>    
+                            <optgroup label="Quarto Andar">
+                                <option value="401"> 401 </option>
+                                <option value="402"> 402 </option>
+                                <option value="404"> 404 </option>
+                                <option value="405"> 405 </option>
+                                <option value="406"> 406 </option>
+                                <option value="407"> 407 </option>
+                                <option value="408"> 408 </option>
+                                <option value="409"> 409 </option>
+                                <option value="411"> 411 </option>
+                                <option value="412"> 412 </option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="modal-footer">                            
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Carregar Formulário</button>
+                        </div>                            
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}
