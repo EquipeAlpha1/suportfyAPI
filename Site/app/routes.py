@@ -15,6 +15,7 @@ from werkzeug.utils import secure_filename
 
 SITE_KEY = '6LdSpxMjAAAAABdv0BhaU6jmVuoPOi8lPG9jvxE6'
 SECRET_KEY = '6LdSpxMjAAAAAJBCtWMa8xeWPh3MbqMjjG5MnClG'
+VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify'
 
 UPLOAD_FOLDER = 'app/static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -79,6 +80,12 @@ def edit_layout():
 
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
+    secret = secret.form['g-recaptcha-response']
+    verify_response = request.post(url=f'{VERIFY_URL}?secret={SECRET_KEY}&response = {secret.response}').json()
+    
+    if verify_response ['success'] == False or verify_response['score'] < 0.5:
+        abort(401)
+
     if request.method == 'POST':
         name = request.form.get('name')
         mail = request.form.get('mail')
