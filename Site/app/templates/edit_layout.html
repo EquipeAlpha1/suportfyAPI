@@ -481,29 +481,43 @@
             let btn = document.activeElement;
             let nameItem = btn.classList.toString().slice(3).split(/(?=[A-Z])/).join(' ');
             let modal = document.getElementById("modalLabel");
+            let modalText = document.getElementById("modalText");
             let formModal = document.getElementById("formModal");
             let selectModal = document.getElementById("selectModal");
             let btnModal = document.getElementById("btnModal");
 
             const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu']  
 
+            if (btnModal.classList.contains('btn-outline-danger')) {
+                btnModal.classList.remove('btn-outline-danger');
+                btnModal.classList.add('btn-outline-primary');
+            };
+
             if (btn.name == 'btnAdd') {
 
                 modal.innerHTML = 'Adicionar '+nameItem;
                 formModal.action = '/add_slot';
+                modalText.innerHTML = '';
+                selectModal.style.display = 'block';
                 btnModal.innerHTML = 'Adicionar';
 
             } else if (btn.name == 'btnEdit') {
 
                 modal.innerHTML = "Editar "+nameItem;
                 formModal.action = '/edit_slot';
+                modalText.innerHTML = '';
+                selectModal.style.display = 'block';
                 btnModal.innerHTML = 'Editar';
 
             } else if (btn.name == 'btnDelete') {
 
                 modal.innerHTML = "Deletar "+nameItem;
                 formModal.action = '/delete_slot';
+                modalText.innerHTML = 'Tem certeza que quer deletar esse item?';
+                selectModal.style.display = 'none';
                 btnModal.innerHTML = 'Deletar';
+                btnModal.classList.remove('btn-outline-primary');
+                btnModal.classList.add('btn-outline-danger');
 
             };
 
@@ -524,6 +538,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                        <span id="modalText"></span>
                         <select class="form-select" id="selectModal" aria-label="select">
                             <option value="" disabled selected hidden>Clique para selecionar</option>
                             <optgroup label="Terceiro Andar">
@@ -545,10 +560,9 @@
                             </optgroup>
                         </select>
                     </div>
-                    <div class="modal-footer">                            
-                        <div class="d-grid gap-2">
-                            <button type="submit" id="btnModal" class="btn btn-primary"></button>
-                        </div>                            
+                    <div class="modal-footer">        
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" id="btnModal" class="btn btn-outline-primary"></button>
                     </div>
                 </form>
             </div>
