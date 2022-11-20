@@ -961,10 +961,11 @@ ul {
   width: 85%;
   margin-bottom: 20px;
   overflow-x: hidden;
+  display: flex;
 }
 
 .btnDeleteRequest{
-  width: 100px;
+  width: 90%;
   margin-left: 0px;
   margin-right: 0px;
 }
