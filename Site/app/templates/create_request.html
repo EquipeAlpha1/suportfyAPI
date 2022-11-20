@@ -2,7 +2,7 @@
 {% block title %} Abrir solicitação {% endblock %}
 {% block conteudo %}
         <section class="sectionCreateRequest">
-            <form method="post" action="/teste" class="formEmail" id="formEmail"> <!-- FORMULÁRIO DE SUPORTE -->
+            <form method="post" action="/consult_requests" class="formEmail" id="formEmail" enctype="multipart/form-data"> <!-- FORMULÁRIO DE SUPORTE -->
                 <div class="steps"> <!-- ETAPAS DO PROCESSO -->
                     <div class="steps_wrapper">
                         <ul> <!-- LISTA DE ETAPAS -->
@@ -550,7 +550,7 @@
                         </div>
                         <div class="form_3_btns common_btns" style="display: none;"> <!-- BOTÕES PARA A PÁGINA 3 -->
                             <button type="button" class="btn btn-secondary btn_back">Voltar</button>  
-                            <button class="g-recaptcha btn btn-primary btn_next" data-sitekey="{{ site_key }}"data-callback='onSubmit'data-action='submit' id="SendMail" value="SendMail">Submit</button>
+                            <button type="submit" class="g-recaptcha btn btn-primary btn_next" data-sitekey="{{ site_key }}" data-callback="recaptcha_callback" data-action="submit" id="SendMail" value="SendMail">Enviar</button>
                         </div>
                         <div class="form_4_btns common_btns" style="display: none;"> <!-- BOTÕES PARA A PÁGINA 4 -->
                             <button type="submit" class="btn btn-primary btn_done" id="Refresh" value="Refresh">Concluir</button>

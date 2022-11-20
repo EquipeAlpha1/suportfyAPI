@@ -12,6 +12,8 @@ from flask_mail import Mail
 from flask_mail import Message
 import os
 from werkzeug.utils import secure_filename
+from urllib import response
+import requests
 
 SITE_KEY = '6LdSpxMjAAAAABdv0BhaU6jmVuoPOi8lPG9jvxE6'
 SECRET_KEY = '6LdSpxMjAAAAAJBCtWMa8xeWPh3MbqMjjG5MnClG'
@@ -80,11 +82,6 @@ def edit_layout():
 
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
-    secret = secret.form['g-recaptcha-response']
-    verify_response = request.post(url=f'{VERIFY_URL}?secret={SECRET_KEY}&response = {secret.response}').json()
-    
-    if verify_response ['success'] == False or verify_response['score'] < 0.5:
-        abort(401)
 
     if request.method == 'POST':
         name = request.form.get('name')
@@ -99,7 +96,7 @@ def create_request():
             return redirect(url_for('create_request'))
                                
         ## Envia um e-mail de notificação para o usuário
-        msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
+        """ msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
         msg.html = "<!DOCTYPE html><html><body>" \
                     "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
                     "Fala {}, Beleza?<br /><br />" \
@@ -123,10 +120,10 @@ def create_request():
                     "<a href='https://www.rataalada.com/' style='color: rgb(71, 124, 204); text-decoration: none; display: inline;'>aqui</a>." \
                     "</table></div></body></html>".format(name, floor, room, pc, subject, description, mail)
 
-        email.send(msg)          
+        email.send(msg) """          
 
         ## Envia um e-mail de notificação para a equipe de suporte
-        msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['luisebf01@gmail.com'])
+        """ msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['luisebf01@gmail.com'])
         msg.html = "<!DOCTYPE html><html><body>" \
                 "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
                     "Fala Suporte Alpha, Beleza?<br /><br />" \
@@ -157,7 +154,7 @@ def create_request():
             tempFilename = ''
             tempEvent = False
 
-        email.send(msg)        
+        email.send(msg) """        
 
         ## Faz o registro da solicitação no banco de dados
         conn = get_db_connection()
@@ -165,6 +162,12 @@ def create_request():
                         (name, mail, floor, room, pc, subject, description))
         conn.commit()
         conn.close()
+    
+        secret_response = request.form['response']
+        verify_response = requests.post(url=f'{VERIFY_URL}?secret={SECRET_KEY}&response={secret_response}').json()
+        
+        if verify_response ['success'] == False or verify_response['score'] < 0.5:
+            abort(401)
              
     return render_template('create_request.html', site_key=SITE_KEY)
 
@@ -274,7 +277,7 @@ for image in files:
 @app.route('/<int:slot_id>/consult_slot', methods=('POST',))
 def consult_slot(slot_id):
     
-    room = x
+    room = ''
 
     conn = get_db_connection()
     slot_info = conn.execute('SELECT \
