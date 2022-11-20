@@ -121,7 +121,7 @@
 {% extends 'base.html' %}
 {% block title %} Editar Layout {% endblock %}
 {% block conteudo %}
-    <div class="wrapper">
+    <div class="wrapper" id="wrapper">
         <div class="sidebarContent">
             <div class="h2_layoutComputers">
                 <h2 class="text-center">Informações</h2>
@@ -142,9 +142,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddMonitor" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditMonitor" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteMonitor" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxMonitor" id="btnAddMonitor" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxMonitor" id="btnEditMonitor" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxMonitor" id="btnDeleteMonitor" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
@@ -160,9 +160,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddCase" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditCase" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteCase" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxGabinete" id="btnAddCase" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxGabinete" id="btnEditCase" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxGabinete" id="btnDeleteCase" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
@@ -178,9 +178,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddKeyboard" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditKeyboard" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteKeyboard" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxTeclado" id="btnAddKeyboard" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxTeclado" id="btnEditKeyboard" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxTeclado" id="btnDeleteKeyboard" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
@@ -196,9 +196,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddMouse" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditMouse" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteMouse" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxMouse" id="btnAddMouse" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxMouse" id="btnEditMouse" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxMouse" id="btnDeleteMouse" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
@@ -214,9 +214,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddOs" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditOs" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteOs" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxSistema" id="btnAddOs" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxSistema" id="btnEditOs" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxSistema" id="btnDeleteOs" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
@@ -232,9 +232,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddNetwork" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditNetwork" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteNetwork" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxRede" id="btnAddNetwork" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxRede" id="btnEditNetwork" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxRede" id="btnDeleteNetwork" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>                        
                     </div>
@@ -252,9 +252,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddMotherboard" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditMotherboard" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteMotherboard" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxPlacaMãe" id="btnAddMotherboard" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxPlacaMãe" id="btnEditMotherboard" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxPlacaMãe" id="btnDeleteMotherboard" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
@@ -270,9 +270,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddCpu" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditCpu" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteCpu" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxProcessador" id="btnAddCpu" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxProcessador" id="btnEditCpu" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxProcessador" id="btnDeleteCpu" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
@@ -288,9 +288,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddMemory" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditMemory" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteMemory" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxMemóriaRam" id="btnAddMemory" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxMemóriaRam" id="btnEditMemory" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxMemóriaRam" id="btnDeleteMemory" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
@@ -306,9 +306,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddStorage" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditStorage" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteStorage" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxArmazenamento" id="btnAddStorage" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxArmazenamento" id="btnEditStorage" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxArmazenamento" id="btnDeleteStorage" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
@@ -324,9 +324,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddGpu" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditGpu" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeleteGpu" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxPlacaDeVídeo" id="btnAddGpu" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxPlacaDeVídeo" id="btnEditGpu" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxPlacaDeVídeo" id="btnDeleteGpu" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>
                         <div class="config">
@@ -342,9 +342,9 @@
                                 </optgroup>
                             </select>
                             <div class="btnBox">
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnAddPsu" data-bs-toggle="modal" data-bs-target="#modalAdd">add</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnEditPsu" data-bs-toggle="modal" data-bs-target="#modalEdit">edit</a></label>
-                                <label class="material-symbols-outlined"><a href="" class="btnSlot" id="btnDeletePsu" data-bs-toggle="modal" data-bs-target="#modalDelete">delete</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxFonte" id="btnAddPsu" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxFonte" id="btnEditPsu" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxFonte" id="btnDeletePsu" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>
                     </div>
@@ -443,7 +443,7 @@
             var name = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['name'];
             var general_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['general_status'];
 
-            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu']          
+            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu']  
 
             const table = {
                 'Monitor':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_status']],
@@ -471,18 +471,43 @@
                     document.getElementById('btnAdd'+element).style.cssText = "pointer-events: fill; cursor: pointer; color: black;";
                     document.getElementById('btnEdit'+element).style.cssText = "pointer-events: none; cursor: default; color: lightgray;";
                     document.getElementById('btnDelete'+element).style.cssText = "pointer-events: none; cursor: default; color: lightgray;";
-                }
+                };
             });
             
-            }
+        };
+
+        function configModal() {
+
+            let item = document.activeElement;
+            let nameItem = item.classList.toString().slice(3).split(/(?=[A-Z])/).join(' ');
+            let modal = document.getElementById("modalLabel");
+            let btnModal = document.getElementById("btnModal");
+            
+            if (item.name == 'btnAdd') {
+                modal.innerHTML = "Adicionar "+nameItem;
+                btnModal.innerHTML = 'Adicionar';
+            } else if (item.name == 'btnEdit') {
+                modal.innerHTML = "Editar "+nameItem;
+                btnModal.innerHTML = 'Editar';
+            } else if (item.name == 'btnDelete') {
+                modal.innerHTML = "Deletar "+nameItem;
+                btnModal.innerHTML = 'Deletar';
+            };
+
+        };
+
+        [].forEach.call(document.getElementsByTagName('a'), function (tag) {
+            tag.addEventListener('click', configModal);					
+		});
+
     </script>
 
-    <div class="modal fade" style="--bs-modal-width: 300px;" id="modalAdd" tabindex="-1" aria-labelledby="modalAddLabel" aria-hidden="true">
+    <div class="modal fade" style="--bs-modal-width: 300px;" id="modalSlot" tabindex="-1" aria-labelledby="modalAddLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <form action="/create_request">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar</h1>
+                        <h1 class="modal-title fs-5" id="modalLabel">Adicionar <span id="nameModalAdd"></span></h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -509,7 +534,7 @@
                     </div>
                     <div class="modal-footer">                            
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary">Carregar Formulário</button>
+                            <button type="submit" id="btnModal" class="btn btn-primary"></button>
                         </div>                            
                     </div>
                 </form>
@@ -517,83 +542,4 @@
         </div>
     </div>
 
-    <div class="modal fade" style="--bs-modal-width: 300px;" id="modalEdit" tabindex="-1" aria-labelledby="modalEditLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <form action="/create_request">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <select class="form-select" name="roomSelected" aria-label="Default select">
-                            <option value="" disabled selected hidden>Clique para selecionar a sala</option>
-                            <optgroup label="Terceiro Andar">
-                                <option value="301"> 301 </option>
-                                <option value="302"> 302 </option>
-                                <option value="303"> 303 </option>
-                            </optgroup>    
-                            <optgroup label="Quarto Andar">
-                                <option value="401"> 401 </option>
-                                <option value="402"> 402 </option>
-                                <option value="404"> 404 </option>
-                                <option value="405"> 405 </option>
-                                <option value="406"> 406 </option>
-                                <option value="407"> 407 </option>
-                                <option value="408"> 408 </option>
-                                <option value="409"> 409 </option>
-                                <option value="411"> 411 </option>
-                                <option value="412"> 412 </option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    <div class="modal-footer">                            
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary">Carregar Formulário</button>
-                        </div>                            
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" style="--bs-modal-width: 300px;" id="modalDelete" tabindex="-1" aria-labelledby="modalDeleteLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <form action="/create_request">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Deletar</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <select class="form-select" name="roomSelected" aria-label="Default select">
-                            <option value="" disabled selected hidden>Clique para selecionar a sala</option>
-                            <optgroup label="Terceiro Andar">
-                                <option value="301"> 301 </option>
-                                <option value="302"> 302 </option>
-                                <option value="303"> 303 </option>
-                            </optgroup>    
-                            <optgroup label="Quarto Andar">
-                                <option value="401"> 401 </option>
-                                <option value="402"> 402 </option>
-                                <option value="404"> 404 </option>
-                                <option value="405"> 405 </option>
-                                <option value="406"> 406 </option>
-                                <option value="407"> 407 </option>
-                                <option value="408"> 408 </option>
-                                <option value="409"> 409 </option>
-                                <option value="411"> 411 </option>
-                                <option value="412"> 412 </option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    <div class="modal-footer">                            
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary">Carregar Formulário</button>
-                        </div>                            
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 {% endblock %}
