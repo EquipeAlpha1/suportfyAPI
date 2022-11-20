@@ -463,9 +463,6 @@
             items.forEach(element => {
                 document.getElementById(element+'Input').value = table[element][0];
                 document.getElementById(element+'Status').innerHTML = table[element][1];
-            });
-
-            items.forEach(element => {
                 if (table[element][0] != '#') {
                     document.getElementById('btnAdd'+element).style.cssText = "pointer-events: none; cursor: default; color: lightgray;";
                     document.getElementById('btnEdit'+element).style.cssText = "pointer-events: fill; cursor: pointer; color: black;";
