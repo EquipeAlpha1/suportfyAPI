@@ -262,28 +262,6 @@ for image in files:
         im.thumbnail(size)
         im.save("thumbnail_%s_%s" % (image, "_".join(size))) """
 
-@app.route('/consult_slot', methods=['GET','POST'])
-def consult_slot(slot_id):
-    
-    #slot = request.form.get('slot')
-
-    conn = get_db_connection()
-    slot_info = conn.execute('SELECT \
-                                    monitor_config_id, \
-                                    monitor_status_id, \
-                                    computer_config_id, \
-                                    computer_status_id, \
-                                    keyboard_config_id, \
-                                    keyboard_status_id, \
-                                    mouse_config_id, \
-                                    mouse_status_id \
-                                FROM \
-                                    "'+room+'" \
-                                WHERE \
-                                    id = ?', (slot_id,)).fetchone()
-    conn.close()
-    return redirect(url_for('edit_layout', slot_info=slot_info))
-
 @app.route('/add_slot', methods=['GET','POST'])
 def add_slot(slot_id):
 
