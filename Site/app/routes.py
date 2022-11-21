@@ -59,8 +59,10 @@ def sign_in():
                 flash("Senha incorreta!")
                 return redirect(url_for('sign_in'))
             else:
-                session['name'] = user['names']
+                session['name'] = user['names'] 
                 session['email'] = user['emails']
+                session['password'] = user['passwords']
+
                 return redirect(url_for('home'))
     return render_template('sign_in.html')
 
@@ -265,10 +267,9 @@ for image in files:
 @app.route('/add_slot', methods=['GET','POST'])
 def add_slot(slot_id):
 
-    #monitor = request.form.get('monitor')
-    #computer = request.form.get('computer')
-    #keyboard = request.form.get('keyboard')
-    #mouse = request.form.get('mouse')
+    #sala
+    #id
+    #coluna do item = str(request.form.get('selectEditModal'))
 
     conn = get_db_connection()
     conn.execute('UPDATE \

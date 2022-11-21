@@ -541,10 +541,10 @@
 
     </script>
 
-    <div class="modal fade" style="--bs-modal-width: 400px;" id="modalSlot" tabindex="-1" aria-labelledby="modalAddLabel" aria-hidden="true">
+    <div class="modal fade" style="--bs-modal-width: 30rem;" id="modalSlot" tabindex="-1" aria-labelledby="modalAddLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form action="/create_request" id="formModal">
+                <form action="/create_request" id="formModal" method="post">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="modalLabel"></h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -556,25 +556,18 @@
                             <input class="form-control" id="inputModal" type="text" placeholder="" style="margin-bottom: 1rem;" readonly>
                             Item Novo:
                         </div>
-                        <select class="form-select" id="selectModal" aria-label="select">
+                        <select class="form-select" id="selectModal" name="selectEditModal" aria-label="select">
                             <option value="" disabled selected hidden>Clique para selecionar</option>
-                            <optgroup label="Terceiro Andar">
-                                <option value="301"> 301 </option>
-                                <option value="302"> 302 </option>
-                                <option value="303"> 303 </option>
-                            </optgroup>    
-                            <optgroup label="Quarto Andar">
-                                <option value="401"> 401 </option>
-                                <option value="402"> 402 </option>
-                                <option value="404"> 404 </option>
-                                <option value="405"> 405 </option>
-                                <option value="406"> 406 </option>
-                                <option value="407"> 407 </option>
-                                <option value="408"> 408 </option>
-                                <option value="409"> 409 </option>
-                                <option value="411"> 411 </option>
-                                <option value="412"> 412 </option>
-                            </optgroup>
+                            <option value="401"> 401 </option>
+                            <option value="402"> 402 </option>
+                            <option value="404"> 404 </option>
+                            <option value="405"> 405 </option>
+                            <option value="406"> 406 </option>
+                            <option value="407"> 407 </option>
+                            <option value="408"> 408 </option>
+                            <option value="409"> 409 </option>
+                            <option value="411"> 411 </option>
+                            <option value="412"> 412 </option>
                         </select>
                     </div>
                     <div class="modal-footer">        
