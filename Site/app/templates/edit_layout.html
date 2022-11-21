@@ -116,6 +116,10 @@
         .status input {
             width: 184px;
         }
+        
+    }
+    .btnBox label a {
+        pointer-events: none; cursor: default; color: lightgray;
     }
 </style>
 {% extends 'base.html' %}
@@ -131,7 +135,7 @@
                     <div class="default">
                         <div class="config">
                             <label class="mb-config d-block" for="MonitorInput">Monitor: <span id="MonitorStatus"></span></label>
-                            <input class="mb-config d-block" id="MonitorInput" type="text">
+                            <input readonly class="mb-config d-block" id="MonitorInput" type="text">
                             <select class="form-select d-none" name="MonitorSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -149,7 +153,7 @@
                         </div>
                         <div class="config">
                             <label class="mb-config d-block" for="CaseInput">Gabinete: <span id="CaseStatus"></span></label>
-                            <input class="mb-config d-block" id="CaseInput" type="text">
+                            <input readonly class="mb-config d-block" id="CaseInput" type="text">
                             <select class="form-select d-none" name="CaseSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -167,7 +171,7 @@
                         </div>
                         <div class="config">
                             <label class="mb-config d-block" for="KeyboardInput">Teclado: <span id="KeyboardStatus"></span></label>
-                            <input class="mb-config d-block" id="KeyboardInput" type="text">
+                            <input readonly class="mb-config d-block" id="KeyboardInput" type="text">
                             <select class="form-select d-none" name="KeyboardSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -185,7 +189,7 @@
                         </div>
                         <div class="config">
                             <label class="mb-config d-block" for="MouseInput">Mouse: <span id="MouseStatus"></span></label>
-                            <input class="mb-config d-block" id="MouseInput" type="text">
+                            <input readonly class="mb-config d-block" id="MouseInput" type="text">
                             <select class="form-select d-none" name="MouseSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -203,7 +207,7 @@
                         </div>
                         <div class="config">
                             <label class="mb-config d-block" for="OsInput">Sistema: <span id="OsStatus"></span></label>
-                            <input class="mb-config d-block" id="OsInput" type="text">
+                            <input readonly class="mb-config d-block" id="OsInput" type="text">
                             <select class="form-select d-none" name="OsSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -221,7 +225,7 @@
                         </div>
                         <div class="config">
                             <label class="mb-config d-block" for="NetworkInput">Rede: <span id="NetworkStatus"></span></label>
-                            <input class="mb-config d-block" id="NetworkInput" type="text">
+                            <input readonly class="mb-config d-block" id="NetworkInput" type="text">
                             <select class="form-select d-none" name="NetworkSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -241,7 +245,7 @@
                     <div class="default">
                         <div class="config">
                             <label class="mb-config d-block" for="MotherboardInput">Placa Mãe: <span id="MotherboardStatus"></span></label>
-                            <input class="mb-config d-block" id="MotherboardInput" type="text">
+                            <input readonly class="mb-config d-block" id="MotherboardInput" type="text">
                             <select class="form-select d-none" name="MotherboardSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -259,7 +263,7 @@
                         </div>
                         <div class="config">
                             <label class="mb-config d-block" for="CpuInput">Processador: <span id="CpuStatus"></span></label>
-                            <input class="mb-config d-block" id="CpuInput" type="text">
+                            <input readonly class="mb-config d-block" id="CpuInput" type="text">
                             <select class="form-select d-none" name="CpuSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -277,7 +281,7 @@
                         </div>
                         <div class="config">
                             <label class="mb-config d-block" for="MemoryInput">Memória RAM: <span id="MemoryStatus"></span></label>
-                            <input class="mb-config d-block" id="MemoryInput" type="text">
+                            <input readonly class="mb-config d-block" id="MemoryInput" type="text">
                             <select class="form-select d-none" name="MemorySelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -295,7 +299,7 @@
                         </div>
                         <div class="config">
                             <label class="mb-config d-block" for="StorageInput">Armazenamento: <span id="StorageStatus"></span></label>
-                            <input class="mb-config d-block" id="StorageInput" type="text">
+                            <input readonly class="mb-config d-block" id="StorageInput" type="text">
                             <select class="form-select d-none" name="StorageSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -313,7 +317,7 @@
                         </div>
                         <div class="config">
                             <label class="mb-config d-block" for="GpuInput">Placa de Vídeo: <span id="GpuStatus"></span></label>
-                            <input class="mb-config d-block" id="GpuInput" type="text">
+                            <input readonly class="mb-config d-block" id="GpuInput" type="text">
                             <select class="form-select d-none" name="GpuSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -331,7 +335,7 @@
                         </div>
                         <div class="config">
                             <label class="mb-config d-block" for="PsuInput">Fonte: <span id="PsuStatus"></span></label>
-                            <input class="mb-config d-block" id="PsuInput" type="text">
+                            <input readonly class="mb-config d-block" id="PsuInput" type="text">
                             <select class="form-select d-none" name="PsuSelect" aria-label="select">
                                 <option value="" disabled selected hidden>Clique para selecionar</option>
                                 <optgroup label="Terceiro Andar">
@@ -443,7 +447,7 @@
             var name = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['name'];
             var general_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['general_status'];
 
-            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu']  
+            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu'];
 
             const table = {
                 'Monitor':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_status']],
@@ -458,11 +462,11 @@
                 'Storage':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_status']],
                 'Gpu':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_status']],
                 'Psu':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_status']]
-            }
+            };
 
             items.forEach(element => {
                 document.getElementById(element+'Input').value = table[element][0];
-                document.getElementById(element+'Status').innerHTML = table[element][1];
+                document.getElementById(element+'Status').value = table[element][1];
                 if (table[element][0] != '#') {
                     document.getElementById('btnAdd'+element).style.cssText = "pointer-events: none; cursor: default; color: lightgray;";
                     document.getElementById('btnEdit'+element).style.cssText = "pointer-events: fill; cursor: pointer; color: black;";
@@ -479,14 +483,20 @@
         function configModal() {
 
             let btn = document.activeElement;
+            let idInputItem = btn.id.toString().slice(3).split(/(?=[A-Z])/)[1]+'Input';
+            let inputItem = document.getElementById(idInputItem).value;
             let nameItem = btn.classList.toString().slice(3).split(/(?=[A-Z])/).join(' ');
             let modal = document.getElementById("modalLabel");
             let modalText = document.getElementById("modalText");
             let formModal = document.getElementById("formModal");
+            let bodyEditModal = document.getElementById("bodyEditModal");
+            let inputModal = document.getElementById("inputModal");
             let selectModal = document.getElementById("selectModal");
             let btnModal = document.getElementById("btnModal");
 
-            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu']  
+            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu'];
+
+            bodyEditModal.style.display = 'none';
 
             if (btnModal.classList.contains('btn-outline-danger')) {
                 btnModal.classList.remove('btn-outline-danger');
@@ -505,6 +515,8 @@
 
                 modal.innerHTML = "Editar "+nameItem;
                 formModal.action = '/edit_slot';
+                bodyEditModal.style.display = 'block';
+                inputModal.value = inputItem;
                 modalText.innerHTML = '';
                 selectModal.style.display = 'block';
                 btnModal.innerHTML = 'Editar';
@@ -513,7 +525,7 @@
 
                 modal.innerHTML = "Deletar "+nameItem;
                 formModal.action = '/delete_slot';
-                modalText.innerHTML = 'Tem certeza que quer deletar esse item?';
+                modalText.innerHTML = 'Tem certeza que deseja deletar esse item?';
                 selectModal.style.display = 'none';
                 btnModal.innerHTML = 'Deletar';
                 btnModal.classList.remove('btn-outline-primary');
@@ -539,6 +551,11 @@
                     </div>
                     <div class="modal-body">
                         <span id="modalText"></span>
+                        <div id="bodyEditModal" style="display: none;">
+                            Item Atual:
+                            <input class="form-control" id="inputModal" type="text" placeholder="" style="margin-bottom: 1rem;" readonly>
+                            Item Novo:
+                        </div>
                         <select class="form-select" id="selectModal" aria-label="select">
                             <option value="" disabled selected hidden>Clique para selecionar</option>
                             <optgroup label="Terceiro Andar">
