@@ -69,9 +69,9 @@ inventory = {
             'Versa H18 Tempered Glass Black SPCC Micro ATX':5
         },
         'Corsair': {
-            '4000D Airflow CC-9011200-WW Black Steel / Plastic / Tempered Glass ATX Mid Tower':3,
-            'iCUE 4000X RGB CC-9011204-WW Black Steel / Plastic / Tempered Glass ATX Mid Tower':4,
-            '4000D Airflow CC-9011201-WW White Steel / Plastic / Tempered Glass ATX Mid Tower':5
+            '4000D Airflow CC-9011200-WW ATX Mid Tower':3,
+            'iCUE 4000X RGB CC-9011204-WW ATX Mid Tower':4,
+            '4000D Airflow CC-9011201-WW White ATX Mid Tower':5
         }
     },
     'Keyboard': {
@@ -122,7 +122,7 @@ inventory = {
     },
     'Motherboard': {
         'Socket Intel': {
-            'Gigabyte Z390 M Gaming, Intel LGA 1151, mATX, DDR4':3,
+            'Asus Prime H510M-A, Intel Socket LGA1200, microATX, DDR4':3,
             'Gigabyte B560M Aorus Elite, LGA 1200, Micro ATX, DDR4, (rev. 1.0)':4,
             'Asus TUF Gaming B460M-Plus, Intel LGA1200, mATX, DDR4':5
         },
@@ -220,20 +220,18 @@ def selectItem(type):
 
     global lastMBSocket
 
-    brand = random.randint(0, 2) if (type != 'OS' or type != 'Motherboard') else random.randint(0, 1)
+    brand = random.randint(0, 2) if type != 'OS' and type != 'Motherboard' and type != 'CPU' else random.randint(0, 1)
     item = random.randint(0, 2)
 
     """ 
     list(inventory['Monitor'][list(inventory['Monitor'])[brand]].keys())[item] # = 'key'
     list(inventory['Monitor'][list(inventory['Monitor'])[brand]].values())[item] # = 'values' 
     """
-    print(brand)
-    print(list(inventory[type])[brand],'\n')
     if type != 'CPU':
-        lastMBSocket = brand if type == 'Motherboard' else 0 # deve receber um inteiro 
+        lastMBSocket = brand if type == 'Motherboard' else 0
         return list(inventory[type][list(inventory[type])[brand]].keys())[item]
     else:
-        return list(inventory[type][list(inventory[type])[lastMBSocket]].keys())[item] # lastMBSocket tem q ser inteiro
+        return list(inventory[type][list(inventory[type])[lastMBSocket]].keys())[item]
 
 def generateMac():
     myhexdigits = []
@@ -252,6 +250,10 @@ for size in layouts.keys():
                         (roomNumber[0]+'rd', roomNumber))
         counter = 10
         ipRoom = (int(roomNumber) - 300) if (int(roomNumber) < 400) else (int(roomNumber) - 400)
+        dict = ['Monitor','Case','Keyboard','Mouse','OS','Motherboard','CPU','Memory','Storage','GPU','PSU']
+        configsRoom = []
+        for i in range(11):
+            configsRoom.append(selectItem(dict[i]))
         for i in range(1, 56):
             if i in disabledSlots: # slots de espaçamento
                 cur.execute('INSERT INTO room_'+roomNumber+' \
@@ -305,18 +307,18 @@ for size in layouts.keys():
                                 mac_config, mac_status) \
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                                 ('slot_Prof', 0, 
-                                selectItem('Monitor'), 'OK', 
-                                selectItem('Case'), 'OK', 
-                                selectItem('Keyboard'), 'OK', 
-                                selectItem('Mouse'), 'OK', 
-                                selectItem('OS'), 'OK', 
+                                configsRoom[0], 'OK', 
+                                configsRoom[1], 'OK', 
+                                configsRoom[2], 'OK', 
+                                configsRoom[3], 'OK', 
+                                configsRoom[4], 'OK', 
                                 'CABONNET [350 mbps]', 'OK',
-                                selectItem('Motherboard'),'OK',
-                                selectItem('CPU'),'OK',
-                                selectItem('Memory'),'OK',
-                                selectItem('Storage'),'OK',
-                                selectItem('GPU'),'OK',
-                                selectItem('PSU'), 'OK',
+                                configsRoom[5],'OK',
+                                configsRoom[6],'OK',
+                                configsRoom[7],'OK',
+                                configsRoom[8],'OK',
+                                configsRoom[9],'OK',
+                                configsRoom[10], 'OK',
                                 '192.168.'+str(ipRoom)+'.'+str(i),'Estático',
                                 generateMac(),'OK'))
             elif i in emptySlots: # slots vazios ou sem bancada
@@ -374,18 +376,18 @@ for size in layouts.keys():
                                 mac_config, mac_status) \
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                                 ('slot_'+str(counter), 0, 
-                                selectItem('Monitor'), 'OK', 
-                                selectItem('Case'), 'OK', 
-                                selectItem('Keyboaard'), 'OK', 
-                                selectItem('Mouse'), 'OK', 
-                                selectItem('OS'), 'OK', 
+                                configsRoom[0], 'OK', 
+                                configsRoom[1], 'OK', 
+                                configsRoom[2], 'OK', 
+                                configsRoom[3], 'OK', 
+                                configsRoom[4], 'OK', 
                                 'CABONNET [350 mbps]', 'OK',
-                                selectItem('Motherboard'),'OK',
-                                selectItem('CPU'),'OK',
-                                selectItem('Memory'),'OK',
-                                selectItem('Storage'),'OK',
-                                selectItem('GPU'),'OK',
-                                selectItem('PSU'), 'OK',
+                                configsRoom[5],'OK',
+                                configsRoom[6],'OK',
+                                configsRoom[7],'OK',
+                                configsRoom[8],'OK',
+                                configsRoom[9],'OK',
+                                configsRoom[10], 'OK',
                                 '192.168.'+str(ipRoom)+'.'+str(i),'Estático',
                                 generateMac(),'OK'))
                 counter -= 1
