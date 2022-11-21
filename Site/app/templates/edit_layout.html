@@ -48,6 +48,7 @@
     }
     .default {
         font-weight: 500;
+        font-size: .9rem !important;
     }
     .material-symbols-outlined {
         font-variation-settings:
@@ -56,9 +57,9 @@
         'GRAD' 0,
         'opsz' 48
     }
-    .config {
+    /* .config {
         margin-bottom: .8rem;
-    }
+    } */
     .config input,
     .status input {
         width: 192px;
@@ -71,7 +72,6 @@
         height: 1.5rem;
         margin: 0;
     };
-    
     @media (max-width:450px) {
     
         h1 {
@@ -240,7 +240,25 @@
                                 <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxRede" id="btnEditNetwork" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
                                 <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxRede" id="btnDeleteNetwork" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
-                        </div>                        
+                        </div>  
+                        <div class="config">
+                            <label class="mb-config d-block" for="IpInput">IPv4: <span id="IpStatus"></span></label>
+                            <input readonly class="mb-config d-block" id="IpInput" type="text">
+                            <select class="form-select d-none" name="IpSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxIpv4" id="btnAddIp" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxIpv4" id="btnEditIp" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxIpv4" id="btnDeleteIp" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
+                            </div>
+                        </div>                       
                     </div>
                     <div class="default">
                         <div class="config">
@@ -351,6 +369,24 @@
                                 <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxFonte" id="btnDeletePsu" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
                             </div>
                         </div>
+                        <div class="config">
+                            <label class="mb-config d-block" for="MacInput">Endereço Físico: <span id="MacStatus"></span></label>
+                            <input readonly class="mb-config d-block" id="MacInput" type="text">
+                            <select class="form-select d-none" name="MacSelect" aria-label="select">
+                                <option value="" disabled selected hidden>Clique para selecionar</option>
+                                <optgroup label="Terceiro Andar">
+                                    <option value="301"> 301 </option>
+                                </optgroup>    
+                                <optgroup label="Quarto Andar">
+                                    <option value="401"> 401 </option>
+                                </optgroup>
+                            </select>
+                            <div class="btnBox">
+                                <label class="material-symbols-outlined"><a href="" name="btnAdd" class="boxEndereçoFísico" id="btnAddMac" data-bs-toggle="modal" data-bs-target="#modalSlot">add</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnEdit" class="boxEndereçoFísico" id="btnEditMac" data-bs-toggle="modal" data-bs-target="#modalSlot">edit</a></label>
+                                <label class="material-symbols-outlined"><a href="" name="btnDelete" class="boxEndereçoFísico" id="btnDeleteMac" data-bs-toggle="modal" data-bs-target="#modalSlot">delete</a></label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -447,7 +483,7 @@
             var name = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['name'];
             var general_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['general_status'];
 
-            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu'];
+            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu', 'Ip', 'Mac'];
 
             const table = {
                 'Monitor':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_status']],
@@ -461,12 +497,14 @@
                 'Memory':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_status']],
                 'Storage':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_status']],
                 'Gpu':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_status']],
-                'Psu':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_status']]
+                'Psu':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_status']],
+                'Ip':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['ip_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['ip_status']],
+                'Mac':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mac_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mac_status']]
             };
 
             items.forEach(element => {
                 document.getElementById(element+'Input').value = table[element][0];
-                document.getElementById(element+'Status').value = table[element][1];
+                document.getElementById(element+'Status').innerHTML = table[element][1];
                 if (table[element][0] != '#') {
                     document.getElementById('btnAdd'+element).style.cssText = "pointer-events: none; cursor: default; color: lightgray;";
                     document.getElementById('btnEdit'+element).style.cssText = "pointer-events: fill; cursor: pointer; color: black;";
@@ -494,7 +532,9 @@
             let selectModal = document.getElementById("selectModal");
             let btnModal = document.getElementById("btnModal");
 
-            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu'];
+            console.log(nameItem);
+
+            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu', 'Ip', 'Mac'];
 
             bodyEditModal.style.display = 'none';
 

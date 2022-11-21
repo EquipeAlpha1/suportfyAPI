@@ -86,7 +86,7 @@ def edit_layout():
     room_id = str(request.args.get('roomSelected'))
     room_layout = load_room(room_id)
 
-    columnNames = ['id','last_alteration','name','general_status','monitor_config','monitor_status','case_config','case_status','keyboard_config','keyboard_status','mouse_config','mouse_status','os_config','os_status','network_config','network_status','motherboard_config','motherboard_status','cpu_config','cpu_status','memory_config','memory_status','storage_config','storage_status','gpu_config','gpu_status','psu_config','psu_status']
+    columnNames = ['id','last_alteration','name','general_status','monitor_config','monitor_status','case_config','case_status','keyboard_config','keyboard_status','mouse_config','mouse_status','os_config','os_status','network_config','network_status','motherboard_config','motherboard_status','cpu_config','cpu_status','memory_config','memory_status','storage_config','storage_status','gpu_config','gpu_status','psu_config','psu_status','ip_config','ip_status','mac_config','mac_status']
     table_dict = {}
     for slots in room_layout:
         line_dict = dict(zip(columnNames, list(slots)))
@@ -293,14 +293,9 @@ def add_slot(slot_id):
 @app.route('/edit_slot', methods=['GET','POST'])
 def edit_slot(slot_id):
 
-    #monitorConfig = request.form.get('monitorConfig')
-    #computerConfig = request.form.get('computerConfig')
-    #keyboardConfig = request.form.get('keyboardConfig')
-    #mouseConfig = request.form.get('mouseConfig')
-    #monitorStatus = request.form.get('monitorStatus')
-    #computerStatus = request.form.get('computerStatus')
-    #keyboardStatus = request.form.get('keyboardStatus')
-    #mouseStatus = request.form.get('mouseStatus')
+    #sala
+    #id
+    #coluna do item = str(request.form.get('selectEditModal'))
 
     conn = get_db_connection()
     conn.execute('UPDATE \
@@ -324,10 +319,9 @@ def edit_slot(slot_id):
 @app.route('/delete_slot', methods=['GET','POST'])
 def delete_slot(slot_id):
 
-    #monitor = request.form.get('monitor')
-    #computer = request.form.get('computer')
-    #keyboard = request.form.get('keyboard')
-    #mouse = request.form.get('mouse')
+    #sala
+    #id
+    #coluna do item = str(request.form.get('selectEditModal'))
 
     conn = get_db_connection()
     conn.execute('UPDATE \
