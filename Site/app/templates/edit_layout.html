@@ -503,6 +503,13 @@
                 'Mac':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['mac_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['mac_status']]
             };
 
+            const table2 = {
+                'Monitor': JSON.parse(window.sessionStorage.getItem("table_inventory"))[id]['type'],
+                'Case': JSON.parse(window.sessionStorage.getItem("table_inventory"))[id]['brand'],
+                'Keyboard': JSON.parse(window.sessionStorage.getItem("table_inventory"))[id]['model'],
+                'Mouse': JSON.parse(window.sessionStorage.getItem("table_inventory"))[id]['amount']
+            };            
+
             items.forEach(element => {
                 document.getElementById(element+'Input').value = table[element][0];
                 document.getElementById(element+'Status').innerHTML = table[element][1];
@@ -521,9 +528,11 @@
 
         function configModal() {
 
+            const inventory = JSON.parse(window.sessionStorage.getItem("table_inventory"));
+
             let btn = document.activeElement;
-            let idInputItem = btn.id.toString().slice(3).split(/(?=[A-Z])/)[1]+'Input';
-            let inputItem = document.getElementById(idInputItem).value;
+            let idInputItem = btn.id.toString().slice(3).split(/(?=[A-Z])/)[1];
+            let inputItem = document.getElementById(idInputItem+'Input').value;
             let nameItem = btn.classList.toString().slice(3).split(/(?=[A-Z])/).join(' ');
             let modal = document.getElementById("modalLabel");
             let modalText = document.getElementById("modalText");
@@ -533,7 +542,7 @@
             let selectModal = document.getElementById("selectModal");
             let btnModal = document.getElementById("btnModal");
 
-            console.log(nameItem);
+            console.log(inputItem);
 
             const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu', 'Ip', 'Mac'];
 
@@ -559,8 +568,24 @@
                 bodyEditModal.style.display = 'block';
                 inputModal.value = inputItem;
                 modalText.innerHTML = '';
+                selectModal.innerHTML = '';
                 selectModal.style.display = 'block';
                 btnModal.innerHTML = 'Editar';
+
+                var option = document.createElement("option");
+                option.value = "" 
+                option.text = 'Clique para selecionar';                
+                option.setAttribute('disabled', true);
+                option.setAttribute('selected', true);
+                option.setAttribute('hidden', true);
+                selectModal.appendChild(option);
+                Object.keys(inventory).forEach(key => {
+                    if (inventory[key].type.toLowerCase() == idInputItem.toLowerCase()) {
+                        var option = document.createElement("option");
+                        option.value = option.text = inventory[key].brand + ' [' + inventory[key].model + ']';
+                        selectModal.appendChild(option);
+                    }
+                });
 
             } else if (btn.name == 'btnDelete') {
 
@@ -582,7 +607,7 @@
 
     </script>
 
-    <div class="modal fade" style="--bs-modal-width: 30rem;" id="modalSlot" tabindex="-1" aria-labelledby="modalAddLabel" aria-hidden="true">
+    <div class="modal fade" style="--bs-modal-width: 45rem;" id="modalSlot" tabindex="-1" aria-labelledby="modalAddLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <form action="/create_request" id="formModal" method="post">
@@ -598,17 +623,6 @@
                             Item Novo:
                         </div>
                         <select class="form-select" id="selectModal" name="selectEditModal" aria-label="select">
-                            <option value="" disabled selected hidden>Clique para selecionar</option>
-                            <option value="401"> 401 </option>
-                            <option value="402"> 402 </option>
-                            <option value="404"> 404 </option>
-                            <option value="405"> 405 </option>
-                            <option value="406"> 406 </option>
-                            <option value="407"> 407 </option>
-                            <option value="408"> 408 </option>
-                            <option value="409"> 409 </option>
-                            <option value="411"> 411 </option>
-                            <option value="412"> 412 </option>
                         </select>
                     </div>
                     <div class="modal-footer">        

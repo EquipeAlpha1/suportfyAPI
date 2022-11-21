@@ -87,18 +87,18 @@ def edit_layout():
     room_id = str(request.args.get('roomSelected'))
     room_layout, inventory = load_room(room_id) # essa função retorna 2 argumentos, o layout da sala e o inventário
 
-    columnsInventory = ['id', 'last_alteration', 'type', 'brand', 'model']
+    columnsInventory = ['id', 'last_alteration', 'type', 'brand', 'model', 'amount']
 
     table_inventory = {}
     for item in inventory:
         line_dict1 = dict(zip(columnsInventory, list(item)))
         table_inventory[inventory.index(item)+1] = line_dict1
 
-    columnsNames = ['id','last_alteration','name','general_status','monitor_config','monitor_status','case_config','case_status','keyboard_config','keyboard_status','mouse_config','mouse_status','os_config','os_status','network_config','network_status','motherboard_config','motherboard_status','cpu_config','cpu_status','memory_config','memory_status','storage_config','storage_status','gpu_config','gpu_status','psu_config','psu_status','ip_config','ip_status','mac_config','mac_status']
+    columnsLayout = ['id','last_alteration','name','general_status','monitor_config','monitor_status','case_config','case_status','keyboard_config','keyboard_status','mouse_config','mouse_status','os_config','os_status','network_config','network_status','motherboard_config','motherboard_status','cpu_config','cpu_status','memory_config','memory_status','storage_config','storage_status','gpu_config','gpu_status','psu_config','psu_status','ip_config','ip_status','mac_config','mac_status']
 
     table_layout = {}
     for slots in room_layout:
-        line_dict = dict(zip(columnsNames, list(slots)))
+        line_dict = dict(zip(columnsLayout, list(slots)))
         table_layout[room_layout.index(slots)+1] = line_dict
     
     return render_template('edit_layout.html', room_layout=room_layout, table_layout=json.dumps(table_layout), table_inventory=json.dumps(table_inventory))
