@@ -473,33 +473,34 @@
     </div>
     <script type="text/javascript">
    
-        sessionStorage.setItem('table_dict', JSON.stringify({{table_dict|safe}}));
+        sessionStorage.setItem('table_layout', JSON.stringify({{table_layout|safe}}));
+        sessionStorage.setItem('table_inventory', JSON.stringify({{table_inventory|safe}}));
 
         function fillSidebar() {
 
             var id = document.activeElement.id;
 
-            var last_alteration = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['last_alteration'];
-            var name = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['name'];
-            var general_status = JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['general_status'];
+            var last_alteration = JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['last_alteration'];
+            var name = JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['name'];
+            var general_status = JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['general_status'];
 
             const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu', 'Ip', 'Mac'];
 
             const table = {
-                'Monitor':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['monitor_status']],
-                'Case':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['case_status']],
-                'Keyboard':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['keyboard_status']],
-                'Mouse':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mouse_status']],
-                'Os':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['os_status']],
-                'Network':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['network_status']],
-                'Motherboard':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['motherboard_status']],
-                'Cpu':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['cpu_status']],
-                'Memory':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['memory_status']],
-                'Storage':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['storage_status']],
-                'Gpu':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['gpu_status']],
-                'Psu':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['psu_status']],
-                'Ip':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['ip_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['ip_status']],
-                'Mac':[JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mac_config'],JSON.parse(window.sessionStorage.getItem("table_dict"))[id]['mac_status']]
+                'Monitor':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['monitor_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['monitor_status']],
+                'Case':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['case_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['case_status']],
+                'Keyboard':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['keyboard_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['keyboard_status']],
+                'Mouse':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['mouse_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['mouse_status']],
+                'Os':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['os_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['os_status']],
+                'Network':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['network_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['network_status']],
+                'Motherboard':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['motherboard_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['motherboard_status']],
+                'Cpu':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['cpu_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['cpu_status']],
+                'Memory':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['memory_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['memory_status']],
+                'Storage':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['storage_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['storage_status']],
+                'Gpu':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['gpu_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['gpu_status']],
+                'Psu':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['psu_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['psu_status']],
+                'Ip':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['ip_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['ip_status']],
+                'Mac':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['mac_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['mac_status']]
             };
 
             items.forEach(element => {

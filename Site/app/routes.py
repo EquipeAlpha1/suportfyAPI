@@ -75,8 +75,9 @@ def sign_out():
 def load_room(id):
     conn = get_db_connection()
     layout = conn.execute('SELECT * FROM room_'+id+'').fetchall()
+    inventory = conn.execute('SELECT * FROM inventory').fetchall()
     conn.close()
-    return layout
+    return layout, inventory
 
 @app.route('/edit_layout', methods=['GET','POST'])
 def edit_layout():
@@ -84,15 +85,23 @@ def edit_layout():
         return 'ERRO: Você não tem autorização!'
 
     room_id = str(request.args.get('roomSelected'))
-    room_layout = load_room(room_id)
+    room_layout, inventory = load_room(room_id) # essa função retorna 2 argumentos, o layout da sala e o inventário
 
-    columnNames = ['id','last_alteration','name','general_status','monitor_config','monitor_status','case_config','case_status','keyboard_config','keyboard_status','mouse_config','mouse_status','os_config','os_status','network_config','network_status','motherboard_config','motherboard_status','cpu_config','cpu_status','memory_config','memory_status','storage_config','storage_status','gpu_config','gpu_status','psu_config','psu_status','ip_config','ip_status','mac_config','mac_status']
-    table_dict = {}
+    columnsInventory = ['id', 'last_alteration', 'type', 'brand', 'model']
+
+    table_inventory = {}
+    for item in inventory:
+        line_dict1 = dict(zip(columnsInventory, list(item)))
+        table_inventory[inventory.index(item)+1] = line_dict1
+
+    columnsNames = ['id','last_alteration','name','general_status','monitor_config','monitor_status','case_config','case_status','keyboard_config','keyboard_status','mouse_config','mouse_status','os_config','os_status','network_config','network_status','motherboard_config','motherboard_status','cpu_config','cpu_status','memory_config','memory_status','storage_config','storage_status','gpu_config','gpu_status','psu_config','psu_status','ip_config','ip_status','mac_config','mac_status']
+
+    table_layout = {}
     for slots in room_layout:
-        line_dict = dict(zip(columnNames, list(slots)))
-        table_dict[room_layout.index(slots)+1] = line_dict
+        line_dict = dict(zip(columnsNames, list(slots)))
+        table_layout[room_layout.index(slots)+1] = line_dict
     
-    return render_template('edit_layout.html', room_layout=room_layout, table_dict=json.dumps(table_dict))
+    return render_template('edit_layout.html', room_layout=room_layout, table_layout=json.dumps(table_layout), table_inventory=json.dumps(table_inventory))
     
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
@@ -181,7 +190,8 @@ def create_request():
         return ('', 204)
 
     room_id = str(request.args.get('roomSelected'))
-    room_layout = load_room(room_id)
+    room_layout = load_room(room_id)[0]
+
     
     return render_template('create_request.html', room_layout=room_layout, room=room_id)
 

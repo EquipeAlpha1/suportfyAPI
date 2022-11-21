@@ -170,12 +170,12 @@ inventory = {
         'Western Digital': {
             '4TB, 5400RPM, Cache 256 MB, 3.5", SATA':3,
             'Purple Surveillance 4TB, 5400RPM, Cache 256MB, 3.5, SATA':4,
-            'Purple Surveillance, 4TB, 3.5´, SATA':5
+            'Purple Surveillance, 4TB, 3.5", SATA':5
         },
         'Kingston': {
-            'A400, SATA, Leitura: 500MB/s e Gravação: 350MB/s':3,
-            'A400, SATA, Leitura: 500MB/s e Gravação: 450MB/s':4,
-            'NV1, M.2 2280 NVMe, Leitura: 2100MB/s e Gravação: 1700MB/s':5
+            'SSD 480 GB A400, SATA, Leitura: 500MB/s e Gravação: 450MB/s':3,
+            'SSD NV2 1 TB, M.2 2280 PCIe, NVMe, Leitura: 3500 MB/s e Gravação: 2100 MB/s':4,
+            'SSD 960 GB A400, SATA, Leitura: 500MB/s e Gravação: 450MB/s':5
         }
     },
     'GPU': {
@@ -402,7 +402,7 @@ for size in layouts.keys():
 
 for keyL1, valueL1 in inventory.items(): # keyL1 = TIPO
     for keyL2, valueL2 in valueL1.items(): # keyL2 = MARCA
-        for keyL3, valueL3 in valueL2.items(): # keyL3 = MODELO
+        for keyL3, valueL3 in valueL2.items(): # keyL3 = MODELO e valueL3 = QUANTIDADE
             cur.execute('INSERT INTO inventory \
                         (type, brand, model, amount) \
                     VALUES (?, ?, ?, ?)',
