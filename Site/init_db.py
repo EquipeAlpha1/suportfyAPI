@@ -258,10 +258,9 @@ for size in layouts.keys():
                         (roomNumber[0]+'rd', roomNumber))
         counter = 10
         ipRoom = (int(roomNumber) - 300) if (int(roomNumber) < 400) else (int(roomNumber) - 400)
-        dict = ['Monitor','Case','Keyboard','Mouse','OS','Motherboard','CPU','Memory','Storage','GPU','PSU']
-        configsRoom = []
+        configsRoom = {}
         for i in range(11):
-            configsRoom.append(selectItem(dict[i]))
+            configsRoom[list(inventory.keys())[i]] = selectItem(list(inventory.keys())[i])
         for i in range(1, 56):
             if i in disabledSlots: # slots de espaçamento
                 cur.execute('INSERT INTO room_'+roomNumber+' \
@@ -315,18 +314,18 @@ for size in layouts.keys():
                                 mac_config, mac_status) \
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                                 ('slot_Prof', 0, 
-                                configsRoom[0], 'OK', 
-                                configsRoom[1], 'OK', 
-                                configsRoom[2], 'OK', 
-                                configsRoom[3], 'OK', 
-                                configsRoom[4], 'OK', 
+                                configsRoom['Monitor'], 'OK', 
+                                configsRoom['Case'], 'OK', 
+                                configsRoom['Keyboard'], 'OK', 
+                                configsRoom['Mouse'], 'OK', 
+                                configsRoom['OS'], 'OK', 
                                 'CABONNET [350 mbps]', 'OK',
-                                configsRoom[5],'OK',
-                                configsRoom[6],'OK',
-                                configsRoom[7],'OK',
-                                configsRoom[8],'OK',
-                                configsRoom[9],'OK',
-                                configsRoom[10], 'OK',
+                                configsRoom['Motherboard'],'OK',
+                                configsRoom['CPU'],'OK',
+                                configsRoom['Memory'],'OK',
+                                configsRoom['Storage'],'OK',
+                                configsRoom['GPU'],'OK',
+                                configsRoom['PSU'], 'OK',
                                 '192.168.'+str(ipRoom)+'.'+str(i),'Estático',
                                 generateMac(),'OK'))
             elif i in emptySlots: # slots vazios ou sem bancada
@@ -384,18 +383,18 @@ for size in layouts.keys():
                                 mac_config, mac_status) \
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                                 ('slot_'+str(counter), 0, 
-                                configsRoom[0], 'OK', 
-                                configsRoom[1], 'OK', 
-                                configsRoom[2], 'OK', 
-                                configsRoom[3], 'OK', 
-                                configsRoom[4], 'OK', 
+                                configsRoom['Monitor'], 'OK', 
+                                configsRoom['Case'], 'OK', 
+                                configsRoom['Keyboard'], 'OK', 
+                                configsRoom['Mouse'], 'OK', 
+                                configsRoom['OS'], 'OK', 
                                 'CABONNET [350 mbps]', 'OK',
-                                configsRoom[5],'OK',
-                                configsRoom[6],'OK',
-                                configsRoom[7],'OK',
-                                configsRoom[8],'OK',
-                                configsRoom[9],'OK',
-                                configsRoom[10], 'OK',
+                                configsRoom['Motherboard'],'OK',
+                                configsRoom['CPU'],'OK',
+                                configsRoom['Memory'],'OK',
+                                configsRoom['Storage'],'OK',
+                                configsRoom['GPU'],'OK',
+                                configsRoom['PSU'], 'OK',
                                 '192.168.'+str(ipRoom)+'.'+str(i),'Estático',
                                 generateMac(),'OK'))
                 counter -= 1
