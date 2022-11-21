@@ -228,10 +228,18 @@ def selectItem(type):
     list(inventory['Monitor'][list(inventory['Monitor'])[brand]].values())[item] # = 'values' 
     """
     if type != 'CPU':
-        lastMBSocket = brand if type == 'Motherboard' else 0
-        return list(inventory[type][list(inventory[type])[brand]].keys())[item]
+        if type != 'Motherboard':
+            marca = list(inventory[type])[brand]
+            modelo = list(inventory[type][list(inventory[type])[brand]].keys())[item]
+        else:
+            lastMBSocket = brand
+            marca = list(inventory[type][list(inventory[type])[brand]].keys())[item].split(' ')[0]
+            modelo = list(inventory[type][list(inventory[type])[brand]].keys())[item].split(' ',1)[1]
     else:
-        return list(inventory[type][list(inventory[type])[lastMBSocket]].keys())[item]
+        marca = list(inventory[type])[lastMBSocket]
+        modelo = list(inventory[type][list(inventory[type])[lastMBSocket]].keys())[item]
+        
+    return marca + ' [' + modelo + ']'
 
 def generateMac():
     myhexdigits = []
