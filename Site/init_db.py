@@ -213,7 +213,7 @@ inventory = {
         }
     }
 }
-
+            
 lastMBSocket = 0
 
 def selectItem(type):
@@ -400,6 +400,13 @@ for size in layouts.keys():
                 counter -= 1
                 counter += 20 if (counter == 0 or counter == 10 or counter == 20) else 0
 
+for keyL1, valueL1 in inventory.items(): # keyL1 = TIPO
+    for keyL2, valueL2 in valueL1.items(): # keyL2 = MARCA
+        for keyL3, valueL3 in valueL2.items(): # keyL3 = MODELO
+            cur.execute('INSERT INTO inventory \
+                        (type, brand, model, amount) \
+                    VALUES (?, ?, ?, ?)',
+                        (keyL1, keyL2, keyL3, valueL3))
 
 connection.commit()
 connection.close()
