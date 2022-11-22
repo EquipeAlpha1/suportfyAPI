@@ -402,7 +402,7 @@
                     {% set slot_num = slot['name'].split('_')[1] if slot['general_status'] != '#' and slot['general_status'] != -2 %}
                     {% if slot['general_status'] != '#' and slot['general_status'] >= 0 %} <!-- SLOT COMUM --> 
                         <div class="wrapperSlot slot{{slot_num}}">
-                            <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" onclick="fillSidebar()" autocomplete="off" value="{{slot_num}}">
+                            <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" autocomplete="off" value="{{slot_num}}">
                         {% set color_num = slot['general_status'] %}
                         {% if color_num == 0 %}
                             <label class="btn btn-outline-dark" for="{{slot['id']}}">
@@ -421,7 +421,7 @@
                         <div style="visibility: hidden;"></div>
                     {% elif slot['general_status'] == -1 %} <!-- SLOT QUE FOI APAGADO -->
                             <div class="wrapperSlot slot{{slot_num}}">
-                                <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" onclick="fillSidebar()" autocomplete="off" value="{{slot_num}}">
+                                <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" autocomplete="off" value="{{slot_num}}">
                                 <label class="btn btn-outline-dark" for="{{slot['id']}}">
                                     <a>{{slot_num}}</a>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -432,7 +432,7 @@
                     {% endif %}
                 {% elif slot['id'] == 5 %} <!-- SLOT PROFESSOR -->                                                                      
                     <div class="wrapperSlot slot{{slot['name'].split('_')[1]}}">   
-                        <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" onclick="fillSidebar()" autocomplete="off" value="Professor">    
+                        <input type="radio" class="btn-check" name="slotComputerEdit" id="{{slot['id']}}" autocomplete="off" value="Professor">    
                     {% set prof_color_num = slot['general_status'] %}                                          
                     {% if prof_color_num <= 0 %}
                         <label class="btn btn-outline-dark" for="{{slot['id']}}">
@@ -501,14 +501,7 @@
                 'Psu':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['psu_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['psu_status']],
                 'Ip':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['ip_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['ip_status']],
                 'Mac':[JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['mac_config'],JSON.parse(window.sessionStorage.getItem("table_layout"))[id]['mac_status']]
-            };
-
-            const table2 = {
-                'Monitor': JSON.parse(window.sessionStorage.getItem("table_inventory"))[id]['type'],
-                'Case': JSON.parse(window.sessionStorage.getItem("table_inventory"))[id]['brand'],
-                'Keyboard': JSON.parse(window.sessionStorage.getItem("table_inventory"))[id]['model'],
-                'Mouse': JSON.parse(window.sessionStorage.getItem("table_inventory"))[id]['amount']
-            };            
+            };       
 
             items.forEach(element => {
                 document.getElementById(element+'Input').value = table[element][0];
@@ -602,35 +595,44 @@
             option.setAttribute('selected', true);
             option.setAttribute('hidden', true);
             selectModal.appendChild(option);
+            let tempOptions = []
             Object.keys(inventory).forEach(key => {
-                if (inventory[key].type.toLowerCase() == idInputItem.toLowerCase() && inventory[key].amount > 0) {    
-                    var option = document.createElement("option");
+                if (inventory[key].type.toLowerCase() == idInputItem.toLowerCase() && inventory[key].amount > 0) {   
+                                     
                     if (inventory[key].type != 'Motherboard' && inventory[key].type != 'CPU') {                        
-                        option.value = option.text = inventory[key].brand + ' [' + inventory[key].model + ']';                        
+                        tempOptions.push(inventory[key].brand + ' [' + inventory[key].model + ']');                        
                     } else if (inventory[key].type == 'Motherboard') {
                         let tempBrand = inventory[key].model.split(' ', 1);
                         let tempModel = inventory[key].model.slice(tempBrand[0].length+1);
-                        option.value = option.text = tempBrand + ' [' + tempModel + ']';
+                        tempOptions.push(tempBrand + ' [' + tempModel + ']');
                     } else if (inventory[key].type == 'CPU') {   
                         if (motherboardInput.value.includes('AM4') && inventory[key].model.includes('AM4')) {
-                            option.value = option.text = inventory[key].brand + ' [' + inventory[key].model + ']'; 
+                            tempOptions.push(inventory[key].brand + ' [' + inventory[key].model + ']'); 
                         } else if (motherboardInput.value.includes('LGA1200') && inventory[key].model.includes('LGA1200')) {
-                            option.value = option.text = inventory[key].brand + ' [' + inventory[key].model + ']'; 
+                            tempOptions.push(inventory[key].brand + ' [' + inventory[key].model + ']'); 
                         } else {
                             return;
                         };                                  
-                    };
-                    selectModal.appendChild(option);
+                    };                 
                 } else {
                     return;
                 };
             });
-            
+            tempOptions.sort();
+            tempOptions.forEach(element => {
+                var option = document.createElement("option");  
+                option.value = option.text = element; 
+                selectModal.appendChild(option);
+            });
+                        
         };
 
         [].forEach.call(document.getElementsByTagName('a'), function (tag) {
             tag.addEventListener('click', configModal);					
-		});       
+		});  
+        [].forEach.call(document.getElementsByName('slotComputerEdit'), function (slot) {
+            slot.addEventListener('click', fillSidebar);					
+		});      
 
     </script>
 
@@ -655,7 +657,7 @@
                         </div>
                         <div id="digitarItemNovoModal">
                             Digite um novo valor:
-                            <input class="form-control" id="inputDigitModal" onkeydown="inputMask(this)" type="text" placeholder="">
+                            <input class="form-control" id="inputDigitModal" type="text" placeholder="">
                         </div>                
                     </div>
                     <div class="modal-footer">        
