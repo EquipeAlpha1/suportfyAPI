@@ -73,8 +73,9 @@ $(document).on('submit','#formModal',function(e) {/* <!-- Essa função será at
         var numberRoom = pc.val().split(' ')[1]; /* SALA = 405 */
         var idSlot = pc.attr('id'); /* ID NA TABELA = 5 */
     };    
-    var columnItem = $('#selectModal').find(":selected").val(); /* COLUNA DO ITEM NA TABELA = case */
+    var columnItem = $('#btnModal').attr('title'); /* COLUNA DO ITEM NA TABELA = case */
     var newItem = $('#selectModal').find(":selected").text(); /* COLUNA DO ITEM NA TABELA = ASUS RGB XXX5000 */
+    var operation = $('#btnModal').attr('name');
         
     if (!numberRoom && !idSlot && !columnItem && !newItem) {    
         alert('ERRO');
@@ -84,12 +85,13 @@ $(document).on('submit','#formModal',function(e) {/* <!-- Essa função será at
     $.ajax ({
 
         type:'POST',
-        url:'/add_slot', /* URL para rota flask */
+        url:'/update_slot', /* URL para rota flask */
         data: { /* Passa um dicionário com os dados inseridos no formulário para o Flask registrar */
             numberRoom : numberRoom,
             idSlot : idSlot,
             columnItem : columnItem,
-            newItem : newItem
+            newItem : newItem,
+            operation : operation
         }
 
     });

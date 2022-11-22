@@ -275,78 +275,31 @@ for image in files:
         im.thumbnail(size)
         im.save("thumbnail_%s_%s" % (image, "_".join(size))) """
 
-@app.route('/add_slot', methods=['GET','POST'])
-def add_slot():
+@app.route('/update_slot', methods=('POST',))
+def update_slot():
 
-    if request.method == 'POST':
 
-        numberRoom = request.form.get('numberRoom')
-        idSlot = request.form.get('idSlot')
-        columnItem = request.form.get('columnItem')
-        newItem = request.form.get('newItem')
+    numberRoom = request.form.get('numberRoom')
+    idSlot = request.form.get('idSlot')
+    columnItem = request.form.get('columnItem')
+    newItem = request.form.get('newItem')
+    operation = request.form.get('operation')
+    newItemStatus = 'OK'
 
-        conn = get_db_connection()
-        conn.execute('UPDATE \
-                            room_'+numberRoom+' \
-                        SET \
-                            '+columnItem+'_config = ?, \
-                            '+columnItem+'_status  = ? \
-                        WHERE \
-                            id = '+idSlot+'', 
-                            (newItem, 'OK'))
-        conn.commit()
-        conn.close()
+    if operation == 'delete':
+        newItem = '#'
+        newItemStatus = '#'
+
+    conn = get_db_connection()
+    conn.execute('UPDATE \
+                        room_'+numberRoom+' \
+                    SET \
+                        '+columnItem+'_config = ?, \
+                        '+columnItem+'_status  = ? \
+                    WHERE \
+                        id = '+idSlot+'', 
+                        (newItem, newItemStatus))
+    conn.commit()
+    conn.close()
     
-    return redirect(url_for('edit_layout'))
-
-@app.route('/edit_slot', methods=['GET','POST'])
-def edit_slot(slot_id):
-
-    #sala
-    #id
-    #coluna do item = str(request.form.get('selectEditModal'))
-
-    conn = get_db_connection()
-    conn.execute('UPDATE \
-                        [room_xxx] \
-                    SET \
-                        monitor_config_id = ?, \
-                        monitor_status_id = ?, \
-                        computer_config_id = ?, \
-                        computer_status_id = ?, \
-                        keyboard_config_id = ?, \
-                        keyboard_status_id = ?, \
-                        mouse_config_id = ?, \
-                        mouse_status_id = ? \
-                    WHERE \
-                        id = ?', 
-                        (monitor_config, 'OK', computer_config, 'OK', keyboard_config, 'OK', mouse_config, 'OK', slot_id))
-    conn.commit()
-    conn.close()
-    return redirect(url_for('edit_layout'))
-
-@app.route('/delete_slot', methods=['GET','POST'])
-def delete_slot(slot_id):
-
-    #sala
-    #id
-    #coluna do item = str(request.form.get('selectEditModal'))
-
-    conn = get_db_connection()
-    conn.execute('UPDATE \
-                        [room_xxx] \
-                    SET \
-                        monitor_config_id = ?, \
-                        monitor_status_id = ?, \
-                        computer_config_id = ?, \
-                        computer_status_id = ?, \
-                        keyboard_config_id = ?, \
-                        keyboard_status_id = ?, \
-                        mouse_config_id = ?, \
-                        mouse_status_id = ? \
-                    WHERE \
-                        id = ?', 
-                        (monitor_config, 'OK', computer_config, 'OK', keyboard_config, 'OK', mouse_config, 'OK', slot_id))
-    conn.commit()
-    conn.close()
     return redirect(url_for('edit_layout'))

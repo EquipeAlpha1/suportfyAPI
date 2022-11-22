@@ -551,6 +551,7 @@
             selectModal.innerHTML = '';
             digitarItemNovoModal.style.display = 'none';
             inputModal.value = inputItem;
+            btnModal.title = btn.title;
 
             if (nameItem != 'Rede' && nameItem != 'Ipv4' && nameItem != 'Endereço Físico') {
 
@@ -568,12 +569,14 @@
 
                 modal.innerHTML = 'Adicionar '+nameItem;
                 itemAtualModal.style.display = 'none';
-                btnModal.innerHTML = 'Adicionar';                
+                btnModal.innerHTML = 'Adicionar';
+                btnModal.name = 'add';
 
             } else if (btn.name == 'btnEdit') {
 
                 modal.innerHTML = "Editar "+nameItem;
                 btnModal.innerHTML = 'Editar';
+                btnModal.name = 'edit';
 
             } else if (btn.name == 'btnDelete') {
 
@@ -582,6 +585,7 @@
                 itemNovoModal.style.display = 'none';
                 digitarItemNovoModal.style.display = 'none';
                 btnModal.innerHTML = 'Deletar';
+                btnModal.name = 'delete';
                 btnModal.classList.remove('btn-outline-primary');
                 btnModal.classList.add('btn-outline-danger');
 
@@ -622,8 +626,7 @@
             tempOptions.sort();
             tempOptions.forEach(element => {
                 var option = document.createElement("option");  
-                option.value = btn.title; /* #### */
-                option.text = element; 
+                option.value = option.text = element; 
                 selectModal.appendChild(option);
             });
                         
