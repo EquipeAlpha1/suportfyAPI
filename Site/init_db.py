@@ -123,7 +123,7 @@ inventory = {
     'Motherboard': {
         'Socket Intel': {
             'Asus Prime H510M-A, Intel Socket LGA1200, microATX, DDR4':3,
-            'Gigabyte B560M Aorus Elite, LGA 1200, Micro ATX, DDR4, (rev. 1.0)':4,
+            'Gigabyte B560M Aorus Elite, LGA1200, Micro ATX, DDR4, (rev. 1.0)':4,
             'Asus TUF Gaming B460M-Plus, Intel LGA1200, mATX, DDR4':5
         },
         'Socket AMD': {
@@ -134,9 +134,9 @@ inventory = {
     },
     'CPU': {
         'Intel': {
-            'i7-10700F, 2.9GHz (4.8GHz Max Turbo), Cache 16MB, LGA 1200':3,
+            'i7-10700F, 2.9GHz (4.8GHz Max Turbo), Cache 16MB, LGA1200':3,
             'i5-11400F, 2.6 GHz (4.4GHz Turbo), Cache 12MB, 6 Núcleos, 12 Threads, LGA1200':4,
-            'i3-10100F, 3.6GHz (4.3GHz Max Boost), Cache 6MB, Quad Core, 8 Threads, LGA 1200':5
+            'i3-10100F, 3.6GHz (4.3GHz Max Boost), Cache 6MB, Quad Core, 8 Threads, LGA1200':5
         },
         'AMD': {
             'Ryzen 5 3600 Cache 32MB 3.6GHz(4.2GHz Max Turbo) AM4, Sem Vídeo':3,

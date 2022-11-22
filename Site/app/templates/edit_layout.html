@@ -534,71 +534,98 @@
             let idInputItem = btn.id.toString().slice(3).split(/(?=[A-Z])/)[1];
             let inputItem = document.getElementById(idInputItem+'Input').value;
             let nameItem = btn.classList.toString().slice(3).split(/(?=[A-Z])/).join(' ');
+            let motherboardInput = document.getElementById("MotherboardInput");
             let modal = document.getElementById("modalLabel");
-            let modalText = document.getElementById("modalText");
             let formModal = document.getElementById("formModal");
-            let bodyEditModal = document.getElementById("bodyEditModal");
+            let itemAtualModal = document.getElementById("itemAtualModal");
             let inputModal = document.getElementById("inputModal");
+            let textBodyModal = document.getElementById("textBodyModal");
+            let itemNovoModal = document.getElementById("itemNovoModal");
             let selectModal = document.getElementById("selectModal");
+            let digitarItemNovoModal = document.getElementById("digitarItemNovoModal");
+            let inputDigitModal = document.getElementById("inputDigitModal");
             let btnModal = document.getElementById("btnModal");
-
-            console.log(inputItem);
-
-            const items = ['Monitor', 'Case', 'Keyboard', 'Mouse', 'Os', 'Network', 'Motherboard', 'Cpu', 'Memory', 'Storage', 'Gpu', 'Psu', 'Ip', 'Mac'];
-
-            bodyEditModal.style.display = 'none';
 
             if (btnModal.classList.contains('btn-outline-danger')) {
                 btnModal.classList.remove('btn-outline-danger');
                 btnModal.classList.add('btn-outline-primary');
             };
 
+            textBodyModal.style.display = 'none';
+            itemAtualModal.style.display = 'block';            
+            selectModal.innerHTML = '';
+            digitarItemNovoModal.style.display = 'none';
+            inputModal.value = inputItem;
+
+            if (nameItem != 'Rede' && nameItem != 'Ipv4' && nameItem != 'Endereço Físico') {
+
+                itemNovoModal.style.display = 'block';
+
+            } else {
+
+                itemNovoModal.style.display = 'none';
+                digitarItemNovoModal.style.display = 'block';
+                inputDigitModal.value = '';
+
+            };
+            
             if (btn.name == 'btnAdd') {
 
                 modal.innerHTML = 'Adicionar '+nameItem;
                 formModal.action = '/add_slot';
-                modalText.innerHTML = '';
-                selectModal.style.display = 'block';
-                btnModal.innerHTML = 'Adicionar';
+                itemAtualModal.style.display = 'none';
+                btnModal.innerHTML = 'Adicionar';                
 
             } else if (btn.name == 'btnEdit') {
 
                 modal.innerHTML = "Editar "+nameItem;
                 formModal.action = '/edit_slot';
-                bodyEditModal.style.display = 'block';
-                inputModal.value = inputItem;
-                modalText.innerHTML = '';
-                selectModal.innerHTML = '';
-                selectModal.style.display = 'block';
                 btnModal.innerHTML = 'Editar';
-
-                var option = document.createElement("option");
-                option.value = "" 
-                option.text = 'Clique para selecionar';                
-                option.setAttribute('disabled', true);
-                option.setAttribute('selected', true);
-                option.setAttribute('hidden', true);
-                selectModal.appendChild(option);
-                Object.keys(inventory).forEach(key => {
-                    if (inventory[key].type.toLowerCase() == idInputItem.toLowerCase()) {
-                        var option = document.createElement("option");
-                        option.value = option.text = inventory[key].brand + ' [' + inventory[key].model + ']';
-                        selectModal.appendChild(option);
-                    }
-                });
 
             } else if (btn.name == 'btnDelete') {
 
                 modal.innerHTML = "Deletar "+nameItem;
                 formModal.action = '/delete_slot';
-                modalText.innerHTML = 'Tem certeza que deseja deletar esse item?';
-                selectModal.style.display = 'none';
+                textBodyModal.style.display = 'block';
+                itemNovoModal.style.display = 'none';
+                digitarItemNovoModal.style.display = 'none';
                 btnModal.innerHTML = 'Deletar';
                 btnModal.classList.remove('btn-outline-primary');
                 btnModal.classList.add('btn-outline-danger');
 
             };
 
+            var option = document.createElement("option");
+            option.value = "";
+            option.text = 'Clique para selecionar';
+            option.setAttribute('disabled', true);
+            option.setAttribute('selected', true);
+            option.setAttribute('hidden', true);
+            selectModal.appendChild(option);
+            Object.keys(inventory).forEach(key => {
+                if (inventory[key].type.toLowerCase() == idInputItem.toLowerCase() && inventory[key].amount > 0) {    
+                    var option = document.createElement("option");
+                    if (inventory[key].type != 'Motherboard' && inventory[key].type != 'CPU') {                        
+                        option.value = option.text = inventory[key].brand + ' [' + inventory[key].model + ']';                        
+                    } else if (inventory[key].type == 'Motherboard') {
+                        let tempBrand = inventory[key].model.split(' ', 1);
+                        let tempModel = inventory[key].model.slice(tempBrand[0].length+1);
+                        option.value = option.text = tempBrand + ' [' + tempModel + ']';
+                    } else if (inventory[key].type == 'CPU') {   
+                        if (motherboardInput.value.includes('AM4') && inventory[key].model.includes('AM4')) {
+                            option.value = option.text = inventory[key].brand + ' [' + inventory[key].model + ']'; 
+                        } else if (motherboardInput.value.includes('LGA1200') && inventory[key].model.includes('LGA1200')) {
+                            option.value = option.text = inventory[key].brand + ' [' + inventory[key].model + ']'; 
+                        } else {
+                            return;
+                        };                                  
+                    };
+                    selectModal.appendChild(option);
+                } else {
+                    return;
+                };
+            });
+            
         };
 
         [].forEach.call(document.getElementsByTagName('a'), function (tag) {
@@ -616,14 +643,20 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <span id="modalText"></span>
-                        <div id="bodyEditModal" style="display: none;">
-                            Item Atual:
-                            <input class="form-control" id="inputModal" type="text" placeholder="" style="margin-bottom: 1rem;" readonly>
-                            Item Novo:
+                        <span id="textBodyModal" style="margin-bottom: 1rem;">Tem certeza que deseja deletar esse item?</span>
+                        <div id="itemAtualModal" style="margin-bottom: 1rem;">
+                            Atual:
+                            <input class="form-control" id="inputModal" type="text" placeholder="" readonly>
                         </div>
-                        <select class="form-select" id="selectModal" name="selectEditModal" aria-label="select">
-                        </select>
+                        <div id="itemNovoModal" style="margin-bottom: 1rem;">
+                            Novo:
+                            <select class="form-select" id="selectModal" name="selectEditModal" aria-label="select">
+                            </select>
+                        </div>
+                        <div id="digitarItemNovoModal">
+                            Digite um novo valor:
+                            <input class="form-control" id="inputDigitModal" onkeydown="inputMask(this)" type="text" placeholder="">
+                        </div>                
                     </div>
                     <div class="modal-footer">        
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
