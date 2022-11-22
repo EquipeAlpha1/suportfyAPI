@@ -73,6 +73,8 @@ def sign_out():
 
 @app.route('/load_room', methods=('POST',))
 def load_room(id):
+    global roomSelectedToEdit
+    roomSelectedToEdit = id
     conn = get_db_connection()
     layout = conn.execute('SELECT * FROM room_'+id+'').fetchall()
     inventory = conn.execute('SELECT * FROM inventory').fetchall()
@@ -101,7 +103,7 @@ def edit_layout():
         line_dict = dict(zip(columnsLayout, list(slots)))
         table_layout[room_layout.index(slots)+1] = line_dict
     
-    return render_template('edit_layout.html', room_layout=room_layout, table_layout=json.dumps(table_layout), table_inventory=json.dumps(table_inventory))
+    return render_template('edit_layout.html', room_layout=room_layout, table_layout=json.dumps(table_layout), table_inventory=json.dumps(table_inventory), room=room_id)
     
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
@@ -191,7 +193,6 @@ def create_request():
 
     room_id = str(request.args.get('roomSelected'))
     room_layout = load_room(room_id)[0]
-
     
     return render_template('create_request.html', room_layout=room_layout, room=room_id)
 
@@ -275,29 +276,27 @@ for image in files:
         im.save("thumbnail_%s_%s" % (image, "_".join(size))) """
 
 @app.route('/add_slot', methods=['GET','POST'])
-def add_slot(slot_id):
+def add_slot():
 
-    #sala
-    #id
-    #coluna do item = str(request.form.get('selectEditModal'))
+    if request.method == 'POST':
 
-    conn = get_db_connection()
-    conn.execute('UPDATE \
-                        [room_xxx] \
-                    SET \
-                        monitor_config_id = ?, \
-                        monitor_status_id = ?, \
-                        computer_config_id = ?, \
-                        computer_status_id = ?, \
-                        keyboard_config_id = ?, \
-                        keyboard_status_id = ?, \
-                        mouse_config_id = ?, \
-                        mouse_status_id = ? \
-                    WHERE \
-                        id = ?', 
-                        (monitor_config, 'OK', computer_config, 'OK', keyboard_config, 'OK', mouse_config, 'OK', slot_id))
-    conn.commit()
-    conn.close()
+        numberRoom = request.form.get('numberRoom')
+        idSlot = request.form.get('idSlot')
+        columnItem = request.form.get('columnItem')
+        newItem = request.form.get('newItem')
+
+        conn = get_db_connection()
+        conn.execute('UPDATE \
+                            room_'+numberRoom+' \
+                        SET \
+                            '+columnItem+'_config = ?, \
+                            '+columnItem+'_status  = ? \
+                        WHERE \
+                            id = '+idSlot+'', 
+                            (newItem, 'OK'))
+        conn.commit()
+        conn.close()
+    
     return redirect(url_for('edit_layout'))
 
 @app.route('/edit_slot', methods=['GET','POST'])
