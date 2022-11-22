@@ -212,34 +212,12 @@ inventory = {
             '450W, 80 Plus Bronze':5
         }
     }
-}
-            
-lastMBSocket = 0
+}          
 
-def selectItem(type):
-
-    global lastMBSocket
-
-    brand = random.randint(0, 2) if type != 'OS' and type != 'Motherboard' and type != 'CPU' else random.randint(0, 1)
-    item = random.randint(0, 2)
-
-    """ 
-    list(inventory['Monitor'][list(inventory['Monitor'])[brand]].keys())[item] # = 'key'
-    list(inventory['Monitor'][list(inventory['Monitor'])[brand]].values())[item] # = 'values' 
-    """
-    if type != 'CPU':
-        if type != 'Motherboard':
-            marca = list(inventory[type])[brand]
-            modelo = list(inventory[type][list(inventory[type])[brand]].keys())[item]
-        else:
-            lastMBSocket = brand
-            marca = list(inventory[type][list(inventory[type])[brand]].keys())[item].split(' ')[0]
-            modelo = list(inventory[type][list(inventory[type])[brand]].keys())[item].split(' ',1)[1]
-    else:
-        marca = list(inventory[type])[lastMBSocket]
-        modelo = list(inventory[type][list(inventory[type])[lastMBSocket]].keys())[item]
-        
-    return marca + ' [' + modelo + ']'
+""" 
+list(inventory['Monitor'][list(inventory['Monitor'])[brand]].keys())[item] # = 'key'
+list(inventory['Monitor'][list(inventory['Monitor'])[brand]].values())[item] # = 'values' 
+"""
 
 def generateMac():
     myhexdigits = []
@@ -248,6 +226,37 @@ def generateMac():
         hex = '%02x' % a
         myhexdigits.append(hex.upper())
     return '-'.join(myhexdigits)
+
+lastMBSocket = 0
+
+def generateConfig():
+
+    configsRoom = {}
+    
+    for i in range(11):
+
+        global lastMBSocket
+
+        type = list(inventory.keys())[i]
+
+        brand = random.randint(0, 2) if type != 'OS' and type != 'Motherboard' and type != 'CPU' else random.randint(0, 1)
+        item = random.randint(0, 2)
+        
+        match type:
+            case 'Motherboard':
+                lastMBSocket = brand
+                marca = list(inventory[type][list(inventory[type])[brand]].keys())[item].split(' ')[0]
+                modelo = list(inventory[type][list(inventory[type])[brand]].keys())[item].split(' ',1)[1]
+            case 'CPU':
+                marca = list(inventory[type])[lastMBSocket]
+                modelo = list(inventory[type][list(inventory[type])[lastMBSocket]].keys())[item]
+            case _:
+                marca = list(inventory[type])[brand]
+                modelo = list(inventory[type][list(inventory[type])[brand]].keys())[item]
+
+        configsRoom[list(inventory.keys())[i]] = marca + ' [' + modelo + ']'
+
+    return configsRoom
 
 for size in layouts.keys():
     emptySlots = layouts[size]['EmptySlots']
@@ -259,9 +268,6 @@ for size in layouts.keys():
         counter = 10
         ipRoom = (int(roomNumber) - 300) if (int(roomNumber) < 400) else (int(roomNumber) - 400)        
         for i in range(1, 56):
-            configsRoom = {}
-            for j in range(11):
-                configsRoom[list(inventory.keys())[j]] = selectItem(list(inventory.keys())[j])
             if i in disabledSlots: # slots de espaçamento
                 cur.execute('INSERT INTO room_'+roomNumber+' \
                                 (name, general_status, \
@@ -296,6 +302,7 @@ for size in layouts.keys():
                                 '#','#',
                                 '#','#'))
             elif i == 5: # slot do professor
+                configsRoom = generateConfig()
                 cur.execute('INSERT INTO room_'+roomNumber+' \
                                 (name, general_status, \
                                 monitor_config, monitor_status, \
@@ -365,6 +372,7 @@ for size in layouts.keys():
                 counter -= 1
                 counter += 20 if (counter == 0 or counter == 10 or counter == 20) else 0                
             else: # slots dos alunos
+                configsRoom = generateConfig()
                 cur.execute('INSERT INTO room_'+roomNumber+' \
                                 (name, general_status, \
                                 monitor_config, monitor_status, \
