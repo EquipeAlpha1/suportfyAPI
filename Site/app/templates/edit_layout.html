@@ -595,9 +595,9 @@
             option.setAttribute('selected', true);
             option.setAttribute('hidden', true);
             selectModal.appendChild(option);
-            let tempOptions = []
+            let tempOptions = [];
             Object.keys(inventory).forEach(key => {
-                if (inventory[key].type.toLowerCase() == idInputItem.toLowerCase() && inventory[key].amount > 0) {   
+                if (inventory[key].amount > 0 && inventory[key].type.toLowerCase() == idInputItem.toLowerCase()) {   
                                      
                     if (inventory[key].type != 'Motherboard' && inventory[key].type != 'CPU') {                        
                         tempOptions.push(inventory[key].brand + ' [' + inventory[key].model + ']');                        
@@ -613,7 +613,8 @@
                         } else {
                             return;
                         };                                  
-                    };                 
+                    };   
+
                 } else {
                     return;
                 };
@@ -628,7 +629,9 @@
         };
 
         [].forEach.call(document.getElementsByTagName('a'), function (tag) {
-            tag.addEventListener('click', configModal);					
+            if (tag.name == 'btnAdd' || tag.name == 'btnEdit' || tag.name == 'btnDelete') {
+                tag.addEventListener('click', configModal);
+            };			
 		});  
         [].forEach.call(document.getElementsByName('slotComputerEdit'), function (slot) {
             slot.addEventListener('click', fillSidebar);					

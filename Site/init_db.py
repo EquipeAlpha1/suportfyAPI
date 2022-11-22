@@ -257,11 +257,11 @@ for size in layouts.keys():
                     VALUES (?, ?)',
                         (roomNumber[0]+'rd', roomNumber))
         counter = 10
-        ipRoom = (int(roomNumber) - 300) if (int(roomNumber) < 400) else (int(roomNumber) - 400)
-        configsRoom = {}
-        for i in range(11):
-            configsRoom[list(inventory.keys())[i]] = selectItem(list(inventory.keys())[i])
+        ipRoom = (int(roomNumber) - 300) if (int(roomNumber) < 400) else (int(roomNumber) - 400)        
         for i in range(1, 56):
+            configsRoom = {}
+            for j in range(11):
+                configsRoom[list(inventory.keys())[j]] = selectItem(list(inventory.keys())[j])
             if i in disabledSlots: # slots de espaçamento
                 cur.execute('INSERT INTO room_'+roomNumber+' \
                                 (name, general_status, \
