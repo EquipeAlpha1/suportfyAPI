@@ -278,7 +278,6 @@ for image in files:
 @app.route('/update_slot', methods=('POST',))
 def update_slot():
 
-
     numberRoom = request.form.get('numberRoom')
     idSlot = request.form.get('idSlot')
     columnItem = request.form.get('columnItem')

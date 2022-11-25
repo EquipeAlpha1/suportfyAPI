@@ -15,6 +15,7 @@ DROP TABLE IF EXISTS room_409;
 DROP TABLE IF EXISTS room_411;
 DROP TABLE IF EXISTS room_412;
 DROP TABLE IF EXISTS inventory;
+DROP TRIGGER IF EXISTS verify_if_room_301_is_filled;
 
 CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -506,3 +507,19 @@ CREATE TABLE inventory (
 	model TEXT NOT NULL UNIQUE DEFAULT 'EMPTY',
 	amount TEXT NOT NULL DEFAULT 'EMPTY'
 );
+
+CREATE TRIGGER verify_if_room_301_is_filled 
+   AFTER UPDATE ON room_301
+BEGIN
+   	SELECT CASE
+		WHEN NEW.motherboard_config LIKE '#' THEN
+			UPDATE 
+				room_301
+			SET
+				motherboard_status = '#', 
+				cpu_config  = '#',
+				cpu_status = '#',
+				memory_config = '#',
+				memory_status = '#'
+    END;
+END;

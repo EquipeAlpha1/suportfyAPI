@@ -65,7 +65,6 @@ $(document).on('submit','#formEmail',function(e) {/* <!-- Essa função será at
     
 });
 
-
 $(document).on('submit','#formModal',function(e) {/* <!-- Essa função será ativada, quando o usuário clicar em qualquer botão 'Submit' do formulário --> */
 
     var pc = $("input[name='slotComputerEdit']:checked");
@@ -73,10 +72,13 @@ $(document).on('submit','#formModal',function(e) {/* <!-- Essa função será at
         var numberRoom = pc.val().split(' ')[1]; /* SALA = 405 */
         var idSlot = pc.attr('id'); /* ID NA TABELA = 5 */
     };    
-    var columnItem = $('#btnModal').attr('title'); /* COLUNA DO ITEM NA TABELA = case */
-    var newItem = $('#selectModal').find(":selected").text(); /* COLUNA DO ITEM NA TABELA = ASUS RGB XXX5000 */
+    var columnItem = $('#btnModal').attr('title'); /* COLUNA DO ITEM NA TABELA = case */    
     var operation = $('#btnModal').attr('name');
-        
+
+    var newItemSelected = $('#selectModal').find(":selected").text(); /* COLUNA DO ITEM NA TABELA = ASUS RGB XXX5000 */
+    var newItemDigited = $('#inputDigitModal').val();
+    var newItem = newItemDigited ? newItemDigited : newItemSelected;
+
     if (!numberRoom && !idSlot && !columnItem && !newItem) {    
         alert('ERRO');
         return; /* Caso falte preencher algum campo do formulário, sai do script */
