@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block title %} Perguntas frequentes {% endblock %}
 {% block styles_faq %}
-    <link rel="stylesheet" href="../static/css/sidebar_faq.css">
     <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
@@ -11,159 +10,160 @@
     <link rel="stylesheet" href="../static/js/scripts.js">
 {% endblock %}
 {% block conteudo %}
-        <!-- <a href="javascript:someFunction()">LINK</a> -->
-        <!-- <a href="#" onclick="someFunction(); return false;">LINK</a> -->
-        <section class="sectionFaq">
-            <div class="sidebarFaq flex-shrink-0 p-3 bg-white" style="width: 280px; height: 100%; background: rgb(201, 201, 201) !important;">
-                <a href="/faq" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-                  <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-                  <span class="fs-5 fw-semibold">FAQ's Alpha</span>
-                </a>
-                <ul class="list-unstyled ps-0">
-                  <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-                      Problemas de Hardware
-                    </button>
-                    <div class="collapse" id="home-collapse">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" onclick="onClickSidebar()" id="hardware-1" class="link-dark d-inline-flex text-decoration-none rounded">Monitor</a></li>
-                        <li><a href="#" onclick="onClickSidebar()" id="hardware-2" class="link-dark d-inline-flex text-decoration-none rounded">Mouse</a></li>
-                        <li><a href="#" onclick="onClickSidebar()" id="hardware-3" class="link-dark d-inline-flex text-decoration-none rounded">Teclado</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                      Problemas na Rede
-                    </button>
-                    <div class="collapse" id="dashboard-collapse">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" onclick="onClickSidebar()" id="rede-7" class="link-dark d-inline-flex text-decoration-none rounded">Modem</a></li>
-                        <li><a href="#" onclick="onClickSidebar()" id="rede-8" class="link-dark d-inline-flex text-decoration-none rounded">Conexão</a></li>
-                      </ul>  
-                    </div>
-                  </li>
-                  <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                      Problemas no Software
-                    </button>
-                    <div class="collapse" id="orders-collapse">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" onclick="onClickSidebar()" id="software-4" class="link-dark d-inline-flex text-decoration-none rounded">Aplicativos</a></li>
-                        <li><a href="#" onclick="onClickSidebar()" id="software-5" class="link-dark d-inline-flex text-decoration-none rounded">Sistema Operacional</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
+    <main id="mainfaq">
+        <aside id="sidebarfaq">
+          <div id="titlesidebar">
+            <a href="faq" style="text-decoration: none; color: black;">FAQ's Alpha</a>
+          </div>
+          <hr id="hrfaq">
+            <div id="navbarfaq">
+              <ul class="list-unstyled ps-0">
+                <li class="mb-1 lisidebarfaq">
+                  <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                    Problemas de Hardware
+                  </button>
+                  <div class="collapse" id="home-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      <li><a href="#" onclick="onClickSidebar()" id="hardware-1" class="link-dark d-inline-flex text-decoration-none rounded asidebarfaq" >Monitor</a></li>
+                      <li><a href="#" onclick="onClickSidebar()" id="hardware-2" class="link-dark d-inline-flex text-decoration-none rounded asidebarfaq">Mouse</a></li>
+                      <li><a href="#" onclick="onClickSidebar()" id="hardware-3" class="link-dark d-inline-flex text-decoration-none rounded asidebarfaq">Teclado</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="mb-1 lisidebarfaq">
+                  <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                    Problemas na Rede
+                  </button>
+                  <div class="collapse" id="dashboard-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      <li><a href="#" onclick="onClickSidebar()" id="rede-7" class="link-dark d-inline-flex text-decoration-none rounded asidebarfaq">Modem</a></li>
+                      <li><a href="#" onclick="onClickSidebar()" id="rede-8" class="link-dark d-inline-flex text-decoration-none rounded asidebarfaq">Conexão</a></li>
+                    </ul>  
+                  </div>
+                </li>
+                <li class="mb-1 lisidebarfaq">
+                  <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                    Problemas no Software
+                  </button>
+                  <div class="collapse" id="orders-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      <li><a href="#" onclick="onClickSidebar()" id="software-4" class="link-dark d-inline-flex text-decoration-none rounded asidebarfaq">Aplicativos</a></li>
+                      <li><a href="#" onclick="onClickSidebar()" id="software-5" class="link-dark d-inline-flex text-decoration-none rounded asidebarfaq">Sistema Operacional</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <div class="content">
-              <div class="default active" style="height: auto; width:auto; margin: 3rem auto 0; display: flex;">
-                  <div class="articles">
-                    <div class="contentprincipal" style="display: block; gap:2rem;">
-                      <div class="articlesTitle">
-                        <h1 class="" dir="auto" style="font-size: 2rem; margin: 0;">Artigos mais visitados</h1>
-                      </div>
-                      <div class="problemcontent">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                        </svg>
-                        <span class="" dir="auto"><a class="" href="#" onclick="onClickSidebar()" id="hardware-1" role="link" tabindex="0">Problemas no monitor</a></span>
-                      </div>
-                      <div class="problemcontent">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                        </svg>
-                        <span class="" dir="auto"><a class="" href="#" onclick="onClickSidebar()" id="rede-7" role="link" tabindex="0">Problemas no modem</a></span>
-                      </div>
-                      <div class="problemcontent">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                        </svg>
-                        <span class="" dir="auto"><a class="" href="#" onclick="onClickSidebar()" id="rede-8" role="link" tabindex="0">Problemas na conexão</a></span>
-                      </div>
-                      <div class="problemcontent">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                        </svg>
-                        <span class="" dir="auto"><a class="" href="#" onclick="onClickSidebar()" id="software-4" role="link" tabindex="0">Problemas no aplicativo</a></span>
-                      </div>
-                      <div class="problemcontent">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                        </svg>
-                        <span class="" dir="auto"><a class="" href="#" onclick="onClickSidebar()" id="hardware-2" role="link" tabindex="0">Problemas no mouse</a></span>
-                      </div>
+        </aside>
+        <section id="contentfaq">
+            <div class="default active" style="display: flex; margin-top: 6em; margin-left: 2em; width: 80%; justify-content: center;">
+                <div class="articles">
+                  <div class="contentprincipal">
+                    <div class="articlesTitle">
+                      <h1 class="" dir="auto" id="titlefaq">Artigos mais visitados</h1>
+                    </div>
+                    <div class="problemcontent">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                      <span class="" dir="auto"><a class="afaq" href="#" onclick="onClickSidebar()" id="hardware-1" role="link" tabindex="0">Problemas no monitor</a></span>
+                    </div>
+                    <div class="problemcontent">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                      <span class="" dir="auto"><a class="afaq" href="#" onclick="onClickSidebar()" id="rede-7" role="link" tabindex="0">Problemas no modem</a></span>
+                    </div>
+                    <div class="problemcontent">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                      <span class="" dir="auto"><a class="afaq" href="#" onclick="onClickSidebar()" id="rede-8" role="link" tabindex="0">Problemas na conexão</a></span>
+                    </div>
+                    <div class="problemcontent">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                      <span class="" dir="auto"><a class="afaq" href="#" onclick="onClickSidebar()" id="software-4" role="link" tabindex="0">Problemas no aplicativo</a></span>
+                    </div>
+                    <div class="problemcontent">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                      <span class="" dir="auto"><a class="afaq" href="#" onclick="onClickSidebar()" id="hardware-2" role="link" tabindex="0">Problemas no mouse</a></span>
                     </div>
                   </div>
-                  <div class="imgfaq">
-                    <img src="../static/img/desktopfaq.jpg" alt="desktops">
-                  </div>
-              </div>
-              <div class="categoria-1" >
+                </div>
+                <div class="imgfaq">
+                  <img src="../static/img/desktopfaq.jpg" alt="desktops">
+                </div>
+            </div>
+            <div class="categoria-1" id="categorias">
                   <div class="hardware-1" id="problemsolucion" style="display: none;">
-                    <h2 class="h2faq">Problemas no monitor:</h2>
+                    <h2 class="h2faq">Problemas no Monitor:</h2>
                     <p class="contentfaq">
                       Em muitos dos casos este problema está relacionado aos cabos de conexão, aconselhamos que verifique se o cabo está plugado corretamente, caso não funcione <a href="create_request" class="chamadofaq">abra um chamado</a>.
                     </p>
                   </div>
                   <div class="hardware-2" id="problemsolucion" style="display: none;">
-                    <h2 class="h2faq">Problemas no mouse:</h2>
+                    <h2 class="h2faq">Problemas no Mouse:</h2>
                     <p class="contentfaq">
                       Geralmente os problemas de hardware estão ligados aos cabos de conexão, instruimos que verifique se os cabos estão devidamente plugados, se o problema persistir <a href="create_request" class="chamadofaq">abra um chamado</a>.
                     </p>
                   </div>
                   <div class="hardware-3" id="problemsolucion" style="display: none;">
-                    <h2 class="h2faq">Problemas no teclado</h2>
+                    <h2 class="h2faq">Problemas no Teclado:</h2>
                     <p class="contentfaq">
                       Assim como os outros hardwares o problemas do teclado também estáo relacionados aos cabos de conexão, aconselhamos que verifique se o cabo está plugado corretamente, caso não funcione <a href="create_request" class="chamadofaq">abra um chamado</a>.
                     </p> 
                     </p>
                   </div>
-              </div>        
-              <div class="categoria-2">
+            </div>        
+            <div class="categoria-2" id="categorias">
                   <div class="software-4" id="problemsolucion" style="display: none;">
-                    <h2 class="h2faq">Problemas no aplicativo:</h2>
+                    <h2 class="h2faq">Problemas no Aplicativo:</h2>
                     <p class="contentfaq">
                       Os problemas nos apps geralmente são gerados pelas configurações equivocadas dos usuarios, tente reinicias o dispositivo, caso não funcione <a href="create_request" class="chamadofaq">abra um chamado</a> e aguarde a visita do técnico.
                     </p>
                   </div>
                   <div class="software-5" id="problemsolucion" style="display: none;">
-                    <h2 class="h2faq">Problemas no sistema operacional:</h2>
+                    <h2 class="h2faq">Problemas no sistema Operacional:</h2>
                     <p class="contentfaq">
                       Os problemas no sistema operacional são mais complexos, por isso intriumos que <a href="create_request" class="chamadofaq">abra um chamado</a> e aguarde a visita do técnico para que não haja problemas graves no software da máquina.
                     </p>
                   </div>
-              </div>                
-              <div class="categoria-3">
+            </div>                
+            <div class="categoria-3" id="categorias">
                   <div class="rede-7" id="problemsolucion" style="display: none;">
-                    <h2 class="h2faq">Problemas no modem:</h2>
+                    <h2 class="h2faq">Problemas no Modem:</h2>
                     <p class="contentfaq">
                       No caso de problemas no modem pedimos que verifique se os cabos estão plugados corretamente e tente desligar e ligar o modem, isso deve eliminar falhas e bugs temporários da conexão, forçando o dispositivo a se reconectar do zero, caso não funcione caso não funcione <a href="create_request" class="chamadofaq">abra um chamado</a> e aguarde a visita do técnico.
                     </p>
                   </div>
                   <div class="rede-8" id="problemsolucion" style="display: none;">
-                    <h2 class="h2faq">Problemas na conexão:</h2>
+                    <h2 class="h2faq">Problemas na Conexão:</h2>
                     <p class="contentfaq">
                       A conexão pode estar fraca ou não ter acesso devido ao grande tráfico de pessoas na rede ou também problemas nos dispositivos da estrutura de rede, pedimos que <a href="create_request" class="chamadofaq">abra um chamado</a> e aguarde a visita do técnico.
                     </p>
                   </div>
-              </div>
-          </div>
-            <script type="text/javascript">
-
-              function onClickSidebar() {
-          
-                  var activeProblem = document.querySelector('.active');
-                  var chosedProblem = document.activeElement.id;
-          
-                  activeProblem.classList.remove('active'); 
-                  activeProblem.style.display = 'none';
-          
-                  document.querySelector('.'+chosedProblem).style.display = 'block';
-                  document.querySelector('.'+chosedProblem).classList.add('active'); /* animation */                
-          
-              };
-          
-          </script>
+            </div>
         </section>
+    </main>
+    <script type="text/javascript">
+
+      function onClickSidebar() {
+  
+          var activeProblem = document.querySelector('.active');
+          var chosedProblem = document.activeElement.id;
+  
+          activeProblem.classList.remove('active'); 
+          activeProblem.style.display = 'none';
+  
+          document.querySelector('.'+chosedProblem).style.display = 'block';
+          document.querySelector('.'+chosedProblem).classList.add('active'); /* animation */                
+  
+      };
+  
+  </script>
+
 {% endblock %}
