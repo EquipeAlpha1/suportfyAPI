@@ -1018,7 +1018,7 @@ ul {
   margin: 0 !important;
 }
 
-}
+
 
 .btn_home2 {
   display: none;
@@ -1061,4 +1061,6 @@ ul {
   background: url(../img/valid.png);
   background-size:cover ;
   z-index: 1000;
+}
+
 }
