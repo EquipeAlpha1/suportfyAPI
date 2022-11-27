@@ -1,5 +1,5 @@
 function recaptcha_callback(){
-
+    console.log('recaptcha_callback');
     var c1_name = $("#c1_name").val();
     var c1_email = $("#c1_email").val();
     var pc = $("input[name='c2_computadores']:checked").val(); /* Pega o valor(número) do computador que está selecionado */
@@ -14,7 +14,7 @@ function recaptcha_callback(){
 
     var responseGoogle = grecaptcha.getResponse();
 
-    if (!c1_name && !c1_email && !c1_floor && !c1_room && !c2_pc && !c3_assunto && !c3_texto) {    
+    if (!c1_name || !c1_email || !pc || !c3_assunto || !c3_texto) {    
         return; /* Caso falte preencher algum campo do formulário, sai do script */
     };        
 
@@ -25,7 +25,6 @@ function recaptcha_callback(){
         var form_data = new FormData();           
         form_data.append('file', document.getElementById('formFile').files[0]); /* Anexa o arquivo ao objeto FormData */
 
-        console.log(c2_floor, c2_room, c2_pc_label, c2_pc_id);
         $.ajax ({
 
             type:'POST',
@@ -38,8 +37,28 @@ function recaptcha_callback(){
         });
 
     };
-    
-};
+
+    $.ajax ({
+
+        type:'POST',
+        url:'/create_request', /* URL para rota flask */
+        data: { /* Passa um dicionário com os dados inseridos no formulário para o Flask registrar */
+            name : c1_name,
+            mail : c1_email,
+            floor : c2_floor,
+            room : c2_room,
+            pc : c2_pc_label,
+            pc_id : c2_pc_id,
+            subject : c3_assunto,
+            description : c3_texto,
+            response : responseGoogle
+        }
+
+    });
+
+    $('#formEmail')[0].reset(); /* Reseta os dados inseridos no formulário */
+
+}
 
 $(document).on('submit','#formModal',function(e) {/* <!-- Essa função será ativada, quando o usuário clicar em qualquer botão 'Submit' do formulário --> */
 

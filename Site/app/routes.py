@@ -16,8 +16,8 @@ import json
 from urllib import response
 import requests
 
-SITE_KEY = '6LdSpxMjAAAAABdv0BhaU6jmVuoPOi8lPG9jvxE6'
-SECRET_KEY = '6LdSpxMjAAAAAJBCtWMa8xeWPh3MbqMjjG5MnClG'
+SITE_KEY = '6LcNIzsjAAAAAAttSTjIUlpuJ7Z_byZkam-CGTXZ'
+SECRET_KEY = '6LcNIzsjAAAAAOszHOqL_-WoHKcNmumkpzeOW0rg'
 VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify'
 
 UPLOAD_FOLDER = 'app/static/uploads'
@@ -28,7 +28,7 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = '465'
 app.config['MAIL_DEFAULT_SENDER'] = 'Grupo Alpha - API <luisebf01@gmail.com>'
 app.config['MAIL_USERNAME'] = 'luisebf01@gmail.com'
-app.config['MAIL_PASSWORD'] = 'bteusbrxhsimnlza' # ESSA É UMA 'SENHA DE APP' GERADA NAS CONFIGURAÇÕES DE SEGURANÇA DO GOOGLE SÓ PARA ENVIOS DE EMAIL PELO FLASK
+app.config['MAIL_PASSWORD'] = 'fjebxwrnnffjonbz' # ESSA É UMA 'SENHA DE APP' GERADA NAS CONFIGURAÇÕES DE SEGURANÇA DO GOOGLE SÓ PARA ENVIOS DE EMAIL PELO FLASK
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 email = Mail(app)
@@ -125,17 +125,17 @@ def create_request():
         name = request.form.get('name')
         mail = request.form.get('mail')
         floor = request.form.get('floor')+'º Andar'
-        room = request.form.get('room') #
+        room = request.form.get('room')
         pc = request.form.get('pc') 
-        pc_id = request.form.get('pc_id') #
+        pc_id = request.form.get('pc_id')
         subject = request.form.get('subject')
         description = request.form.get('description')
 
-        if not name and not mail and not floor and not room and not pc and not subject and not description:
-            return redirect(url_for('create_request'))
-    
+        if not name or not mail or not floor or not room or not pc or not subject or not description:
+            "<h2>ERRO: Faltou preencher algum campo do formulário. Sua solicitação não foi registrada.</h2>"
+
         ## Envia um e-mail de notificação para o usuário
-        """ msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
+        msg = Message('SUPORTE FATEC: Sua solicitação foi recebida!', recipients=[mail])
         msg.html = "<!DOCTYPE html><html><body>" \
                     "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
                     "Fala {}, Beleza?<br /><br />" \
@@ -158,11 +158,14 @@ def create_request():
                     "Se você não deseja mais receber esse tipo de e-mail, clique " \
                     "<a href='https://www.rataalada.com/' style='color: rgb(71, 124, 204); text-decoration: none; display: inline;'>aqui</a>." \
                     "</table></div></body></html>".format(name, floor, room, pc, subject, description, mail)
-
-        email.send(msg)           """
+        
+        try:
+            email.send(msg)    
+        except:
+            return "<h2>ERRO: O servidor está fora do ar ou você inseriu no formulário algum dado inválido. Sua solicitação não foi registrada.</h2>"
 
         ## Envia um e-mail de notificação para a equipe de suporte
-        """ msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['luisebf01@gmail.com'])
+        msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['luisebf01@gmail.com'])
         msg.html = "<!DOCTYPE html><html><body>" \
                 "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
                     "Fala Suporte Alpha, Beleza?<br /><br />" \
@@ -192,8 +195,11 @@ def create_request():
                 msg.attach("Image."+extension, "image/"+extension, fp.read())
             tempFilename = ''
             tempEvent = False
-
-        email.send(msg)         """
+        
+        try:
+            email.send(msg)
+        except:
+            return "<h2>ERRO: O envio de e-mail para a equipe de suporte deu errado. Sua solicitação não foi registrada.</h2>"
 
         ## Faz o registro da solicitação no banco de dados
         conn = get_db_connection()
@@ -209,9 +215,7 @@ def create_request():
     room_layout = load_room(room_id)[0]
     
     return render_template('create_request.html', room_layout=room_layout, room=room_id, site_key=SITE_KEY)   
-        
-             
-
+           
 @app.route('/consult_requests', methods=['GET','POST'])
 def consult_requests():
     conn = get_db_connection()
@@ -233,10 +237,6 @@ def delete_request(id):
     conn.close()
     flash('A solicitação "{}" foi deletada com sucesso!'.format(id))
     return redirect(url_for('consult_requests'))
-
-""" @app.route('/about_us')
-def about_us():
-    return render_template('about_us.html') """
 
 @app.route('/faq')
 def faq():
@@ -270,26 +270,6 @@ def get_issue(issue_id):
     if issue is None:
         abort(404)
     return issue
-
-""" def get_user(user_id):
-    conn = get_db_connection()
-    user = conn.execute('SELECT * FROM users WHERE id = ?',
-                        (user_id,)).fetchone()
-    conn.close()
-    if user is None:
-        abort(404)
-    return user """
-
-""" # O CÓDIGO ABAIXO SERVE PARA GERAR THUMBNAILS DOS ARQUIVOS UPADOS
-from PIL import Image
-sizes = [(120,120), (720,720), (1600,1600)]
-files = ['a.jpg','b.jpg','c.jpg']
-
-for image in files:
-    for size in sizes:
-        im = Image.open(image)
-        im.thumbnail(size)
-        im.save("thumbnail_%s_%s" % (image, "_".join(size))) """
 
 @app.route('/update_slot', methods=('POST',))
 def update_slot():
