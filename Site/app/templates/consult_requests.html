@@ -15,12 +15,13 @@
                                     <p class="itens">Computador: {{ issue['pcs'] }}</p>
                                     <p class="itens">Assunto: {{ issue['subjects'] }}</p>
                                     <p class="itens">Descrição: {{ issue['descriptions'] }}</p>
-                                
+                                    {% if session %}
                                     <form action="{{ url_for('delete_request', id=issue['id']) }}" method="post">
                                         <button type="submit" class="btn btn-outline-danger btnDeleteRequest" onclick="return confirm('Clique em OK se você tem certeza que quer deletar essa solicitação.')">
                                             Deletar
                                         </button>
                                     </form>
+                                    {% endif %}
                                 </section>    
                             </div>
                         {% endfor %}

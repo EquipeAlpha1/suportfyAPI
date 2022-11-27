@@ -16,8 +16,8 @@ import json
 from urllib import response
 import requests
 
-SITE_KEY = '6LcNIzsjAAAAAAttSTjIUlpuJ7Z_byZkam-CGTXZ'
-SECRET_KEY = '6LcNIzsjAAAAAOszHOqL_-WoHKcNmumkpzeOW0rg'
+SITE_KEY = 'sitekey'
+SECRET_KEY = 'secretkey'
 VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify'
 
 UPLOAD_FOLDER = 'app/static/uploads'
