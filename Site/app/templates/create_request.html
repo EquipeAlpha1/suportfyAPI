@@ -42,7 +42,7 @@
                             <div class="email"> <!-- E-MAIL -->        
                                 <label for="c1_email" class="form-label">E-mail: <span class="requiredField">*</span></label>
                                 <input class="form-control" type ="email" placeholder="Digite seu e-mail aqui" id="c1_email" aria-describedby="emailHelp" oninput="validation()"> <!-- ÁREA PARA DIGITAR O E-MAIL DO USUÁRIO -->
-                                <span id="text"></span>
+                                <span id="text"></span>                                
                             </div>
                             <br>
                             <div class="subtitleRequiredField">* Campo Obrigatório</div> <!-- LEGENDA -->
@@ -176,8 +176,8 @@
                             <button type="button" class="btn btn-secondary btn_next">Avançar</button>
                         </div>
                         <div class="form_3_btns common_btns" style="display: none;"> <!-- BOTÕES PARA A PÁGINA 3 -->
-                            <button type="button" class="btn btn-secondary btn_back">Voltar</button>
-                            <button type="submit" class="btn btn-primary btn_next" id="SendMail" value="SendMail">Enviar</button>   
+                            <button type="button" class="btn btn-secondary btn_back">Voltar</button>  
+                            <button type="submit" class="g-recaptcha btn btn-primary btn_next" data-sitekey="{{ site_key }}" data-callback="recaptcha_callback" data-action="submit" id="SendMail" value="SendMail">Enviar</button>
                         </div>
                         <div class="form_4_btns common_btns" style="display: none;"> <!-- BOTÕES PARA A PÁGINA 4 -->
                             <button type="submit" class="btn btn-primary btn_done" id="Refresh" value="Refresh">Concluir</button>

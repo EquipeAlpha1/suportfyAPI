@@ -13,6 +13,12 @@ from flask_mail import Message
 import os
 from werkzeug.utils import secure_filename
 import json
+from urllib import response
+import requests
+
+SITE_KEY = '6LdSpxMjAAAAABdv0BhaU6jmVuoPOi8lPG9jvxE6'
+SECRET_KEY = '6LdSpxMjAAAAAJBCtWMa8xeWPh3MbqMjjG5MnClG'
+VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify'
 
 UPLOAD_FOLDER = 'app/static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -107,7 +113,15 @@ def edit_layout():
     
 @app.route('/create_request', methods=['GET','POST'])
 def create_request():
+
     if request.method == 'POST':
+        
+        secret_response = request.form['response']
+        verify_response = requests.post(url=f'{VERIFY_URL}?secret={SECRET_KEY}&response={secret_response}').json()
+        
+        if verify_response ['success'] == False or verify_response['score'] < 0.5:
+            abort(401)
+
         name = request.form.get('name')
         mail = request.form.get('mail')
         floor = request.form.get('floor')+'º Andar'
@@ -194,7 +208,9 @@ def create_request():
     room_id = str(request.args.get('roomSelected'))
     room_layout = load_room(room_id)[0]
     
-    return render_template('create_request.html', room_layout=room_layout, room=room_id)
+    return render_template('create_request.html', room_layout=room_layout, room=room_id, site_key=SITE_KEY)   
+        
+             
 
 @app.route('/consult_requests', methods=['GET','POST'])
 def consult_requests():
