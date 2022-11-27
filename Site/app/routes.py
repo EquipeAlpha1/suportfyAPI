@@ -28,7 +28,7 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = '465'
 app.config['MAIL_DEFAULT_SENDER'] = 'Grupo Alpha - API <luisebf01@gmail.com>'
 app.config['MAIL_USERNAME'] = 'luisebf01@gmail.com'
-app.config['MAIL_PASSWORD'] = 'fjebxwrnnffjonbz' # ESSA É UMA 'SENHA DE APP' GERADA NAS CONFIGURAÇÕES DE SEGURANÇA DO GOOGLE SÓ PARA ENVIOS DE EMAIL PELO FLASK
+app.config['MAIL_PASSWORD'] = 'senha' # ESSA É UMA 'SENHA DE APP' GERADA NAS CONFIGURAÇÕES DE SEGURANÇA DO GOOGLE SÓ PARA ENVIOS DE EMAIL PELO FLASK
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 email = Mail(app)
@@ -158,44 +158,34 @@ def create_request():
                     "Se você não deseja mais receber esse tipo de e-mail, clique " \
                     "<a href='https://www.rataalada.com/' style='color: rgb(71, 124, 204); text-decoration: none; display: inline;'>aqui</a>." \
                     "</table></div></body></html>".format(name, floor, room, pc, subject, description, mail)
-        
+
         try:
             email.send(msg)    
         except:
             return "<h2>ERRO: O servidor está fora do ar ou você inseriu no formulário algum dado inválido. Sua solicitação não foi registrada.</h2>"
 
-        # ## Envia um e-mail de notificação para a equipe de suporte
-        # msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['luisebf01@gmail.com'])
-        # msg.html = "<!DOCTYPE html><html><body>" \
-        #         "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
-        #             "Fala Suporte Alpha, Beleza?<br /><br />" \
-        #             "Acabaram de abrir uma solicitação de suporte, e as informações seguem abaixo:<br /><br />" \
-        #             "  Solicitante: {}<br />" \
-        #             "       E-mail: {}<br />" \
-        #             "         Piso: {}<br />" \
-        #             "         Sala: {}<br />" \
-        #             "   Computador: {}<br />" \
-        #             "      Assunto: {}<br />" \
-        #             "    Descrição: {}<br /><br />" \
-        #             "Atenciosamente,<br />" \
-        #             "GRUPO ALPHA" \
-        #             "<br /><br />" \
-        #             "<table style='border-top:1px solid #dddddd;border-collapse:collapse' cellpadding='0' cellspacing='0' width='100%'>" \
-        #             "<td style='line-height:12px;color:#808080;font-size:10px'>" \
-        #             "<b>Este é um e-mail de notificação e foi gerado automaticamente. Por favor, não responda esta mensagem!</b><br />" \
-        #             "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [api.ads.2022@gmail.com] porque este e-mail foi registrado para a equipe de suporte na FATEC - SJC.</a><br />" \
-        #             "</table></div></body></html>".format(name, mail, floor, room, pc, subject, description)
+        ## Envia um e-mail de notificação para a equipe de suporte
+        msg = Message('SUPORTE FATEC: Chamado de manutenção recebido!', recipients=['luisebf01@gmail.com'])
+        msg.html = "<!DOCTYPE html><html><body>" \
+                "<div style=""font-family:'Segoe UI', Calibri, Arial, Helvetica; font-size: 14px; max-width: 762px;"">" \
+                    "Fala Suporte Alpha, Beleza?<br /><br />" \
+                    "Acabaram de abrir uma solicitação de suporte, e as informações seguem abaixo:<br /><br />" \
+                    "  Solicitante: {}<br />" \
+                    "       E-mail: {}<br />" \
+                    "         Piso: {}<br />" \
+                    "         Sala: {}<br />" \
+                    "   Computador: {}<br />" \
+                    "      Assunto: {}<br />" \
+                    "    Descrição: {}<br /><br />" \
+                    "Atenciosamente,<br />" \
+                    "GRUPO ALPHA" \
+                    "<br /><br />" \
+                    "<table style='border-top:1px solid #dddddd;border-collapse:collapse' cellpadding='0' cellspacing='0' width='100%'>" \
+                    "<td style='line-height:12px;color:#808080;font-size:10px'>" \
+                    "<b>Este é um e-mail de notificação e foi gerado automaticamente. Por favor, não responda esta mensagem!</b><br />" \
+                    "<a style='text-decoration:none;color:#808080'>Este e-mail foi enviado para o e-mail [api.ads.2022@gmail.com] porque este e-mail foi registrado para a equipe de suporte na FATEC - SJC.</a><br />" \
+                    "</table></div></body></html>".format(name, mail, floor, room, pc, subject, description)
 
-        ## Se houver uma imagem na solicitação, anexa no e-mail para a equipe de suporte
-        global tempFilename, tempEvent
-        if tempEvent:
-            extension = tempFilename.rsplit('.', 1)[1].lower()
-            filePath = os.getcwd().replace('\\', '/')+'/'+UPLOAD_FOLDER+'/'+tempFilename
-            with app.open_resource(filePath) as fp:
-                msg.attach("Image."+extension, "image/"+extension, fp.read())
-            tempFilename = ''
-            tempEvent = False
-        
         try:
             email.send(msg)
         except:
