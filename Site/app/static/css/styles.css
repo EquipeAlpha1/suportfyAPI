@@ -642,8 +642,8 @@ textarea {
 }
 
 #categorias{
-  position: relative; 
-  bottom: 8em;
+  margin-left: 10%;
+  margin-top: 13%;
 }
 
 #problemsolucion{
