@@ -119,8 +119,8 @@ def create_request():
         secret_response = request.form['response']
         verify_response = requests.post(url=f'{VERIFY_URL}?secret={SECRET_KEY}&response={secret_response}').json()
         
-        if verify_response ['success'] == False or verify_response['score'] < 0.5:
-            abort(401)
+        """ if verify_response ['success'] == False or verify_response['score'] < 0.5:
+            abort(401) """
 
         name = request.form.get('name')
         mail = request.form.get('mail')
