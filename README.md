@@ -39,7 +39,6 @@
 * [Objetivo do Projeto](#objetivo-do-projeto)
 * [Backlog Total](#backlog-total)
 * [Backlog Sprint 3](#backlog-sprint-3)
-* [Burndown](#burndown)
 * [Tecnologias e ferramentas utilizadas](#tecnologias-e-ferramentas)
 * [App da Sprint 3](#app-da-sprint-3)
 * [Software em funcionamento](#software-em-funcionamento)
@@ -65,9 +64,6 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 | Trabalhar responsividade mobile | 34 | Facilitar o acesso do usuário por meio de qualquer aparelho e tamanho de tela |
 | Trocar o máximo de elementos avulsos por Bootstrap | 13 | Dar mais padronização ao software |
 
-
-## Burndown
-![image](https://user-images.githubusercontent.com/111616660/200330728-3ae90226-ce6b-4ad6-bcad-527da2a0bcb8.png)
 
 
 ## Tecnologias e ferramentas
