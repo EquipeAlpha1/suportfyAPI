@@ -77,12 +77,12 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 
 ## App da Sprint 3
 
-[App Sprint 3]()
+[App Sprint 3](https://sprint1-grupo-alpha.herokuapp.com/)
 
 
 ## Software em funcionamento
 
-[Vídeo Sprint 3]()
+[Vídeo Sprint 3](https://youtu.be/yWSd8k3RCxw)
 
 ## Agradecimentos
 Agradecemos pelo corpo docente da Fatec-SJC, que nos auxiliou no trabalho com as tecnologias envolvidas no projeto e também com a disponibilidade dos laborátórios, para mapeamento e utilização dos computadores.
