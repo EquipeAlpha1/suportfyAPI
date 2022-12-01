@@ -38,7 +38,7 @@
 ## Índice
 * [Objetivo do Projeto](#objetivo-do-projeto)
 * [Backlog Total](#backlog-total)
-* [Backlog Sprint 3](#backlog-sprint-3)
+* [Backlog Sprint 4](#backlog-sprint-4)
 * [Tecnologias e ferramentas utilizadas](#tecnologias-e-ferramentas)
 * [App da Sprint 3](#app-da-sprint-3)
 * [Software em funcionamento](#software-em-funcionamento)
@@ -54,7 +54,7 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 ![Backlog total](https://user-images.githubusercontent.com/111616660/190879818-7063c42b-8c20-4404-8b14-e524a64352ad.png)
 
 
-## Backlog Sprint 3
+## Backlog Sprint 4
 
 | US | Estimativa de esforço | Critério de aceitação |
 |:--------------:  | :----------:|:---------------------------------:|
