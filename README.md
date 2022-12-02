@@ -40,7 +40,7 @@
 * [Backlog Total](#backlog-total)
 * [Backlog Sprint 4](#backlog-sprint-4)
 * [Tecnologias e ferramentas utilizadas](#tecnologias-e-ferramentas)
-* [App da Sprint 3](#app-da-sprint-3)
+* [App da Sprint](#app-da-sprint)
 * [Software em funcionamento](#software-em-funcionamento)
 * [Agradecimentos](#agradecimentos)
 
@@ -75,14 +75,14 @@ O projeto de suporte para laboratórios de informática da Fatec-SJC, tem como p
 * Flask;
 * SQLite.
 
-## App da Sprint 3
+## App da Sprint
 
-[App Sprint 3](https://sprint1-grupo-alpha.herokuapp.com/)
+[App Sprint](https://sprint1-grupo-alpha.herokuapp.com/)
 
 
 ## Software em funcionamento
 
-[Vídeo Sprint 3](https://youtu.be/yWSd8k3RCxw)
+[Vídeo Sprint](https://youtu.be/yWSd8k3RCxw)
 
 ## Agradecimentos
 Agradecemos pelo corpo docente da Fatec-SJC, que nos auxiliou no trabalho com as tecnologias envolvidas no projeto e também com a disponibilidade dos laborátórios, para mapeamento e utilização dos computadores.
