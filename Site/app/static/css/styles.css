@@ -647,9 +647,10 @@ a:hover:not(.wrapperSlot a),
   margin-bottom: 30px;
 }
 
-#categorias{
-  margin-left: 10%;
-  margin-top: 13%;
+#categoria{
+ position: relative;
+ left: 8rem;
+ top: 8rem;
 }
 
 #problemsolucion{
@@ -785,6 +786,7 @@ a:hover:not(.wrapperSlot a),
 .scrollarea {
   overflow-y: auto;
 }
+
 
 
 
